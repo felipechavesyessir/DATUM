@@ -1,0 +1,30 @@
+<svg width="1000" height="300" viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">DATUM - Inteligência Espacial, Geodésia e Cartografia</title>
+  <desc id="desc">Logo principal horizontal da DATUM com relevo topográfico, wordmark geométrico e descritor técnico.</desc>
+  <rect width="1000" height="300" fill="#F7FAFC"/>
+  <g transform="translate(220 24)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 107 C36 69 75 83 103 42 C125 10 137 -9 151 4 C167 19 181 55 211 78 C256 113 320 115 366 92 C406 72 424 33 450 44 C474 54 483 87 515 96 C544 104 563 111 560 124 C555 146 503 147 463 131 C421 115 383 111 344 128 C294 150 250 144 204 122 C166 104 137 107 101 126 C60 147 13 141 0 107Z" stroke="#071426" stroke-width="2.6"/>
+    <path d="M28 100 C65 75 91 78 116 43 C135 18 143 10 154 19 C167 31 181 59 212 82 C256 116 320 120 365 101 C405 84 423 52 448 58 C470 64 482 92 511 100 C533 106 547 113 538 123 C520 143 478 136 446 123 C407 107 377 105 341 119 C294 138 253 132 206 110 C169 92 142 96 108 113 C75 130 39 126 28 100Z" stroke="#007EA7" stroke-width="2.8"/>
+    <path d="M56 91 C87 77 105 72 128 43 C144 25 149 24 158 30 C171 39 183 61 213 85 C257 120 320 126 364 110 C402 96 421 69 446 70 C468 71 482 96 507 104 C522 109 531 115 518 123 C493 139 460 125 430 113 C395 99 371 99 338 111 C294 127 255 120 210 99 C173 82 147 86 115 101 C88 114 62 112 56 91Z" stroke="#071426" stroke-width="2.4"/>
+    <path d="M83 80 C108 73 120 64 139 42 C151 31 153 33 161 39 C174 48 186 65 215 88 C258 123 320 132 362 119 C399 108 419 86 444 84 C465 82 480 101 503 110 C512 113 515 119 499 123 C470 130 445 112 417 102 C386 91 365 93 336 103 C294 116 258 107 213 88 C177 73 151 78 122 90 C100 99 86 95 83 80Z" stroke="#007EA7" stroke-width="2.8"/>
+    <path d="M111 67 C127 64 136 55 151 38 C159 31 162 38 169 47 C181 62 194 76 218 91 C261 119 320 137 360 128 C397 119 417 101 441 98 C461 95 477 106 494 116 C498 118 496 123 480 123 C451 123 431 102 405 94 C377 85 359 87 334 96 C295 106 261 94 218 77 C181 62 155 65 130 74 C116 79 110 75 111 67Z" stroke="#071426" stroke-width="2.4"/>
+    <path d="M133 51 C143 48 151 41 159 30 C165 22 172 39 180 55 C191 73 204 86 223 96 C265 118 321 143 359 137 C394 132 414 115 438 112 C457 109 470 114 484 124" stroke="#007EA7" stroke-width="2.8"/>
+    <path d="M145 30 C150 13 159 9 169 27 C176 38 184 53 194 66" stroke="#071426" stroke-width="2.4"/>
+    <path d="M421 75 C431 54 441 43 452 49 C463 54 472 73 481 90" stroke="#071426" stroke-width="2.4"/>
+  </g>
+  <g transform="translate(170 168)" fill="#071426">
+    <path d="M0 0 H60 C99 0 128 27 128 62 C128 97 99 124 60 124 H0 V0ZM15 15 V109 H59 C89 109 111 89 111 62 C111 35 89 15 59 15H15Z"/>
+    <path d="M206 0 L276 124 H258 L239 89 H170 L151 124 H133 L206 0ZM178 75 H231 L206 29 L178 75Z"/>
+    <rect x="202" y="81" width="29" height="5" fill="#007EA7"/>
+    <path d="M322 0 H438 V15 H388 V124 H372 V15 H322 V0Z"/>
+    <path d="M496 0 H512 V75 C512 97 534 112 568 112 C602 112 624 97 624 75 V0 H640 V76 C640 108 611 127 568 127 C525 127 496 108 496 76 V0Z"/>
+    <path d="M702 124 V0 H719 L770 70 L821 0 H838 V124 H822 V27 L773 93 H767 L718 27 V124 H702Z"/>
+  </g>
+  <g font-family="'Inter', 'IBM Plex Sans', Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="7.5" fill="#071426">
+    <text x="176" y="275">INTELIGÊNCIA ESPACIAL</text>
+    <text x="496" y="275">GEODÉSIA</text>
+    <text x="650" y="275">CARTOGRAFIA</text>
+  </g>
+  <rect x="468" y="262" width="2.4" height="17" fill="#007EA7"/>
+  <rect x="622" y="262" width="2.4" height="17" fill="#007EA7"/>
+</svg>

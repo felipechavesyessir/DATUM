@@ -1,0 +1,360 @@
+--- PAGE 1 ---
+DATUM — Sistema de Identidade Visual
+Brandbook Conceitual
+1. Essência da Marca
+Nome
+DATUM
+Referência direta ao conceito de datum geográfico: modelo matemático utilizado para representar a
+Terra e definir coordenadas espaciais com precisão.
+Posicionamento
+A DATUM é uma marca de inteligência geoespacial aplicada.
+Sua identidade deve transmitir:
+• precisão técnica;
+• engenharia;
+• confiabilidade;
+• rastreabilidade;
+• leitura espacial;
+• cartografia moderna;
+• tecnologia aplicada;
+• análise territorial;
+• geodésia e dados.
+A marca não deve parecer:
+• startup genérica;
+• agência criativa;
+• marca futurista exagerada;
+• software infantil;
+• empresa “tech” abstrata.
+Ela deve parecer:
+• empresa de engenharia moderna;
+• consultoria geoespacial premium;
+• plataforma técnica confiável;
+• inteligência territorial aplicada;
+• empresa de dados espaciais.
+1
+
+--- PAGE 2 ---
+2. Conceito Visual
+Ideia central
+A marca é baseada em:
+• curvas de nível;
+• relevo topográfico;
+• dois picos conectados;
+• continuidade espacial;
+• fluxo de dados;
+• leitura territorial;
+• precisão geométrica.
+O símbolo representa:
+• topografia;
+• elevação gradual;
+• modelagem espacial;
+• superfície geográfica;
+• interpretação técnica do terreno.
+3. Estrutura da Marca
+3.1 Logo Principal
+Composição horizontal:
+• símbolo topográfico;
+• wordmark DATUM;
+• descritor institucional.
+Estrutura
+[SÍMBOLO] DATUM Inteligência Espacial | Geodésia | Cartografia
+3.2 Logo Reduzido
+Versão simplificada:
+• símbolo topográfico;
+• DATUM;
+• sem descritor.
+2
+
+--- PAGE 3 ---
+Uso recomendado:
+• cabeçalhos;
+• dashboards;
+• relatórios;
+• favicon expandido;
+• aplicações pequenas.
+3.3 Monograma / Ícone
+Elemento compacto inspirado em:
+• letra D;
+• curvas de nível;
+• marco geodésico;
+• malha espacial;
+• ponto de referência.
+Objetivo
+Criar reconhecimento imediato mesmo em tamanhos pequenos.
+Uso recomendado:
+• app;
+• favicon;
+• avatar;
+• watermark;
+• ícone de sistema;
+• GIS/webapp;
+• assinatura visual.
+4. Sistema Geométrico
+Construção das curvas
+As curvas devem:
+• possuir espessura uniforme;
+• manter continuidade visual;
+• criar sensação de elevação gradual;
+• evitar excesso de linhas;
+• manter leitura limpa em escala reduzida.
+3
+
+--- PAGE 4 ---
+Regras do relevo
+Permitido
+• curvas suaves;
+• geometria contínua;
+• assimetria controlada;
+• fluxo horizontal elegante;
+• dois picos principais.
+Não permitido
+• sombras;
+• textura;
+• efeitos 3D;
+• excesso de curvas;
+• aparência orgânica exagerada;
+• formas aleatórias.
+5. Grid Oficial
+Estrutura Base
+A construção da marca deve seguir:
+• grid modular;
+• alinhamento horizontal;
+• proporções matemáticas constantes.
+Relação ideal
+• altura do símbolo = altura do wordmark;
+• distância entre símbolo e DATUM = 1x;
+• área de respiro externa = 2x.
+Onde:
+x = espessura principal da curva de nível.
+6. Área de Respiro
+Regra
+Nenhum elemento gráfico deve invadir a área mínima ao redor da marca.
+4
+
+--- PAGE 5 ---
+Medida
+A área mínima de respiro deve equivaler à altura da letra “D”.
+7. Tamanho Mínimo
+Logo principal
+Uso digital:
+• mínimo: 140 px largura.
+Uso impresso:
+• mínimo: 35 mm largura.
+Monograma
+Uso digital:
+• mínimo: 24 px.
+Uso impresso:
+• mínimo: 8 mm.
+8. Paleta Oficial
+Primária
+Azul Técnico Profundo
+HEX: #071426 RGB: 7 / 20 / 38
+Uso:
+• fundo principal;
+• wordmark;
+• aplicações premium.
+Azul Geoespacial
+HEX: #007EA7 RGB: 0 / 126 / 167
+5
+
+--- PAGE 6 ---
+Uso:
+• curvas de nível;
+• destaque;
+• elementos tecnológicos;
+• links;
+• interação.
+Branco Gelo
+HEX: #F7FAFC RGB: 247 / 250 / 252
+Uso:
+• fundo claro;
+• contraste;
+• dashboards;
+• documentos.
+Secundária
+Cinza Técnico
+HEX: #5E6B76
+Grafite
+HEX: #1D252C
+Verde Coordenada
+HEX: #2FBF71
+Uso do verde:
+• extremamente moderado;
+• status;
+• confirmação;
+• dados ativos;
+• sensores;
+• elementos GIS.
+6
+
+--- PAGE 7 ---
+9. Tipografia Oficial
+Marca
+Principal
+Space Grotesk SemiBold
+Características:
+• tecnológica;
+• geométrica;
+• sofisticada;
+• moderna;
+• corporativa.
+Institucional
+Principal
+Inter
+Uso:
+• dashboards;
+• relatórios;
+• apresentações;
+• interface;
+• documentos.
+Alternativa Técnica
+IBM Plex Sans
+Uso:
+• documentação técnica;
+• engenharia;
+• especificações;
+• relatórios corporativos.
+7
+
+--- PAGE 8 ---
+10. Sistema de Espessura
+Curvas de nível
+Espessura recomendada:
+• desktop: 2.5 px;
+• mobile: 2 px;
+• impressão: proporcional.
+As curvas devem:
+• permanecer legíveis;
+• evitar ruído;
+• manter fluidez visual.
+11. Aplicações Permitidas
+Fundos claros
+• logo azul escuro;
+• curvas em azul geoespacial;
+• tipografia escura.
+Fundos escuros
+• curvas brancas;
+• detalhes ciano;
+• DATUM branco;
+• descritor em cinza claro.
+Versão monocromática
+Permitido:
+• azul escuro sólido;
+• branco sólido;
+• preto sólido.
+Não permitido:
+• gradientes;
+• sombras;
+• bevel;
+8
+
+--- PAGE 9 ---
+• glow.
+12. Interface GIS / Dashboard
+A linguagem visual da DATUM deve funcionar naturalmente em:
+• dashboards geoespaciais;
+• plataformas web GIS;
+• aplicações técnicas;
+• softwares de engenharia;
+• mapas;
+• painéis operacionais.
+Elementos UI
+Botões
+• cantos suaves;
+• aparência técnica;
+• contraste limpo.
+Mapas
+• fundo neutro;
+• layers limpos;
+• azul geoespacial como destaque.
+Cards
+• minimalistas;
+• sem excesso de bordas;
+• foco em legibilidade.
+13. Biblioteca de Ícones
+Os ícones derivados devem seguir:
+• traço uniforme;
+• geometria limpa;
+• aparência técnica;
+• leitura rápida.
+9
+
+--- PAGE 10 ---
+Inspirações
+• curvas de nível;
+• triangulação;
+• coordenadas;
+• vetores;
+• satélite;
+• grid espacial;
+• LiDAR;
+• georreferenciamento.
+14. Tom de Voz
+Características
+A DATUM deve comunicar:
+• clareza;
+• autoridade;
+• precisão;
+• confiabilidade;
+• inteligência técnica.
+Evitar
+• buzzwords;
+• exagero futurista;
+• marketing vazio;
+• jargão excessivo.
+Linguagem ideal
+Curta. Direta. Objetiva. Técnica. Confiável.
+15. Exemplos de Comunicação
+Correto
+“Transformamos dados geoespaciais em informação técnica pronta para decisão.”
+“Precisão territorial aplicada à engenharia.”
+10
+
+--- PAGE 11 ---
+“Modelagem espacial com rastreabilidade técnica.”
+“Cartografia inteligente para operações de campo.”
+Incorreto
+“Tecnologia disruptiva para revolucionar o mercado.”
+“Soluções inovadoras de última geração.”
+“Ecossistema inteligente e futurista.”
+16. Aplicações Recomendadas
+A identidade da DATUM foi construída para funcionar em:
+• GIS;
+• geotecnologia;
+• topografia;
+• geotecnia;
+• engenharia;
+• LiDAR;
+• drones;
+• cartografia;
+• inteligência territorial;
+• mineração;
+• meio ambiente;
+• logística;
+• infraestrutura.
+17. Assinatura Conceitual
+DATUM
+Inteligência espacial aplicada.
+Precisão geográfica para engenharia, análise territorial e tomada de decisão.
+11
+
+--- PAGE 12 ---
+18. Direção Final da Marca
+A DATUM deve ser percebida como:
+• premium;
+• técnica;
+• contemporânea;
+• precisa;
+• confiável;
+• espacial;
+• sólida.
+A identidade visual deve funcionar tanto:
+• em uma interface GIS;
+• quanto em um relatório técnico;
+• ou em uma apresentação corporativa de engenharia.
+O objetivo é construir uma marca:
+• memorável;
+• limpa;
+• escalável;
+• tecnológica;
+• com autoridade técnica real.
+12

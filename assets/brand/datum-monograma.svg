@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">DATUM - Ícone monograma</title>
+  <desc id="desc">Monograma DATUM inspirado na letra D, marco geodésico e curvas de nível.</desc>
+  <rect width="256" height="256" fill="#F7FAFC"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M92 56 H134 C180 56 213 88 213 128 C213 168 180 200 134 200 H92" stroke="#071426" stroke-width="12"/>
+    <path d="M92 80 V115" stroke="#071426" stroke-width="8"/>
+    <path d="M92 141 V176" stroke="#071426" stroke-width="8"/>
+    <path d="M91 133 C110 131 115 113 130 99 C148 83 174 91 185 114 C193 132 190 151 179 166" stroke="#071426" stroke-width="5"/>
+    <path d="M91 156 C112 154 121 137 134 124 C146 112 164 117 171 132 C177 145 173 157 164 165" stroke="#007EA7" stroke-width="5"/>
+    <path d="M91 178 C115 176 127 158 140 145 C149 137 160 141 163 151 C166 160 160 169 149 173 C132 179 113 182 92 184" stroke="#071426" stroke-width="5"/>
+    <path d="M92 112 C104 111 110 101 119 90 C134 72 166 73 185 95 C199 111 204 131 199 151" stroke="#071426" stroke-width="5"/>
+    <path d="M126 164 C133 154 140 148 148 149 C155 150 158 156 156 163 C153 174 137 177 126 174 C122 172 122 169 126 164Z" stroke="#007EA7" stroke-width="5"/>
+    <path d="M92 56 V34" stroke="#071426" stroke-width="7"/>
+    <circle cx="92" cy="27" r="14" stroke="#007EA7" stroke-width="7"/>
+  </g>
+</svg>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DATUM - Inteligência Geoespacial Aplicada</title>
+    <meta
+      name="description"
+      content="DATUM transforma dados geoespaciais em informação técnica pronta para engenharia, análise territorial e tomada de decisão."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas class="site-topography-field" id="site-topography-field" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <div class="announcement reveal">
+      <span>DATUM LAB</span>
+      <p>Modelagem espacial com rastreabilidade técnica para operações de engenharia.</p>
+      <a href="#contato">Agendar diagnóstico</a>
+    </div>
+
+    <header class="site-header reveal">
+      <a class="brand" href="#inicio" aria-label="DATUM">
+        <svg class="datum-vector-logo" viewBox="0 0 1254 1254" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DATUM">
+          <g stroke-linecap="round" stroke-linejoin="round">
+            <circle class="logo-trace logo-accent-stroke" pathLength="1" cx="348" cy="251" r="57" stroke="#0068D9" stroke-width="33"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M348 367V640" stroke="#071426" stroke-width="37"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M462 268H710C895 268 1030 424 1030 615C1030 806 895 966 710 966H330" stroke="#071426" stroke-width="50"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M338 724C417 710 445 653 445 592C430 470 543 379 655 385C789 392 841 492 865 574C877 612 905 631 943 643" stroke="#071426" stroke-width="23"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M338 802C439 784 500 714 500 612C500 535 564 488 642 488C733 488 783 557 803 653C811 690 828 708 855 724C883 740 884 774 858 809C819 858 758 874 697 872H340" stroke="#071426" stroke-width="23"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M340 879H695" stroke="#071426" stroke-width="23"/>
+            <path class="logo-trace logo-accent-stroke" pathLength="1" d="M530 778C555 737 561 704 570 657C579 613 614 587 654 589C699 592 724 638 731 697C738 761 705 801 638 810C590 816 544 809 531 794C526 789 525 783 530 778Z" stroke="#0068D9" stroke-width="23"/>
+          </g>
+        </svg>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
+        <a href="#produtos">Atuação</a>
+        <a href="#cases">Cases</a>
+        <a href="#processo">Recursos</a>
+        <a href="#carreiras">Biblioteca</a>
+        <a href="#contato">Contato</a>
+        <a href="#login">Login</a>
+      </nav>
+
+      <div class="language-switch" aria-label="Idiomas">
+        <button class="language is-active" type="button" data-lang="pt">pt</button>
+        <button class="language" type="button" data-lang="en">en</button>
+      </div>
+    </header>
+
+    <div class="scroll-brand-lockup" id="scroll-brand-lockup" aria-hidden="true">
+      <div class="scroll-brand-wordmark">
+        <svg class="datum-vector-logo scroll-brand-monogram" viewBox="0 0 1254 1254" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke-linecap="round" stroke-linejoin="round">
+            <circle class="logo-trace logo-accent-stroke" pathLength="1" cx="348" cy="251" r="57" stroke="#0068D9" stroke-width="33"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M348 367V640" stroke="#071426" stroke-width="37"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M462 268H710C895 268 1030 424 1030 615C1030 806 895 966 710 966H330" stroke="#071426" stroke-width="50"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M338 724C417 710 445 653 445 592C430 470 543 379 655 385C789 392 841 492 865 574C877 612 905 631 943 643" stroke="#071426" stroke-width="23"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M338 802C439 784 500 714 500 612C500 535 564 488 642 488C733 488 783 557 803 653C811 690 828 708 855 724C883 740 884 774 858 809C819 858 758 874 697 872H340" stroke="#071426" stroke-width="23"/>
+            <path class="logo-trace logo-main-stroke" pathLength="1" d="M340 879H695" stroke="#071426" stroke-width="23"/>
+            <path class="logo-trace logo-accent-stroke" pathLength="1" d="M530 778C555 737 561 704 570 657C579 613 614 587 654 589C699 592 724 638 731 697C738 761 705 801 638 810C590 816 544 809 531 794C526 789 525 783 530 778Z" stroke="#0068D9" stroke-width="23"/>
+          </g>
+        </svg>
+        <span class="scroll-brand-rest">atum</span>
+      </div>
+    </div>
+
+    <main id="conteudo">
+      <section id="inicio" class="hero">
+        <div class="intro-impact" aria-hidden="true">
+          <strong>Precisão territorial aplicada à engenharia.</strong>
+          <span>Modelagem espacial com rastreabilidade técnica.</span>
+        </div>
+        <a class="scroll-cue" href="#company-intro-title" aria-label="Rolar para apresentação da DATUM">
+          <span></span>
+        </a>
+      </section>
+
+      <section class="company-intro-section reveal" aria-labelledby="company-intro-title">
+        <div class="section-shell company-intro-layout">
+          <div>
+            <span class="eyebrow">DATUM Geotecnologias</span>
+            <h1 id="company-intro-title">Inteligência espacial para engenharia, cartografia e decisão territorial.</h1>
+          </div>
+          <div class="company-intro-copy">
+            <p>
+              A DATUM transforma dados geoespaciais em informação técnica pronta para decisão.
+              Unimos geodésia, cartografia, topografia, LiDAR, drones e bases territoriais em fluxos
+              rastreáveis para operações de campo, engenharia e análise territorial.
+            </p>
+            <div class="company-intro-actions">
+              <a class="button primary" href="#contato">Fale com a DATUM</a>
+              <a class="button secondary" href="#processo">Ver operação técnica</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-section reveal">
+        <div class="section-shell">
+          <p>Construída para operações que exigem precisão geográfica, leitura espacial e rastreabilidade.</p>
+          <div class="trust-grid" aria-label="Setores atendidos">
+            <span>Infraestrutura</span>
+            <span>Mineração</span>
+            <span>Meio ambiente</span>
+            <span>Logística</span>
+            <span>Geotecnia</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="cases" class="results-section">
+        <div class="section-shell results-grid">
+          <div class="results-copy reveal">
+            <span class="eyebrow">Cases</span>
+            <h2>Aplicações onde precisão geográfica vira decisão técnica.</h2>
+            <p>
+              Cenários de uso alinhados à identidade da DATUM: leitura espacial, cartografia moderna,
+              rastreabilidade e análise territorial aplicada.
+            </p>
+          </div>
+          <div class="result-cards">
+            <article class="result-card reveal">
+              <span>Infraestrutura</span>
+              <h3>Leitura de traçado e interferências</h3>
+              <p>Curvas de nível, bases cartográficas, pontos de controle e restrições territoriais reunidos para apoiar decisões em corredores lineares.</p>
+            </article>
+            <article class="result-card reveal">
+              <span>Meio ambiente</span>
+              <h3>Diagnóstico espacial verificável</h3>
+              <p>Hidrografia, declividade, uso do solo, APP e imagens recentes cruzados em uma leitura limpa para relatório técnico e análise territorial.</p>
+            </article>
+            <article class="result-card reveal">
+              <span>Engenharia</span>
+              <h3>Superfície, datum e modelo técnico</h3>
+              <p>Levantamentos, nuvens de pontos, LiDAR, drones e entregáveis CAD/GIS organizados com origem, coordenada, escala e validação.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="processo" class="process-section">
+        <div class="section-shell process-layout">
+          <div class="process-intro reveal">
+            <span class="eyebrow">Operação ponta a ponta</span>
+            <h2>Como a DATUM opera sua inteligência territorial.</h2>
+            <p>
+              Cada etapa organiza origem, coordenada, versão, evidência e entrega técnica para reduzir
+              ruído e sustentar decisões territoriais.
+            </p>
+          </div>
+
+          <div class="process-workbench reveal">
+            <div class="step-list" role="tablist" aria-label="Etapas da operação">
+              <button class="step is-active" type="button" role="tab" aria-selected="true" data-step="0">
+                <span>01</span>Coleta e cadastro
+              </button>
+              <button class="step" type="button" role="tab" aria-selected="false" data-step="1">
+                <span>02</span>Leitura espacial
+              </button>
+              <button class="step" type="button" role="tab" aria-selected="false" data-step="2">
+                <span>03</span>Evidências
+              </button>
+              <button class="step" type="button" role="tab" aria-selected="false" data-step="3">
+                <span>04</span>Checagem técnica
+              </button>
+              <button class="step" type="button" role="tab" aria-selected="false" data-step="4">
+                <span>05</span>Entrega
+              </button>
+            </div>
+
+            <article class="step-detail" id="workflow-detail" aria-live="polite">
+              <span>01 / coleta</span>
+              <h3>Coleta de dados e cadastro</h3>
+              <p>
+                Conexão com bases de campo, arquivos CAD/GIS, levantamentos, sensores e documentos.
+                Cada camada recebe origem, data, coordenada e status de validação.
+              </p>
+              <div class="detail-grid">
+                <strong>CAD</strong>
+                <strong>GIS</strong>
+                <strong>LiDAR</strong>
+                <strong>Campo</strong>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial-section">
+        <div class="section-shell testimonial-layout">
+          <div class="testimonial-copy reveal">
+            <span class="eyebrow">Aplicações</span>
+            <h2>Onde a inteligência geoespacial precisa ser verificável.</h2>
+          </div>
+          <div class="testimonial-card reveal">
+            <blockquote id="testimonial-quote">
+              "Integrar curvas de nível, pontos de controle, bases GIS e levantamentos de campo para leitura técnica do território."
+            </blockquote>
+            <div class="testimonial-meta">
+              <strong id="testimonial-name">Topografia e geotecnia</strong>
+              <span id="testimonial-role">Relevo, superfície, drenagem, terraplenagem e compatibilização de engenharia</span>
+            </div>
+            <div class="testimonial-controls">
+              <button type="button" class="testimonial-nav" data-testimonial="prev">Anterior</button>
+              <button type="button" class="testimonial-nav" data-testimonial="next">Próximo</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="seguranca" class="security-section">
+        <div class="section-shell security-layout">
+          <div class="security-panel reveal">
+            <span class="eyebrow">Sistema técnico</span>
+            <h2>Uma linguagem visual feita para GIS, engenharia e relatórios.</h2>
+            <p>
+              A marca DATUM nasce do datum geográfico: referência, coordenada e precisão. A interface deve funcionar
+              como uma extensão dessa lógica, com camadas limpas, contraste técnico e rastreabilidade de origem.
+            </p>
+          </div>
+          <div class="accordion reveal" id="security-accordion">
+            <button class="accordion-item is-open" type="button">
+              <span>Datum, coordenada e fonte</span>
+              <p>Cada entrega parte de uma referência espacial clara: sistema geodésico, origem, escala, data e cadeia de transformação.</p>
+            </button>
+            <button class="accordion-item" type="button">
+              <span>Curvas, layers e leitura territorial</span>
+              <p>Curvas de nível, malhas, vetores, imagens e bases públicas entram como camadas legíveis, não como ruído visual.</p>
+            </button>
+            <button class="accordion-item" type="button">
+              <span>Relatório, mapa e decisão</span>
+              <p>O resultado deve ser limpo, verificável e pronto para engenharia, análise territorial e tomada de decisão.</p>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="produtos" class="products-section">
+        <div class="section-shell products-layout">
+          <div class="products-copy reveal">
+            <span class="eyebrow">Frentes de atuação</span>
+            <h2>Geotecnologia aplicada com autoridade técnica real.</h2>
+          </div>
+          <div class="product-grid">
+            <a class="product-card reveal" href="#contato">
+              <span>01</span>
+              <h3>Geodésia e referência espacial</h3>
+              <p>Modelos, coordenadas e critérios técnicos para sustentar leituras precisas do território.</p>
+            </a>
+            <a class="product-card reveal" href="#contato">
+              <span>02</span>
+              <h3>Cartografia e GIS</h3>
+              <p>Mapas, layers, dashboards e bases territoriais preparados para análise, operação e relatório.</p>
+            </a>
+            <a class="product-card product-card-remote reveal" href="#contato">
+              <canvas class="remote-sensing-orb" data-liquid-orb aria-hidden="true"></canvas>
+              <span>03</span>
+              <h3>Sensoriamento remoto</h3>
+              <p>LiDAR, drones, satélite e imagens aéreas integrados a fluxos de interpretação espacial.</p>
+            </a>
+            <a class="product-card reveal" href="#contato">
+              <span>04</span>
+              <h3>Inteligência territorial</h3>
+              <p>Cruzamento de dados espaciais para infraestrutura, mineração, meio ambiente, logística e geotecnia.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="carreiras" class="news-section">
+        <div class="section-shell news-layout">
+          <div class="news-head reveal">
+            <span class="eyebrow">Biblioteca técnica</span>
+            <h2>Elementos que constroem a leitura espacial da DATUM.</h2>
+            <a class="button secondary" href="#contato">Fale com a DATUM</a>
+          </div>
+          <div class="news-list">
+            <a class="news-item reveal" href="#contato">
+              <time>CURVAS DE NÍVEL</time>
+              <strong>Relevo, elevação gradual e interpretação técnica do terreno.</strong>
+            </a>
+            <a class="news-item reveal" href="#contato">
+              <time>GRID ESPACIAL</time>
+              <strong>Alinhamento, proporção e leitura limpa para interfaces GIS e documentos técnicos.</strong>
+            </a>
+            <a class="news-item reveal" href="#contato">
+              <time>VETORES E COORDENADAS</time>
+              <strong>Triangulação, georreferenciamento e cadeia de validação para dados espaciais.</strong>
+            </a>
+            <a class="news-item reveal" href="#contato">
+              <time>SATÉLITE, LIDAR E DRONES</time>
+              <strong>Sensoriamento remoto aplicado à engenharia, mineração, meio ambiente e infraestrutura.</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="contact-section">
+        <div class="section-shell contact-layout">
+          <div class="contact-copy reveal">
+            <span class="eyebrow">Contato</span>
+            <h2>Transformamos dados geoespaciais em informação técnica pronta para decisão.</h2>
+            <p>Conte o desafio territorial. A DATUM organiza a leitura espacial com precisão, rastreabilidade e linguagem de engenharia.</p>
+          </div>
+          <form class="contact-form reveal" novalidate>
+            <label>
+              Nome
+              <input type="text" name="name" placeholder="Seu nome" autocomplete="name" required />
+              <span class="field-error" data-error-for="name"></span>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="voce@empresa.com" autocomplete="email" required />
+              <span class="field-error" data-error-for="email"></span>
+            </label>
+            <label>
+              Desafio territorial
+              <textarea name="message" rows="4" placeholder="Área, escala, fontes disponíveis e decisão necessária" required></textarea>
+              <span class="field-error" data-error-for="message"></span>
+            </label>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <button class="button primary" type="submit">Enviar diagnóstico</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="login">
+      <div>
+        <strong>DATUM</strong>
+        <p>Inteligência espacial aplicada. Precisão geográfica para engenharia, análise territorial e tomada de decisão.</p>
+      </div>
+      <nav aria-label="Links institucionais">
+        <a href="#login" aria-label="Termos de Uso em preparação">Termos de Uso</a>
+        <a href="#login" aria-label="Política de Privacidade em preparação">Política de Privacidade</a>
+        <a href="#login" aria-label="Código de Ética em preparação">Código de Ética</a>
+        <a href="#login" aria-label="LinkedIn da DATUM em preparação">LinkedIn</a>
+        <a href="#login" aria-label="Twitter da DATUM em preparação">Twitter</a>
+      </nav>
+      <p>© 2026 DATUM</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

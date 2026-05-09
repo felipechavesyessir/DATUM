@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DATUM - Sistema de Logo</title>
+    <style>
+      :root {
+        --deep-blue: #071426;
+        --geo-blue: #007ea7;
+        --ice: #f7fafc;
+        --gray: #7b838b;
+        --line: #d8dde2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f6f8;
+        color: var(--deep-blue);
+        font-family: Inter, "IBM Plex Sans", Arial, sans-serif;
+      }
+
+      main {
+        width: min(1180px, 100vw);
+        min-height: 100vh;
+        margin: 0 auto;
+        background: var(--ice);
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 210px 1fr;
+        align-items: center;
+        min-height: 150px;
+        padding: 22px 26px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .row.primary {
+        min-height: 340px;
+        padding-top: 28px;
+      }
+
+      .label {
+        align-self: start;
+        color: var(--gray);
+        font-size: 14px;
+        line-height: 1.35;
+        text-transform: uppercase;
+      }
+
+      .logo-main {
+        width: min(720px, 100%);
+        display: block;
+        margin: 0 auto;
+      }
+
+      .logo-reduced {
+        width: min(470px, 100%);
+        display: block;
+        margin: 0 auto;
+      }
+
+      .icon {
+        width: 132px;
+        height: 132px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .applications {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 192px;
+      }
+
+      .tile {
+        display: grid;
+        place-items: center;
+        padding: 28px;
+        overflow: hidden;
+      }
+
+      .tile.dark {
+        background: var(--deep-blue);
+      }
+
+      .tile.blue {
+        background: var(--geo-blue);
+      }
+
+      .tile.graphite {
+        background: linear-gradient(135deg, #171d23, #22282e);
+      }
+
+      .tile img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tile .mark {
+        width: 255px;
+      }
+
+      .tile .word {
+        width: 330px;
+        filter: brightness(0) invert(1);
+      }
+
+      .tile .mono {
+        width: 128px;
+        background: transparent;
+      }
+
+      @media (max-width: 760px) {
+        .row {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .applications {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="row primary">
+        <div class="label">Logo principal<br />horizontal</div>
+        <img class="logo-main" src="./datum-logo.svg" alt="Logo principal horizontal DATUM" />
+      </section>
+
+      <section class="row">
+        <div class="label">Logo reduzido<br />sem descritor</div>
+        <img class="logo-reduced" src="./datum-logo-reduzido.svg" alt="Logo reduzido DATUM" />
+      </section>
+
+      <section class="row">
+        <div class="label">Ícone / Monograma</div>
+        <img class="icon" src="./datum-monograma.svg" alt="Ícone monograma DATUM" />
+      </section>
+
+      <section class="applications" aria-label="Aplicações do logo DATUM">
+        <div class="tile dark">
+          <img class="mark" src="./datum-logo-dark.svg" alt="Logo DATUM aplicado em fundo escuro" />
+        </div>
+        <div class="tile blue">
+          <img class="word" src="./datum-logo-reduzido.svg" alt="Logo reduzido DATUM aplicado em fundo azul" />
+        </div>
+        <div class="tile graphite">
+          <img class="mono" src="./datum-monograma.svg" alt="Monograma DATUM aplicado em fundo grafite" />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
