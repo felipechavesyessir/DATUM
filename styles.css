@@ -425,7 +425,7 @@ body.logo-prelude .terrain-console {
   align-items: center;
   justify-content: flex-start;
   gap: 14px;
-  padding: clamp(116px, 17vh, 178px) 24px 0;
+  padding: clamp(72px, 10vh, 118px) 24px 0;
   pointer-events: none;
   text-align: center;
   opacity: 0;
@@ -438,10 +438,10 @@ body.logo-prelude .terrain-console {
 .scroll-cue {
   position: absolute;
   left: 50%;
-  bottom: clamp(86px, 14vh, 150px);
+  bottom: clamp(300px, 38vh, 380px);
   z-index: 3;
-  width: 64px;
-  height: 64px;
+  width: 92px;
+  height: 92px;
   display: grid;
   place-items: center;
   border: 1px solid rgba(7, 20, 38, 0.16);
@@ -458,10 +458,10 @@ body.logo-prelude .terrain-console {
 }
 
 .scroll-cue span {
-  width: 18px;
-  height: 18px;
-  border-right: 3px solid var(--deep);
-  border-bottom: 3px solid var(--deep);
+  width: 28px;
+  height: 28px;
+  border-right: 4px solid var(--deep);
+  border-bottom: 4px solid var(--deep);
   transform: translateY(-3px) rotate(45deg);
   animation: scroll-cue-drift 1.8s ease-in-out infinite;
 }
@@ -506,15 +506,16 @@ body.logo-prelude .terrain-console {
 }
 
 .intro-impact strong {
-  max-width: 680px;
+  max-width: 1180px;
   color: var(--deep);
   font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
-  font-size: clamp(36px, 5.8vw, 86px);
+  font-size: clamp(34px, 5vw, 76px);
   font-weight: 600;
   line-height: 0.92;
 }
 
 .intro-impact span {
+  display: none;
   color: var(--graphite);
   font-size: clamp(14px, 1.5vw, 20px);
   font-weight: 700;
