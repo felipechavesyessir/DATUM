@@ -651,7 +651,11 @@ function applyLogoProgress(progress) {
 function updateLogoMarker(options = {}) {
   logoTargetProgress = getLogoScrollProgress();
 
-  if (options.immediate) {
+  if (options.immediate || logoTargetProgress >= 0.72) {
+    if (logoAnimationFrame) {
+      cancelAnimationFrame(logoAnimationFrame);
+      logoAnimationFrame = 0;
+    }
     logoVisualProgress = logoTargetProgress;
     applyLogoProgress(logoVisualProgress);
     return;

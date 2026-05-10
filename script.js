@@ -131,13 +131,13 @@ const translations = {
       [".news-head h2", "Ferramentas e critérios que sustentam a entrega."],
       [".news-head .button", "Falar com especialista"],
       [".news-item:nth-child(1) time", "GNSS E CAMPO"],
-      [".news-item:nth-child(1) strong", "Pontos de controle, medições e coleta planialtimétrica para bases confiáveis."],
+      [".news-item:nth-child(1) strong", "Pontos de controle e medições confiáveis."],
       [".news-item:nth-child(2) time", "SIG E CAD"],
-      [".news-item:nth-child(2) strong", "QGIS, ArcGIS, CAD e bancos de dados para organizar, cruzar e entregar informações espaciais."],
+      [".news-item:nth-child(2) strong", "Bases SIG/CAD prontas para análise."],
       [".news-item:nth-child(3) time", "AUTOMAÇÃO"],
-      [".news-item:nth-child(3) strong", "Rotinas para reduzir retrabalho, padronizar mapas, calcular áreas e acelerar validações."],
+      [".news-item:nth-child(3) strong", "Rotinas para validar e padronizar entregas."],
       [".news-item:nth-child(4) time", "RELATÓRIOS"],
-      [".news-item:nth-child(4) strong", "Mapas, memoriais, dashboards, arquivos técnicos e relatórios executivos prontos para uso do cliente."],
+      [".news-item:nth-child(4) strong", "Mapas, modelos e relatórios executivos."],
       [".contact-copy .eyebrow", "Contato"],
       [".contact-copy h2", "Solicite orçamento ou converse com um especialista."],
       [".contact-copy p", "Envie o tipo de serviço, localização, prazo, arquivos disponíveis e objetivo técnico. A DATUM faz a triagem e retorna com próximos passos."],
@@ -308,13 +308,13 @@ const translations = {
       [".news-head h2", "Tools and criteria behind the delivery."],
       [".news-head .button", "Talk to a specialist"],
       [".news-item:nth-child(1) time", "GNSS AND FIELDWORK"],
-      [".news-item:nth-child(1) strong", "Control points, measurements and planialtimetric collection for reliable datasets."],
+      [".news-item:nth-child(1) strong", "Reliable control points and measurements."],
       [".news-item:nth-child(2) time", "GIS AND CAD"],
-      [".news-item:nth-child(2) strong", "QGIS, ArcGIS, CAD and databases to organize, cross-check and deliver spatial information."],
+      [".news-item:nth-child(2) strong", "GIS/CAD bases ready for analysis."],
       [".news-item:nth-child(3) time", "AUTOMATION"],
-      [".news-item:nth-child(3) strong", "Routines that reduce rework, standardize maps, calculate areas and speed up validations."],
+      [".news-item:nth-child(3) strong", "Routines to validate and standardize deliverables."],
       [".news-item:nth-child(4) time", "REPORTS"],
-      [".news-item:nth-child(4) strong", "Maps, memorials, dashboards, technical files and executive reports ready for client use."],
+      [".news-item:nth-child(4) strong", "Maps, models and executive reports."],
       [".contact-copy .eyebrow", "Contact"],
       [".contact-copy h2", "Request a quote or talk to a specialist."],
       [".contact-copy p", "Send the service type, location, deadline, available files and technical objective. DATUM screens the demand and returns with next steps."],
@@ -1004,7 +1004,11 @@ function applyLogoProgress(progress) {
 function updateLogoMarker(options = {}) {
   logoTargetProgress = getLogoScrollProgress();
 
-  if (options.immediate) {
+  if (options.immediate || logoTargetProgress >= 0.72) {
+    if (logoAnimationFrame) {
+      cancelAnimationFrame(logoAnimationFrame);
+      logoAnimationFrame = 0;
+    }
     logoVisualProgress = logoTargetProgress;
     applyLogoProgress(logoVisualProgress);
     return;
