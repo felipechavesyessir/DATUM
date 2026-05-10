@@ -1,0 +1,8 @@
+node_modules
+reports
+brandbook_extract
+.agents
+.git
+*.md
+package-lock.json
+PLAYWRIGHT.md
