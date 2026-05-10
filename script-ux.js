@@ -605,7 +605,7 @@ function applyLogoProgress(progress) {
   const draw = 0.18 + 0.82 * eased;
   const arrival = clamp(progress / 0.34, 0, 1);
   const arrivalEase = 1 - Math.pow(1 - arrival, 4);
-  const exit = clamp((progress - 0.58) / 0.24, 0, 1);
+  const exit = clamp((progress - 0.46) / 0.16, 0, 1);
   const exitEase = 1 - Math.pow(1 - exit, 3);
 
   if (logoMarker) {
