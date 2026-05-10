@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DATUM - Inteligência Geoespacial Aplicada</title>
+    <title>DATUM UX - Inteligência Geoespacial Aplicada</title>
     <meta
       name="description"
       content="DATUM transforma dados geoespaciais em informação técnica pronta para engenharia, análise territorial e tomada de decisão."
@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles-ux.css" />
   </head>
   <body>
     <canvas class="site-topography-field" id="site-topography-field" aria-hidden="true"></canvas>
@@ -26,8 +26,8 @@
 
     <div class="announcement reveal">
       <span>DATUM LAB</span>
-      <p>Modelagem espacial com rastreabilidade técnica para operações de engenharia.</p>
-      <a href="#contato">Agendar diagnóstico</a>
+      <p>Do levantamento ao relatório: inteligência espacial rastreável para decisões técnicas.</p>
+      <a href="#contato">Solicitar diagnóstico</a>
     </div>
 
     <header class="site-header reveal">
@@ -51,12 +51,12 @@
       </button>
 
       <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
-        <a href="#produtos">Atuação</a>
+        <a href="#inicio">Início</a>
         <a href="#processo">Operação</a>
         <a href="#cases">Cases</a>
+        <a href="#produtos">Atuação</a>
         <a href="#carreiras">Biblioteca</a>
         <a href="#contato">Contato</a>
-        <a href="#login">Login</a>
       </nav>
 
       <div class="language-switch" aria-label="Idiomas">
@@ -97,17 +97,21 @@
         <div class="section-shell company-intro-layout">
           <div>
             <span class="eyebrow">DATUM Geotecnologias</span>
-            <h1 id="company-intro-title">Inteligência espacial para engenharia, cartografia e decisão territorial.</h1>
+            <h1 id="company-intro-title">A DATUM transforma território em decisão técnica.</h1>
           </div>
           <div class="company-intro-copy">
             <p>
-              A DATUM transforma dados geoespaciais em informação técnica pronta para decisão.
-              Unimos geodésia, cartografia, topografia, LiDAR, drones e bases territoriais em fluxos
-              rastreáveis para operações de campo, engenharia e análise territorial.
+              Integramos campo, geodésia, cartografia, LiDAR, drones e bases territoriais em fluxos
+              verificáveis para engenharia, operação e análise espacial.
             </p>
+            <div class="ux-proof-points" aria-label="Como a DATUM gera valor">
+              <span>Coleta e origem dos dados</span>
+              <span>Leitura espacial verificável</span>
+              <span>Entrega pronta para decisão</span>
+            </div>
             <div class="company-intro-actions">
-              <a class="button primary" href="#contato">Fale com a DATUM</a>
-              <a class="button secondary" href="#processo">Ver operação técnica</a>
+              <a class="button primary" href="#contato">Solicitar diagnóstico</a>
+              <a class="button secondary" href="#processo">Entender operação</a>
             </div>
           </div>
         </div>
@@ -460,7 +464,7 @@
               <span class="field-error" data-error-for="message"></span>
             </label>
             <p class="form-status" role="status" aria-live="polite"></p>
-            <button class="button primary" type="submit">Enviar diagnóstico</button>
+            <button class="button primary" type="submit">Enviar contexto do projeto</button>
           </form>
         </div>
       </section>
@@ -482,6 +486,6 @@
     </footer>
 
     <script src="./assets/vendor/three.min.js"></script>
-    <script src="./script.js"></script>
+    <script src="./script-ux.js"></script>
   </body>
 </html>

@@ -498,6 +498,37 @@ body.logo-prelude .terrain-console {
   line-height: 1.45;
 }
 
+.ux-proof-points {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.ux-proof-points span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--deep);
+  font-size: 14px;
+  font-weight: 800;
+  background: rgba(247, 250, 252, 0.72);
+}
+
+.ux-proof-points span::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--green);
+  box-shadow: 0 0 0 5px rgba(47, 191, 113, 0.12);
+}
+
 .company-intro-actions {
   display: flex;
   flex-wrap: wrap;
