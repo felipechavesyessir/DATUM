@@ -119,7 +119,7 @@ const translations = {
       [".accordion-item:nth-child(3) p", "Rotinas reduzem retrabalho, padronizam mapas, calculam áreas, aceleram validações e organizam entregáveis para uso técnico do cliente."],
       [".products-copy .eyebrow", "Frentes de atuação"],
       [".products-copy h2", "Geotecnologia aplicada a demandas técnicas reais."],
-      [".product-card:nth-child(1) h3", "Sensoriamento remoto e imagens"],
+      [".product-card:nth-child(1) h3", "Modelo 3D"],
       [".product-card:nth-child(1) p", "LiDAR, drones, satélites e imagens aéreas integrados à leitura de território, risco, obras e planejamento."],
       [".product-card:nth-child(2) h3", "Georreferenciamento e referência espacial"],
       [".product-card:nth-child(2) p", "Limites, coordenadas, sistemas de referência, memoriais e compatibilidade com padrões oficiais e exigências legais."],
@@ -296,7 +296,7 @@ const translations = {
       [".accordion-item:nth-child(3) p", "Routines reduce rework, standardize maps, calculate areas, accelerate validations and organize deliverables for technical client use."],
       [".products-copy .eyebrow", "Areas of work"],
       [".products-copy h2", "Applied geotechnology for real technical demands."],
-      [".product-card:nth-child(1) h3", "Remote sensing and imagery"],
+      [".product-card:nth-child(1) h3", "3D Model"],
       [".product-card:nth-child(1) p", "LiDAR, drones, satellites and aerial imagery integrated into territorial, risk, construction and planning workflows."],
       [".product-card:nth-child(2) h3", "Georeferencing and spatial reference"],
       [".product-card:nth-child(2) p", "Boundaries, coordinates, reference systems, memorials and compatibility with official standards and legal requirements."],
@@ -1437,7 +1437,7 @@ workflowSteps.forEach((step) => {
   });
 });
 
-renderWorkflow(0);
+setLanguage(currentLang);
 
 mobileWorkflowQuery.addEventListener("change", syncWorkflowLayout);
 
@@ -1462,14 +1462,7 @@ accordionItems.forEach((item) => {
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const lang = button.dataset.lang;
-    languageButtons.forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
-    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const key = element.dataset.i18n;
-      element.textContent = translations[lang][key];
-    });
+    setLanguage(button.dataset.lang);
   });
 });
 
@@ -1484,22 +1477,22 @@ contactForm.addEventListener("submit", (event) => {
   fields.forEach((field) => {
     let message = "";
     if (!field.value.trim()) {
-      message = "Preencha este campo.";
+      message = getCopy().form.required;
     } else if (field.type === "email" && !field.validity.valid) {
-      message = "Use um email válido.";
+      message = getCopy().form.email;
     }
     setFieldError(field, message);
     isValid = isValid && !message;
   });
 
   if (!isValid) {
-    status.textContent = "Revise os campos destacados para enviar o diagnóstico.";
+    status.textContent = getCopy().form.invalid;
     return;
   }
 
-  button.textContent = "Diagnóstico solicitado";
+  button.textContent = getCopy().form.sent;
   button.disabled = true;
-  status.textContent = "Recebemos seu contexto técnico. A equipe DATUM retorna com o próximo passo.";
+  status.textContent = getCopy().form.success;
 });
 
 contactForm.querySelectorAll("input, textarea").forEach((field) => {
