@@ -1,0 +1,381 @@
+
+--- PAGE 1 ---
+
+CONTEÚDO INSTITUCIONAL PARA SITE
+DATUM: dados geoespaciais
+transformados em decisão técnica
+Documento-base para organizar o conteúdo do site da DATUM, explicar seus
+serviços, evidenciar sua metodologia e estruturar a narrativa institucional com
+apoio em referências públicas sobre georreferenciamento, gestão fundiária,
+mapeamento de risco e territórios.
+Precisão territorial para topografia, geoprocessamento, análises geotécnicas,
+regularização, obras e automação de processos espaciais.
+Empresa
+DATUM
+Sede informada
+IGC-UFMG, Belo Horizonte, MG
+Data
+10 de maio de 2026
+Uso recomendado
+Briefing de site, apresentação e portfólio
+DATUM - Conteúdo institucional para site 1/11
+
+--- PAGE 2 ---
+
+Estrutura Recomendada
+A arquitetura abaixo organiza a DATUM de forma clara para o visitante: primeiro a proposta de valor, depois a
+credibilidade técnica, os serviços, o método, as experiências realizadas, a equipe, a tecnologia e os caminhos de
+contato.
+1. Início
+Primeira impressão, promessa central e chamadas
+para orçamento ou conversa técnica.
+2. Sobre a DATUM
+Origem, posicionamento, sede, propósito e áreas de
+atuação.
+3. Serviços
+O que a empresa entrega e em quais contextos cada
+serviço se aplica.
+4. Como Trabalhamos
+Passo a passo: coleta, validação, interpretação,
+automação e entrega.
+5. Projetos
+Experiências e tipos de trabalho já executados pela
+equipe.
+6. Equipe
+Pessoas, especialidades e credenciais a apresentar.
+7. Tecnologia
+Ferramentas, dados, formatos, automações e
+padrões técnicos.
+8. Contato
+Canais de atendimento, briefing inicial e próximos
+passos.
+DATUM - Conteúdo institucional para site 2/11
+
+--- PAGE 3 ---
+
+1. Início
+A página inicial precisa responder rapidamente a três perguntas: o que a DATUM faz, para quem faz e por que sua
+abordagem é confiável. O visitante deve entender que a empresa não entrega apenas mapas, mas resultados
+técnicos baseados em dados espaciais verificados.
+Mensagem principal
+A DATUM transforma dados geoespaciais em soluções precisas para engenharia,
+território, obras, gestão de riscos e tomada de decisão.
+Texto de abertura sugerido
+A DATUM é uma empresa de inteligência geoespacial sediada no IGC-UFMG, em Belo Horizonte, especializada em
+coleta, verificação, interpretação e automação de dados territoriais. Atuamos em topografia, geoprocessamento,
+georreferenciamento de imóveis, locação de obras, análises geotécnicas e mapeamentos aplicados a projetos
+públicos, privados e institucionais.
+Chamadas de ação
+Solicitar orçamento
+Para clientes que já sabem o
+serviço que precisam contratar.
+Falar com especialista
+Para demandas que exigem
+diagnóstico ou definição técnica.
+Ver projetos
+Para gerar confiança por meio
+de experiências anteriores.
+Informações que devem aparecer logo no primeiro bloco
+Atuação com dados geoespaciais, topografia, geoprocessamento e automação.
+Sede no Instituto de Geociências da UFMG, no campus Pampulha.
+Experiência da equipe em mapeamentos de risco, territórios indígenas e projetos federais.
+Foco em precisão, rastreabilidade, velocidade de entrega e utilidade técnica.
+DATUM - Conteúdo institucional para site 3/11
+
+--- PAGE 4 ---
+
+2. Sobre a DATUM
+A seção "Sobre" deve explicar a identidade da empresa sem virar um texto genérico. A DATUM deve ser apresentada
+como uma empresa técnica, aplicada e orientada à resolução de problemas reais envolvendo território, obras, risco e
+informação espacial.
+Texto institucional sugerido
+A DATUM foi pensada para transformar dados geoespaciais em resultados precisos. Seu trabalho conecta campo,
+análise espacial, automação e entrega técnica para apoiar decisões em engenharia, planejamento territorial, gestão
+de riscos, regularização fundiária e projetos de infraestrutura.
+Com sede no Instituto de Geociências da Universidade Federal de Minas Gerais, a empresa nasce próxima de um
+ambiente de pesquisa, cartografia, geologia, geografia e inovação aplicada. Essa conexão reforça uma atuação
+baseada em método, qualidade de dados e interpretação técnica.
+Localização
+O IGC-UFMG informa como endereço institucional a Av. Antônio Carlos, 6.627, Pampulha, Belo Horizonte, MG, CEP
+31270-901. No site da DATUM, essa informação deve ser apresentada junto com um mapa, pontos de referência e
+uma observação sobre atendimento em campo.
+Proposta de valor
+Precisão
+Dados coletados e processados com critérios
+técnicos para reduzir incerteza.
+Rastreabilidade
+Entregas organizadas para que o cliente entenda
+origem, método e resultado.
+Agilidade
+Automação aplicada para acelerar rotinas de
+processamento e revisão.
+Aplicação prática
+Produtos finais orientados a decisões, obras,
+relatórios, cadastros e regularização.
+Missão, visão e posicionamento
+Missão: converter dados geoespaciais em produtos técnicos confiáveis, prontos para orientar decisões sobre
+território, engenharia e risco.
+Visão: ser referência em soluções geoespaciais aplicadas que unem campo, análise, automação e entrega
+precisa.
+Posicionamento: inteligência geoespacial para projetos que exigem precisão, velocidade e responsabilidade
+técnica.
+DATUM - Conteúdo institucional para site 4/11
+
+--- PAGE 5 ---
+
+3. Serviços
+A página de serviços deve ser objetiva, mas suficientemente detalhada para que clientes de engenharia, setor
+público, proprietários, construtoras, consultorias ambientais e equipes de planejamento entendam quando acionar a
+DATUM.
+Topografia e levantamentos de campo
+Coleta de dados planialtimétricos, pontos de
+controle, medições, cadastro de elementos e
+suporte técnico para projetos de engenharia, obras
+e regularização.
+Geoprocessamento
+Organização, cruzamento, análise e representação
+de dados espaciais em ambiente SIG, com produção
+de mapas, camadas, bases geográficas e relatórios.
+Georreferenciamento de imóveis
+Apoio técnico a levantamentos e produtos
+georreferenciados, considerando exigências legais,
+precisão posicional, limites, memorial descritivo e
+compatibilidade com sistemas oficiais.
+Mapeamento de áreas de risco
+Levantamento, setorização e análise espacial de
+áreas suscetíveis a deslizamentos, processos
+erosivos, instabilidade de encostas e outros riscos
+geológico-geotécnicos.
+Análises geotécnicas e territoriais
+Interpretação de relevo, declividade, ocupação,
+drenagem, feições de instabilidade e outros
+elementos necessários para apoiar diagnóstico
+técnico.
+Locação de obra
+Materialização em campo de pontos, eixos, cotas e
+referências necessárias à execução de obras com
+controle espacial.
+Automação de processos geoespaciais
+Criação de rotinas para reduzir retrabalho,
+padronizar entregas, acelerar validações e processar
+grandes volumes de dados.
+Produtos cartográficos e relatórios
+Elaboração de mapas técnicos, plantas, bases
+georreferenciadas, memoriais, dashboards, arquivos
+CAD/GIS e relatórios executivos.
+Clientes e contextos atendidos
+Órgãos públicos e equipes ligadas a planejamento, defesa civil, infraestrutura e território.
+Construtoras, engenharias e empresas que precisam de dados confiáveis para execução de obra.
+Consultorias ambientais, geotécnicas e fundiárias.
+Proprietários rurais e urbanos que precisam organizar documentação espacial.
+Instituições de pesquisa e organizações que trabalham com territórios sensíveis.
+Referência técnica: o INCRA informa que a certificação do georreferenciamento de imóvel rural é feita pelo
+SIGEF e busca garantir que os limites de um imóvel não se sobreponham a outros, seguindo especificações
+legais e técnicas.
+DATUM - Conteúdo institucional para site 5/11
+
+--- PAGE 6 ---
+
+4. Como Trabalhamos
+Esta é uma das seções mais importantes do site, porque transforma conhecimento técnico em confiança. O cliente
+precisa perceber que a DATUM tem método, controle de qualidade e uma lógica clara de entrega.
+Como explicar a automação sem soar abstrato
+No site, a automação deve ser apresentada como ganho de qualidade e prazo: menos tarefas repetitivas, menor
+chance de erro manual, padronização de produtos e capacidade de processar mais informações em menos tempo.
+Isso é especialmente relevante em geoprocessamento, validação de bases, geração de mapas seriados, cálculo de
+áreas e organização de relatórios.
+Entendimento da demanda
+A equipe identifica o objetivo do cliente, o território envolvido, as restrições legais, os prazos, os formatos
+necessários e o nível de precisão esperado.
+1
+Planejamento técnico
+Definição de metodologia, equipamentos, bases cartográficas, pontos de controle, escalas, sistema de
+referência, equipe de campo e produtos finais.
+2
+Coleta de dados
+Levantamento em campo ou obtenção de bases geoespaciais existentes, imagens, coordenadas,
+cadastros, modelos de terreno e demais informações necessárias.
+3
+Verificação e validação
+Conferência de consistência, precisão, completude, compatibilidade espacial, sobreposições, lacunas e
+eventuais inconsistências nos dados.
+4
+Interpretação técnica
+Análise dos dados conforme a finalidade do projeto: obra, risco, georreferenciamento, planejamento,
+território indígena, regularização ou diagnóstico geotécnico.
+5
+Automação e processamento
+Aplicação de rotinas para acelerar cálculos, geração de camadas, relatórios, mapas, validações e
+padronização de entregáveis.
+6
+Entrega e suporte
+Produção dos arquivos finais, apresentação dos resultados, organização dos dados e apoio para leitura
+técnica ou uso posterior pelo cliente.
+7
+DATUM - Conteúdo institucional para site 6/11
+
+--- PAGE 7 ---
+
+5. Projetos
+A seção de projetos deve mostrar experiência real sem expor informações sensíveis. Quando houver restrição
+contratual, o site pode apresentar o tipo de trabalho, a instituição envolvida, a região e o impacto técnico, sem
+divulgar bases, coordenadas ou documentos internos.
+Mapeamento de áreas com risco de deslizamento
+Experiência da equipe em mapeamento de áreas de risco para o Ministério das Cidades, com atuação em
+municípios como Contagem, Betim e Nova Lima. Esse tipo de projeto exige leitura territorial, observação de
+campo, análise de relevo, ocupação urbana, drenagem, feições de instabilidade e organização de informações
+para subsidiar políticas públicas e prevenção.
+Mapeamento de áreas indígenas e apoio territorial
+Experiência em mapeamento de áreas indígenas, incluindo trabalhos relacionados à Terra Indígena Kaxuyana-
+Tunayana. As referências públicas do Governo Federal registram a homologação da demarcação administrativa
+da TI Kaxuyana-Tunayana pelo Decreto nº 12.720, de 17 de novembro de 2025, abrangendo municípios do Pará
+e do Amazonas.
+Projetos federais e bases para decisão pública
+A experiência citada envolve órgãos federais como Ministério das Cidades, Governo Federal e FUNAI. Para o
+site, recomenda-se tratar esses trabalhos como evidência de atuação em contextos de alta responsabilidade
+técnica, especialmente quando envolvem risco, território, comunidades e documentação oficial.
+Como apresentar cada projeto no site
+Contexto: qual problema territorial ou técnico precisava ser resolvido.
+Escopo: qual foi a atuação da equipe, sem exagerar atribuições.
+Método: coleta, análise, validação, geoprocessamento e produto final.
+Resultado: mapas, relatórios, bases, diagnósticos ou apoio à decisão.
+Confidencialidade: o que pode ou não ser publicado.
+Observação editorial: os projetos foram descritos com base nas informações fornecidas por você. Antes da
+publicação, vale confirmar nomes oficiais dos contratos, permissões de uso de marca institucional, datas, escopo
+exato e créditos da equipe.
+DATUM - Conteúdo institucional para site 7/11
+
+--- PAGE 8 ---
+
+6. Equipe
+A equipe deve aparecer com rosto técnico e humano. O objetivo não é apenas listar nomes, mas mostrar que a
+DATUM reúne experiência em campo, geoprocessamento, análise territorial, automação e entrega de produtos
+aplicáveis.
+Felipe Chaves
+Atuação informada em
+mapeamento,
+geoprocessamento, automação
+de processos e projetos
+territoriais. Bio final deve incluir
+formação, registro profissional
+quando houver, competências
+principais e responsabilidades na
+DATUM.
+Matheus Carvalho
+Atuação informada em projetos
+de mapeamento e análise
+geoespacial. Bio final deve
+detalhar especialidades,
+experiência de campo, softwares
+dominados e tipos de entrega.
+José Renato Pereira
+Atuação informada em
+mapeamento territorial e
+projetos técnicos. Bio final deve
+incluir formação, experiência,
+área de foco e participação em
+trabalhos relevantes.
+Informações que fortalecem a seção de equipe
+Formação acadêmica e vínculo com geografia, geologia, cartografia, engenharia ou áreas correlatas.
+Registros profissionais, ART/RRT ou credenciamentos aplicáveis, quando existirem.
+Experiência com GNSS, SIG, CAD, sensoriamento remoto, drone, banco de dados ou automação.
+Participação específica em projetos públicos, privados, acadêmicos ou institucionais.
+Fotos profissionais consistentes, preferencialmente em campo ou ambiente técnico.
+Para publicação final, recomenda-se escrever bios curtas de 4 a 6 linhas por pessoa e uma versão expandida para propostas técnicas.
+DATUM - Conteúdo institucional para site 8/11
+
+--- PAGE 9 ---
+
+7. Tecnologia
+A seção de tecnologia deve provar capacidade sem virar uma lista vazia de ferramentas. O ideal é explicar como os
+recursos técnicos melhoram precisão, rastreabilidade e velocidade.
+Coleta e posicionamento
+GNSS, pontos de controle, dados de campo,
+levantamentos topográficos, imagens e bases
+espaciais oficiais ou produzidas sob demanda.
+SIG e análise espacial
+QGIS, ArcGIS ou plataformas equivalentes para
+cruzamento de camadas, cálculo de áreas, análise de
+relevo, mapas temáticos e organização territorial.
+CAD e produtos de engenharia
+Arquivos técnicos para uso em projetos, obras,
+locação, plantas, memoriais e documentação
+compatível com fluxos de engenharia.
+Automação
+Rotinas em Python, scripts, modelos de
+processamento, padronização de mapas, validação
+de atributos e geração de relatórios.
+Dados e formatos
+Shapefile, GeoPackage, GeoJSON, DXF/DWG, CSV,
+KML/KMZ, raster, modelos digitais de terreno,
+plantas e relatórios em PDF.
+Referenciais e normas
+Atenção a sistemas de coordenadas, padrões
+cartográficos, critérios de precisão e exigências de
+órgãos oficiais quando o serviço demandar.
+Referências externas que justificam essa abordagem
+O SIGEF, sistema do INCRA, é descrito como ferramenta para recepção, validação, organização, regularização e
+disponibilização de informações georreferenciadas de limites de imóveis rurais. Essa lógica reforça a importância de
+dados consistentes, verificáveis e bem estruturados.
+No campo de risco geológico, materiais do Serviço Geológico do Brasil destacam a utilidade de mapeamentos e
+diagnósticos para políticas públicas de prevenção e resposta a desastres. Para a DATUM, isso reforça o valor de unir
+campo, análise espacial e leitura técnica do território.
+DATUM - Conteúdo institucional para site 9/11
+
+--- PAGE 10 ---
+
+8. Contato
+A seção de contato deve ser simples, objetiva e orientada à conversão. O visitante precisa entender como pedir
+orçamento, quais informações enviar e o que acontece depois do primeiro contato.
+Canais recomendados
+WhatsApp comercial com botão fixo ou destacado.
+E-mail institucional.
+Formulário com campos para tipo de serviço, localização, prazo e anexos.
+LinkedIn ou Instagram, se a empresa for manter presença ativa.
+Mapa com endereço no IGC-UFMG e indicação de atendimento em campo.
+Campos úteis no formulário
+Tipo de demanda
+Topografia, georreferenciamento, risco, obra,
+geoprocessamento, automação ou outro.
+Local do projeto
+Município, endereço, coordenada, polígono ou
+arquivo de referência.
+Objetivo
+Regularização, obra, relatório, análise, licenciamento,
+diagnóstico ou tomada de decisão.
+Prazo e anexos
+Data desejada, documentos, plantas, bases, imagens
+ou memoriais já existentes.
+Resposta automática sugerida
+"Recebemos sua solicitação. A equipe da DATUM irá analisar as informações enviadas e retornará com os próximos
+passos para diagnóstico técnico, escopo e orçamento."
+Informações pendentes para finalizar o site
+CNPJ, razão social e nome jurídico, se já existirem.
+Telefone, WhatsApp e e-mail oficiais.
+Endereço de publicação: domínio, Instagram, LinkedIn e Google Business Profile.
+Credenciais profissionais e permissões para citar órgãos, projetos e imagens.
+Fotos da equipe, imagens de campo, mapas autorizados e exemplos de entregáveis.
+DATUM - Conteúdo institucional para site 10/11
+
+--- PAGE 11 ---
+
+Referências Consultadas
+As referências abaixo foram usadas como apoio de contexto técnico e institucional. Elas não substituem a checagem de contratos,
+autorizações de uso de marca, escopos oficiais e documentos internos da DATUM.
+1. Instituto de Geociências da UFMG. Página de contatos e endereço institucional do IGC: https://www.igc.ufmg.br/contatos/
+2. INCRA. Certificação de Imóvel Rural: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis
+3. SIGEF/INCRA. Sistema de Gestão Fundiária: https://sigef.incra.gov.br/
+4. INCRA. Manual Técnico para Georreferenciamento de Imóveis Rurais, 2ª edição: https://www.gov.br/incra/pt-
+br/assuntos/noticias/incra-lanca-2a-edicao-do-manual-para-georreferenciamento-de-imoveis-rurais/
+5. INCRA. Exigência de georreferenciamento em transações com imóveis rurais a partir de 25 hectares: https://www.gov.br/incra/pt-
+br/assuntos/noticias/transacoes-com-imoveis-acima-de-25-hectares-exigem-georreferenciamento
+6. Serviço Geológico do Brasil. Diagnóstico da População em Áreas de Risco Geológico: https://sgb.gov.br/diagnostico-da-
+populacao-em-areas-de-risco-geologico
+7. Serviço Geológico do Brasil. Publicação sobre setorizações de áreas de risco geológico: https://www.sgb.gov.br/w/publicadas-
+setorizacao-de-areas-de-risco-geologico-de-sete-municipios
+8. FUNAI. Documento sobre Terra Indígena Kaxuyana-Tunayana: https://www.gov.br/funai/pt-br/assuntos/noticias/2025/com-mais-
+quatro-homologacoes-sobe-para-20-o-numero-de-terras-homologadas-pelo-presidente-
+lula/TerraIndgenaKaxuyanaTunayana.pdf/view
+9. Ministério dos Povos Indígenas. Homologação da TI Kaxuyana-Tunayana: https://www.gov.br/povosindigenas/pt-
+br/assuntos/noticias/2026/02/mpi-comemora-homologacao-da-ti-kaxuyana-tunayana
+DATUM - Conteúdo institucional para site 11/11

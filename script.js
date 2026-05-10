@@ -3,7 +3,7 @@ if (window.location.hash && window.location.hash !== "#") {
   window.scrollTo(0, 0);
 }
 
-const workflow = [
+let workflow = [
   {
     label: "01 / coleta",
     title: "Coleta de dados e cadastro",
@@ -46,7 +46,7 @@ const workflow = [
   }
 ];
 
-const testimonials = [
+let testimonials = [
   {
     quote:
       "Integrar curvas de nível, pontos de controle, bases GIS e levantamentos de campo para leitura técnica do território.",
@@ -68,8 +68,360 @@ const testimonials = [
 ];
 
 const translations = {
-  pt: {},
-  en: {}
+  pt: {
+    static: [
+      ["title", "DATUM - Dados geoespaciais transformados em decisão técnica"],
+      ['meta[name="description"]', "A DATUM transforma dados geoespaciais em soluções precisas para engenharia, território, obras, gestão de riscos e tomada de decisão.", "content"],
+      [".skip-link", "Ir para o conteúdo"],
+      [".announcement span", "DATUM"],
+      [".announcement p", "Precisão territorial para topografia, geoprocessamento, análises geotécnicas, regularização, obras e automação espacial."],
+      [".announcement a", "Falar com especialista"],
+      ['.site-nav a[href="#produtos"]', "Serviços"],
+      ['.site-nav a[href="#processo"]', "Método"],
+      ['.site-nav a[href="#cases"]', "Projetos"],
+      ['.site-nav a[href="#carreiras"]', "Tecnologia"],
+      ['.site-nav a[href="#contato"]', "Contato"],
+      ['.site-nav a[href="#login"]', "Login"],
+      [".intro-impact strong", "Dados geoespaciais transformados em decisão técnica."],
+      [".intro-impact span", "Precisão territorial para obras, risco, regularização e gestão."],
+      [".company-intro-section .eyebrow", "Sobre a DATUM"],
+      ["#company-intro-title", "A DATUM transforma dados geoespaciais em soluções precisas para engenharia, território e tomada de decisão."],
+      [".company-intro-copy p", "Sediada no IGC-UFMG, em Belo Horizonte, a DATUM coleta, verifica, interpreta e automatiza dados territoriais. Atuamos em topografia, geoprocessamento, georreferenciamento de imóveis, locação de obras, análises geotécnicas e mapeamentos para projetos públicos, privados e institucionais."],
+      [".company-intro-actions .primary", "Solicitar orçamento"],
+      [".company-intro-actions .secondary", "Ver método técnico"],
+      [".process-intro .eyebrow", "Como trabalhamos"],
+      [".process-intro h2", "Como a DATUM opera"],
+      [".process-intro p", "Da demanda à entrega, organizamos objetivo, método, coordenada, validação, automação e suporte para reduzir incerteza e sustentar decisões territoriais."],
+      [".results-copy .eyebrow", "Projetos"],
+      [".results-copy h2", "Experiências em territórios, risco e decisão pública."],
+      [".results-copy p", "Aplicações inspiradas em experiências reais da equipe, apresentadas sem expor dados sensíveis: contexto, método, produto técnico e utilidade para decisão."],
+      [".result-card:nth-child(1) span", "Risco geológico"],
+      [".result-card:nth-child(1) h3", "Mapeamento de áreas suscetíveis"],
+      [".result-card:nth-child(1) p", "Experiência em mapeamentos de risco para o Ministério das Cidades em municípios como Contagem, Betim e Nova Lima, com leitura de relevo, ocupação, drenagem e instabilidade."],
+      [".result-card:nth-child(2) span", "Territórios sensíveis"],
+      [".result-card:nth-child(2) h3", "Mapeamento e apoio territorial"],
+      [".result-card:nth-child(2) p", "Organização de bases, limites, referências e documentação espacial em contextos de alta responsabilidade técnica, incluindo experiências relacionadas à Terra Indígena Kaxuyana-Tunayana."],
+      [".result-card:nth-child(3) span", "Projetos institucionais"],
+      [".result-card:nth-child(3) h3", "Base técnica para decisão pública"],
+      [".result-card:nth-child(3) p", "Produção de mapas, relatórios, cadastros e bases geográficas para apoiar decisões sobre território, risco, comunidades, regularização e infraestrutura."],
+      [".testimonial-copy .eyebrow", "Aplicações"],
+      [".testimonial-copy h2", "Onde dados espaciais precisam virar produto técnico confiável."],
+      ['.testimonial-nav[data-testimonial="prev"]', "Anterior"],
+      ['.testimonial-nav[data-testimonial="next"]', "Próximo"],
+      [".security-panel .eyebrow", "Tecnologia e padrões"],
+      [".security-panel h2", "Dados, ferramentas e automação com rastreabilidade."],
+      [".security-panel p", "A DATUM combina campo, SIG, CAD, sensoriamento remoto, bases públicas, modelos de terreno e rotinas de automação para entregar mapas, memoriais, dashboards e relatórios com origem e método claros."],
+      [".accordion-item:nth-child(1) span", "Referência, precisão e sistema oficial"],
+      [".accordion-item:nth-child(1) p", "Coordenadas, datum, escala, limites e compatibilidade com exigências técnicas e legais, incluindo fluxos de georreferenciamento e documentação espacial."],
+      [".accordion-item:nth-child(2) span", "Campo, SIG e sensoriamento remoto"],
+      [".accordion-item:nth-child(2) p", "GNSS, estações, drones, LiDAR, imagens orbitais, QGIS, ArcGIS, CAD e bancos de dados entram como camadas verificáveis do projeto."],
+      [".accordion-item:nth-child(3) span", "Automação, relatório e suporte"],
+      [".accordion-item:nth-child(3) p", "Rotinas reduzem retrabalho, padronizam mapas, calculam áreas, aceleram validações e organizam entregáveis para uso técnico do cliente."],
+      [".products-copy .eyebrow", "Frentes de atuação"],
+      [".products-copy h2", "Geotecnologia aplicada a demandas técnicas reais."],
+      [".product-card:nth-child(1) h3", "Sensoriamento remoto e imagens"],
+      [".product-card:nth-child(1) p", "LiDAR, drones, satélites e imagens aéreas integrados à leitura de território, risco, obras e planejamento."],
+      [".product-card:nth-child(2) h3", "Georreferenciamento e referência espacial"],
+      [".product-card:nth-child(2) p", "Limites, coordenadas, sistemas de referência, memoriais e compatibilidade com padrões oficiais e exigências legais."],
+      [".product-card:nth-child(3) h3", "Geoprocessamento e produtos cartográficos"],
+      [".product-card:nth-child(3) p", "Mapas técnicos, camadas SIG, bases geográficas, dashboards, arquivos CAD/GIS e relatórios prontos para decisão."],
+      [".product-card:nth-child(4) h3", "Análises geotécnicas e territoriais"],
+      [".product-card:nth-child(4) p", "Relevo, declividade, drenagem, ocupação, riscos e feições de instabilidade para diagnóstico técnico."],
+      [".news-head .eyebrow", "Tecnologia"],
+      [".news-head h2", "Ferramentas e critérios que sustentam a entrega."],
+      [".news-head .button", "Falar com especialista"],
+      [".news-item:nth-child(1) time", "GNSS E CAMPO"],
+      [".news-item:nth-child(1) strong", "Pontos de controle, medições e coleta planialtimétrica para bases confiáveis."],
+      [".news-item:nth-child(2) time", "SIG E CAD"],
+      [".news-item:nth-child(2) strong", "QGIS, ArcGIS, CAD e bancos de dados para organizar, cruzar e entregar informações espaciais."],
+      [".news-item:nth-child(3) time", "AUTOMAÇÃO"],
+      [".news-item:nth-child(3) strong", "Rotinas para reduzir retrabalho, padronizar mapas, calcular áreas e acelerar validações."],
+      [".news-item:nth-child(4) time", "RELATÓRIOS"],
+      [".news-item:nth-child(4) strong", "Mapas, memoriais, dashboards, arquivos técnicos e relatórios executivos prontos para uso do cliente."],
+      [".contact-copy .eyebrow", "Contato"],
+      [".contact-copy h2", "Solicite orçamento ou converse com um especialista."],
+      [".contact-copy p", "Envie o tipo de serviço, localização, prazo, arquivos disponíveis e objetivo técnico. A DATUM faz a triagem e retorna com próximos passos."],
+      [".contact-form button", "Enviar briefing"],
+      [".site-footer strong", "DATUM"],
+      [".site-footer > div p", "Dados geoespaciais transformados em decisão técnica para engenharia, território, risco e regularização."],
+      [".site-footer nav a:nth-child(1)", "Termos de Uso"],
+      [".site-footer nav a:nth-child(2)", "Política de Privacidade"],
+      [".site-footer nav a:nth-child(3)", "Código de Ética"],
+      [".site-footer nav a:nth-child(4)", "LinkedIn"],
+      [".site-footer nav a:nth-child(5)", "Twitter"],
+      [".site-footer > p", "© 2026 DATUM"]
+    ],
+    labels: [
+      [".contact-form label:nth-of-type(1)", "Nome"],
+      [".contact-form label:nth-of-type(2)", "Email"],
+      [".contact-form label:nth-of-type(3)", "Briefing técnico"]
+    ],
+    attrs: [
+      [".brand", "aria-label", "DATUM"],
+      [".nav-toggle", "aria-label", "Abrir menu"],
+      ["#site-nav", "aria-label", "Navegação principal"],
+      [".language-switch", "aria-label", "Idiomas"],
+      [".scroll-cue", "aria-label", "Rolar para apresentação da DATUM"],
+      [".step-list", "aria-label", "Etapas do método DATUM"],
+      ['input[name="name"]', "aria-label", "Nome"],
+      ['input[name="name"]', "placeholder", "Seu nome"],
+      ['input[name="email"]', "aria-label", "Email"],
+      ['input[name="email"]', "placeholder", "voce@empresa.com"],
+      ['textarea[name="message"]', "aria-label", "Briefing técnico"],
+      ['textarea[name="message"]', "placeholder", "Tipo de serviço, localização, prazo e arquivos disponíveis"]
+    ],
+    workflow: [
+      {
+        label: "01 / demanda",
+        title: "Entendimento e planejamento",
+        body:
+          "Identificamos objetivo, território, restrições legais, prazo, formatos necessários e nível de precisão esperado. A partir disso, definimos metodologia, equipamentos, bases, escala e produtos finais.",
+        tags: ["Objetivo", "Método", "Escala", "Prazo"],
+        visual: "collect"
+      },
+      {
+        label: "02 / coleta",
+        title: "Coleta de dados",
+        body:
+          "Levantamento em campo ou obtenção de bases geoespaciais existentes, imagens, coordenadas, cadastros, modelos de terreno e demais informações necessárias ao projeto.",
+        tags: ["Campo", "GNSS", "Imagens", "Modelos"],
+        visual: "read"
+      },
+      {
+        label: "03 / validação",
+        title: "Verificação e validação",
+        body:
+          "Conferimos consistência, precisão, completude, compatibilidade espacial, sobreposições, lacunas e inconsistências para reduzir risco técnico antes da interpretação.",
+        tags: ["Precisão", "Fonte", "Conflitos", "Controle"],
+        visual: "evidence"
+      },
+      {
+        label: "04 / análise",
+        title: "Interpretação e automação",
+        body:
+          "Analisamos os dados conforme a finalidade do projeto e aplicamos rotinas para acelerar cálculos, geração de camadas, mapas, validações e padronização de entregáveis.",
+        tags: ["Análise", "Python", "SIG", "Rotinas"],
+        visual: "check"
+      },
+      {
+        label: "05 / entrega",
+        title: "Entrega e suporte",
+        body:
+          "Produzimos arquivos finais, mapas, memoriais, dashboards e relatórios, com organização dos dados e apoio para leitura técnica ou uso posterior pelo cliente.",
+        tags: ["Mapas", "Relatórios", "CAD/GIS", "Suporte"],
+        visual: "deliver"
+      }
+    ],
+    testimonials: [
+      {
+        quote:
+          "Coleta planialtimétrica, pontos de controle, medições e cadastro de elementos para projetos de engenharia, obras e regularização.",
+        name: "Topografia e levantamentos",
+        role: "Campo, pontos, cotas, locação e suporte técnico"
+      },
+      {
+        quote:
+          "Organização, cruzamento e análise de dados espaciais em ambiente SIG, com mapas, camadas, bases geográficas e relatórios.",
+        name: "Geoprocessamento",
+        role: "QGIS, ArcGIS, CAD, bancos de dados e produtos cartográficos"
+      },
+      {
+        quote:
+          "Leitura de relevo, declividade, drenagem, ocupação e feições de instabilidade para apoiar diagnóstico técnico e gestão de risco.",
+        name: "Risco e análise territorial",
+        role: "Mapeamento geotécnico, áreas suscetíveis e decisão pública"
+      }
+    ],
+    console: {
+      validated: "validado",
+      active: "ativos",
+      paused: "camadas pausadas"
+    },
+    form: {
+      required: "Preencha este campo.",
+      email: "Use um email válido.",
+      invalid: "Revise os campos destacados para enviar o briefing.",
+      sent: "Briefing enviado",
+      success: "Recebemos seu contexto técnico. A equipe DATUM retorna com o próximo passo."
+    }
+  },
+  en: {
+    static: [
+      ["title", "DATUM - Geospatial data transformed into technical decisions"],
+      ['meta[name="description"]', "DATUM transforms geospatial data into precise solutions for engineering, territory, construction, risk management and decision-making.", "content"],
+      [".skip-link", "Skip to content"],
+      [".announcement span", "DATUM"],
+      [".announcement p", "Territorial precision for surveying, GIS, geotechnical analysis, land regularization, construction and spatial automation."],
+      [".announcement a", "Talk to a specialist"],
+      ['.site-nav a[href="#produtos"]', "Services"],
+      ['.site-nav a[href="#processo"]', "Method"],
+      ['.site-nav a[href="#cases"]', "Projects"],
+      ['.site-nav a[href="#carreiras"]', "Technology"],
+      ['.site-nav a[href="#contato"]', "Contact"],
+      ['.site-nav a[href="#login"]', "Login"],
+      [".intro-impact strong", "Geospatial data transformed into technical decisions."],
+      [".intro-impact span", "Territorial precision for construction, risk, regularization and management."],
+      [".company-intro-section .eyebrow", "About DATUM"],
+      ["#company-intro-title", "DATUM transforms geospatial data into precise solutions for engineering, territory and decision-making."],
+      [".company-intro-copy p", "Based at IGC-UFMG in Belo Horizonte, DATUM collects, verifies, interprets and automates territorial data. We work with surveying, GIS, property georeferencing, construction layout, geotechnical analysis and mapping for public, private and institutional projects."],
+      [".company-intro-actions .primary", "Request a quote"],
+      [".company-intro-actions .secondary", "See technical method"],
+      [".process-intro .eyebrow", "How we work"],
+      [".process-intro h2", "How DATUM operates"],
+      [".process-intro p", "From demand to delivery, we organize purpose, method, coordinates, validation, automation and support to reduce uncertainty and sustain territorial decisions."],
+      [".results-copy .eyebrow", "Projects"],
+      [".results-copy h2", "Experience across territory, risk and public decision-making."],
+      [".results-copy p", "Applications inspired by real team experience, presented without exposing sensitive data: context, method, technical output and usefulness for decisions."],
+      [".result-card:nth-child(1) span", "Geological risk"],
+      [".result-card:nth-child(1) h3", "Mapping susceptible areas"],
+      [".result-card:nth-child(1) p", "Experience in risk mapping for Brazil's Ministry of Cities in municipalities such as Contagem, Betim and Nova Lima, combining relief, land occupation, drainage and instability readings."],
+      [".result-card:nth-child(2) span", "Sensitive territories"],
+      [".result-card:nth-child(2) h3", "Mapping and territorial support"],
+      [".result-card:nth-child(2) p", "Organization of datasets, boundaries, references and spatial documentation in high-responsibility technical contexts, including experience related to the Kaxuyana-Tunayana Indigenous Territory."],
+      [".result-card:nth-child(3) span", "Institutional projects"],
+      [".result-card:nth-child(3) h3", "Technical basis for public decisions"],
+      [".result-card:nth-child(3) p", "Production of maps, reports, registries and geographic databases to support decisions on territory, risk, communities, regularization and infrastructure."],
+      [".testimonial-copy .eyebrow", "Applications"],
+      [".testimonial-copy h2", "Where spatial data must become reliable technical output."],
+      ['.testimonial-nav[data-testimonial="prev"]', "Previous"],
+      ['.testimonial-nav[data-testimonial="next"]', "Next"],
+      [".security-panel .eyebrow", "Technology and standards"],
+      [".security-panel h2", "Data, tools and automation with traceability."],
+      [".security-panel p", "DATUM combines fieldwork, GIS, CAD, remote sensing, public datasets, terrain models and automation routines to deliver maps, memorials, dashboards and reports with clear origin and method."],
+      [".accordion-item:nth-child(1) span", "Reference, precision and official systems"],
+      [".accordion-item:nth-child(1) p", "Coordinates, datum, scale, boundaries and compatibility with technical and legal requirements, including georeferencing and spatial documentation workflows."],
+      [".accordion-item:nth-child(2) span", "Fieldwork, GIS and remote sensing"],
+      [".accordion-item:nth-child(2) p", "GNSS, total stations, drones, LiDAR, orbital imagery, QGIS, ArcGIS, CAD and databases enter as verifiable project layers."],
+      [".accordion-item:nth-child(3) span", "Automation, reporting and support"],
+      [".accordion-item:nth-child(3) p", "Routines reduce rework, standardize maps, calculate areas, accelerate validations and organize deliverables for technical client use."],
+      [".products-copy .eyebrow", "Areas of work"],
+      [".products-copy h2", "Applied geotechnology for real technical demands."],
+      [".product-card:nth-child(1) h3", "Remote sensing and imagery"],
+      [".product-card:nth-child(1) p", "LiDAR, drones, satellites and aerial imagery integrated into territorial, risk, construction and planning workflows."],
+      [".product-card:nth-child(2) h3", "Georeferencing and spatial reference"],
+      [".product-card:nth-child(2) p", "Boundaries, coordinates, reference systems, memorials and compatibility with official standards and legal requirements."],
+      [".product-card:nth-child(3) h3", "GIS and cartographic products"],
+      [".product-card:nth-child(3) p", "Technical maps, GIS layers, geographic databases, dashboards, CAD/GIS files and decision-ready reports."],
+      [".product-card:nth-child(4) h3", "Geotechnical and territorial analysis"],
+      [".product-card:nth-child(4) p", "Relief, slope, drainage, occupation, risk and instability features for technical diagnostics."],
+      [".news-head .eyebrow", "Technology"],
+      [".news-head h2", "Tools and criteria behind the delivery."],
+      [".news-head .button", "Talk to a specialist"],
+      [".news-item:nth-child(1) time", "GNSS AND FIELDWORK"],
+      [".news-item:nth-child(1) strong", "Control points, measurements and planialtimetric collection for reliable datasets."],
+      [".news-item:nth-child(2) time", "GIS AND CAD"],
+      [".news-item:nth-child(2) strong", "QGIS, ArcGIS, CAD and databases to organize, cross-check and deliver spatial information."],
+      [".news-item:nth-child(3) time", "AUTOMATION"],
+      [".news-item:nth-child(3) strong", "Routines that reduce rework, standardize maps, calculate areas and speed up validations."],
+      [".news-item:nth-child(4) time", "REPORTS"],
+      [".news-item:nth-child(4) strong", "Maps, memorials, dashboards, technical files and executive reports ready for client use."],
+      [".contact-copy .eyebrow", "Contact"],
+      [".contact-copy h2", "Request a quote or talk to a specialist."],
+      [".contact-copy p", "Send the service type, location, deadline, available files and technical objective. DATUM screens the demand and returns with next steps."],
+      [".contact-form button", "Send briefing"],
+      [".site-footer strong", "DATUM"],
+      [".site-footer > div p", "Geospatial data transformed into technical decisions for engineering, territory, risk and regularization."],
+      [".site-footer nav a:nth-child(1)", "Terms of Use"],
+      [".site-footer nav a:nth-child(2)", "Privacy Policy"],
+      [".site-footer nav a:nth-child(3)", "Code of Ethics"],
+      [".site-footer nav a:nth-child(4)", "LinkedIn"],
+      [".site-footer nav a:nth-child(5)", "Twitter"],
+      [".site-footer > p", "© 2026 DATUM"]
+    ],
+    labels: [
+      [".contact-form label:nth-of-type(1)", "Name"],
+      [".contact-form label:nth-of-type(2)", "Email"],
+      [".contact-form label:nth-of-type(3)", "Technical briefing"]
+    ],
+    attrs: [
+      [".brand", "aria-label", "DATUM"],
+      [".nav-toggle", "aria-label", "Open menu"],
+      ["#site-nav", "aria-label", "Main navigation"],
+      [".language-switch", "aria-label", "Languages"],
+      [".scroll-cue", "aria-label", "Scroll to DATUM introduction"],
+      [".step-list", "aria-label", "DATUM method steps"],
+      ['input[name="name"]', "aria-label", "Name"],
+      ['input[name="name"]', "placeholder", "Your name"],
+      ['input[name="email"]', "aria-label", "Email"],
+      ['input[name="email"]', "placeholder", "you@company.com"],
+      ['textarea[name="message"]', "aria-label", "Technical briefing"],
+      ['textarea[name="message"]', "placeholder", "Service type, location, deadline and available files"]
+    ],
+    workflow: [
+      {
+        label: "01 / demand",
+        title: "Understanding and planning",
+        body:
+          "We identify the objective, territory, legal restrictions, timeline, required formats and expected precision level. From there, we define methodology, equipment, datasets, scale and final deliverables.",
+        tags: ["Objective", "Method", "Scale", "Timeline"],
+        visual: "collect"
+      },
+      {
+        label: "02 / collection",
+        title: "Data collection",
+        body:
+          "Field surveying or acquisition of existing geospatial datasets, imagery, coordinates, registries, terrain models and other information required for the project.",
+        tags: ["Field", "GNSS", "Imagery", "Models"],
+        visual: "read"
+      },
+      {
+        label: "03 / validation",
+        title: "Verification and validation",
+        body:
+          "We check consistency, precision, completeness, spatial compatibility, overlaps, gaps and inconsistencies to reduce technical risk before interpretation.",
+        tags: ["Precision", "Source", "Conflicts", "Control"],
+        visual: "evidence"
+      },
+      {
+        label: "04 / analysis",
+        title: "Interpretation and automation",
+        body:
+          "We analyze data according to the project purpose and apply routines to accelerate calculations, layer generation, maps, validations and deliverable standardization.",
+        tags: ["Analysis", "Python", "GIS", "Routines"],
+        visual: "check"
+      },
+      {
+        label: "05 / delivery",
+        title: "Delivery and support",
+        body:
+          "We produce final files, maps, memorials, dashboards and reports, organizing the data and supporting technical reading or later use by the client.",
+        tags: ["Maps", "Reports", "CAD/GIS", "Support"],
+        visual: "deliver"
+      }
+    ],
+    testimonials: [
+      {
+        quote:
+          "Planialtimetric collection, control points, measurements and element registration for engineering, construction and regularization projects.",
+        name: "Surveying and fieldwork",
+        role: "Field, points, elevations, layout and technical support"
+      },
+      {
+        quote:
+          "Organization, cross-checking and analysis of spatial data in GIS environments, producing maps, layers, geographic databases and reports.",
+        name: "Geoprocessing",
+        role: "QGIS, ArcGIS, CAD, databases and cartographic products"
+      },
+      {
+        quote:
+          "Reading relief, slope, drainage, occupation and instability features to support technical diagnostics and risk management.",
+        name: "Risk and territorial analysis",
+        role: "Geotechnical mapping, susceptible areas and public decision-making"
+      }
+    ],
+    console: {
+      validated: "validated",
+      active: "active",
+      paused: "layers paused"
+    },
+    form: {
+      required: "Fill out this field.",
+      email: "Use a valid email.",
+      invalid: "Review the highlighted fields before sending the briefing.",
+      sent: "Briefing sent",
+      success: "We received your technical context. The DATUM team will return with the next step."
+    }
+  }
 };
 
 const navToggle = document.querySelector(".nav-toggle");
@@ -83,6 +435,9 @@ const heroSection = document.querySelector("#inicio");
 const layerButtons = document.querySelectorAll(".layer");
 const workflowDetail = document.querySelector("#workflow-detail");
 const workflowSteps = document.querySelectorAll(".step");
+const processWorkbench = document.querySelector(".process-workbench");
+const mobileWorkflowQuery = window.matchMedia("(max-width: 720px)");
+let workflowDetailTween;
 const testimonialQuote = document.querySelector("#testimonial-quote");
 const testimonialName = document.querySelector("#testimonial-name");
 const testimonialRole = document.querySelector("#testimonial-role");
@@ -95,6 +450,7 @@ const topographyCanvas = document.querySelector("#site-topography-field");
 const liquidOrbCanvases = document.querySelectorAll("[data-liquid-orb]");
 
 let testimonialIndex = 0;
+let currentLang = localStorage.getItem("datum-language") || "pt";
 
 document.body.classList.add("motion-ready");
 
@@ -681,6 +1037,136 @@ function updateLogoMarker(options = {}) {
   logoAnimationFrame = requestAnimationFrame(animateLogoProgress);
 }
 
+function placeWorkflowDetail() {
+  if (!workflowDetail || !processWorkbench) {
+    return;
+  }
+
+  const activeStep = document.querySelector(".step.is-active");
+
+  if (mobileWorkflowQuery.matches && activeStep) {
+    activeStep.insertAdjacentElement("afterend", workflowDetail);
+    return;
+  }
+
+  processWorkbench.appendChild(workflowDetail);
+}
+
+function setWorkflowStepState(step, isActive) {
+  step.classList.toggle("is-active", isActive);
+  step.setAttribute("aria-selected", String(isActive));
+  step.setAttribute("aria-expanded", String(isActive));
+}
+
+function collapseMobileWorkflow() {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    return;
+  }
+
+  workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+  tweenMobileWorkflowDetail("close", () => {
+    workflowDetail.hidden = true;
+    processWorkbench.appendChild(workflowDetail);
+  });
+}
+
+function syncWorkflowLayout() {
+  if (!workflowDetail) {
+    return;
+  }
+
+  if (mobileWorkflowQuery.matches) {
+    placeWorkflowDetail();
+    return;
+  }
+
+  workflowDetail.hidden = false;
+
+  if (!document.querySelector(".step.is-active")) {
+    setWorkflowStepState(workflowSteps[0], true);
+    renderWorkflow(0);
+    return;
+  }
+
+  placeWorkflowDetail();
+}
+
+function tweenMobileWorkflowDetail(direction, onFinish) {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    onFinish?.();
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (workflowDetailTween) {
+    workflowDetailTween.cancel();
+  }
+
+  if (prefersReducedMotion || typeof workflowDetail.animate !== "function") {
+    onFinish?.();
+    return;
+  }
+
+  const open = direction === "open";
+  const fullHeight = `${workflowDetail.scrollHeight}px`;
+  workflowDetail.style.overflow = "hidden";
+  workflowDetail.style.transformOrigin = "top center";
+
+  workflowDetailTween = workflowDetail.animate(
+    open
+      ? [
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-10px) scale(0.985)", filter: "blur(2px)" },
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" }
+        ]
+      : [
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-8px) scale(0.99)", filter: "blur(1.5px)" }
+        ],
+    {
+      duration: open ? 420 : 300,
+      easing: open ? "cubic-bezier(0.16, 1, 0.3, 1)" : "cubic-bezier(0.55, 0, 0.1, 1)",
+      fill: "both"
+    }
+  );
+
+  workflowDetailTween.onfinish = () => {
+    const finishedTween = workflowDetailTween;
+    workflowDetailTween = undefined;
+
+    if (!open) {
+      onFinish?.();
+      finishedTween?.cancel();
+      return;
+    }
+
+    finishedTween?.cancel();
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+    onFinish?.();
+  };
+
+  workflowDetailTween.oncancel = () => {
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+  };
+}
+
+function revealMobileWorkflowStep(step) {
+  if (!mobileWorkflowQuery.matches || !step) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  requestAnimationFrame(() => {
+    step.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start"
+    });
+  });
+}
+
 function renderWorkflow(index) {
   if (!workflowDetail) {
     return;
@@ -696,6 +1182,8 @@ function renderWorkflow(index) {
     </div>
     ${renderWorkflowVisual(item.visual)}
   `;
+
+  placeWorkflowDetail();
 }
 
 function renderWorkflowVisual(type) {
@@ -759,6 +1247,83 @@ function setFieldError(field, message) {
   }
 }
 
+function getCopy() {
+  return translations[currentLang] || translations.pt;
+}
+
+function setLabelText(selector, text) {
+  const label = document.querySelector(selector);
+  if (!label) {
+    return;
+  }
+
+  const textNode = Array.from(label.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+  if (textNode) {
+    textNode.textContent = `\n              ${text}\n              `;
+  }
+}
+
+function applyStaticCopy(copy) {
+  copy.static.forEach(([selector, value, attribute]) => {
+    const element = selector === "title" ? document.querySelector("title") : document.querySelector(selector);
+    if (!element) {
+      return;
+    }
+
+    if (attribute) {
+      element.setAttribute(attribute, value);
+    } else {
+      element.textContent = value;
+    }
+  });
+
+  copy.labels.forEach(([selector, value]) => setLabelText(selector, value));
+  copy.attrs.forEach(([selector, attribute, value]) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.setAttribute(attribute, value);
+    }
+  });
+}
+
+function updateWorkflowTabs(copy) {
+  workflowSteps.forEach((step, index) => {
+    const item = copy.workflow[index];
+    if (!item) {
+      return;
+    }
+
+    const title = item.title.length > 28 ? item.title.replace(" e ", " e\n") : item.title;
+    step.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${title}`;
+  });
+}
+
+function setLanguage(lang) {
+  currentLang = translations[lang] ? lang : "pt";
+  const copy = getCopy();
+
+  document.documentElement.lang = currentLang === "pt" ? "pt-BR" : "en";
+  localStorage.setItem("datum-language", currentLang);
+
+  languageButtons.forEach((button) => {
+    const isActive = button.dataset.lang === currentLang;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  workflow = copy.workflow;
+  testimonials = copy.testimonials;
+  testimonialIndex = Math.min(testimonialIndex, testimonials.length - 1);
+
+  applyStaticCopy(copy);
+  updateWorkflowTabs(copy);
+
+  const activeStep = document.querySelector(".step.is-active");
+  const workflowIndex = activeStep ? Number(activeStep.dataset.step) : 0;
+  renderWorkflow(Number.isFinite(workflowIndex) ? workflowIndex : 0);
+  renderTestimonial(testimonialIndex);
+}
+
 initTopographyField();
 initPointerMotion();
 initLiquidOrbs();
@@ -769,7 +1334,8 @@ function setMobileNavState(isOpen) {
   }
 
   navToggle.setAttribute("aria-expanded", String(isOpen));
-  navToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  const labels = currentLang === "en" ? ["Close menu", "Open menu"] : ["Fechar menu", "Abrir menu"];
+  navToggle.setAttribute("aria-label", isOpen ? labels[0] : labels[1]);
   siteNav.toggleAttribute("inert", !isOpen && window.matchMedia("(max-width: 760px)").matches);
 }
 
@@ -836,7 +1402,7 @@ mapPins.forEach((pin) => {
   pin.addEventListener("click", () => {
     mapPins.forEach((item) => item.classList.remove("is-active"));
     pin.classList.add("is-active");
-    scanStatus.textContent = `${pin.dataset.pin} validado`;
+    scanStatus.textContent = `${pin.dataset.pin} ${getCopy().console.validated}`;
   });
 });
 
@@ -847,25 +1413,33 @@ layerButtons.forEach((button) => {
       .filter((item) => item.classList.contains("is-active"))
       .map((item) => item.textContent.trim())
       .join(" + ");
-    scanStatus.textContent = activeLayers ? `${activeLayers} ativos` : "camadas pausadas";
+    scanStatus.textContent = activeLayers ? `${activeLayers} ${getCopy().console.active}` : getCopy().console.paused;
   });
 });
 
 workflowSteps.forEach((step) => {
+  step.setAttribute("aria-controls", "workflow-detail");
+
   step.addEventListener("click", () => {
-    workflowSteps.forEach((item) => {
-      item.classList.remove("is-active");
-      item.setAttribute("aria-selected", "false");
-      item.setAttribute("aria-expanded", "false");
-    });
-    step.classList.add("is-active");
-    step.setAttribute("aria-selected", "true");
-    step.setAttribute("aria-expanded", "true");
+    const isOpenMobileStep = mobileWorkflowQuery.matches && step.classList.contains("is-active") && !workflowDetail.hidden;
+
+    if (isOpenMobileStep) {
+      collapseMobileWorkflow();
+      return;
+    }
+
+    workflowDetail.hidden = false;
+    workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+    setWorkflowStepState(step, true);
     renderWorkflow(Number(step.dataset.step));
+    tweenMobileWorkflowDetail("open");
+    revealMobileWorkflowStep(step);
   });
 });
 
 renderWorkflow(0);
+
+mobileWorkflowQuery.addEventListener("change", syncWorkflowLayout);
 
 testimonialButtons.forEach((button) => {
   button.addEventListener("click", () => {

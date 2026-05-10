@@ -14,6 +14,21 @@ Para animacoes, esta regra substitui qualquer instrucao antiga que proiba o uso 
 
 Nao alterar desenho, cores, proporcoes, espessuras ou composicao do monograma.
 
+## Regras Obrigatorias Para Mobile
+
+Ao adaptar o site para mobile, nao mudar o conteudo nem as animacoes existentes.
+
+Isso significa:
+
+- Nao reescrever, remover, resumir ou trocar textos.
+- Nao alterar a ordem conceitual das secoes.
+- Nao remover elementos importantes para "simplificar" a versao mobile.
+- Nao mudar o comportamento, ritmo, gatilhos, sequencia ou intencao das animacoes.
+- Nao substituir animacoes por versoes diferentes no mobile.
+- Nao desligar animacoes, exceto quando houver preferencia explicita do usuario por reducao de movimento.
+- Ajustar apenas o que for necessario para responsividade: tamanhos, espacamentos, quebras, alinhamentos, largura, altura, leitura e toque.
+- Preservar a experiencia visual e narrativa da versao desktop, apenas reorganizada para caber bem em telas pequenas.
+
 ## Objetivo
 
 Criar um site institucional para uma empresa chamada **DATUM**, seguindo integralmente as diretrizes do brandbook:

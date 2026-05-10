@@ -994,6 +994,11 @@ h3 {
   border-right: 0;
 }
 
+.step:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: -4px;
+}
+
 .step span {
   display: block;
   margin-bottom: 18px;
@@ -1013,7 +1018,7 @@ h3 {
 
 .step-detail {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(220px, 0.74fr);
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.76fr);
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
   min-height: 330px;
@@ -1022,6 +1027,11 @@ h3 {
   background: transparent;
   color: var(--ice);
   animation: datum-panel-open 360ms var(--ease-out);
+}
+
+.step-detail-copy,
+.workflow-visual {
+  min-width: 0;
 }
 
 .step-detail-copy > span {
@@ -1039,12 +1049,13 @@ h3 {
 
 .detail-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 112px), 1fr));
   gap: 10px;
   margin-top: 28px;
 }
 
 .detail-grid strong {
+  min-width: 0;
   border: 1px solid var(--line-dark);
   border-radius: 8px;
   padding: 16px;
@@ -2003,6 +2014,18 @@ blockquote {
   }
 }
 
+@keyframes datum-mobile-card-open {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes datum-workflow-dash {
   to {
     stroke-dashoffset: -72;
@@ -2357,6 +2380,14 @@ body.motion-ready.logo-prelude .terrain-console.reveal {
   .trust-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .step-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-visual {
+    min-height: 240px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -2409,16 +2440,93 @@ body.motion-ready.logo-prelude .terrain-console.reveal {
   }
 
   .step-list {
+    display: grid;
+    gap: 10px;
     border-bottom: 0;
+  }
+
+  .process-workbench {
+    border: 0;
+    overflow: visible;
+    background:
+      linear-gradient(rgba(247, 250, 252, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(247, 250, 252, 0.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .step {
+    width: 100%;
+    min-height: 84px;
+    scroll-margin-top: 96px;
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+    padding: 18px 56px 18px 18px;
+    background: rgba(247, 250, 252, 0.045);
+  }
+
+  .step span {
+    display: inline-block;
+    margin: 0 12px 0 0;
+  }
+
+  .step::after {
+    right: 22px;
+    bottom: 50%;
+    transform: translateY(50%) rotate(45deg);
+  }
+
+  .step.is-active {
+    border-bottom-color: transparent;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .step.is-active::after {
+    transform: translateY(50%) rotate(225deg);
   }
 
   .step-detail {
     grid-template-columns: 1fr;
     min-height: auto;
+    margin-top: -10px;
+    border-color: var(--line-dark);
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    background: rgba(247, 250, 252, 0.065);
+    box-shadow: inset 0 1px 0 rgba(247, 250, 252, 0.05);
+    transform-origin: top center;
+    will-change: max-height, opacity, transform, filter;
+  }
+
+  .step-detail p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .step-detail h3 {
+    margin: 10px 0 10px;
+    font-size: clamp(28px, 8vw, 34px);
+    line-height: 1.12;
+  }
+
+  .step-detail-copy > span {
+    font-size: 12px;
+  }
+
+  .detail-grid {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .detail-grid strong {
+    min-height: 44px;
+    padding: 12px;
   }
 
   .workflow-visual {
-    min-height: 190px;
+    min-height: 176px;
+    margin-top: 4px;
   }
 
   .layer-controls {

@@ -83,6 +83,9 @@ const heroSection = document.querySelector("#inicio");
 const layerButtons = document.querySelectorAll(".layer");
 const workflowDetail = document.querySelector("#workflow-detail");
 const workflowSteps = document.querySelectorAll(".step");
+const processWorkbench = document.querySelector(".process-workbench");
+const mobileWorkflowQuery = window.matchMedia("(max-width: 720px)");
+let workflowDetailTween;
 const testimonialQuote = document.querySelector("#testimonial-quote");
 const testimonialName = document.querySelector("#testimonial-name");
 const testimonialRole = document.querySelector("#testimonial-role");
@@ -681,6 +684,136 @@ function updateLogoMarker(options = {}) {
   logoAnimationFrame = requestAnimationFrame(animateLogoProgress);
 }
 
+function placeWorkflowDetail() {
+  if (!workflowDetail || !processWorkbench) {
+    return;
+  }
+
+  const activeStep = document.querySelector(".step.is-active");
+
+  if (mobileWorkflowQuery.matches && activeStep) {
+    activeStep.insertAdjacentElement("afterend", workflowDetail);
+    return;
+  }
+
+  processWorkbench.appendChild(workflowDetail);
+}
+
+function setWorkflowStepState(step, isActive) {
+  step.classList.toggle("is-active", isActive);
+  step.setAttribute("aria-selected", String(isActive));
+  step.setAttribute("aria-expanded", String(isActive));
+}
+
+function collapseMobileWorkflow() {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    return;
+  }
+
+  workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+  tweenMobileWorkflowDetail("close", () => {
+    workflowDetail.hidden = true;
+    processWorkbench.appendChild(workflowDetail);
+  });
+}
+
+function syncWorkflowLayout() {
+  if (!workflowDetail) {
+    return;
+  }
+
+  if (mobileWorkflowQuery.matches) {
+    placeWorkflowDetail();
+    return;
+  }
+
+  workflowDetail.hidden = false;
+
+  if (!document.querySelector(".step.is-active")) {
+    setWorkflowStepState(workflowSteps[0], true);
+    renderWorkflow(0);
+    return;
+  }
+
+  placeWorkflowDetail();
+}
+
+function tweenMobileWorkflowDetail(direction, onFinish) {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    onFinish?.();
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (workflowDetailTween) {
+    workflowDetailTween.cancel();
+  }
+
+  if (prefersReducedMotion || typeof workflowDetail.animate !== "function") {
+    onFinish?.();
+    return;
+  }
+
+  const open = direction === "open";
+  const fullHeight = `${workflowDetail.scrollHeight}px`;
+  workflowDetail.style.overflow = "hidden";
+  workflowDetail.style.transformOrigin = "top center";
+
+  workflowDetailTween = workflowDetail.animate(
+    open
+      ? [
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-10px) scale(0.985)", filter: "blur(2px)" },
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" }
+        ]
+      : [
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-8px) scale(0.99)", filter: "blur(1.5px)" }
+        ],
+    {
+      duration: open ? 420 : 300,
+      easing: open ? "cubic-bezier(0.16, 1, 0.3, 1)" : "cubic-bezier(0.55, 0, 0.1, 1)",
+      fill: "both"
+    }
+  );
+
+  workflowDetailTween.onfinish = () => {
+    const finishedTween = workflowDetailTween;
+    workflowDetailTween = undefined;
+
+    if (!open) {
+      onFinish?.();
+      finishedTween?.cancel();
+      return;
+    }
+
+    finishedTween?.cancel();
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+    onFinish?.();
+  };
+
+  workflowDetailTween.oncancel = () => {
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+  };
+}
+
+function revealMobileWorkflowStep(step) {
+  if (!mobileWorkflowQuery.matches || !step) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  requestAnimationFrame(() => {
+    step.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start"
+    });
+  });
+}
+
 function renderWorkflow(index) {
   if (!workflowDetail) {
     return;
@@ -696,6 +829,8 @@ function renderWorkflow(index) {
     </div>
     ${renderWorkflowVisual(item.visual)}
   `;
+
+  placeWorkflowDetail();
 }
 
 function renderWorkflowVisual(type) {
@@ -852,20 +987,28 @@ layerButtons.forEach((button) => {
 });
 
 workflowSteps.forEach((step) => {
+  step.setAttribute("aria-controls", "workflow-detail");
+
   step.addEventListener("click", () => {
-    workflowSteps.forEach((item) => {
-      item.classList.remove("is-active");
-      item.setAttribute("aria-selected", "false");
-      item.setAttribute("aria-expanded", "false");
-    });
-    step.classList.add("is-active");
-    step.setAttribute("aria-selected", "true");
-    step.setAttribute("aria-expanded", "true");
+    const isOpenMobileStep = mobileWorkflowQuery.matches && step.classList.contains("is-active") && !workflowDetail.hidden;
+
+    if (isOpenMobileStep) {
+      collapseMobileWorkflow();
+      return;
+    }
+
+    workflowDetail.hidden = false;
+    workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+    setWorkflowStepState(step, true);
     renderWorkflow(Number(step.dataset.step));
+    tweenMobileWorkflowDetail("open");
+    revealMobileWorkflowStep(step);
   });
 });
 
 renderWorkflow(0);
+
+mobileWorkflowQuery.addEventListener("change", syncWorkflowLayout);
 
 testimonialButtons.forEach((button) => {
   button.addEventListener("click", () => {

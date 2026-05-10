@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DATUM - Conteúdo Institucional para Site</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+    }
+
+    :root {
+      --ink: #071426;
+      --graphite: #1d252c;
+      --muted: #5e6b76;
+      --blue: #007ea7;
+      --green: #2fbf71;
+      --ice: #f7fafc;
+      --line: #dce6ed;
+      --soft: #eef5f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--graphite);
+      background: white;
+      font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+      font-size: 10.7pt;
+      line-height: 1.58;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--ink);
+      font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 29pt;
+      max-width: 620px;
+    }
+
+    h2 {
+      border-top: 1px solid var(--line);
+      font-size: 18pt;
+      margin-top: 26px;
+      padding-top: 18px;
+    }
+
+    h3 {
+      color: var(--blue);
+      font-size: 12.5pt;
+      margin-top: 16px;
+    }
+
+    p {
+      margin: 8px 0 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .cover {
+      min-height: 248mm;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: -18mm -16mm auto auto;
+      width: 72mm;
+      height: 72mm;
+      background:
+        linear-gradient(90deg, rgba(0, 126, 167, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 126, 167, 0.08) 1px, transparent 1px);
+      background-size: 8mm 8mm;
+      z-index: -1;
+    }
+
+    .logo {
+      width: 138px;
+      height: auto;
+      margin-bottom: 46px;
+    }
+
+    .kicker {
+      color: var(--blue);
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 13pt;
+      line-height: 1.45;
+      margin-top: 18px;
+      max-width: 610px;
+    }
+
+    .meta {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 18px;
+    }
+
+    .toc {
+      page-break-after: always;
+    }
+
+    .toc-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 18px;
+    }
+
+    .toc-item,
+    .box,
+    .service,
+    .step,
+    .project,
+    .person {
+      background: var(--ice);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px 14px;
+    }
+
+    .toc-item strong,
+    .box strong,
+    .service strong,
+    .step strong,
+    .project strong,
+    .person strong {
+      color: var(--ink);
+      display: block;
+    }
+
+    .section {
+      page-break-inside: avoid;
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 12px;
+    }
+
+    .grid-3 {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 12px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      padding: 9px 11px;
+      margin-top: 8px;
+    }
+
+    .note {
+      background: #f3fbf7;
+      border-left: 4px solid var(--green);
+      color: #204436;
+      margin-top: 12px;
+      padding: 10px 12px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .process {
+      counter-reset: steps;
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .step {
+      counter-increment: steps;
+      position: relative;
+      padding-left: 52px;
+    }
+
+    .step::before {
+      align-items: center;
+      background: var(--ink);
+      border-radius: 50%;
+      color: white;
+      content: counter(steps);
+      display: flex;
+      font-weight: 700;
+      height: 28px;
+      justify-content: center;
+      left: 14px;
+      position: absolute;
+      top: 15px;
+      width: 28px;
+    }
+
+    .quote {
+      border-left: 4px solid var(--blue);
+      color: var(--ink);
+      font-size: 14pt;
+      font-weight: 650;
+      line-height: 1.35;
+      margin: 14px 0 0;
+      padding-left: 14px;
+    }
+
+    .sources {
+      font-size: 9.3pt;
+      page-break-before: always;
+    }
+
+    .sources li {
+      margin-bottom: 7px;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-line {
+      color: var(--muted);
+      font-size: 8.5pt;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="cover">
+      <div>
+        <img class="logo" src="../assets/brand/datum-logo-official.png" alt="DATUM">
+        <p class="kicker">Conteúdo institucional para site</p>
+        <h1>DATUM: dados geoespaciais transformados em decisão técnica</h1>
+        <p class="subtitle">
+          Documento-base para organizar o conteúdo do site da DATUM, explicar seus serviços,
+          evidenciar sua metodologia e estruturar a narrativa institucional com apoio em referências
+          públicas sobre georreferenciamento, gestão fundiária, mapeamento de risco e territórios.
+        </p>
+        <p class="quote">
+          Precisão territorial para topografia, geoprocessamento, análises geotécnicas,
+          regularização, obras e automação de processos espaciais.
+        </p>
+      </div>
+      <div class="meta">
+        <div><strong>Empresa</strong><br>DATUM</div>
+        <div><strong>Sede informada</strong><br>IGC-UFMG, Belo Horizonte, MG</div>
+        <div><strong>Data</strong><br>10 de maio de 2026</div>
+        <div><strong>Uso recomendado</strong><br>Briefing de site, apresentação e portfólio</div>
+      </div>
+    </section>
+
+    <section class="toc">
+      <h2>Estrutura Recomendada</h2>
+      <p>
+        A arquitetura abaixo organiza a DATUM de forma clara para o visitante: primeiro a proposta
+        de valor, depois a credibilidade técnica, os serviços, o método, as experiências realizadas,
+        a equipe, a tecnologia e os caminhos de contato.
+      </p>
+      <div class="toc-grid">
+        <div class="toc-item"><strong>1. Início</strong>Primeira impressão, promessa central e chamadas para orçamento ou conversa técnica.</div>
+        <div class="toc-item"><strong>2. Sobre a DATUM</strong>Origem, posicionamento, sede, propósito e áreas de atuação.</div>
+        <div class="toc-item"><strong>3. Serviços</strong>O que a empresa entrega e em quais contextos cada serviço se aplica.</div>
+        <div class="toc-item"><strong>4. Como Trabalhamos</strong>Passo a passo: coleta, validação, interpretação, automação e entrega.</div>
+        <div class="toc-item"><strong>5. Projetos</strong>Experiências e tipos de trabalho já executados pela equipe.</div>
+        <div class="toc-item"><strong>6. Equipe</strong>Pessoas, especialidades e credenciais a apresentar.</div>
+        <div class="toc-item"><strong>7. Tecnologia</strong>Ferramentas, dados, formatos, automações e padrões técnicos.</div>
+        <div class="toc-item"><strong>8. Contato</strong>Canais de atendimento, briefing inicial e próximos passos.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. Início</h2>
+      <p>
+        A página inicial precisa responder rapidamente a três perguntas: o que a DATUM faz, para quem
+        faz e por que sua abordagem é confiável. O visitante deve entender que a empresa não entrega
+        apenas mapas, mas resultados técnicos baseados em dados espaciais verificados.
+      </p>
+      <h3>Mensagem principal</h3>
+      <p class="quote">
+        A DATUM transforma dados geoespaciais em soluções precisas para engenharia,
+        território, obras, gestão de riscos e tomada de decisão.
+      </p>
+      <h3>Texto de abertura sugerido</h3>
+      <p>
+        A DATUM é uma empresa de inteligência geoespacial sediada no IGC-UFMG, em Belo Horizonte,
+        especializada em coleta, verificação, interpretação e automação de dados territoriais.
+        Atuamos em topografia, geoprocessamento, georreferenciamento de imóveis, locação de obras,
+        análises geotécnicas e mapeamentos aplicados a projetos públicos, privados e institucionais.
+      </p>
+      <h3>Chamadas de ação</h3>
+      <div class="grid-3">
+        <div class="box"><strong>Solicitar orçamento</strong>Para clientes que já sabem o serviço que precisam contratar.</div>
+        <div class="box"><strong>Falar com especialista</strong>Para demandas que exigem diagnóstico ou definição técnica.</div>
+        <div class="box"><strong>Ver projetos</strong>Para gerar confiança por meio de experiências anteriores.</div>
+      </div>
+      <h3>Informações que devem aparecer logo no primeiro bloco</h3>
+      <ul>
+        <li>Atuação com dados geoespaciais, topografia, geoprocessamento e automação.</li>
+        <li>Sede no Instituto de Geociências da UFMG, no campus Pampulha.</li>
+        <li>Experiência da equipe em mapeamentos de risco, territórios indígenas e projetos federais.</li>
+        <li>Foco em precisão, rastreabilidade, velocidade de entrega e utilidade técnica.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>2. Sobre a DATUM</h2>
+      <p>
+        A seção "Sobre" deve explicar a identidade da empresa sem virar um texto genérico. A DATUM
+        deve ser apresentada como uma empresa técnica, aplicada e orientada à resolução de problemas
+        reais envolvendo território, obras, risco e informação espacial.
+      </p>
+      <h3>Texto institucional sugerido</h3>
+      <p>
+        A DATUM foi pensada para transformar dados geoespaciais em resultados precisos. Seu trabalho
+        conecta campo, análise espacial, automação e entrega técnica para apoiar decisões em engenharia,
+        planejamento territorial, gestão de riscos, regularização fundiária e projetos de infraestrutura.
+      </p>
+      <p>
+        Com sede no Instituto de Geociências da Universidade Federal de Minas Gerais, a empresa nasce
+        próxima de um ambiente de pesquisa, cartografia, geologia, geografia e inovação aplicada.
+        Essa conexão reforça uma atuação baseada em método, qualidade de dados e interpretação técnica.
+      </p>
+      <h3>Localização</h3>
+      <p>
+        O IGC-UFMG informa como endereço institucional a Av. Antônio Carlos, 6.627, Pampulha,
+        Belo Horizonte, MG, CEP 31270-901. No site da DATUM, essa informação deve ser apresentada
+        junto com um mapa, pontos de referência e uma observação sobre atendimento em campo.
+      </p>
+      <h3>Proposta de valor</h3>
+      <div class="grid-2">
+        <div class="box"><strong>Precisão</strong>Dados coletados e processados com critérios técnicos para reduzir incerteza.</div>
+        <div class="box"><strong>Rastreabilidade</strong>Entregas organizadas para que o cliente entenda origem, método e resultado.</div>
+        <div class="box"><strong>Agilidade</strong>Automação aplicada para acelerar rotinas de processamento e revisão.</div>
+        <div class="box"><strong>Aplicação prática</strong>Produtos finais orientados a decisões, obras, relatórios, cadastros e regularização.</div>
+      </div>
+      <h3>Missão, visão e posicionamento</h3>
+      <div class="pill"><strong>Missão:</strong> converter dados geoespaciais em produtos técnicos confiáveis, prontos para orientar decisões sobre território, engenharia e risco.</div>
+      <div class="pill"><strong>Visão:</strong> ser referência em soluções geoespaciais aplicadas que unem campo, análise, automação e entrega precisa.</div>
+      <div class="pill"><strong>Posicionamento:</strong> inteligência geoespacial para projetos que exigem precisão, velocidade e responsabilidade técnica.</div>
+    </section>
+
+    <section class="section">
+      <h2>3. Serviços</h2>
+      <p>
+        A página de serviços deve ser objetiva, mas suficientemente detalhada para que clientes de
+        engenharia, setor público, proprietários, construtoras, consultorias ambientais e equipes de
+        planejamento entendam quando acionar a DATUM.
+      </p>
+      <div class="grid-2">
+        <div class="service">
+          <strong>Topografia e levantamentos de campo</strong>
+          Coleta de dados planialtimétricos, pontos de controle, medições, cadastro de elementos e
+          suporte técnico para projetos de engenharia, obras e regularização.
+        </div>
+        <div class="service">
+          <strong>Geoprocessamento</strong>
+          Organização, cruzamento, análise e representação de dados espaciais em ambiente SIG, com
+          produção de mapas, camadas, bases geográficas e relatórios.
+        </div>
+        <div class="service">
+          <strong>Georreferenciamento de imóveis</strong>
+          Apoio técnico a levantamentos e produtos georreferenciados, considerando exigências legais,
+          precisão posicional, limites, memorial descritivo e compatibilidade com sistemas oficiais.
+        </div>
+        <div class="service">
+          <strong>Mapeamento de áreas de risco</strong>
+          Levantamento, setorização e análise espacial de áreas suscetíveis a deslizamentos,
+          processos erosivos, instabilidade de encostas e outros riscos geológico-geotécnicos.
+        </div>
+        <div class="service">
+          <strong>Análises geotécnicas e territoriais</strong>
+          Interpretação de relevo, declividade, ocupação, drenagem, feições de instabilidade e outros
+          elementos necessários para apoiar diagnóstico técnico.
+        </div>
+        <div class="service">
+          <strong>Locação de obra</strong>
+          Materialização em campo de pontos, eixos, cotas e referências necessárias à execução de
+          obras com controle espacial.
+        </div>
+        <div class="service">
+          <strong>Automação de processos geoespaciais</strong>
+          Criação de rotinas para reduzir retrabalho, padronizar entregas, acelerar validações e
+          processar grandes volumes de dados.
+        </div>
+        <div class="service">
+          <strong>Produtos cartográficos e relatórios</strong>
+          Elaboração de mapas técnicos, plantas, bases georreferenciadas, memoriais, dashboards,
+          arquivos CAD/GIS e relatórios executivos.
+        </div>
+      </div>
+      <h3>Clientes e contextos atendidos</h3>
+      <ul>
+        <li>Órgãos públicos e equipes ligadas a planejamento, defesa civil, infraestrutura e território.</li>
+        <li>Construtoras, engenharias e empresas que precisam de dados confiáveis para execução de obra.</li>
+        <li>Consultorias ambientais, geotécnicas e fundiárias.</li>
+        <li>Proprietários rurais e urbanos que precisam organizar documentação espacial.</li>
+        <li>Instituições de pesquisa e organizações que trabalham com territórios sensíveis.</li>
+      </ul>
+      <div class="note">
+        Referência técnica: o INCRA informa que a certificação do georreferenciamento de imóvel rural
+        é feita pelo SIGEF e busca garantir que os limites de um imóvel não se sobreponham a outros,
+        seguindo especificações legais e técnicas.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. Como Trabalhamos</h2>
+      <p>
+        Esta é uma das seções mais importantes do site, porque transforma conhecimento técnico em
+        confiança. O cliente precisa perceber que a DATUM tem método, controle de qualidade e uma
+        lógica clara de entrega.
+      </p>
+      <div class="process">
+        <div class="step">
+          <strong>Entendimento da demanda</strong>
+          A equipe identifica o objetivo do cliente, o território envolvido, as restrições legais,
+          os prazos, os formatos necessários e o nível de precisão esperado.
+        </div>
+        <div class="step">
+          <strong>Planejamento técnico</strong>
+          Definição de metodologia, equipamentos, bases cartográficas, pontos de controle, escalas,
+          sistema de referência, equipe de campo e produtos finais.
+        </div>
+        <div class="step">
+          <strong>Coleta de dados</strong>
+          Levantamento em campo ou obtenção de bases geoespaciais existentes, imagens, coordenadas,
+          cadastros, modelos de terreno e demais informações necessárias.
+        </div>
+        <div class="step">
+          <strong>Verificação e validação</strong>
+          Conferência de consistência, precisão, completude, compatibilidade espacial, sobreposições,
+          lacunas e eventuais inconsistências nos dados.
+        </div>
+        <div class="step">
+          <strong>Interpretação técnica</strong>
+          Análise dos dados conforme a finalidade do projeto: obra, risco, georreferenciamento,
+          planejamento, território indígena, regularização ou diagnóstico geotécnico.
+        </div>
+        <div class="step">
+          <strong>Automação e processamento</strong>
+          Aplicação de rotinas para acelerar cálculos, geração de camadas, relatórios, mapas,
+          validações e padronização de entregáveis.
+        </div>
+        <div class="step">
+          <strong>Entrega e suporte</strong>
+          Produção dos arquivos finais, apresentação dos resultados, organização dos dados e apoio
+          para leitura técnica ou uso posterior pelo cliente.
+        </div>
+      </div>
+      <h3>Como explicar a automação sem soar abstrato</h3>
+      <p>
+        No site, a automação deve ser apresentada como ganho de qualidade e prazo: menos tarefas
+        repetitivas, menor chance de erro manual, padronização de produtos e capacidade de processar
+        mais informações em menos tempo. Isso é especialmente relevante em geoprocessamento,
+        validação de bases, geração de mapas seriados, cálculo de áreas e organização de relatórios.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>5. Projetos</h2>
+      <p>
+        A seção de projetos deve mostrar experiência real sem expor informações sensíveis. Quando
+        houver restrição contratual, o site pode apresentar o tipo de trabalho, a instituição envolvida,
+        a região e o impacto técnico, sem divulgar bases, coordenadas ou documentos internos.
+      </p>
+      <div class="project">
+        <strong>Mapeamento de áreas com risco de deslizamento</strong>
+        Experiência da equipe em mapeamento de áreas de risco para o Ministério das Cidades, com
+        atuação em municípios como Contagem, Betim e Nova Lima. Esse tipo de projeto exige leitura
+        territorial, observação de campo, análise de relevo, ocupação urbana, drenagem, feições de
+        instabilidade e organização de informações para subsidiar políticas públicas e prevenção.
+      </div>
+      <div class="project">
+        <strong>Mapeamento de áreas indígenas e apoio territorial</strong>
+        Experiência em mapeamento de áreas indígenas, incluindo trabalhos relacionados à Terra
+        Indígena Kaxuyana-Tunayana. As referências públicas do Governo Federal registram a homologação
+        da demarcação administrativa da TI Kaxuyana-Tunayana pelo Decreto nº 12.720, de 17 de novembro
+        de 2025, abrangendo municípios do Pará e do Amazonas.
+      </div>
+      <div class="project">
+        <strong>Projetos federais e bases para decisão pública</strong>
+        A experiência citada envolve órgãos federais como Ministério das Cidades, Governo Federal e
+        FUNAI. Para o site, recomenda-se tratar esses trabalhos como evidência de atuação em contextos
+        de alta responsabilidade técnica, especialmente quando envolvem risco, território, comunidades
+        e documentação oficial.
+      </div>
+      <h3>Como apresentar cada projeto no site</h3>
+      <ul>
+        <li><strong>Contexto:</strong> qual problema territorial ou técnico precisava ser resolvido.</li>
+        <li><strong>Escopo:</strong> qual foi a atuação da equipe, sem exagerar atribuições.</li>
+        <li><strong>Método:</strong> coleta, análise, validação, geoprocessamento e produto final.</li>
+        <li><strong>Resultado:</strong> mapas, relatórios, bases, diagnósticos ou apoio à decisão.</li>
+        <li><strong>Confidencialidade:</strong> o que pode ou não ser publicado.</li>
+      </ul>
+      <div class="note">
+        Observação editorial: os projetos foram descritos com base nas informações fornecidas por você.
+        Antes da publicação, vale confirmar nomes oficiais dos contratos, permissões de uso de marca
+        institucional, datas, escopo exato e créditos da equipe.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. Equipe</h2>
+      <p>
+        A equipe deve aparecer com rosto técnico e humano. O objetivo não é apenas listar nomes,
+        mas mostrar que a DATUM reúne experiência em campo, geoprocessamento, análise territorial,
+        automação e entrega de produtos aplicáveis.
+      </p>
+      <div class="grid-3">
+        <div class="person">
+          <strong>Felipe Chaves</strong>
+          Atuação informada em mapeamento, geoprocessamento, automação de processos e projetos
+          territoriais. Bio final deve incluir formação, registro profissional quando houver,
+          competências principais e responsabilidades na DATUM.
+        </div>
+        <div class="person">
+          <strong>Matheus Carvalho</strong>
+          Atuação informada em projetos de mapeamento e análise geoespacial. Bio final deve detalhar
+          especialidades, experiência de campo, softwares dominados e tipos de entrega.
+        </div>
+        <div class="person">
+          <strong>José Renato Pereira</strong>
+          Atuação informada em mapeamento territorial e projetos técnicos. Bio final deve incluir
+          formação, experiência, área de foco e participação em trabalhos relevantes.
+        </div>
+      </div>
+      <h3>Informações que fortalecem a seção de equipe</h3>
+      <ul>
+        <li>Formação acadêmica e vínculo com geografia, geologia, cartografia, engenharia ou áreas correlatas.</li>
+        <li>Registros profissionais, ART/RRT ou credenciamentos aplicáveis, quando existirem.</li>
+        <li>Experiência com GNSS, SIG, CAD, sensoriamento remoto, drone, banco de dados ou automação.</li>
+        <li>Participação específica em projetos públicos, privados, acadêmicos ou institucionais.</li>
+        <li>Fotos profissionais consistentes, preferencialmente em campo ou ambiente técnico.</li>
+      </ul>
+      <p class="footer-line">
+        Para publicação final, recomenda-se escrever bios curtas de 4 a 6 linhas por pessoa e uma
+        versão expandida para propostas técnicas.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>7. Tecnologia</h2>
+      <p>
+        A seção de tecnologia deve provar capacidade sem virar uma lista vazia de ferramentas. O ideal
+        é explicar como os recursos técnicos melhoram precisão, rastreabilidade e velocidade.
+      </p>
+      <div class="grid-2">
+        <div class="box">
+          <strong>Coleta e posicionamento</strong>
+          GNSS, pontos de controle, dados de campo, levantamentos topográficos, imagens e bases
+          espaciais oficiais ou produzidas sob demanda.
+        </div>
+        <div class="box">
+          <strong>SIG e análise espacial</strong>
+          QGIS, ArcGIS ou plataformas equivalentes para cruzamento de camadas, cálculo de áreas,
+          análise de relevo, mapas temáticos e organização territorial.
+        </div>
+        <div class="box">
+          <strong>CAD e produtos de engenharia</strong>
+          Arquivos técnicos para uso em projetos, obras, locação, plantas, memoriais e documentação
+          compatível com fluxos de engenharia.
+        </div>
+        <div class="box">
+          <strong>Automação</strong>
+          Rotinas em Python, scripts, modelos de processamento, padronização de mapas, validação de
+          atributos e geração de relatórios.
+        </div>
+        <div class="box">
+          <strong>Dados e formatos</strong>
+          Shapefile, GeoPackage, GeoJSON, DXF/DWG, CSV, KML/KMZ, raster, modelos digitais de terreno,
+          plantas e relatórios em PDF.
+        </div>
+        <div class="box">
+          <strong>Referenciais e normas</strong>
+          Atenção a sistemas de coordenadas, padrões cartográficos, critérios de precisão e exigências
+          de órgãos oficiais quando o serviço demandar.
+        </div>
+      </div>
+      <h3>Referências externas que justificam essa abordagem</h3>
+      <p>
+        O SIGEF, sistema do INCRA, é descrito como ferramenta para recepção, validação, organização,
+        regularização e disponibilização de informações georreferenciadas de limites de imóveis rurais.
+        Essa lógica reforça a importância de dados consistentes, verificáveis e bem estruturados.
+      </p>
+      <p>
+        No campo de risco geológico, materiais do Serviço Geológico do Brasil destacam a utilidade de
+        mapeamentos e diagnósticos para políticas públicas de prevenção e resposta a desastres. Para a
+        DATUM, isso reforça o valor de unir campo, análise espacial e leitura técnica do território.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>8. Contato</h2>
+      <p>
+        A seção de contato deve ser simples, objetiva e orientada à conversão. O visitante precisa
+        entender como pedir orçamento, quais informações enviar e o que acontece depois do primeiro
+        contato.
+      </p>
+      <h3>Canais recomendados</h3>
+      <ul>
+        <li>WhatsApp comercial com botão fixo ou destacado.</li>
+        <li>E-mail institucional.</li>
+        <li>Formulário com campos para tipo de serviço, localização, prazo e anexos.</li>
+        <li>LinkedIn ou Instagram, se a empresa for manter presença ativa.</li>
+        <li>Mapa com endereço no IGC-UFMG e indicação de atendimento em campo.</li>
+      </ul>
+      <h3>Campos úteis no formulário</h3>
+      <div class="grid-2">
+        <div class="box"><strong>Tipo de demanda</strong>Topografia, georreferenciamento, risco, obra, geoprocessamento, automação ou outro.</div>
+        <div class="box"><strong>Local do projeto</strong>Município, endereço, coordenada, polígono ou arquivo de referência.</div>
+        <div class="box"><strong>Objetivo</strong>Regularização, obra, relatório, análise, licenciamento, diagnóstico ou tomada de decisão.</div>
+        <div class="box"><strong>Prazo e anexos</strong>Data desejada, documentos, plantas, bases, imagens ou memoriais já existentes.</div>
+      </div>
+      <h3>Resposta automática sugerida</h3>
+      <p>
+        "Recebemos sua solicitação. A equipe da DATUM irá analisar as informações enviadas e retornará
+        com os próximos passos para diagnóstico técnico, escopo e orçamento."
+      </p>
+      <h3>Informações pendentes para finalizar o site</h3>
+      <ul>
+        <li>CNPJ, razão social e nome jurídico, se já existirem.</li>
+        <li>Telefone, WhatsApp e e-mail oficiais.</li>
+        <li>Endereço de publicação: domínio, Instagram, LinkedIn e Google Business Profile.</li>
+        <li>Credenciais profissionais e permissões para citar órgãos, projetos e imagens.</li>
+        <li>Fotos da equipe, imagens de campo, mapas autorizados e exemplos de entregáveis.</li>
+      </ul>
+    </section>
+
+    <section class="sources">
+      <h2>Referências Consultadas</h2>
+      <p>
+        As referências abaixo foram usadas como apoio de contexto técnico e institucional. Elas não
+        substituem a checagem de contratos, autorizações de uso de marca, escopos oficiais e documentos
+        internos da DATUM.
+      </p>
+      <ol>
+        <li>Instituto de Geociências da UFMG. Página de contatos e endereço institucional do IGC: <a href="https://www.igc.ufmg.br/contatos/">https://www.igc.ufmg.br/contatos/</a></li>
+        <li>INCRA. Certificação de Imóvel Rural: <a href="https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis">https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis</a></li>
+        <li>SIGEF/INCRA. Sistema de Gestão Fundiária: <a href="https://sigef.incra.gov.br/">https://sigef.incra.gov.br/</a></li>
+        <li>INCRA. Manual Técnico para Georreferenciamento de Imóveis Rurais, 2ª edição: <a href="https://www.gov.br/incra/pt-br/assuntos/noticias/incra-lanca-2a-edicao-do-manual-para-georreferenciamento-de-imoveis-rurais/">https://www.gov.br/incra/pt-br/assuntos/noticias/incra-lanca-2a-edicao-do-manual-para-georreferenciamento-de-imoveis-rurais/</a></li>
+        <li>INCRA. Exigência de georreferenciamento em transações com imóveis rurais a partir de 25 hectares: <a href="https://www.gov.br/incra/pt-br/assuntos/noticias/transacoes-com-imoveis-acima-de-25-hectares-exigem-georreferenciamento">https://www.gov.br/incra/pt-br/assuntos/noticias/transacoes-com-imoveis-acima-de-25-hectares-exigem-georreferenciamento</a></li>
+        <li>Serviço Geológico do Brasil. Diagnóstico da População em Áreas de Risco Geológico: <a href="https://sgb.gov.br/diagnostico-da-populacao-em-areas-de-risco-geologico">https://sgb.gov.br/diagnostico-da-populacao-em-areas-de-risco-geologico</a></li>
+        <li>Serviço Geológico do Brasil. Publicação sobre setorizações de áreas de risco geológico: <a href="https://www.sgb.gov.br/w/publicadas-setorizacao-de-areas-de-risco-geologico-de-sete-municipios">https://www.sgb.gov.br/w/publicadas-setorizacao-de-areas-de-risco-geologico-de-sete-municipios</a></li>
+        <li>FUNAI. Documento sobre Terra Indígena Kaxuyana-Tunayana: <a href="https://www.gov.br/funai/pt-br/assuntos/noticias/2025/com-mais-quatro-homologacoes-sobe-para-20-o-numero-de-terras-homologadas-pelo-presidente-lula/TerraIndgenaKaxuyanaTunayana.pdf/view">https://www.gov.br/funai/pt-br/assuntos/noticias/2025/com-mais-quatro-homologacoes-sobe-para-20-o-numero-de-terras-homologadas-pelo-presidente-lula/TerraIndgenaKaxuyanaTunayana.pdf/view</a></li>
+        <li>Ministério dos Povos Indígenas. Homologação da TI Kaxuyana-Tunayana: <a href="https://www.gov.br/povosindigenas/pt-br/assuntos/noticias/2026/02/mpi-comemora-homologacao-da-ti-kaxuyana-tunayana">https://www.gov.br/povosindigenas/pt-br/assuntos/noticias/2026/02/mpi-comemora-homologacao-da-ti-kaxuyana-tunayana</a></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
