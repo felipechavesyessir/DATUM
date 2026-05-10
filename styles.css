@@ -1382,11 +1382,12 @@ blockquote {
 .product-card {
   position: relative;
   display: grid;
-  min-height: 288px;
-  align-content: end;
+  grid-template-rows: 1fr auto auto auto;
+  min-height: 360px;
+  align-content: stretch;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 24px;
+  padding: 214px 24px 24px;
   background:
     linear-gradient(rgba(0, 126, 167, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 126, 167, 0.08) 1px, transparent 1px),
@@ -1406,8 +1407,11 @@ blockquote {
   z-index: 1;
 }
 
+.product-card > span {
+  align-self: end;
+}
+
 .product-card-geodesy {
-  min-height: 360px;
   overflow: hidden;
   background:
     linear-gradient(rgba(0, 126, 167, 0.055) 1px, transparent 1px),
@@ -1419,10 +1423,10 @@ blockquote {
 
 .geodesy-orbit {
   position: absolute;
-  top: 12px;
+  top: 16px;
   left: 50%;
   z-index: 0;
-  width: min(92%, 320px);
+  width: min(82%, 292px);
   transform: translateX(-50%);
   overflow: visible;
   pointer-events: none;
@@ -1542,7 +1546,6 @@ blockquote {
 }
 
 .product-card-gis {
-  min-height: 360px;
   overflow: hidden;
   background:
     linear-gradient(rgba(7, 20, 38, 0.035) 1px, transparent 1px),
@@ -1554,10 +1557,10 @@ blockquote {
 
 .gis-dashboard {
   position: absolute;
-  top: 14px;
+  top: 18px;
   left: 50%;
   z-index: 0;
-  width: min(92%, 320px);
+  width: min(82%, 292px);
   transform: translateX(-50%);
   overflow: visible;
   pointer-events: none;
@@ -1693,7 +1696,6 @@ blockquote {
 }
 
 .product-card-intelligence {
-  min-height: 360px;
   overflow: hidden;
   background:
     linear-gradient(rgba(0, 126, 167, 0.045) 1px, transparent 1px),
@@ -1705,10 +1707,10 @@ blockquote {
 
 .territorial-intelligence {
   position: absolute;
-  top: 12px;
+  top: 18px;
   left: 50%;
   z-index: 0;
-  width: min(92%, 320px);
+  width: min(82%, 292px);
   transform: translateX(-50%);
   overflow: visible;
   pointer-events: none;
@@ -1822,7 +1824,6 @@ blockquote {
 }
 
 .product-card-remote {
-  min-height: 360px;
   background:
     linear-gradient(rgba(0, 126, 167, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 126, 167, 0.07) 1px, transparent 1px),
@@ -1833,14 +1834,15 @@ blockquote {
 
 .remote-sensing-orb {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 20px;
+  left: 50%;
   z-index: 0;
-  width: min(58%, 220px);
+  width: min(52%, 184px);
   aspect-ratio: 1;
   opacity: 0.92;
   pointer-events: none;
   contain: strict;
+  transform: translateX(-50%);
 }
 
 .product-card:hover {
@@ -1870,7 +1872,16 @@ blockquote {
   font-weight: 800;
 }
 
+.product-card h3 {
+  max-width: 13ch;
+  margin: 8px 0 10px;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 0.98;
+}
+
 .product-card p {
+  max-width: 34ch;
+  margin: 0;
   color: var(--gray);
 }
 
