@@ -229,6 +229,7 @@ body.logo-in-motion .brand {
   width: clamp(136px, 21vw, 236px);
   height: clamp(136px, 21vw, 236px);
   --logo-draw: var(--lockup-draw, 1);
+  transform: translateY(20%);
 }
 
 .scroll-brand-rest {
@@ -523,7 +524,7 @@ body.logo-prelude .terrain-console {
 
 .intro-brand-word {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.02em;
   white-space: nowrap;
 }
@@ -532,7 +533,7 @@ body.logo-prelude .terrain-console {
 .intro-punctuation {
   font-size: 0.78em;
   line-height: 1;
-  transform: translateY(0.13em);
+  transform: translateY(0.09em);
 }
 
 .intro-brand-mark {
@@ -540,6 +541,7 @@ body.logo-prelude .terrain-console {
   height: 1.12em;
   margin: -0.12em -0.18em -0.1em -0.08em;
   flex: 0 0 auto;
+  transform: translateY(16%);
 }
 
 .intro-brand-mark .logo-trace {
