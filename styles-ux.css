@@ -537,6 +537,11 @@ body.logo-prelude .terrain-console {
 }
 
 .intro-impact strong {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.2em;
   max-width: 1180px;
   color: var(--deep);
   font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
@@ -545,7 +550,25 @@ body.logo-prelude .terrain-console {
   line-height: 0.92;
 }
 
-.intro-impact span {
+.intro-brand-word {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.02em;
+  white-space: nowrap;
+}
+
+.intro-brand-mark {
+  width: 1.12em;
+  height: 1.12em;
+  margin: -0.08em -0.18em -0.14em -0.08em;
+  flex: 0 0 auto;
+}
+
+.intro-brand-mark .logo-trace {
+  --logo-draw: 1;
+}
+
+.intro-impact > span {
   display: none;
   color: var(--graphite);
   font-size: clamp(14px, 1.5vw, 20px);
