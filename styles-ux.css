@@ -218,7 +218,7 @@ body.logo-in-motion .brand {
 
 .scroll-brand-wordmark {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   min-width: 0;
   transform: translateX(calc(var(--word-shift, -118) * 1px));
@@ -236,12 +236,14 @@ body.logo-in-motion .brand {
   margin-left: clamp(-30px, -2.8vw, -18px);
   color: var(--deep);
   font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
-  font-size: clamp(92px, 15vw, 202px);
+  font-size: clamp(76px, 12.4vw, 166px);
   font-weight: 600;
-  line-height: 0.82;
+  line-height: 0.88;
   letter-spacing: 0.02em;
   opacity: var(--word-opacity, 0);
-  transform: translateX(calc((1 - var(--word-opacity, 0)) * -34px));
+  transform:
+    translateX(calc((1 - var(--word-opacity, 0)) * -34px))
+    translateY(-0.04em);
   transition: opacity 120ms linear;
 }
 
@@ -2519,7 +2521,7 @@ body.motion-ready.logo-prelude .terrain-console.reveal {
   }
 
   .scroll-brand-lockup {
-    width: min(94vw, 500px);
+    width: min(82vw, 500px);
   }
 
   .scroll-brand-monogram {
@@ -2530,7 +2532,7 @@ body.motion-ready.logo-prelude .terrain-console.reveal {
 
   .scroll-brand-rest {
     margin-left: -18px;
-    font-size: clamp(62px, 21vw, 112px);
+    font-size: clamp(52px, 18vw, 94px);
   }
 
   .console-head,

@@ -78,6 +78,7 @@ const mapPins = document.querySelectorAll(".map-pin");
 const scanStatus = document.querySelector("#scan-status");
 const logoMarker = document.querySelector("#logo-map-marker");
 const headerBrand = document.querySelector(".brand");
+const introBrandMark = document.querySelector(".intro-brand-mark");
 const scrollBrandLockup = document.querySelector("#scroll-brand-lockup");
 const heroSection = document.querySelector("#inicio");
 const layerButtons = document.querySelectorAll(".layer");
@@ -527,6 +528,18 @@ function getLogoScrollProgress() {
   return clamp((startOffset - rect.top) / travel, 0, 1);
 }
 
+function getScrollBrandOriginRect() {
+  if (introBrandMark) {
+    const introRect = introBrandMark.getBoundingClientRect();
+
+    if (introRect.width > 0 && introRect.height > 0) {
+      return introRect;
+    }
+  }
+
+  return headerBrand ? headerBrand.getBoundingClientRect() : null;
+}
+
 function cancelLogoAutoComplete() {
   clearTimeout(logoIdleTimer);
 
@@ -619,20 +632,25 @@ function applyLogoProgress(progress) {
     logoMarker.dataset.docked = progress > 0.72 ? "true" : "false";
   }
 
-  if (scrollBrandLockup && headerBrand) {
-    const brandRect = headerBrand.getBoundingClientRect();
+  if (scrollBrandLockup) {
+    const brandRect = getScrollBrandOriginRect();
+
+    if (!brandRect) {
+      return;
+    }
+
     const startX = brandRect.left + brandRect.width / 2 - window.innerWidth / 2;
     const startY = brandRect.top + brandRect.height / 2 - window.innerHeight / 2;
-    const visualArrival = 0.82 + 0.18 * arrivalEase;
+    const visualArrival = arrivalEase;
     const lockupX = startX * (1 - visualArrival);
     const lockupY = startY * (1 - visualArrival) - 86 * exitEase;
-    const lockupScale = 0.92 + (1.26 - 0.92) * arrivalEase - 0.16 * exitEase;
+    const lockupScale = 0.42 + (1.2 - 0.42) * arrivalEase - 0.16 * exitEase;
     const lockupOpacity = arrivalEase * (1 - exitEase);
     const wordReveal = clamp(arrival / 0.24, 0, 1);
     const dDrawReveal = clamp((arrival - 0.32) / 0.42, 0, 1);
     const dDrawEase = 1 - Math.pow(1 - dDrawReveal, 4);
     const wordOpacity = wordReveal * (1 - exitEase);
-    const wordShift = -118 + 118 * wordReveal - 28 * exitEase;
+    const wordShift = -90 + 90 * wordReveal - 24 * exitEase;
 
     scrollBrandLockup.style.setProperty("--lockup-x", lockupX.toFixed(2));
     scrollBrandLockup.style.setProperty("--lockup-y", lockupY.toFixed(2));
