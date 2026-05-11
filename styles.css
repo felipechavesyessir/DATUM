@@ -233,7 +233,10 @@ body.logo-in-motion .brand {
 }
 
 .scroll-brand-rest {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.015em;
   margin-left: clamp(-30px, -2.8vw, -18px);
   color: var(--deep);
   font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
@@ -241,11 +244,63 @@ body.logo-in-motion .brand {
   font-weight: 600;
   line-height: 0.88;
   letter-spacing: 0.02em;
-  opacity: var(--word-opacity, 0);
   transform:
     translateX(calc((1 - var(--word-opacity, 0)) * -34px))
     translateY(-0.04em);
-  transition: opacity 120ms linear;
+}
+
+.scroll-brand-rest::before {
+  content: "";
+  position: absolute;
+  left: -0.06em;
+  right: -0.02em;
+  top: 0.52em;
+  height: 0.035em;
+  background: linear-gradient(90deg, transparent, rgba(0, 126, 167, 0.78), transparent);
+  opacity: clamp(0, calc((var(--word-opacity, 0) - 0.12) * 2.8), 0.78);
+  transform:
+    scaleX(clamp(0, calc((var(--word-opacity, 0) - 0.06) * 1.25), 1))
+    translateX(calc((1 - var(--word-opacity, 0)) * -0.12em));
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.brand-letter {
+  --letter-delay: calc(var(--letter-index) * 0.08);
+  --letter-progress: clamp(0, calc((var(--word-opacity, 0) - var(--letter-delay)) * 3.6), 1);
+  --letter-x: -0.18em;
+  --letter-y: 0.34em;
+  --letter-r: -5deg;
+  display: inline-block;
+  opacity: var(--letter-progress);
+  clip-path: inset(calc((1 - var(--letter-progress)) * 58%) 0 0 0);
+  transform:
+    translate3d(
+      calc((1 - var(--letter-progress)) * var(--letter-x)),
+      calc((1 - var(--letter-progress)) * var(--letter-y)),
+      0
+    )
+    rotate(calc((1 - var(--letter-progress)) * var(--letter-r)));
+  transform-origin: 50% 100%;
+  will-change: transform, opacity, clip-path;
+}
+
+.brand-letter:nth-child(2) {
+  --letter-x: -0.07em;
+  --letter-y: -0.18em;
+  --letter-r: 3deg;
+}
+
+.brand-letter:nth-child(3) {
+  --letter-x: 0.08em;
+  --letter-y: 0.22em;
+  --letter-r: -2deg;
+}
+
+.brand-letter:nth-child(4) {
+  --letter-x: 0.2em;
+  --letter-y: -0.1em;
+  --letter-r: 4deg;
 }
 
 .hero-copy,

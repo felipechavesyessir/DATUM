@@ -646,8 +646,8 @@ function applyLogoProgress(progress) {
     const lockupY = startY * (1 - visualArrival) - 86 * exitEase;
     const lockupScale = 0.42 + (1.2 - 0.42) * arrivalEase - 0.16 * exitEase;
     const lockupOpacity = arrivalEase * (1 - exitEase);
-    const wordReveal = clamp(arrival / 0.24, 0, 1);
-    const dDrawReveal = clamp((arrival - 0.32) / 0.42, 0, 1);
+    const wordReveal = clamp((arrival - 0.02) / 0.78, 0, 1);
+    const dDrawReveal = clamp((arrival - 0.82) / 0.18, 0, 1);
     const dDrawEase = 1 - Math.pow(1 - dDrawReveal, 4);
     const wordOpacity = wordReveal * (1 - exitEase);
     const wordShift = -90 + 90 * wordReveal - 24 * exitEase;
