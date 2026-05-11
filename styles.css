@@ -526,6 +526,12 @@ body.logo-prelude .terrain-console {
   white-space: nowrap;
 }
 
+.intro-brand-word > span,
+.intro-punctuation {
+  font-size: 0.78em;
+  line-height: 1;
+}
+
 .intro-brand-mark {
   width: 1.12em;
   height: 1.12em;
