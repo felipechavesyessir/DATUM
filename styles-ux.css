@@ -561,12 +561,13 @@ body.logo-prelude .terrain-console {
 .intro-punctuation {
   font-size: 0.78em;
   line-height: 1;
+  transform: translateY(0.13em);
 }
 
 .intro-brand-mark {
   width: 1.12em;
   height: 1.12em;
-  margin: -0.08em -0.18em -0.14em -0.08em;
+  margin: -0.12em -0.18em -0.1em -0.08em;
   flex: 0 0 auto;
 }
 
