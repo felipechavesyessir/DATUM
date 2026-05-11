@@ -512,8 +512,8 @@ let logoAutoCompleting = false;
 let logoPreviousScrollBehavior = "";
 const logoAutoCompleteDelay = 2000;
 const logoAutoCompleteStart = 0.006;
-const logoAutoCompleteFormationEnd = 0.42;
-const logoAutoCompleteCenteredEnd = 0.58;
+const logoAutoCompleteFormationEnd = 0.32;
+const logoAutoCompleteCenteredEnd = 0.48;
 const logoAutoCompleteDuration = 2400;
 
 function getLogoScrollProgress() {
@@ -523,7 +523,8 @@ function getLogoScrollProgress() {
 
   const rect = heroSection.getBoundingClientRect();
   const travel = Math.max(rect.height, 1);
-  return clamp(-rect.top / travel, 0, 1);
+  const startOffset = clamp(window.innerHeight * 0.12, 86, 120);
+  return clamp((startOffset - rect.top) / travel, 0, 1);
 }
 
 function cancelLogoAutoComplete() {
@@ -606,9 +607,9 @@ function applyLogoProgress(progress) {
   const x = 12 + (36 - 12) * eased;
   const y = 22 + (54 - 22) * eased;
   const draw = 0.18 + 0.82 * eased;
-  const arrival = clamp(progress / 0.34, 0, 1);
+  const arrival = clamp(progress / 0.18, 0, 1);
   const arrivalEase = 1 - Math.pow(1 - arrival, 4);
-  const exit = clamp((progress - 0.36) / 0.22, 0, 1);
+  const exit = clamp((progress - 0.48) / 0.2, 0, 1);
   const exitEase = 1 - Math.pow(1 - exit, 3);
 
   if (logoMarker) {
@@ -627,8 +628,8 @@ function applyLogoProgress(progress) {
     const lockupY = startY * (1 - visualArrival) - 86 * exitEase;
     const lockupScale = 0.92 + (1.26 - 0.92) * arrivalEase - 0.16 * exitEase;
     const lockupOpacity = arrivalEase * (1 - exitEase);
-    const wordReveal = clamp(arrival / 0.42, 0, 1);
-    const dDrawReveal = clamp((arrival - 0.42) / 0.46, 0, 1);
+    const wordReveal = clamp(arrival / 0.24, 0, 1);
+    const dDrawReveal = clamp((arrival - 0.32) / 0.42, 0, 1);
     const dDrawEase = 1 - Math.pow(1 - dDrawReveal, 4);
     const wordOpacity = wordReveal * (1 - exitEase);
     const wordShift = -118 + 118 * wordReveal - 28 * exitEase;
