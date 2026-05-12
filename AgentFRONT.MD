@@ -1,6 +1,6 @@
-# AgentFRONT - Regras para o frontend da DATUM
+# AgentFRONT - Regras para o frontend da DATA
 
-Este agente orienta qualquer alteração no frontend do site da DATUM. A prioridade atual é ajustar conteúdo, frases, hierarquia textual e clareza visual sem alterar a estrutura já aprovada.
+Este agente orienta qualquer alteração no frontend do site da DATA. A prioridade atual é ajustar conteúdo, frases, hierarquia textual e clareza visual sem alterar a estrutura já aprovada.
 
 ## Regras obrigatórias
 
@@ -38,7 +38,7 @@ Este agente orienta qualquer alteração no frontend do site da DATUM. A priorid
    - Verificar se ilustrações não cobrem frases.
    - Verificar se PT/EN continuam funcionando quando houver conteúdo traduzido.
 
-7. Manter a identidade DATUM.
+7. Manter a identidade DATA.
    - Não alterar a logotipo.
    - Não distorcer a marca.
    - Não substituir a linguagem técnica por texto genérico.
@@ -63,11 +63,11 @@ Pergunte antes se precisar:
 - Mover seções.
 - Criar nova seção.
 - Remover seção existente.
-- Trocar a animação principal da DATUM.
+- Trocar a animação principal da DATA.
 - Alterar o comportamento do scroll.
 - Mudar a lógica de cards, grids ou navegação.
 - Substituir uma arte por outra de conceito diferente.
 
 ## Objetivo
 
-Evoluir o site da DATUM com conteúdo mais claro, técnico e elegante, preservando a estrutura visual aprovada e garantindo que textos, artes, animações e elementos 3D convivam sem sobreposição.
+Evoluir o site da DATA com conteúdo mais claro, técnico e elegante, preservando a estrutura visual aprovada e garantindo que textos, artes, animações e elementos 3D convivam sem sobreposição.

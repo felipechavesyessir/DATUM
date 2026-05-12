@@ -17,7 +17,7 @@ const workflow = [
     title: "Leitura geoespacial",
     body:
       "Interpretação de superfícies, feições, pontos de controle, áreas de interesse e relações territoriais para reduzir ruído operacional.",
-    tags: ["Relevo", "Feições", "Áreas", "Datum"],
+    tags: ["Relevo", "Feições", "Áreas", "Referência"],
     visual: "read"
   },
   {
@@ -1094,7 +1094,7 @@ contactForm.addEventListener("submit", (event) => {
 
   button.textContent = "Diagnóstico solicitado";
   button.disabled = true;
-  status.textContent = "Recebemos seu contexto técnico. A equipe DATUM retorna com o próximo passo.";
+  status.textContent = "Recebemos seu contexto técnico. A equipe DATA retorna com o próximo passo.";
 });
 
 contactForm.querySelectorAll("input, textarea").forEach((field) => {

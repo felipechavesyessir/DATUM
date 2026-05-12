@@ -1,4 +1,4 @@
-# DATUM Product Context
+# DATA Product Context
 
 ## Register
 
@@ -6,7 +6,7 @@ brand
 
 ## Product Purpose
 
-DATUM is an institutional website for a premium geospatial intelligence company. The site should turn technical credibility into clear commercial confidence for engineering, GIS, cartography, LiDAR, drones, infrastructure, environmental, mining, logistics, and territorial analysis audiences.
+DATA is an institutional website for a premium geospatial intelligence company. The site should turn technical credibility into clear commercial confidence for engineering, GIS, cartography, LiDAR, drones, infrastructure, environmental, mining, logistics, and territorial analysis audiences.
 
 ## Users
 
@@ -32,7 +32,7 @@ DATUM is an institutional website for a premium geospatial intelligence company.
 
 ## Logo Rule
 
-The original DATUM logo asset is:
+The original DATA logo asset is:
 
 `assets/brand/datum-logo-official.png`
 
