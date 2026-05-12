@@ -2537,6 +2537,53 @@ body.motion-ready.logo-prelude .terrain-console.reveal {
     min-height: auto;
   }
 
+  .intro-impact {
+    justify-content: flex-start;
+    padding: clamp(102px, 17vh, 138px) 18px 0;
+  }
+
+  .intro-impact strong {
+    max-width: min(352px, calc(100vw - 32px));
+    font-size: clamp(30px, 10vw, 40px);
+    line-height: 1.02;
+    row-gap: 0.14em;
+  }
+
+  .intro-copy {
+    flex: 0 1 100%;
+  }
+
+  .intro-brand-word {
+    margin-top: 0.02em;
+    font-size: 1.12em;
+  }
+
+  .intro-brand-mark {
+    transform: translateY(6%);
+  }
+
+  .intro-brand-word > span,
+  .intro-punctuation {
+    transform: translateY(0.07em);
+  }
+
+  .intro-punctuation {
+    margin-left: -0.16em;
+  }
+
+  .scroll-cue {
+    bottom: clamp(210px, 30vh, 268px);
+    width: 78px;
+    height: 78px;
+  }
+
+  .scroll-cue span {
+    width: 24px;
+    height: 24px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+  }
+
   .terrain-map {
     min-height: 340px;
   }

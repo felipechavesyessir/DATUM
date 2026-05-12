@@ -877,7 +877,10 @@ function getLogoScrollProgress() {
 
   const rect = heroSection.getBoundingClientRect();
   const travel = Math.max(rect.height, 1);
-  const startOffset = clamp(window.innerHeight * 0.12, 86, 120);
+  const isCompactViewport = window.matchMedia("(max-width: 720px)").matches;
+  const startOffset = isCompactViewport
+    ? clamp(window.innerHeight * 0.07, 46, 64)
+    : clamp(window.innerHeight * 0.12, 86, 120);
   return clamp((startOffset - rect.top) / travel, 0, 1);
 }
 
