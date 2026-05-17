@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DATA - Dossiê Institucional</title>
+  <style>
+    @page { size: A4; margin: 17mm 15mm; }
+    :root {
+      --ink: #071426;
+      --graphite: #1d252c;
+      --muted: #5e6b76;
+      --blue: #007ea7;
+      --green: #2fbf71;
+      --ice: #f7fafc;
+      --line: #dce6ed;
+      --wash: #eef5f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--graphite);
+      background: #fff;
+      font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+      line-height: 1.14;
+    }
+    h1 { font-size: 30pt; max-width: 650px; }
+    h2 {
+      border-top: 1px solid var(--line);
+      font-size: 17.5pt;
+      margin-top: 24px;
+      padding-top: 16px;
+    }
+    h3 { color: var(--blue); font-size: 12.4pt; margin-top: 15px; }
+    p { margin: 7px 0 0; }
+    a { color: var(--blue); text-decoration: none; overflow-wrap: anywhere; }
+    ul, ol { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 4px 0; }
+    .cover {
+      min-height: 249mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+    }
+    .cover:before {
+      content: "";
+      position: absolute;
+      inset: -17mm -15mm auto auto;
+      width: 86mm;
+      height: 86mm;
+      background:
+        linear-gradient(90deg, rgba(0,126,167,.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0,126,167,.08) 1px, transparent 1px);
+      background-size: 8mm 8mm;
+      z-index: -1;
+    }
+    .logo { width: 142px; height: auto; margin-bottom: 42px; }
+    .kicker {
+      color: var(--blue);
+      font-size: 8.7pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 13pt;
+      line-height: 1.43;
+      margin-top: 16px;
+      max-width: 650px;
+    }
+    .meta {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 16px;
+    }
+    .page-break { page-break-before: always; }
+    .section { page-break-inside: avoid; }
+    .toc { page-break-after: always; }
+    .grid-2 { display: grid; gap: 11px; grid-template-columns: 1fr 1fr; margin-top: 11px; }
+    .grid-3 { display: grid; gap: 10px; grid-template-columns: 1fr 1fr 1fr; margin-top: 11px; }
+    .box, .item, .step, .profile, .project {
+      background: var(--ice);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 13px;
+    }
+    .box strong, .item strong, .step strong, .profile strong, .project strong {
+      color: var(--ink);
+      display: block;
+    }
+    .lead {
+      border-left: 4px solid var(--blue);
+      color: var(--ink);
+      font-size: 14pt;
+      font-weight: 650;
+      line-height: 1.35;
+      margin: 14px 0 0;
+      padding-left: 13px;
+    }
+    .note {
+      background: #f3fbf7;
+      border-left: 4px solid var(--green);
+      color: #1f4234;
+      margin-top: 12px;
+      padding: 10px 12px;
+    }
+    .warn {
+      background: #fff8eb;
+      border-left: 4px solid #c9891b;
+      color: #4a3413;
+      margin-top: 12px;
+      padding: 10px 12px;
+    }
+    .process { counter-reset: steps; display: grid; gap: 9px; margin-top: 11px; }
+    .step { counter-increment: steps; padding-left: 50px; position: relative; }
+    .step:before {
+      align-items: center;
+      background: var(--ink);
+      border-radius: 50%;
+      color: white;
+      content: counter(steps);
+      display: flex;
+      font-weight: 700;
+      height: 27px;
+      justify-content: center;
+      left: 13px;
+      position: absolute;
+      top: 14px;
+      width: 27px;
+    }
+    .tagline {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
+      margin-top: 9px;
+      padding: 8px 10px;
+    }
+    .table {
+      border-collapse: collapse;
+      margin-top: 10px;
+      width: 100%;
+    }
+    .table th, .table td {
+      border: 1px solid var(--line);
+      padding: 8px 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .table th { background: var(--wash); color: var(--ink); }
+    .sources { font-size: 9.2pt; page-break-before: always; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="cover">
+      <div>
+        <img class="logo" src="../assets/brand/data-logo-official.png" alt="DATA">
+        <p class="kicker">Dossiê institucional</p>
+        <h1>Tudo sobre a DATA</h1>
+        <p class="subtitle">
+          Documento completo para apresentar a DATA como empresa de inteligência geoespacial:
+          o que faz, como trabalha, onde está, quais problemas resolve, quais projetos sustentam
+          sua credibilidade, quais tecnologias utiliza e quais informações ainda devem ser
+          confirmadas antes da publicação final.
+        </p>
+        <p class="lead">
+          A DATA transforma dados geoespaciais em produtos técnicos precisos para topografia,
+          geoprocessamento, análises geotécnicas, regularização, obras, gestão de risco e
+          automação de processos territoriais.
+        </p>
+      </div>
+      <div class="meta">
+        <div><strong>Empresa</strong><br>DATA</div>
+        <div><strong>Sede informada</strong><br>IGC-UFMG, Belo Horizonte, Minas Gerais</div>
+        <div><strong>Data</strong><br>10 de maio de 2026</div>
+        <div><strong>Formato</strong><br>PDF institucional e base para site, portfólio e propostas</div>
+      </div>
+    </section>
+
+    <section class="toc">
+      <h2>Sumário</h2>
+      <div class="grid-2">
+        <div class="item"><strong>1. Visão geral</strong>Quem é a DATA e qual é sua proposta de valor.</div>
+        <div class="item"><strong>2. Origem e localização</strong>Sede no IGC-UFMG e relação com conhecimento técnico aplicado.</div>
+        <div class="item"><strong>3. Problemas que resolve</strong>Dores de clientes em obra, território, risco e documentação.</div>
+        <div class="item"><strong>4. Serviços</strong>Topografia, geoprocessamento, georreferenciamento, risco, obra e automação.</div>
+        <div class="item"><strong>5. Método de trabalho</strong>Passo a passo da demanda até a entrega final.</div>
+        <div class="item"><strong>6. Projetos e experiência</strong>Risco geológico, cidades, Governo Federal, FUNAI e TI Kaxuyana-Tunayana.</div>
+        <div class="item"><strong>7. Equipe</strong>Felipe Chaves, Matheus Carvalho e José Renato Pereira.</div>
+        <div class="item"><strong>8. Tecnologia e entregáveis</strong>Ferramentas, dados, formatos e produtos finais.</div>
+        <div class="item"><strong>9. Diferenciais</strong>Precisão, rastreabilidade, agilidade, automação e leitura técnica.</div>
+        <div class="item"><strong>10. Comunicação</strong>Como a empresa deve se apresentar no site e em propostas.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. Visão geral</h2>
+      <p>
+        A DATA é uma empresa de inteligência geoespacial criada para transformar dados territoriais
+        em resultados técnicos claros, verificáveis e aplicáveis. Seu trabalho se apoia em coleta
+        de dados, validação, interpretação, geoprocessamento, topografia e automação para resolver
+        problemas que dependem de localização, precisão e leitura espacial.
+      </p>
+      <p>
+        A empresa atua no ponto de encontro entre campo, escritório técnico e decisão. Isso significa
+        que a DATA não se limita a medir pontos ou produzir mapas: ela organiza informações espaciais
+        para que clientes consigam projetar, regularizar, construir, diagnosticar, planejar e tomar
+        decisões com mais segurança.
+      </p>
+      <h3>Definição curta</h3>
+      <p class="lead">
+        DATA é inteligência geoespacial aplicada a engenharia, território, risco e automação.
+      </p>
+      <h3>Definição expandida</h3>
+      <p>
+        A DATA coleta, verifica, interpreta e automatiza dados geoespaciais para entregar mapas,
+        bases, relatórios, plantas, arquivos técnicos e análises que apoiam topografia,
+        georreferenciamento, geoprocessamento, análises geotécnicas, locação de obra e gestão
+        territorial.
+      </p>
+      <h3>Frases de posicionamento</h3>
+      <div class="grid-2">
+        <div class="box"><strong>Para site</strong>Transformamos dados geoespaciais em resultados precisos para engenharia e território.</div>
+        <div class="box"><strong>Para proposta</strong>Unimos campo, análise espacial e automação para entregar produtos técnicos confiáveis.</div>
+        <div class="box"><strong>Para apresentação</strong>Dados verificados, interpretação técnica e entregas prontas para decisão.</div>
+        <div class="box"><strong>Para redes sociais</strong>Geotecnologia aplicada para entender, medir e transformar o território.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. Origem, sede e contexto</h2>
+      <p>
+        A DATA tem sua sede informada no Instituto de Geociências da Universidade Federal de Minas
+        Gerais, o IGC-UFMG, em Belo Horizonte. Esse contexto é importante porque aproxima a empresa
+        de um ambiente ligado a geografia, geologia, cartografia, análise ambiental, pesquisa aplicada
+        e formação técnica.
+      </p>
+      <p>
+        O IGC-UFMG informa como endereço institucional a Avenida Antônio Carlos, 6.627, Pampulha,
+        Belo Horizonte, MG, CEP 31270-901. No material público da DATA, essa localização deve ser
+        usada como sinal de proximidade com conhecimento geocientífico e tecnologia aplicada, sem
+        exagerar vínculos institucionais que precisem de autorização formal.
+      </p>
+      <h3>O que a localização comunica</h3>
+      <ul>
+        <li>Conexão com uma universidade pública reconhecida.</li>
+        <li>Proximidade com pesquisa, ciência territorial e geotecnologias.</li>
+        <li>Ambiente favorável à inovação técnica e à formação de equipe qualificada.</li>
+        <li>Credibilidade para projetos que exigem método, precisão e responsabilidade.</li>
+      </ul>
+      <div class="warn">
+        Antes de publicar, confirme a forma correta de mencionar a sede no IGC-UFMG e se há autorização
+        para usar nomes, imagens, marcas ou referências institucionais da universidade.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. O que a DATA resolve</h2>
+      <p>
+        A DATA resolve problemas em que a qualidade da informação espacial altera diretamente o
+        resultado do projeto. Em muitos contextos, o risco não está apenas em não ter dados, mas em
+        trabalhar com dados imprecisos, incompatíveis, desatualizados ou sem validação.
+      </p>
+      <div class="grid-2">
+        <div class="box"><strong>Incerteza territorial</strong>Limites, áreas, coordenadas e elementos físicos precisam ser medidos e organizados com critério.</div>
+        <div class="box"><strong>Retrabalho técnico</strong>Processos manuais e bases inconsistentes geram atrasos, erros e versões conflitantes.</div>
+        <div class="box"><strong>Decisão sem evidência espacial</strong>Obras, diagnósticos e regularizações precisam de mapas e dados confiáveis.</div>
+        <div class="box"><strong>Complexidade de campo</strong>Terrenos, áreas urbanas, encostas e territórios extensos exigem método de coleta e leitura técnica.</div>
+        <div class="box"><strong>Documentação fundiária</strong>Imóveis e áreas precisam de produtos compatíveis com exigências legais e sistemas oficiais.</div>
+        <div class="box"><strong>Gestão de risco</strong>Áreas suscetíveis a deslizamento e instabilidade exigem observação, setorização e interpretação integrada.</div>
+      </div>
+    </section>
+
+    <section class="section page-break">
+      <h2>4. Serviços da DATA</h2>
+      <p>
+        Os serviços da DATA podem ser apresentados em oito frentes principais. Cada frente pode
+        funcionar como uma seção no site, uma página específica ou um bloco em proposta comercial.
+      </p>
+      <div class="grid-2">
+        <div class="box"><strong>Topografia</strong>Levantamentos planialtimétricos, cadastro de elementos, pontos de controle, medições e suporte a projetos de engenharia e obra.</div>
+        <div class="box"><strong>Geoprocessamento</strong>Organização, cruzamento, edição, análise e representação de dados espaciais em ambiente SIG.</div>
+        <div class="box"><strong>Georreferenciamento de imóveis</strong>Produtos georreferenciados, limites, áreas, memoriais e bases compatíveis com exigências técnicas aplicáveis.</div>
+        <div class="box"><strong>Mapeamento de risco</strong>Identificação e análise de áreas suscetíveis a deslizamentos, erosão, instabilidade de encostas e processos associados.</div>
+        <div class="box"><strong>Análises geotécnicas e territoriais</strong>Leitura de relevo, declividade, drenagem, ocupação, feições de instabilidade e contexto físico do terreno.</div>
+        <div class="box"><strong>Locação de obra</strong>Materialização de pontos, eixos, cotas e referências em campo para orientar execução com controle espacial.</div>
+        <div class="box"><strong>Automação geoespacial</strong>Criação de rotinas para padronizar mapas, validar dados, calcular áreas, gerar relatórios e acelerar entregas.</div>
+        <div class="box"><strong>Produtos técnicos</strong>Mapas, plantas, relatórios, bases GIS, arquivos CAD, dashboards, memoriais e documentação de apoio.</div>
+      </div>
+      <h3>Como vender esses serviços com clareza</h3>
+      <table class="table">
+        <tr><th>Serviço</th><th>Cliente provável</th><th>Valor entregue</th></tr>
+        <tr><td>Topografia</td><td>Engenharia, obras, construtoras</td><td>Medição confiável para projetar, executar e conferir.</td></tr>
+        <tr><td>Geoprocessamento</td><td>Órgãos públicos, consultorias, empresas</td><td>Dados organizados em mapas e análises espaciais.</td></tr>
+        <tr><td>Georreferenciamento</td><td>Proprietários, regularização, jurídico</td><td>Limites, áreas e documentação espacial tecnicamente estruturada.</td></tr>
+        <tr><td>Risco geológico</td><td>Prefeituras, defesa civil, planejamento</td><td>Diagnóstico territorial para prevenção e gestão de risco.</td></tr>
+        <tr><td>Automação</td><td>Equipes técnicas com alto volume de dados</td><td>Mais velocidade, padronização e menos erro operacional.</td></tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>5. Como a DATA trabalha</h2>
+      <p>
+        O método da DATA pode ser explicado como uma cadeia técnica: entender o problema, planejar
+        a coleta, levantar dados, validar informações, interpretar resultados, automatizar tarefas
+        e entregar produtos úteis. Essa narrativa comunica controle e maturidade.
+      </p>
+      <div class="process">
+        <div class="step"><strong>Diagnóstico da demanda</strong>Compreensão do objetivo, da área de interesse, do prazo, das restrições, dos formatos esperados e do nível de precisão necessário.</div>
+        <div class="step"><strong>Planejamento técnico</strong>Definição de metodologia, equipe, bases, equipamentos, sistema de referência, escala, produtos e critérios de qualidade.</div>
+        <div class="step"><strong>Coleta de dados</strong>Levantamento de campo e/ou obtenção de bases existentes, imagens, coordenadas, cadastros, modelos de terreno e documentos técnicos.</div>
+        <div class="step"><strong>Verificação</strong>Checagem de precisão, consistência, completude, compatibilidade espacial, sobreposições, lacunas e coerência entre camadas.</div>
+        <div class="step"><strong>Interpretação</strong>Análise dos dados conforme o objetivo: obra, risco, território, imóvel, planejamento, regularização ou diagnóstico.</div>
+        <div class="step"><strong>Automação</strong>Aplicação de rotinas para acelerar cálculos, padronizar mapas, gerar relatórios e reduzir erros repetitivos.</div>
+        <div class="step"><strong>Entrega</strong>Produção de arquivos finais, documentação, apresentação dos resultados e suporte para uso técnico pelo cliente.</div>
+      </div>
+      <h3>Princípios operacionais</h3>
+      <ul>
+        <li>Todo produto precisa ter finalidade clara.</li>
+        <li>Todo dado precisa ser validado antes de orientar decisão.</li>
+        <li>Toda entrega deve ser organizada para uso posterior.</li>
+        <li>Automação deve reduzir erro, não esconder método.</li>
+        <li>Mapas e relatórios devem ser compreensíveis para públicos técnicos e decisores.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>6. Projetos e experiência</h2>
+      <p>
+        A equipe da DATA já atua com projetos de alta responsabilidade territorial, incluindo
+        mapeamento de áreas com risco de deslizamento para o Ministério das Cidades em municípios
+        como Contagem, Betim e Nova Lima, além de mapeamentos de áreas indígenas vinculados à FUNAI,
+        incluindo trabalhos relacionados à Terra Indígena Kaxuyana-Tunayana.
+      </p>
+      <div class="project">
+        <strong>Mapeamento de áreas com risco de deslizamento</strong>
+        Trabalhos em cidades como Contagem, Betim e Nova Lima, em contexto relacionado ao Ministério
+        das Cidades e Governo Federal. Esse tipo de atuação envolve leitura de relevo, ocupação,
+        drenagem, encostas, evidências de instabilidade e organização de dados para prevenção e
+        planejamento público.
+      </div>
+      <div class="project">
+        <strong>Mapeamento de áreas indígenas</strong>
+        Experiência em projetos vinculados à FUNAI e ao mapeamento de áreas indígenas, incluindo
+        referência à TI Kaxuyana-Tunayana. Fontes públicas do Governo Federal registram a homologação
+        da demarcação administrativa da Terra Indígena Kaxuyana-Tunayana pelo Decreto nº 12.720,
+        de 17 de novembro de 2025.
+      </div>
+      <div class="project">
+        <strong>Projetos com relevância pública</strong>
+        Os exemplos informados mostram capacidade de atuar em temas sensíveis: risco geológico,
+        território, documentação técnica, comunidades, políticas públicas e bases oficiais de decisão.
+      </div>
+      <h3>Como publicar projetos sem expor dados sensíveis</h3>
+      <ul>
+        <li>Descrever tipo de projeto, município ou região, órgão relacionado e produto entregue.</li>
+        <li>Evitar coordenadas, mapas detalhados, bases internas e documentos sigilosos.</li>
+        <li>Confirmar autorização para citar ministérios, órgãos, contratos e marcas.</li>
+        <li>Usar imagens genéricas de campo ou mapas redesenhados quando houver restrição.</li>
+        <li>Separar claramente trabalho da equipe, trabalho da empresa e parcerias institucionais.</li>
+      </ul>
+    </section>
+
+    <section class="section page-break">
+      <h2>7. Equipe</h2>
+      <p>
+        A equipe da DATA é formada por Felipe Chaves, Matheus Carvalho e José Renato Pereira. A
+        apresentação pública da equipe deve enfatizar competência técnica, experiência de campo,
+        domínio de dados geoespaciais e capacidade de transformar análise em entrega.
+      </p>
+      <div class="grid-3">
+        <div class="profile"><strong>Felipe Chaves</strong>Atuação informada em mapeamento, geoprocessamento, automação de processos e projetos territoriais. A bio final deve incluir formação, competências, ferramentas e responsabilidades na DATA.</div>
+        <div class="profile"><strong>Matheus Carvalho</strong>Atuação informada em mapeamento, análise geoespacial e projetos técnicos. A bio final deve detalhar experiência de campo, softwares, especialidades e entregáveis.</div>
+        <div class="profile"><strong>José Renato Pereira</strong>Atuação informada em mapeamento territorial e projetos técnicos. A bio final deve incluir formação, área de foco, experiências relevantes e papel na empresa.</div>
+      </div>
+      <h3>Modelo de bio curta</h3>
+      <p class="tagline">
+        Nome Sobrenome atua com geoprocessamento, topografia e análise territorial, com experiência
+        em projetos de mapeamento, validação de dados espaciais e produção de entregáveis técnicos
+        para engenharia, território e gestão pública.
+      </p>
+      <h3>Informações que faltam coletar</h3>
+      <ul>
+        <li>Formação acadêmica de cada integrante.</li>
+        <li>Registros profissionais, credenciamentos e autorizações aplicáveis.</li>
+        <li>Experiência individual em softwares e equipamentos.</li>
+        <li>Fotos profissionais e imagens de campo autorizadas.</li>
+        <li>Divisão de responsabilidades dentro da empresa.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>8. Tecnologia, dados e entregáveis</h2>
+      <p>
+        A tecnologia da DATA deve ser apresentada como meio para produzir qualidade. O ponto central
+        não é listar ferramentas por aparência, mas mostrar como cada recurso melhora precisão,
+        velocidade, rastreabilidade e utilidade dos produtos finais.
+      </p>
+      <div class="grid-2">
+        <div class="box"><strong>Campo e posicionamento</strong>GNSS, pontos de controle, levantamentos topográficos, dados de campo e imagens de apoio.</div>
+        <div class="box"><strong>SIG/GIS</strong>QGIS, ArcGIS ou equivalentes para edição, cruzamento, análise e representação de dados espaciais.</div>
+        <div class="box"><strong>CAD e engenharia</strong>Arquivos DWG/DXF, plantas, eixos, cotas, locações e produtos compatíveis com fluxos de obra.</div>
+        <div class="box"><strong>Automação</strong>Python, modelos de processamento, scripts de validação, geração de mapas seriados e relatórios.</div>
+        <div class="box"><strong>Formatos GIS</strong>Shapefile, GeoPackage, GeoJSON, KML/KMZ, raster, modelos digitais de terreno e tabelas espaciais.</div>
+        <div class="box"><strong>Produtos finais</strong>Mapas técnicos, memoriais, relatórios, bases georreferenciadas, plantas, dashboards e pacotes de arquivos.</div>
+      </div>
+      <h3>Por que a automação importa</h3>
+      <p>
+        Em projetos geoespaciais, tarefas repetitivas podem consumir tempo e gerar erros: renomear
+        camadas, calcular áreas, validar atributos, gerar dezenas de mapas, converter formatos,
+        revisar sobreposições e montar relatórios. A automação permite que a equipe concentre energia
+        na interpretação técnica, ao mesmo tempo em que acelera a entrega e padroniza resultados.
+      </p>
+      <h3>Rastreabilidade</h3>
+      <p>
+        Um produto geoespacial confiável precisa permitir que o cliente entenda de onde vieram os
+        dados, como foram processados, qual sistema de referência foi adotado, quais limitações
+        existem e como os arquivos devem ser usados. Essa rastreabilidade deve ser um diferencial
+        explícito da DATA.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>9. Diferenciais da DATA</h2>
+      <div class="grid-2">
+        <div class="box"><strong>Base técnica</strong>Atuação conectada a geociências, território, topografia, cartografia e análise espacial.</div>
+        <div class="box"><strong>Experiência em projetos públicos</strong>Participação informada em trabalhos de risco, cidades e territórios indígenas.</div>
+        <div class="box"><strong>Campo + análise</strong>Capacidade de unir coleta de dados, interpretação e entrega organizada.</div>
+        <div class="box"><strong>Automação aplicada</strong>Uso de rotinas para ganhar prazo, consistência e escala sem perder controle técnico.</div>
+        <div class="box"><strong>Comunicação objetiva</strong>Produtos que podem ser entendidos por técnicos, gestores e decisores.</div>
+        <div class="box"><strong>Entrega orientada ao uso</strong>Mapas, bases e relatórios pensados para resolver o problema do cliente.</div>
+      </div>
+      <h3>Tom de marca</h3>
+      <p>
+        A comunicação da DATA deve soar precisa, técnica, confiável e contemporânea. Deve evitar
+        promessas genéricas, linguagem exageradamente futurista e frases vazias sobre inovação. O
+        ideal é falar com clareza sobre método, aplicação e resultado.
+      </p>
+      <h3>Palavras-chave da marca</h3>
+      <p class="tagline">
+        precisão, território, dados geoespaciais, topografia, geoprocessamento, rastreabilidade,
+        automação, análise, campo, decisão, risco, regularização, engenharia.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>10. Públicos atendidos</h2>
+      <p>
+        A DATA pode falar com diferentes públicos, mas a mensagem deve ser ajustada para cada um.
+        O mesmo serviço técnico pode ter valor diferente para uma prefeitura, uma construtora, uma
+        consultoria ambiental ou um proprietário.
+      </p>
+      <table class="table">
+        <tr><th>Público</th><th>O que provavelmente procura</th><th>Como a DATA deve responder</th></tr>
+        <tr><td>Órgãos públicos</td><td>Mapas, diagnósticos, risco, planejamento, bases territoriais.</td><td>Mostrar método, experiência pública, clareza documental e responsabilidade técnica.</td></tr>
+        <tr><td>Construtoras e engenharia</td><td>Levantamentos, locação, controle espacial e arquivos compatíveis com projeto.</td><td>Falar de precisão, prazo, compatibilidade CAD/GIS e suporte de campo.</td></tr>
+        <tr><td>Consultorias</td><td>Dados e análises para relatórios ambientais, geotécnicos ou fundiários.</td><td>Destacar interoperabilidade, organização das bases e rastreabilidade.</td></tr>
+        <tr><td>Proprietários</td><td>Regularização, limites, área, documentação e orientação técnica.</td><td>Explicar o processo em linguagem clara e indicar próximos passos.</td></tr>
+        <tr><td>Instituições e pesquisa</td><td>Mapeamentos, bancos de dados e análise territorial qualificada.</td><td>Enfatizar rigor, dados verificáveis e capacidade de customização.</td></tr>
+      </table>
+    </section>
+
+    <section class="section page-break">
+      <h2>11. Estrutura recomendada para o site</h2>
+      <p>
+        O site deve ser direto, técnico e comercialmente claro. Abaixo está a estrutura recomendada
+        para transformar este dossiê em páginas ou seções navegáveis.
+      </p>
+      <div class="process">
+        <div class="step"><strong>Início</strong>Proposta de valor, chamada para contato, prova de credibilidade e resumo dos serviços.</div>
+        <div class="step"><strong>Sobre a DATA</strong>Origem, sede no IGC-UFMG, propósito, diferenciais e posicionamento.</div>
+        <div class="step"><strong>Serviços</strong>Descrição objetiva de cada frente de atuação e seus entregáveis.</div>
+        <div class="step"><strong>Como trabalhamos</strong>Processo da demanda à entrega, com foco em qualidade e rastreabilidade.</div>
+        <div class="step"><strong>Projetos</strong>Cases permitidos, experiências da equipe e tipos de resultado já entregues.</div>
+        <div class="step"><strong>Equipe</strong>Bios, fotos, especialidades e credenciais.</div>
+        <div class="step"><strong>Tecnologia</strong>Ferramentas, dados, automações, formatos e produtos finais.</div>
+        <div class="step"><strong>Contato</strong>WhatsApp, e-mail, formulário, endereço e briefing inicial.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>12. Conteúdo pronto para o site</h2>
+      <h3>Texto curto de abertura</h3>
+      <p>
+        A DATA transforma dados geoespaciais em soluções técnicas precisas para topografia,
+        geoprocessamento, georreferenciamento, obras, análises geotécnicas e gestão territorial.
+        Com sede no IGC-UFMG, unimos campo, análise espacial e automação para entregar resultados
+        confiáveis, rastreáveis e prontos para decisão.
+      </p>
+      <h3>Texto institucional</h3>
+      <p>
+        A DATA nasceu para aproximar dados geoespaciais de decisões concretas. Nosso trabalho começa
+        na compreensão da demanda, passa pela coleta e verificação de dados, avança para a interpretação
+        técnica e se consolida em entregas claras: mapas, plantas, bases georreferenciadas, relatórios,
+        memoriais e automações.
+      </p>
+      <p>
+        Atuamos em projetos que envolvem território, risco, engenharia, regularização e planejamento,
+        com atenção à precisão, à rastreabilidade e à aplicação prática dos resultados.
+      </p>
+      <h3>Mensagem para contato</h3>
+      <p>
+        Envie sua área de interesse, tipo de demanda, prazo desejado e arquivos disponíveis. A equipe
+        da DATA irá avaliar o escopo e retornar com os próximos passos para diagnóstico técnico,
+        orçamento e execução.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>13. Informações pendentes</h2>
+      <p>
+        Para transformar este dossiê em site público, proposta comercial ou portfólio definitivo,
+        ainda é importante confirmar alguns dados.
+      </p>
+      <div class="grid-2">
+        <div class="box"><strong>Dados legais</strong>CNPJ, razão social, endereço comercial formal e responsáveis técnicos.</div>
+        <div class="box"><strong>Contato</strong>E-mail oficial, telefone, WhatsApp, redes sociais e domínio.</div>
+        <div class="box"><strong>Credenciais</strong>Formações, registros profissionais, certificados e habilitações.</div>
+        <div class="box"><strong>Projetos</strong>Datas, escopos, órgãos, contratos, autorização de citação e imagens publicáveis.</div>
+        <div class="box"><strong>Portfólio visual</strong>Fotos de campo, mapas autorizados, telas de análise, plantas e exemplos de entregáveis.</div>
+        <div class="box"><strong>Política comercial</strong>Área de atendimento, tipos de contrato, prazos médios e modelo de orçamento.</div>
+      </div>
+      <div class="note">
+        Este documento organiza a narrativa institucional da DATA com base nas informações fornecidas
+        e em referências públicas. Ele deve ser revisado pela equipe antes de publicação final.
+      </div>
+    </section>
+
+    <section class="sources">
+      <h2>Referências consultadas</h2>
+      <p>
+        As fontes abaixo servem como apoio institucional e técnico. Elas ajudam a contextualizar sede,
+        georreferenciamento, gestão fundiária, mapeamento de risco e territórios indígenas.
+      </p>
+      <ol>
+        <li>Instituto de Geociências da UFMG. Contatos e endereço institucional do IGC: <a href="https://www.igc.ufmg.br/contatos/">https://www.igc.ufmg.br/contatos/</a></li>
+        <li>INCRA. Certificação de Imóvel Rural: <a href="https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis">https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis</a></li>
+        <li>SIGEF/INCRA. Sistema de Gestão Fundiária: <a href="https://sigef.incra.gov.br/">https://sigef.incra.gov.br/</a></li>
+        <li>INCRA. Manual Técnico para Georreferenciamento de Imóveis Rurais, 2ª edição: <a href="https://www.gov.br/incra/pt-br/assuntos/noticias/incra-lanca-2a-edicao-do-manual-para-georreferenciamento-de-imoveis-rurais/">https://www.gov.br/incra/pt-br/assuntos/noticias/incra-lanca-2a-edicao-do-manual-para-georreferenciamento-de-imoveis-rurais/</a></li>
+        <li>INCRA. Exigência de georreferenciamento em transações com imóveis rurais a partir de 25 hectares: <a href="https://www.gov.br/incra/pt-br/assuntos/noticias/transacoes-com-imoveis-acima-de-25-hectares-exigem-georreferenciamento">https://www.gov.br/incra/pt-br/assuntos/noticias/transacoes-com-imoveis-acima-de-25-hectares-exigem-georreferenciamento</a></li>
+        <li>Serviço Geológico do Brasil. Diagnóstico da População em Áreas de Risco Geológico: <a href="https://sgb.gov.br/diagnostico-da-populacao-em-areas-de-risco-geologico">https://sgb.gov.br/diagnostico-da-populacao-em-areas-de-risco-geologico</a></li>
+        <li>Serviço Geológico do Brasil. Setorização de áreas de risco geológico: <a href="https://www.sgb.gov.br/w/publicadas-setorizacao-de-areas-de-risco-geologico-de-sete-municipios">https://www.sgb.gov.br/w/publicadas-setorizacao-de-areas-de-risco-geologico-de-sete-municipios</a></li>
+        <li>FUNAI. Terra Indígena Kaxuyana-Tunayana: <a href="https://www.gov.br/funai/pt-br/assuntos/noticias/2025/com-mais-quatro-homologacoes-sobe-para-20-o-numero-de-terras-homologadas-pelo-presidente-lula/TerraIndgenaKaxuyanaTunayana.pdf/view">https://www.gov.br/funai/pt-br/assuntos/noticias/2025/com-mais-quatro-homologacoes-sobe-para-20-o-numero-de-terras-homologadas-pelo-presidente-lula/TerraIndgenaKaxuyanaTunayana.pdf/view</a></li>
+        <li>Ministério dos Povos Indígenas. Homologação da TI Kaxuyana-Tunayana: <a href="https://www.gov.br/povosindigenas/pt-br/assuntos/noticias/2026/02/mpi-comemora-homologacao-da-ti-kaxuyana-tunayana">https://www.gov.br/povosindigenas/pt-br/assuntos/noticias/2026/02/mpi-comemora-homologacao-da-ti-kaxuyana-tunayana</a></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

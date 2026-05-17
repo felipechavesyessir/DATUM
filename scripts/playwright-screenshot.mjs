@@ -25,11 +25,11 @@ for (let y = 0; y <= pageHeight; y += 700) {
 await page.evaluate(() => window.scrollTo(0, 0));
 await page.waitForTimeout(120);
 
-const screenshotPath = path.join(outputDir, "datum-home.png");
+const screenshotPath = path.join(outputDir, "data-home.png");
 await page.screenshot({ path: screenshotPath, fullPage: true });
 const title = await page.title();
 const h1 = await page.locator("h1").innerText();
-const logo = await page.locator(".brand .datum-vector-logo").evaluate((logoEl) => {
+const logo = await page.locator(".brand .data-vector-logo").evaluate((logoEl) => {
   const box = logoEl.getBoundingClientRect();
   return {
     type: logoEl.tagName.toLowerCase(),

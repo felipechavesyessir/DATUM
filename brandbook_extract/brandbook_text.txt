@@ -1,13 +1,13 @@
 --- PAGE 1 ---
-DATUM — Sistema de Identidade Visual
+DATA — Sistema de Identidade Visual
 Brandbook Conceitual
 1. Essência da Marca
 Nome
-DATUM
-Referência direta ao conceito de datum geográfico: modelo matemático utilizado para representar a
+DATA
+Referência direta ao conceito de data geográfico: modelo matemático utilizado para representar a
 Terra e definir coordenadas espaciais com precisão.
 Posicionamento
-A DATUM é uma marca de inteligência geoespacial aplicada.
+A DATA é uma marca de inteligência geoespacial aplicada.
 Sua identidade deve transmitir:
 • precisão técnica;
 • engenharia;
@@ -53,14 +53,14 @@ O símbolo representa:
 3.1 Logo Principal
 Composição horizontal:
 • símbolo topográfico;
-• wordmark DATUM;
+• wordmark DATA;
 • descritor institucional.
 Estrutura
-[SÍMBOLO] DATUM Inteligência Espacial | Geodésia | Cartografia
+[SÍMBOLO] DATA Inteligência Espacial | Geodésia | Cartografia
 3.2 Logo Reduzido
 Versão simplificada:
 • símbolo topográfico;
-• DATUM;
+• DATA;
 • sem descritor.
 2
 
@@ -121,7 +121,7 @@ A construção da marca deve seguir:
 • proporções matemáticas constantes.
 Relação ideal
 • altura do símbolo = altura do wordmark;
-• distância entre símbolo e DATUM = 1x;
+• distância entre símbolo e DATA = 1x;
 • área de respiro externa = 2x.
 Onde:
 x = espessura principal da curva de nível.
@@ -234,7 +234,7 @@ Fundos claros
 Fundos escuros
 • curvas brancas;
 • detalhes ciano;
-• DATUM branco;
+• DATA branco;
 • descritor em cinza claro.
 Versão monocromática
 Permitido:
@@ -250,7 +250,7 @@ Não permitido:
 --- PAGE 9 ---
 • glow.
 12. Interface GIS / Dashboard
-A linguagem visual da DATUM deve funcionar naturalmente em:
+A linguagem visual da DATA deve funcionar naturalmente em:
 • dashboards geoespaciais;
 • plataformas web GIS;
 • aplicações técnicas;
@@ -290,7 +290,7 @@ Inspirações
 • georreferenciamento.
 14. Tom de Voz
 Características
-A DATUM deve comunicar:
+A DATA deve comunicar:
 • clareza;
 • autoridade;
 • precisão;
@@ -317,7 +317,7 @@ Incorreto
 “Soluções inovadoras de última geração.”
 “Ecossistema inteligente e futurista.”
 16. Aplicações Recomendadas
-A identidade da DATUM foi construída para funcionar em:
+A identidade da DATA foi construída para funcionar em:
 • GIS;
 • geotecnologia;
 • topografia;
@@ -332,14 +332,14 @@ A identidade da DATUM foi construída para funcionar em:
 • logística;
 • infraestrutura.
 17. Assinatura Conceitual
-DATUM
+DATA
 Inteligência espacial aplicada.
 Precisão geográfica para engenharia, análise territorial e tomada de decisão.
 11
 
 --- PAGE 12 ---
 18. Direção Final da Marca
-A DATUM deve ser percebida como:
+A DATA deve ser percebida como:
 • premium;
 • técnica;
 • contemporânea;

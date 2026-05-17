@@ -1,6 +1,6 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">DATUM - Ícone monograma</title>
-  <desc id="desc">Monograma DATUM inspirado na letra D, marco geodésico e curvas de nível.</desc>
+  <title id="title">DATA - Ícone monograma</title>
+  <desc id="desc">Monograma DATA inspirado na letra D, marco geodésico e curvas de nível.</desc>
   <rect width="256" height="256" fill="#F7FAFC"/>
   <g stroke-linecap="round" stroke-linejoin="round">
     <path d="M92 56 H134 C180 56 213 88 213 128 C213 168 180 200 134 200 H92" stroke="#071426" stroke-width="12"/>

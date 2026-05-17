@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DATA - Logo Azul Laranja Preto</title>
+  <style>
+    :root {
+      --blue: #007EA7;
+      --orange: #F28C28;
+      --black: #0B0B0F;
+      --ice: #F7FAFC;
+      --line: #DCE6ED;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--ice);
+      color: var(--black);
+      font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+      padding: 48px;
+    }
+    h1 {
+      font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+      font-size: 32px;
+      letter-spacing: 0;
+      margin: 0 0 8px;
+    }
+    p { color: #5E6B76; margin: 0; max-width: 720px; }
+    .palette {
+      display: flex;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      width: 160px;
+      background: white;
+    }
+    .chip div { height: 42px; }
+    .chip span { display: block; font-size: 13px; padding: 8px 10px; }
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+    }
+    .card {
+      align-items: center;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      min-height: 280px;
+      padding: 28px;
+    }
+    .card.dark { background: var(--black); }
+    .card.wide { grid-column: 1 / -1; min-height: 190px; }
+    img { max-height: 220px; max-width: 100%; }
+    .wide img { max-height: 110px; }
+  </style>
+</head>
+<body>
+  <h1>DATA - variação azul, laranja e preto</h1>
+  <p>Preto para a estrutura principal, azul para referência/precisão e laranja para destaque topográfico.</p>
+
+  <div class="palette">
+    <div class="chip"><div style="background:#007EA7"></div><span>Azul #007EA7</span></div>
+    <div class="chip"><div style="background:#F28C28"></div><span>Laranja #F28C28</span></div>
+    <div class="chip"><div style="background:#0B0B0F"></div><span>Preto #0B0B0F</span></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="data-logo-azul-laranja-preto.svg" alt="Logo DATA azul laranja preto">
+    </div>
+    <div class="card">
+      <img src="data-monograma-azul-laranja-preto.svg" alt="Monograma DATA azul laranja preto">
+    </div>
+    <div class="card wide">
+      <img src="data-logo-reduzido-azul-laranja-preto.svg" alt="Logo reduzido DATA azul laranja preto">
+    </div>
+  </div>
+</body>
+</html>

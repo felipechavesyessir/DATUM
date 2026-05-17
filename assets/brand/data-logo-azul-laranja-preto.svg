@@ -1,0 +1,13 @@
+<svg width="1254" height="1254" viewBox="0 0 1254 1254" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">DATA - logo azul, laranja e preto</title>
+  <desc id="desc">Variacao vetorial da marca DATA com estrutura principal em preto, elementos de referencia em azul e detalhe topografico em laranja.</desc>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="348" cy="251" r="57" stroke="#007EA7" stroke-width="33"/>
+    <path d="M348 367V640" stroke="#0B0B0F" stroke-width="37"/>
+    <path d="M462 268H710C895 268 1030 424 1030 615C1030 806 895 966 710 966H330" stroke="#0B0B0F" stroke-width="50"/>
+    <path d="M338 724C417 710 445 653 445 592C430 470 543 379 655 385C789 392 841 492 865 574C877 612 905 631 943 643" stroke="#0B0B0F" stroke-width="23"/>
+    <path d="M338 802C439 784 500 714 500 612C500 535 564 488 642 488C733 488 783 557 803 653C811 690 828 708 855 724C883 740 884 774 858 809C819 858 758 874 697 872H340" stroke="#0B0B0F" stroke-width="23"/>
+    <path d="M340 879H695" stroke="#0B0B0F" stroke-width="23"/>
+    <path d="M530 778C555 737 561 704 570 657C579 613 614 587 654 589C699 592 724 638 731 697C738 761 705 801 638 810C590 816 544 809 531 794C526 789 525 783 530 778Z" stroke="#F28C28" stroke-width="23"/>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 <svg width="1000" height="300" viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">DATUM - Inteligência Espacial, Geodésia e Cartografia</title>
-  <desc id="desc">Logo principal horizontal da DATUM em versão para fundo escuro.</desc>
+  <title id="title">DATA - Inteligência Espacial, Geodésia e Cartografia</title>
+  <desc id="desc">Logo principal horizontal da DATA em versão para fundo escuro.</desc>
   <rect width="1000" height="300" fill="#071426"/>
   <g transform="translate(220 24)" stroke-linecap="round" stroke-linejoin="round">
     <path d="M0 107 C36 69 75 83 103 42 C125 10 137 -9 151 4 C167 19 181 55 211 78 C256 113 320 115 366 92 C406 72 424 33 450 44 C474 54 483 87 515 96 C544 104 563 111 560 124 C555 146 503 147 463 131 C421 115 383 111 344 128 C294 150 250 144 204 122 C166 104 137 107 101 126 C60 147 13 141 0 107Z" stroke="#F7FAFC" stroke-width="2.6"/>

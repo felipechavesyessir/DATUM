@@ -1,0 +1,14 @@
+<svg width="620" height="110" viewBox="0 0 620 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">DATA - logo reduzido azul, laranja e preto</title>
+  <desc id="desc">Versao reduzida da marca DATA com wordmark preto, detalhe azul e detalhe laranja.</desc>
+  <rect width="620" height="110" fill="#F7FAFC"/>
+  <g transform="translate(20 8)" fill="#0B0B0F">
+    <path d="M0 0 H47 C78 0 101 21 101 48 C101 76 78 96 47 96 H0 V0ZM12 12 V84 H46 C70 84 88 69 88 48 C88 27 70 12 46 12H12Z"/>
+    <path d="M168 0 L222 96 H208 L193 69 H140 L125 96 H111 L168 0ZM146 58 H187 L168 22 L146 58Z"/>
+    <rect x="164" y="63" width="23" height="4" fill="#F28C28"/>
+    <path d="M254 0 H344 V12 H305 V96 H293 V12 H254 V0Z"/>
+    <path d="M389 0 H402 V58 C402 75 419 87 445 87 C471 87 488 75 488 58 V0 H501 V59 C501 84 479 99 445 99 C411 99 389 84 389 59 V0Z"/>
+    <path d="M548 96 V0 H561 L600 54 L639 0 H652 V96 H639 V21 L602 72 H597 L560 21 V96 H548Z" transform="translate(-42 0)"/>
+  </g>
+  <circle cx="32" cy="18" r="5" fill="#007EA7"/>
+</svg>

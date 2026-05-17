@@ -10,7 +10,7 @@ Regra resumida: a animacao central nao deve comecar aberta. A logo oficial deve 
 
 Para animacoes, esta regra substitui qualquer instrucao antiga que proiba o uso da versao vetorial. A animacao deve usar o arquivo oficial:
 
-`assets/brand/datum-logo-official-vector.svg`
+`assets/brand/data-logo-official-vector.svg`
 
 Nao alterar desenho, cores, proporcoes, espessuras ou composicao do monograma.
 
@@ -80,7 +80,7 @@ img.logo {
 
 ## Essência da Marca
 
-DATA vem do conceito de datum geográfico: modelo matemático usado para representar a Terra e definir coordenadas espaciais com precisão.
+DATA vem do conceito de data geográfico: modelo matemático usado para representar a Terra e definir coordenadas espaciais com precisão.
 
 A marca deve comunicar:
 

@@ -112,7 +112,7 @@ const translations = {
       [".security-panel h2", "Dados, ferramentas e automação com rastreabilidade."],
       [".security-panel p", "A DATA combina campo, SIG, CAD, sensoriamento remoto, bases públicas, modelos de terreno e rotinas de automação para entregar mapas, memoriais, dashboards e relatórios com origem e método claros."],
       [".accordion-item:nth-child(1) span", "Referência, precisão e sistema oficial"],
-      [".accordion-item:nth-child(1) p", "Coordenadas, datum geodésico, escala, limites e compatibilidade com exigências técnicas e legais, incluindo fluxos de georreferenciamento e documentação espacial."],
+      [".accordion-item:nth-child(1) p", "Coordenadas, data geodésico, escala, limites e compatibilidade com exigências técnicas e legais, incluindo fluxos de georreferenciamento e documentação espacial."],
       [".accordion-item:nth-child(2) span", "Campo, SIG e sensoriamento remoto"],
       [".accordion-item:nth-child(2) p", "GNSS, estações, drones, LiDAR, imagens orbitais, QGIS, ArcGIS, CAD e bancos de dados entram como camadas verificáveis do projeto."],
       [".accordion-item:nth-child(3) span", "Automação, relatório e suporte"],
@@ -289,7 +289,7 @@ const translations = {
       [".security-panel h2", "Data, tools and automation with traceability."],
       [".security-panel p", "DATA combines fieldwork, GIS, CAD, remote sensing, public datasets, terrain models and automation routines to deliver maps, memorials, dashboards and reports with clear origin and method."],
       [".accordion-item:nth-child(1) span", "Reference, precision and official systems"],
-      [".accordion-item:nth-child(1) p", "Coordinates, geodetic datum, scale, boundaries and compatibility with technical and legal requirements, including georeferencing and spatial documentation workflows."],
+      [".accordion-item:nth-child(1) p", "Coordinates, geodetic reference, scale, boundaries and compatibility with technical and legal requirements, including georeferencing and spatial documentation workflows."],
       [".accordion-item:nth-child(2) span", "Fieldwork, GIS and remote sensing"],
       [".accordion-item:nth-child(2) p", "GNSS, total stations, drones, LiDAR, orbital imagery, QGIS, ArcGIS, CAD and databases enter as verifiable project layers."],
       [".accordion-item:nth-child(3) span", "Automation, reporting and support"],
@@ -451,7 +451,7 @@ const topographyCanvas = document.querySelector("#site-topography-field");
 const liquidOrbCanvases = document.querySelectorAll("[data-liquid-orb]");
 
 let testimonialIndex = 0;
-let currentLang = localStorage.getItem("datum-language") || "pt";
+let currentLang = localStorage.getItem("data-language") || "pt";
 
 document.body.classList.add("motion-ready");
 
@@ -1329,7 +1329,7 @@ function setLanguage(lang) {
   const copy = getCopy();
 
   document.documentElement.lang = currentLang === "pt" ? "pt-BR" : "en";
-  localStorage.setItem("datum-language", currentLang);
+  localStorage.setItem("data-language", currentLang);
 
   languageButtons.forEach((button) => {
     const isActive = button.dataset.lang === currentLang;

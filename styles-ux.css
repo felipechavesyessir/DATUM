@@ -163,7 +163,7 @@ textarea {
   transition: opacity var(--medium) var(--ease-out);
 }
 
-.datum-vector-logo,
+.data-vector-logo,
 img.logo {
   display: block;
   width: 100%;
@@ -172,7 +172,7 @@ img.logo {
   object-fit: contain;
 }
 
-.datum-vector-logo .logo-trace {
+.data-vector-logo .logo-trace {
   stroke-dasharray: 1;
   stroke-dashoffset: calc(1 - var(--logo-draw, 1));
   transition:
@@ -180,12 +180,12 @@ img.logo {
     stroke-width var(--medium) var(--ease-out);
 }
 
-.brand .datum-vector-logo {
+.brand .data-vector-logo {
   transform-origin: center;
   transition: transform var(--medium) var(--ease-out);
 }
 
-body.logo-in-motion .brand .datum-vector-logo {
+body.logo-in-motion .brand .data-vector-logo {
   transform: translateY(4px) scale(0.94);
 }
 
@@ -676,7 +676,7 @@ body.logo-word-revealing .scroll-cue {
 
 .operation-eyebrow::before {
   box-shadow: 0 0 0 0 rgba(47, 191, 113, 0.46);
-  animation: datum-signal-pulse 1.7s ease-out infinite;
+  animation: data-signal-pulse 1.7s ease-out infinite;
 }
 
 h1,
@@ -847,7 +847,7 @@ h3 {
     transform var(--fast) var(--ease-out);
 }
 
-.logo-map-marker .datum-vector-logo {
+.logo-map-marker .data-vector-logo {
   width: 82%;
   height: 82%;
 }
@@ -1131,7 +1131,7 @@ h3 {
   border-radius: 0;
   background: transparent;
   color: var(--ice);
-  animation: datum-panel-open 360ms var(--ease-out);
+  animation: data-panel-open 360ms var(--ease-out);
 }
 
 .step-detail-copy,
@@ -1260,7 +1260,7 @@ h3 {
   stroke: rgba(0, 126, 167, 0.58);
   stroke-width: 2;
   stroke-dasharray: 7 8;
-  animation: datum-workflow-dash 7s linear infinite;
+  animation: data-workflow-dash 7s linear infinite;
 }
 
 .workflow-visual-read circle {
@@ -1322,7 +1322,7 @@ h3 {
   stroke-width: 4;
   stroke-dasharray: 160;
   stroke-dashoffset: 160;
-  animation: datum-workflow-check 4.2s ease-in-out infinite;
+  animation: data-workflow-check 4.2s ease-in-out infinite;
 }
 
 .workflow-visual-check circle {
@@ -1547,7 +1547,7 @@ blockquote {
   stroke-width: 1;
   stroke-dasharray: 6 9;
   transform-origin: 160px 104px;
-  animation: datum-orbit-drift 12s linear infinite;
+  animation: data-orbit-drift 12s linear infinite;
 }
 
 .orbit-ring-b {
@@ -1563,7 +1563,7 @@ blockquote {
 
 .earth-system {
   transform-origin: 160px 112px;
-  animation: datum-earth-breathe 7s ease-in-out infinite;
+  animation: data-earth-breathe 7s ease-in-out infinite;
 }
 
 .earth-globe {
@@ -1592,7 +1592,7 @@ blockquote {
   stroke: rgba(47, 191, 113, 0.62);
   stroke-width: 1.2;
   transform-origin: center;
-  animation: datum-capture-pulse 2.8s ease-out infinite;
+  animation: data-capture-pulse 2.8s ease-out infinite;
 }
 
 .capture-point-b circle:last-child {
@@ -1609,15 +1609,15 @@ blockquote {
 }
 
 .satellite-a {
-  animation: datum-satellite-a 8s ease-in-out infinite;
+  animation: data-satellite-a 8s ease-in-out infinite;
 }
 
 .satellite-b {
-  animation: datum-satellite-b 9s ease-in-out infinite;
+  animation: data-satellite-b 9s ease-in-out infinite;
 }
 
 .satellite-c {
-  animation: datum-satellite-c 7s ease-in-out infinite;
+  animation: data-satellite-c 7s ease-in-out infinite;
 }
 
 .satellite rect {
@@ -1635,7 +1635,7 @@ blockquote {
   stroke: rgba(0, 126, 167, 0.42);
   stroke-width: 1.2;
   stroke-dasharray: 3 7;
-  animation: datum-signal-flow 2.4s linear infinite;
+  animation: data-signal-flow 2.4s linear infinite;
 }
 
 .signal-b {
@@ -1709,7 +1709,7 @@ blockquote {
   stroke: rgba(0, 126, 167, 0.52);
   stroke-width: 1.5;
   stroke-dasharray: 4 5;
-  animation: datum-gis-river 7.5s linear infinite;
+  animation: data-gis-river 7.5s linear infinite;
 }
 
 .coord circle:first-child {
@@ -1721,7 +1721,7 @@ blockquote {
   stroke: rgba(47, 191, 113, 0.62);
   stroke-width: 1.2;
   transform-origin: center;
-  animation: datum-gis-pin 3.2s ease-out infinite;
+  animation: data-gis-pin 3.2s ease-out infinite;
 }
 
 .coord-b circle:last-child {
@@ -1740,7 +1740,7 @@ blockquote {
   stroke: rgba(0, 126, 167, 0.34);
   stroke-width: 1.1;
   stroke-dasharray: 4 6;
-  animation: datum-gis-river 8s linear infinite;
+  animation: data-gis-river 8s linear infinite;
 }
 
 .gis-stand,
@@ -1752,7 +1752,7 @@ blockquote {
 .gis-popout-dashboard {
   transform-box: fill-box;
   transform-origin: center;
-  animation: datum-gis-popout 6s ease-in-out infinite;
+  animation: data-gis-popout 6s ease-in-out infinite;
 }
 
 .gis-popout-shell {
@@ -1770,7 +1770,7 @@ blockquote {
   stroke-width: 2 !important;
   stroke-dasharray: 84;
   stroke-dashoffset: 84;
-  animation: datum-gis-chart 4.8s ease-in-out infinite;
+  animation: data-gis-chart 4.8s ease-in-out infinite;
 }
 
 .gis-chart-axis {
@@ -1848,7 +1848,7 @@ blockquote {
 .intel-layer {
   stroke-width: 1.2;
   transform-origin: 160px 112px;
-  animation: datum-intel-layer 6.8s ease-in-out infinite;
+  animation: data-intel-layer 6.8s ease-in-out infinite;
 }
 
 .intel-layer-b {
@@ -1870,7 +1870,7 @@ blockquote {
   stroke-width: 1.8;
   stroke-dasharray: 130;
   stroke-dashoffset: 130;
-  animation: datum-intel-link 4.8s ease-in-out infinite;
+  animation: data-intel-link 4.8s ease-in-out infinite;
 }
 
 .intel-nodes circle {
@@ -1878,7 +1878,7 @@ blockquote {
   stroke: var(--surface);
   stroke-width: 2;
   transform-origin: center;
-  animation: datum-intel-node 3.4s ease-in-out infinite;
+  animation: data-intel-node 3.4s ease-in-out infinite;
 }
 
 .intel-nodes circle:nth-child(3) {
@@ -1923,7 +1923,7 @@ blockquote {
   stroke: rgba(47, 191, 113, 0.42);
   stroke-width: 1.2;
   stroke-dasharray: 5 8;
-  animation: datum-intel-scan 5.4s linear infinite;
+  animation: data-intel-scan 5.4s linear infinite;
 }
 
 .product-card-remote {
@@ -1979,13 +1979,13 @@ blockquote {
   color: var(--gray);
 }
 
-@keyframes datum-orbit-drift {
+@keyframes data-orbit-drift {
   to {
     stroke-dashoffset: -60;
   }
 }
 
-@keyframes datum-earth-breathe {
+@keyframes data-earth-breathe {
   0%,
   100% {
     transform: scale(1);
@@ -1996,7 +1996,7 @@ blockquote {
   }
 }
 
-@keyframes datum-capture-pulse {
+@keyframes data-capture-pulse {
   0% {
     opacity: 0;
     transform: scale(0.5);
@@ -2012,13 +2012,13 @@ blockquote {
   }
 }
 
-@keyframes datum-signal-flow {
+@keyframes data-signal-flow {
   to {
     stroke-dashoffset: -40;
   }
 }
 
-@keyframes datum-satellite-a {
+@keyframes data-satellite-a {
   0%,
   100% {
     transform: translate3d(0, 0, 0) rotate(-2deg);
@@ -2029,7 +2029,7 @@ blockquote {
   }
 }
 
-@keyframes datum-satellite-b {
+@keyframes data-satellite-b {
   0%,
   100% {
     transform: translate3d(0, 0, 0) rotate(3deg);
@@ -2040,7 +2040,7 @@ blockquote {
   }
 }
 
-@keyframes datum-satellite-c {
+@keyframes data-satellite-c {
   0%,
   100% {
     transform: translate3d(0, 0, 0) rotate(0deg);
@@ -2051,13 +2051,13 @@ blockquote {
   }
 }
 
-@keyframes datum-gis-river {
+@keyframes data-gis-river {
   to {
     stroke-dashoffset: -54;
   }
 }
 
-@keyframes datum-gis-pin {
+@keyframes data-gis-pin {
   0% {
     opacity: 0;
     transform: scale(0.45);
@@ -2073,7 +2073,7 @@ blockquote {
   }
 }
 
-@keyframes datum-gis-chart {
+@keyframes data-gis-chart {
   0%,
   18% {
     stroke-dashoffset: 84;
@@ -2085,7 +2085,7 @@ blockquote {
   }
 }
 
-@keyframes datum-gis-layer {
+@keyframes data-gis-layer {
   0%,
   100% {
     transform: translateY(0);
@@ -2096,7 +2096,7 @@ blockquote {
   }
 }
 
-@keyframes datum-gis-popout {
+@keyframes data-gis-popout {
   0%,
   100% {
     transform: translate3d(0, 0, 0);
@@ -2107,7 +2107,7 @@ blockquote {
   }
 }
 
-@keyframes datum-panel-open {
+@keyframes data-panel-open {
   from {
     opacity: 0;
     transform: translateY(-10px);
@@ -2119,7 +2119,7 @@ blockquote {
   }
 }
 
-@keyframes datum-mobile-card-open {
+@keyframes data-mobile-card-open {
   from {
     opacity: 0;
     transform: translateY(-8px) scale(0.985);
@@ -2131,13 +2131,13 @@ blockquote {
   }
 }
 
-@keyframes datum-workflow-dash {
+@keyframes data-workflow-dash {
   to {
     stroke-dashoffset: -72;
   }
 }
 
-@keyframes datum-workflow-check {
+@keyframes data-workflow-check {
   0%,
   22% {
     stroke-dashoffset: 160;
@@ -2149,7 +2149,7 @@ blockquote {
   }
 }
 
-@keyframes datum-signal-pulse {
+@keyframes data-signal-pulse {
   0% {
     opacity: 1;
     box-shadow: 0 0 0 0 rgba(47, 191, 113, 0.48);
@@ -2166,7 +2166,7 @@ blockquote {
   }
 }
 
-@keyframes datum-intel-layer {
+@keyframes data-intel-layer {
   0%,
   100% {
     transform: translateY(0);
@@ -2177,7 +2177,7 @@ blockquote {
   }
 }
 
-@keyframes datum-intel-link {
+@keyframes data-intel-link {
   0%,
   18% {
     stroke-dashoffset: 130;
@@ -2189,7 +2189,7 @@ blockquote {
   }
 }
 
-@keyframes datum-intel-node {
+@keyframes data-intel-node {
   0%,
   100% {
     transform: scale(1);
@@ -2200,7 +2200,7 @@ blockquote {
   }
 }
 
-@keyframes datum-intel-scan {
+@keyframes data-intel-scan {
   to {
     stroke-dashoffset: -52;
   }

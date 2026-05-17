@@ -2,34 +2,34 @@
 --- PAGE 1 ---
 
 CONTEÚDO INSTITUCIONAL PARA SITE
-DATUM: dados geoespaciais
+DATA: dados geoespaciais
 transformados em decisão técnica
-Documento-base para organizar o conteúdo do site da DATUM, explicar seus
+Documento-base para organizar o conteúdo do site da DATA, explicar seus
 serviços, evidenciar sua metodologia e estruturar a narrativa institucional com
 apoio em referências públicas sobre georreferenciamento, gestão fundiária,
 mapeamento de risco e territórios.
 Precisão territorial para topografia, geoprocessamento, análises geotécnicas,
 regularização, obras e automação de processos espaciais.
 Empresa
-DATUM
+DATA
 Sede informada
 IGC-UFMG, Belo Horizonte, MG
 Data
 10 de maio de 2026
 Uso recomendado
 Briefing de site, apresentação e portfólio
-DATUM - Conteúdo institucional para site 1/11
+DATA - Conteúdo institucional para site 1/11
 
 --- PAGE 2 ---
 
 Estrutura Recomendada
-A arquitetura abaixo organiza a DATUM de forma clara para o visitante: primeiro a proposta de valor, depois a
+A arquitetura abaixo organiza a DATA de forma clara para o visitante: primeiro a proposta de valor, depois a
 credibilidade técnica, os serviços, o método, as experiências realizadas, a equipe, a tecnologia e os caminhos de
 contato.
 1. Início
 Primeira impressão, promessa central e chamadas
 para orçamento ou conversa técnica.
-2. Sobre a DATUM
+2. Sobre a DATA
 Origem, posicionamento, sede, propósito e áreas de
 atuação.
 3. Serviços
@@ -49,19 +49,19 @@ padrões técnicos.
 8. Contato
 Canais de atendimento, briefing inicial e próximos
 passos.
-DATUM - Conteúdo institucional para site 2/11
+DATA - Conteúdo institucional para site 2/11
 
 --- PAGE 3 ---
 
 1. Início
-A página inicial precisa responder rapidamente a três perguntas: o que a DATUM faz, para quem faz e por que sua
+A página inicial precisa responder rapidamente a três perguntas: o que a DATA faz, para quem faz e por que sua
 abordagem é confiável. O visitante deve entender que a empresa não entrega apenas mapas, mas resultados
 técnicos baseados em dados espaciais verificados.
 Mensagem principal
-A DATUM transforma dados geoespaciais em soluções precisas para engenharia,
+A DATA transforma dados geoespaciais em soluções precisas para engenharia,
 território, obras, gestão de riscos e tomada de decisão.
 Texto de abertura sugerido
-A DATUM é uma empresa de inteligência geoespacial sediada no IGC-UFMG, em Belo Horizonte, especializada em
+A DATA é uma empresa de inteligência geoespacial sediada no IGC-UFMG, em Belo Horizonte, especializada em
 coleta, verificação, interpretação e automação de dados territoriais. Atuamos em topografia, geoprocessamento,
 georreferenciamento de imóveis, locação de obras, análises geotécnicas e mapeamentos aplicados a projetos
 públicos, privados e institucionais.
@@ -80,16 +80,16 @@ Atuação com dados geoespaciais, topografia, geoprocessamento e automação.
 Sede no Instituto de Geociências da UFMG, no campus Pampulha.
 Experiência da equipe em mapeamentos de risco, territórios indígenas e projetos federais.
 Foco em precisão, rastreabilidade, velocidade de entrega e utilidade técnica.
-DATUM - Conteúdo institucional para site 3/11
+DATA - Conteúdo institucional para site 3/11
 
 --- PAGE 4 ---
 
-2. Sobre a DATUM
-A seção "Sobre" deve explicar a identidade da empresa sem virar um texto genérico. A DATUM deve ser apresentada
+2. Sobre a DATA
+A seção "Sobre" deve explicar a identidade da empresa sem virar um texto genérico. A DATA deve ser apresentada
 como uma empresa técnica, aplicada e orientada à resolução de problemas reais envolvendo território, obras, risco e
 informação espacial.
 Texto institucional sugerido
-A DATUM foi pensada para transformar dados geoespaciais em resultados precisos. Seu trabalho conecta campo,
+A DATA foi pensada para transformar dados geoespaciais em resultados precisos. Seu trabalho conecta campo,
 análise espacial, automação e entrega técnica para apoiar decisões em engenharia, planejamento territorial, gestão
 de riscos, regularização fundiária e projetos de infraestrutura.
 Com sede no Instituto de Geociências da Universidade Federal de Minas Gerais, a empresa nasce próxima de um
@@ -97,7 +97,7 @@ ambiente de pesquisa, cartografia, geologia, geografia e inovação aplicada. Es
 baseada em método, qualidade de dados e interpretação técnica.
 Localização
 O IGC-UFMG informa como endereço institucional a Av. Antônio Carlos, 6.627, Pampulha, Belo Horizonte, MG, CEP
-31270-901. No site da DATUM, essa informação deve ser apresentada junto com um mapa, pontos de referência e
+31270-901. No site da DATA, essa informação deve ser apresentada junto com um mapa, pontos de referência e
 uma observação sobre atendimento em campo.
 Proposta de valor
 Precisão
@@ -119,14 +119,14 @@ Visão: ser referência em soluções geoespaciais aplicadas que unem campo, an�
 precisa.
 Posicionamento: inteligência geoespacial para projetos que exigem precisão, velocidade e responsabilidade
 técnica.
-DATUM - Conteúdo institucional para site 4/11
+DATA - Conteúdo institucional para site 4/11
 
 --- PAGE 5 ---
 
 3. Serviços
 A página de serviços deve ser objetiva, mas suficientemente detalhada para que clientes de engenharia, setor
 público, proprietários, construtoras, consultorias ambientais e equipes de planejamento entendam quando acionar a
-DATUM.
+DATA.
 Topografia e levantamentos de campo
 Coleta de dados planialtimétricos, pontos de
 controle, medições, cadastro de elementos e
@@ -172,13 +172,13 @@ Instituições de pesquisa e organizações que trabalham com territórios sens�
 Referência técnica: o INCRA informa que a certificação do georreferenciamento de imóvel rural é feita pelo
 SIGEF e busca garantir que os limites de um imóvel não se sobreponham a outros, seguindo especificações
 legais e técnicas.
-DATUM - Conteúdo institucional para site 5/11
+DATA - Conteúdo institucional para site 5/11
 
 --- PAGE 6 ---
 
 4. Como Trabalhamos
 Esta é uma das seções mais importantes do site, porque transforma conhecimento técnico em confiança. O cliente
-precisa perceber que a DATUM tem método, controle de qualidade e uma lógica clara de entrega.
+precisa perceber que a DATA tem método, controle de qualidade e uma lógica clara de entrega.
 Como explicar a automação sem soar abstrato
 No site, a automação deve ser apresentada como ganho de qualidade e prazo: menos tarefas repetitivas, menor
 chance de erro manual, padronização de produtos e capacidade de processar mais informações em menos tempo.
@@ -212,7 +212,7 @@ Entrega e suporte
 Produção dos arquivos finais, apresentação dos resultados, organização dos dados e apoio para leitura
 técnica ou uso posterior pelo cliente.
 7
-DATUM - Conteúdo institucional para site 6/11
+DATA - Conteúdo institucional para site 6/11
 
 --- PAGE 7 ---
 
@@ -243,13 +243,13 @@ Confidencialidade: o que pode ou não ser publicado.
 Observação editorial: os projetos foram descritos com base nas informações fornecidas por você. Antes da
 publicação, vale confirmar nomes oficiais dos contratos, permissões de uso de marca institucional, datas, escopo
 exato e créditos da equipe.
-DATUM - Conteúdo institucional para site 7/11
+DATA - Conteúdo institucional para site 7/11
 
 --- PAGE 8 ---
 
 6. Equipe
 A equipe deve aparecer com rosto técnico e humano. O objetivo não é apenas listar nomes, mas mostrar que a
-DATUM reúne experiência em campo, geoprocessamento, análise territorial, automação e entrega de produtos
+DATA reúne experiência em campo, geoprocessamento, análise territorial, automação e entrega de produtos
 aplicáveis.
 Felipe Chaves
 Atuação informada em
@@ -260,7 +260,7 @@ territoriais. Bio final deve incluir
 formação, registro profissional
 quando houver, competências
 principais e responsabilidades na
-DATUM.
+DATA.
 Matheus Carvalho
 Atuação informada em projetos
 de mapeamento e análise
@@ -282,7 +282,7 @@ Experiência com GNSS, SIG, CAD, sensoriamento remoto, drone, banco de dados ou 
 Participação específica em projetos públicos, privados, acadêmicos ou institucionais.
 Fotos profissionais consistentes, preferencialmente em campo ou ambiente técnico.
 Para publicação final, recomenda-se escrever bios curtas de 4 a 6 linhas por pessoa e uma versão expandida para propostas técnicas.
-DATUM - Conteúdo institucional para site 8/11
+DATA - Conteúdo institucional para site 8/11
 
 --- PAGE 9 ---
 
@@ -318,9 +318,9 @@ O SIGEF, sistema do INCRA, é descrito como ferramenta para recepção, validaç
 disponibilização de informações georreferenciadas de limites de imóveis rurais. Essa lógica reforça a importância de
 dados consistentes, verificáveis e bem estruturados.
 No campo de risco geológico, materiais do Serviço Geológico do Brasil destacam a utilidade de mapeamentos e
-diagnósticos para políticas públicas de prevenção e resposta a desastres. Para a DATUM, isso reforça o valor de unir
+diagnósticos para políticas públicas de prevenção e resposta a desastres. Para a DATA, isso reforça o valor de unir
 campo, análise espacial e leitura técnica do território.
-DATUM - Conteúdo institucional para site 9/11
+DATA - Conteúdo institucional para site 9/11
 
 --- PAGE 10 ---
 
@@ -347,7 +347,7 @@ Prazo e anexos
 Data desejada, documentos, plantas, bases, imagens
 ou memoriais já existentes.
 Resposta automática sugerida
-"Recebemos sua solicitação. A equipe da DATUM irá analisar as informações enviadas e retornará com os próximos
+"Recebemos sua solicitação. A equipe da DATA irá analisar as informações enviadas e retornará com os próximos
 passos para diagnóstico técnico, escopo e orçamento."
 Informações pendentes para finalizar o site
 CNPJ, razão social e nome jurídico, se já existirem.
@@ -355,13 +355,13 @@ Telefone, WhatsApp e e-mail oficiais.
 Endereço de publicação: domínio, Instagram, LinkedIn e Google Business Profile.
 Credenciais profissionais e permissões para citar órgãos, projetos e imagens.
 Fotos da equipe, imagens de campo, mapas autorizados e exemplos de entregáveis.
-DATUM - Conteúdo institucional para site 10/11
+DATA - Conteúdo institucional para site 10/11
 
 --- PAGE 11 ---
 
 Referências Consultadas
 As referências abaixo foram usadas como apoio de contexto técnico e institucional. Elas não substituem a checagem de contratos,
-autorizações de uso de marca, escopos oficiais e documentos internos da DATUM.
+autorizações de uso de marca, escopos oficiais e documentos internos da DATA.
 1. Instituto de Geociências da UFMG. Página de contatos e endereço institucional do IGC: https://www.igc.ufmg.br/contatos/
 2. INCRA. Certificação de Imóvel Rural: https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/certificacao-imoveis
 3. SIGEF/INCRA. Sistema de Gestão Fundiária: https://sigef.incra.gov.br/
@@ -378,4 +378,4 @@ quatro-homologacoes-sobe-para-20-o-numero-de-terras-homologadas-pelo-presidente-
 lula/TerraIndgenaKaxuyanaTunayana.pdf/view
 9. Ministério dos Povos Indígenas. Homologação da TI Kaxuyana-Tunayana: https://www.gov.br/povosindigenas/pt-
 br/assuntos/noticias/2026/02/mpi-comemora-homologacao-da-ti-kaxuyana-tunayana
-DATUM - Conteúdo institucional para site 11/11
+DATA - Conteúdo institucional para site 11/11
