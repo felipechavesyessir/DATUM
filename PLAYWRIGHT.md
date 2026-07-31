@@ -17,7 +17,7 @@ npm run browser:search -- "termo de busca"
 Exemplo:
 
 ```bash
-npm run browser:search -- "DATUM geodésia cartografia"
+npm run browser:search -- "DATA geodésia cartografia"
 ```
 
 O resultado gera:
@@ -25,7 +25,7 @@ O resultado gera:
 - JSON com links encontrados em `reports/browser-search/`
 - Screenshot da página de busca em `reports/browser-search/`
 
-Tirar screenshot do site DATUM:
+Tirar screenshot do site DATA:
 
 ```bash
 npm run browser:screenshot
@@ -33,7 +33,7 @@ npm run browser:screenshot
 
 O resultado gera:
 
-- Screenshot em `reports/screenshots/datum-home.png`
+- Screenshot em `reports/screenshots/data-home.png`
 - Resumo no terminal com título, H1 e dimensões da logo renderizada
 
 ## Arquivos
@@ -44,6 +44,6 @@ O resultado gera:
 
 ## Nota
 
-A logo oficial da DATUM continua sendo usada como PNG intacto:
+A logo oficial da DATA continua sendo usada como PNG intacto:
 
-`assets/brand/datum-logo-official.png`
+`assets/brand/data-logo-official.png`

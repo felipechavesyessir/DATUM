@@ -3,7 +3,7 @@ if (window.location.hash && window.location.hash !== "#") {
   window.scrollTo(0, 0);
 }
 
-const workflow = [
+let workflow = [
   {
     label: "01 / coleta",
     title: "Coleta de dados e cadastro",
@@ -17,7 +17,7 @@ const workflow = [
     title: "Leitura geoespacial",
     body:
       "Interpretação de superfícies, feições, pontos de controle, áreas de interesse e relações territoriais para reduzir ruído operacional.",
-    tags: ["Relevo", "Feições", "Áreas", "Datum"],
+    tags: ["Relevo", "Feições", "Áreas", "Referência"],
     visual: "read"
   },
   {
@@ -46,7 +46,7 @@ const workflow = [
   }
 ];
 
-const testimonials = [
+let testimonials = [
   {
     quote:
       "Integrar curvas de nível, pontos de controle, bases GIS e levantamentos de campo para leitura técnica do território.",
@@ -68,8 +68,392 @@ const testimonials = [
 ];
 
 const translations = {
-  pt: {},
-  en: {}
+  pt: {
+    static: [
+      ["title", "Datum - Dados geoespaciais transformados em decisão técnica"],
+      ['meta[name="description"]', "A Datum transforma dados geoespaciais em soluções precisas para engenharia, território, obras, gestão de riscos e tomada de decisão.", "content"],
+      [".skip-link", "Ir para o conteúdo"],
+      [".announcement span", "Datum"],
+      [".announcement p", "Precisão territorial para topografia, geoprocessamento, análises geotécnicas, regularização, obras e automação espacial."],
+      [".announcement a", "Falar com especialista"],
+      ['.site-nav a[href="#produtos"]', "Serviços"],
+      ['.site-nav a[href="#processo"]', "Método"],
+      ['.site-nav a[href="#cases"]', "Projetos"],
+      ['.site-nav a[href="#carreiras"]', "Tecnologia"],
+      ['.site-nav a[href="#contato"]', "Contato"],
+      ['.site-nav a[href="#login"]', "Login"],
+      [".intro-impact .intro-copy", "Leia o território com a"],
+      [".intro-impact > span", ""],
+      [".company-intro-section .eyebrow", "Sobre a Datum"],
+      ["#company-intro-title", "Dados geoespaciais para decisões precisas."],
+      [".company-intro-copy p", "Sediada no IGC-UFMG, em Belo Horizonte, a Datum coleta, verifica, interpreta e automatiza dados territoriais. Atuamos em topografia, geoprocessamento, georreferenciamento de imóveis, locação de obras, análises geotécnicas e mapeamentos para projetos públicos, privados e institucionais."],
+      [".company-intro-actions .primary", "Solicitar orçamento"],
+      [".company-intro-actions .secondary", "Ver método técnico"],
+      [".process-intro .eyebrow", "Como trabalhamos"],
+      [".process-intro h2", "Como a Datum opera"],
+      [".process-intro p", "Da demanda à entrega, organizamos objetivo, método, coordenada, validação, automação e suporte para reduzir incerteza e sustentar decisões territoriais."],
+      [".results-copy .eyebrow", "Projetos"],
+      [".results-copy h2", "Experiências em territórios, risco e decisão pública."],
+      [".results-copy p", "Aplicações inspiradas em experiências reais da equipe, apresentadas sem expor dados sensíveis: contexto, método, produto técnico e utilidade para decisão."],
+      [".result-card:nth-child(1) span", "Risco geológico"],
+      [".result-card:nth-child(1) h3", "Mapeamento de risco"],
+      [".result-card:nth-child(1) p", "Leitura de relevo, drenagem, ocupação e instabilidade para apoiar PMRR e decisões públicas."],
+      [".result-card:nth-child(2) span", "Territórios sensíveis"],
+      [".result-card:nth-child(2) h3", "Apoio territorial"],
+      [".result-card:nth-child(2) p", "Bases, limites e referências organizados para territórios sensíveis e documentação técnica."],
+      [".result-card:nth-child(3) span", "Projetos institucionais"],
+      [".result-card:nth-child(3) h3", "Decisão pública"],
+      [".result-card:nth-child(3) p", "Mapas, relatórios e bases geográficas para risco, regularização, comunidades e infraestrutura."],
+      [".case-panel-intro .eyebrow", "Projetos e trabalhos"],
+      [".case-panel-intro h2", "Trabalhos e cases da Datum."],
+      [".case-panel-intro p", "Uma seleção de entregas em geoprocessamento, análise espacial, modelagem, documentação técnica e apoio à decisão pública."],
+      [".case-partner-lockup span", "Fundação Nacional dos Povos Indígenas"],
+      [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
+      [".case-detail-panel:nth-child(2) .case-story h3", "Terra Indígena Kaxuyana-Tunayana"],
+      [".case-detail-panel:nth-child(2) .case-story strong", "2,182 milhões de hectares"],
+      [".case-detail-panel:nth-child(2) .case-story p", "A Datum atuou no geoprocessamento, organização dos dados, análise espacial e mapeamento da terra para suporte técnico à Funai."],
+      [".case-detail-panel:nth-child(3) .case-story span", "PMRR Contagem"],
+      [".case-detail-panel:nth-child(3) .case-story h3", "Áreas com risco de deslizamento"],
+      [".case-detail-panel:nth-child(3) .case-story strong", "3D + ortofoto"],
+      [".case-detail-panel:nth-child(3) .case-story p", "Mapeamento de áreas suscetíveis, produção de ortofotos e modelos 3D para apoiar diagnóstico técnico, leitura de relevo e planejamento de redução de risco."],
+      [".case-detail-panel:nth-child(4) .case-story span", "Governo Federal"],
+      [".case-detail-panel:nth-child(4) .case-story h3", "Regularização fundiária"],
+      [".case-detail-panel:nth-child(4) .case-story strong", "REURB"],
+      [".case-detail-panel:nth-child(4) .case-story p", "Organização de bases, lotes, limites e documentação geoespacial para apoiar processos de regularização fundiária urbana com rastreabilidade técnica."],
+      [".testimonial-copy .eyebrow", "Aplicações"],
+      [".testimonial-copy h2", "Onde dados espaciais precisam virar produto técnico confiável."],
+      ['.testimonial-nav[data-testimonial="prev"]', "Anterior"],
+      ['.testimonial-nav[data-testimonial="next"]', "Próximo"],
+      [".security-panel .eyebrow", "Tecnologia e padrões"],
+      [".security-panel h2", "Dados, ferramentas e automação com rastreabilidade."],
+      [".security-panel p", "A Datum combina campo, SIG, CAD, sensoriamento remoto, bases públicas, modelos de terreno e rotinas de automação para entregar mapas, memoriais, dashboards e relatórios com origem e método claros."],
+      [".accordion-item:nth-child(1) span", "Referência, precisão e sistema oficial"],
+      [".accordion-item:nth-child(1) p", "Coordenadas, data geodésico, escala, limites e compatibilidade com exigências técnicas e legais, incluindo fluxos de georreferenciamento e documentação espacial."],
+      [".accordion-item:nth-child(2) span", "Campo, SIG e sensoriamento remoto"],
+      [".accordion-item:nth-child(2) p", "GNSS, estações, drones, LiDAR, imagens orbitais, QGIS, ArcGIS, CAD e bancos de dados entram como camadas verificáveis do projeto."],
+      [".accordion-item:nth-child(3) span", "Automação, relatório e suporte"],
+      [".accordion-item:nth-child(3) p", "Rotinas reduzem retrabalho, padronizam mapas, calculam áreas, aceleram validações e organizam entregáveis para uso técnico do cliente."],
+      [".products-copy .eyebrow", "Frentes de atuação"],
+      [".products-copy h2", "Geotecnologia aplicada a demandas técnicas reais."],
+      [".product-card:nth-child(1) h3", "Modelo 3D"],
+      [".product-card:nth-child(1) p", "Superfícies, nuvens de pontos e modelos visuais para leitura territorial."],
+      [".product-card:nth-child(2) h3", "Geodésia"],
+      [".product-card:nth-child(2) p", "Coordenadas, limites, referência geodésica e posicionamento com precisão técnica."],
+      [".product-card:nth-child(3) h3", "Cartografia e GIS"],
+      [".product-card:nth-child(3) p", "Mapas, camadas SIG, dashboards e arquivos CAD/GIS prontos para uso."],
+      [".product-card:nth-child(4) h3", "Inteligência territorial"],
+      [".product-card:nth-child(4) p", "Cruzamento de dados para interpretar risco, uso do solo e infraestrutura."],
+      [".news-head .eyebrow", "Tecnologia"],
+      [".news-head h2", "Ferramentas e critérios que sustentam a entrega."],
+      [".news-head .button", "Falar com especialista"],
+      [".news-item:nth-child(1) time", "GNSS E CAMPO"],
+      [".news-item:nth-child(1) strong", "Pontos de controle e medições confiáveis."],
+      [".news-item:nth-child(2) time", "SIG E CAD"],
+      [".news-item:nth-child(2) strong", "Bases SIG/CAD prontas para análise."],
+      [".news-item:nth-child(3) time", "AUTOMAÇÃO"],
+      [".news-item:nth-child(3) strong", "Rotinas para validar e padronizar entregas."],
+      [".news-item:nth-child(4) time", "RELATÓRIOS"],
+      [".news-item:nth-child(4) strong", "Mapas, modelos e relatórios executivos."],
+      [".contact-copy .eyebrow", "Contato"],
+      [".contact-copy h2", "Solicite orçamento ou converse com um especialista."],
+      [".contact-copy p", "Envie o tipo de serviço, localização, prazo, arquivos disponíveis e objetivo técnico. A Datum faz a triagem e retorna com próximos passos."],
+      [".contact-form button", "Enviar briefing"],
+      [".site-footer strong", "Datum"],
+      [".site-footer > div p", "Dados geoespaciais transformados em decisão técnica para engenharia, território, risco e regularização."],
+      [".site-footer nav a:nth-child(1)", "Termos de Uso"],
+      [".site-footer nav a:nth-child(2)", "Política de Privacidade"],
+      [".site-footer nav a:nth-child(3)", "Código de Ética"],
+      [".site-footer nav a:nth-child(4)", "LinkedIn"],
+      [".site-footer nav a:nth-child(5)", "Twitter"],
+      [".site-footer > p", "© 2026 Datum"]
+    ],
+    labels: [
+      [".contact-form label:nth-of-type(1)", "Nome"],
+      [".contact-form label:nth-of-type(2)", "Email"],
+      [".contact-form label:nth-of-type(3)", "Briefing técnico"]
+    ],
+    attrs: [
+      [".brand", "aria-label", "Datum"],
+      [".nav-toggle", "aria-label", "Abrir menu"],
+      ["#site-nav", "aria-label", "Navegação principal"],
+      [".language-switch", "aria-label", "Idiomas"],
+      [".scroll-cue", "aria-label", "Rolar para Sobre a Datum"],
+      [".step-list", "aria-label", "Etapas do método Datum"],
+      ['input[name="name"]', "aria-label", "Nome"],
+      ['input[name="name"]', "placeholder", "Seu nome"],
+      ['input[name="email"]', "aria-label", "Email"],
+      ['input[name="email"]', "placeholder", "voce@empresa.com"],
+      ['textarea[name="message"]', "aria-label", "Briefing técnico"],
+      ['textarea[name="message"]', "placeholder", "Tipo de serviço, localização, prazo e arquivos disponíveis"]
+    ],
+    workflow: [
+      {
+        label: "01 / demanda",
+        title: "Entendimento e planejamento",
+        body:
+          "Identificamos objetivo, território, restrições legais, prazo, formatos necessários e nível de precisão esperado. A partir disso, definimos metodologia, equipamentos, bases, escala e produtos finais.",
+        tags: ["Objetivo", "Método", "Escala", "Prazo"],
+        visual: "collect"
+      },
+      {
+        label: "02 / coleta",
+        title: "Coleta de dados",
+        body:
+          "Levantamento em campo ou obtenção de bases geoespaciais existentes, imagens, coordenadas, cadastros, modelos de terreno e demais informações necessárias ao projeto.",
+        tags: ["Campo", "GNSS", "Imagens", "Modelos"],
+        visual: "read"
+      },
+      {
+        label: "03 / validação",
+        title: "Verificação e validação",
+        body:
+          "Conferimos consistência, precisão, completude, compatibilidade espacial, sobreposições, lacunas e inconsistências para reduzir risco técnico antes da interpretação.",
+        tags: ["Precisão", "Fonte", "Conflitos", "Controle"],
+        visual: "evidence"
+      },
+      {
+        label: "04 / análise",
+        title: "Interpretação e automação",
+        body:
+          "Analisamos os dados conforme a finalidade do projeto e aplicamos rotinas para acelerar cálculos, geração de camadas, mapas, validações e padronização de entregáveis.",
+        tags: ["Análise", "Python", "SIG", "Rotinas"],
+        visual: "check"
+      },
+      {
+        label: "05 / entrega",
+        title: "Entrega e suporte",
+        body:
+          "Produzimos arquivos finais, mapas, memoriais, dashboards e relatórios, com organização dos dados e apoio para leitura técnica ou uso posterior pelo cliente.",
+        tags: ["Mapas", "Relatórios", "CAD/GIS", "Suporte"],
+        visual: "deliver"
+      }
+    ],
+    testimonials: [
+      {
+        quote:
+          "Coleta planialtimétrica, pontos de controle, medições e cadastro de elementos para projetos de engenharia, obras e regularização.",
+        name: "Topografia e levantamentos",
+        role: "Campo, pontos, cotas, locação e suporte técnico"
+      },
+      {
+        quote:
+          "Organização, cruzamento e análise de dados espaciais em ambiente SIG, com mapas, camadas, bases geográficas e relatórios.",
+        name: "Geoprocessamento",
+        role: "QGIS, ArcGIS, CAD, bancos de dados e produtos cartográficos"
+      },
+      {
+        quote:
+          "Leitura de relevo, declividade, drenagem, ocupação e feições de instabilidade para apoiar diagnóstico técnico e gestão de risco.",
+        name: "Risco e análise territorial",
+        role: "Mapeamento geotécnico, áreas suscetíveis e decisão pública"
+      }
+    ],
+    console: {
+      validated: "validado",
+      active: "ativos",
+      paused: "camadas pausadas"
+    },
+    form: {
+      required: "Preencha este campo.",
+      email: "Use um email válido.",
+      invalid: "Revise os campos destacados para enviar o briefing.",
+      sent: "Briefing enviado",
+      success: "Recebemos seu contexto técnico. A equipe Datum retorna com o próximo passo."
+    }
+  },
+  en: {
+    static: [
+      ["title", "Datum - Geospatial data transformed into technical decisions"],
+      ['meta[name="description"]', "Datum transforms geospatial data into precise solutions for engineering, territory, construction, risk management and decision-making.", "content"],
+      [".skip-link", "Skip to content"],
+      [".announcement span", "Datum"],
+      [".announcement p", "Territorial precision for surveying, GIS, geotechnical analysis, land regularization, construction and spatial automation."],
+      [".announcement a", "Talk to a specialist"],
+      ['.site-nav a[href="#produtos"]', "Services"],
+      ['.site-nav a[href="#processo"]', "Method"],
+      ['.site-nav a[href="#cases"]', "Projects"],
+      ['.site-nav a[href="#carreiras"]', "Technology"],
+      ['.site-nav a[href="#contato"]', "Contact"],
+      ['.site-nav a[href="#login"]', "Login"],
+      [".intro-impact .intro-copy", "Read the territory with"],
+      [".intro-impact > span", ""],
+      [".company-intro-section .eyebrow", "About Datum"],
+      ["#company-intro-title", "Geospatial data for precise decisions."],
+      [".company-intro-copy p", "Based at IGC-UFMG in Belo Horizonte, Datum collects, verifies, interprets and automates territorial data. We work with surveying, GIS, property georeferencing, construction layout, geotechnical analysis and mapping for public, private and institutional projects."],
+      [".company-intro-actions .primary", "Request a quote"],
+      [".company-intro-actions .secondary", "See technical method"],
+      [".process-intro .eyebrow", "How we work"],
+      [".process-intro h2", "How Datum operates"],
+      [".process-intro p", "From demand to delivery, we organize purpose, method, coordinates, validation, automation and support to reduce uncertainty and sustain territorial decisions."],
+      [".results-copy .eyebrow", "Projects"],
+      [".results-copy h2", "Experience across territory, risk and public decision-making."],
+      [".results-copy p", "Applications inspired by real team experience, presented without exposing sensitive data: context, method, technical output and usefulness for decisions."],
+      [".result-card:nth-child(1) span", "Geological risk"],
+      [".result-card:nth-child(1) h3", "Risk mapping"],
+      [".result-card:nth-child(1) p", "Relief, drainage, occupation and instability readings for risk plans and public decisions."],
+      [".result-card:nth-child(2) span", "Sensitive territories"],
+      [".result-card:nth-child(2) h3", "Territorial support"],
+      [".result-card:nth-child(2) p", "Datasets, boundaries and references organized for sensitive territories and technical documentation."],
+      [".result-card:nth-child(3) span", "Institutional projects"],
+      [".result-card:nth-child(3) h3", "Public decisions"],
+      [".result-card:nth-child(3) p", "Maps, reports and geographic databases for risk, regularization, communities and infrastructure."],
+      [".case-panel-intro .eyebrow", "Projects and work"],
+      [".case-panel-intro h2", "Datum work and case studies."],
+      [".case-panel-intro p", "A selection of deliveries in geoprocessing, spatial analysis, modeling, technical documentation and public decision support."],
+      [".case-partner-lockup span", "National Foundation for Indigenous Peoples"],
+      [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
+      [".case-detail-panel:nth-child(2) .case-story h3", "Kaxuyana-Tunayana Indigenous Land"],
+      [".case-detail-panel:nth-child(2) .case-story strong", "2.182 million hectares"],
+      [".case-detail-panel:nth-child(2) .case-story p", "Datum worked on geoprocessing, data organization, spatial analysis and land mapping for technical support to Funai."],
+      [".case-detail-panel:nth-child(3) .case-story span", "Contagem risk plan"],
+      [".case-detail-panel:nth-child(3) .case-story h3", "Landslide risk areas"],
+      [".case-detail-panel:nth-child(3) .case-story strong", "3D + orthophoto"],
+      [".case-detail-panel:nth-child(3) .case-story p", "Mapping of susceptible areas, orthophoto production and 3D models to support technical diagnosis, terrain reading and risk reduction planning."],
+      [".case-detail-panel:nth-child(4) .case-story span", "Federal Government"],
+      [".case-detail-panel:nth-child(4) .case-story h3", "Land regularization"],
+      [".case-detail-panel:nth-child(4) .case-story strong", "REURB"],
+      [".case-detail-panel:nth-child(4) .case-story p", "Organization of datasets, parcels, boundaries and geospatial documentation to support urban land regularization with technical traceability."],
+      [".testimonial-copy .eyebrow", "Applications"],
+      [".testimonial-copy h2", "Where spatial data must become reliable technical output."],
+      ['.testimonial-nav[data-testimonial="prev"]', "Previous"],
+      ['.testimonial-nav[data-testimonial="next"]', "Next"],
+      [".security-panel .eyebrow", "Technology and standards"],
+      [".security-panel h2", "Data, tools and automation with traceability."],
+      [".security-panel p", "Datum combines fieldwork, GIS, CAD, remote sensing, public datasets, terrain models and automation routines to deliver maps, memorials, dashboards and reports with clear origin and method."],
+      [".accordion-item:nth-child(1) span", "Reference, precision and official systems"],
+      [".accordion-item:nth-child(1) p", "Coordinates, geodetic reference, scale, boundaries and compatibility with technical and legal requirements, including georeferencing and spatial documentation workflows."],
+      [".accordion-item:nth-child(2) span", "Fieldwork, GIS and remote sensing"],
+      [".accordion-item:nth-child(2) p", "GNSS, total stations, drones, LiDAR, orbital imagery, QGIS, ArcGIS, CAD and databases enter as verifiable project layers."],
+      [".accordion-item:nth-child(3) span", "Automation, reporting and support"],
+      [".accordion-item:nth-child(3) p", "Routines reduce rework, standardize maps, calculate areas, accelerate validations and organize deliverables for technical client use."],
+      [".products-copy .eyebrow", "Areas of work"],
+      [".products-copy h2", "Applied geotechnology for real technical demands."],
+      [".product-card:nth-child(1) h3", "3D Model"],
+      [".product-card:nth-child(1) p", "Surfaces, point clouds and visual models for territorial reading."],
+      [".product-card:nth-child(2) h3", "Geodesy"],
+      [".product-card:nth-child(2) p", "Coordinates, boundaries, geodetic reference and positioning with technical precision."],
+      [".product-card:nth-child(3) h3", "Cartography and GIS"],
+      [".product-card:nth-child(3) p", "Maps, GIS layers, dashboards and CAD/GIS files ready for use."],
+      [".product-card:nth-child(4) h3", "Territorial intelligence"],
+      [".product-card:nth-child(4) p", "Spatial data crossed to interpret risk, land use and infrastructure."],
+      [".news-head .eyebrow", "Technology"],
+      [".news-head h2", "Tools and criteria behind the delivery."],
+      [".news-head .button", "Talk to a specialist"],
+      [".news-item:nth-child(1) time", "GNSS AND FIELDWORK"],
+      [".news-item:nth-child(1) strong", "Reliable control points and measurements."],
+      [".news-item:nth-child(2) time", "GIS AND CAD"],
+      [".news-item:nth-child(2) strong", "GIS/CAD bases ready for analysis."],
+      [".news-item:nth-child(3) time", "AUTOMATION"],
+      [".news-item:nth-child(3) strong", "Routines to validate and standardize deliverables."],
+      [".news-item:nth-child(4) time", "REPORTS"],
+      [".news-item:nth-child(4) strong", "Maps, models and executive reports."],
+      [".contact-copy .eyebrow", "Contact"],
+      [".contact-copy h2", "Request a quote or talk to a specialist."],
+      [".contact-copy p", "Send the service type, location, deadline, available files and technical objective. Datum screens the demand and returns with next steps."],
+      [".contact-form button", "Send briefing"],
+      [".site-footer strong", "Datum"],
+      [".site-footer > div p", "Geospatial data transformed into technical decisions for engineering, territory, risk and regularization."],
+      [".site-footer nav a:nth-child(1)", "Terms of Use"],
+      [".site-footer nav a:nth-child(2)", "Privacy Policy"],
+      [".site-footer nav a:nth-child(3)", "Code of Ethics"],
+      [".site-footer nav a:nth-child(4)", "LinkedIn"],
+      [".site-footer nav a:nth-child(5)", "Twitter"],
+      [".site-footer > p", "© 2026 Datum"]
+    ],
+    labels: [
+      [".contact-form label:nth-of-type(1)", "Name"],
+      [".contact-form label:nth-of-type(2)", "Email"],
+      [".contact-form label:nth-of-type(3)", "Technical briefing"]
+    ],
+    attrs: [
+      [".brand", "aria-label", "Datum"],
+      [".nav-toggle", "aria-label", "Open menu"],
+      ["#site-nav", "aria-label", "Main navigation"],
+      [".language-switch", "aria-label", "Languages"],
+      [".scroll-cue", "aria-label", "Scroll to About Datum"],
+      [".step-list", "aria-label", "Datum method steps"],
+      ['input[name="name"]', "aria-label", "Name"],
+      ['input[name="name"]', "placeholder", "Your name"],
+      ['input[name="email"]', "aria-label", "Email"],
+      ['input[name="email"]', "placeholder", "you@company.com"],
+      ['textarea[name="message"]', "aria-label", "Technical briefing"],
+      ['textarea[name="message"]', "placeholder", "Service type, location, deadline and available files"]
+    ],
+    workflow: [
+      {
+        label: "01 / demand",
+        title: "Understanding and planning",
+        body:
+          "We identify the objective, territory, legal restrictions, timeline, required formats and expected precision level. From there, we define methodology, equipment, datasets, scale and final deliverables.",
+        tags: ["Objective", "Method", "Scale", "Timeline"],
+        visual: "collect"
+      },
+      {
+        label: "02 / collection",
+        title: "Data collection",
+        body:
+          "Field surveying or acquisition of existing geospatial datasets, imagery, coordinates, registries, terrain models and other information required for the project.",
+        tags: ["Field", "GNSS", "Imagery", "Models"],
+        visual: "read"
+      },
+      {
+        label: "03 / validation",
+        title: "Verification and validation",
+        body:
+          "We check consistency, precision, completeness, spatial compatibility, overlaps, gaps and inconsistencies to reduce technical risk before interpretation.",
+        tags: ["Precision", "Source", "Conflicts", "Control"],
+        visual: "evidence"
+      },
+      {
+        label: "04 / analysis",
+        title: "Interpretation and automation",
+        body:
+          "We analyze data according to the project purpose and apply routines to accelerate calculations, layer generation, maps, validations and deliverable standardization.",
+        tags: ["Analysis", "Python", "GIS", "Routines"],
+        visual: "check"
+      },
+      {
+        label: "05 / delivery",
+        title: "Delivery and support",
+        body:
+          "We produce final files, maps, memorials, dashboards and reports, organizing the data and supporting technical reading or later use by the client.",
+        tags: ["Maps", "Reports", "CAD/GIS", "Support"],
+        visual: "deliver"
+      }
+    ],
+    testimonials: [
+      {
+        quote:
+          "Planialtimetric collection, control points, measurements and element registration for engineering, construction and regularization projects.",
+        name: "Surveying and fieldwork",
+        role: "Field, points, elevations, layout and technical support"
+      },
+      {
+        quote:
+          "Organization, cross-checking and analysis of spatial data in GIS environments, producing maps, layers, geographic databases and reports.",
+        name: "Geoprocessing",
+        role: "QGIS, ArcGIS, CAD, databases and cartographic products"
+      },
+      {
+        quote:
+          "Reading relief, slope, drainage, occupation and instability features to support technical diagnostics and risk management.",
+        name: "Risk and territorial analysis",
+        role: "Geotechnical mapping, susceptible areas and public decision-making"
+      }
+    ],
+    console: {
+      validated: "validated",
+      active: "active",
+      paused: "layers paused"
+    },
+    form: {
+      required: "Fill out this field.",
+      email: "Use a valid email.",
+      invalid: "Review the highlighted fields before sending the briefing.",
+      sent: "Briefing sent",
+      success: "We received your technical context. The Datum team will return with the next step."
+    }
+  }
 };
 
 const navToggle = document.querySelector(".nav-toggle");
@@ -78,11 +462,15 @@ const mapPins = document.querySelectorAll(".map-pin");
 const scanStatus = document.querySelector("#scan-status");
 const logoMarker = document.querySelector("#logo-map-marker");
 const headerBrand = document.querySelector(".brand");
+const introBrandMark = document.querySelector(".intro-brand-mark");
 const scrollBrandLockup = document.querySelector("#scroll-brand-lockup");
 const heroSection = document.querySelector("#inicio");
 const layerButtons = document.querySelectorAll(".layer");
 const workflowDetail = document.querySelector("#workflow-detail");
 const workflowSteps = document.querySelectorAll(".step");
+const processWorkbench = document.querySelector(".process-workbench");
+const mobileWorkflowQuery = window.matchMedia("(max-width: 720px)");
+let workflowDetailTween;
 const testimonialQuote = document.querySelector("#testimonial-quote");
 const testimonialName = document.querySelector("#testimonial-name");
 const testimonialRole = document.querySelector("#testimonial-role");
@@ -93,8 +481,15 @@ const revealItems = document.querySelectorAll(".reveal");
 const contactForm = document.querySelector(".contact-form");
 const topographyCanvas = document.querySelector("#site-topography-field");
 const liquidOrbCanvases = document.querySelectorAll("[data-liquid-orb]");
+const terrainModelCanvases = document.querySelectorAll("[data-terrain-model]");
+const horizontalCases = document.querySelector("[data-horizontal-cases]");
+const horizontalCaseTrack = document.querySelector("[data-case-track]");
+const horizontalCaseDots = document.querySelectorAll(".horizontal-case-progress span");
 
 let testimonialIndex = 0;
+let currentLang = localStorage.getItem("data-language") || "pt";
+let horizontalCaseSnapTimer = 0;
+let horizontalCaseSnapping = false;
 
 document.body.classList.add("motion-ready");
 
@@ -500,6 +895,255 @@ function initLiquidOrbs() {
   });
 }
 
+function initTerrainModels() {
+  if (!window.THREE || !terrainModelCanvases.length) {
+    return;
+  }
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const elevationRamp = [
+    { stop: 0, color: new THREE.Color("#184f9f") },
+    { stop: 0.18, color: new THREE.Color("#1fb6d0") },
+    { stop: 0.38, color: new THREE.Color("#2fbf71") },
+    { stop: 0.58, color: new THREE.Color("#b9d95c") },
+    { stop: 0.74, color: new THREE.Color("#f2d16b") },
+    { stop: 0.88, color: new THREE.Color("#e98732") },
+    { stop: 1, color: new THREE.Color("#c7372f") }
+  ];
+
+  function sampleElevationColor(value) {
+    const adjusted = clamp(value, 0, 1);
+    for (let index = 1; index < elevationRamp.length; index += 1) {
+      const previous = elevationRamp[index - 1];
+      const next = elevationRamp[index];
+      if (adjusted <= next.stop) {
+        const local = (adjusted - previous.stop) / (next.stop - previous.stop);
+        return previous.color.clone().lerp(next.color, clamp(local, 0, 1));
+      }
+    }
+    return elevationRamp[elevationRamp.length - 1].color.clone();
+  }
+
+  terrainModelCanvases.forEach((canvas) => {
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: true,
+        preserveDrawingBuffer: true,
+        powerPreference: "high-performance"
+      });
+    } catch {
+      return;
+    }
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 40);
+    camera.position.set(0, 0.52, 6.18);
+    camera.lookAt(0, 0.18, 0.18);
+
+    const terrainGroup = new THREE.Group();
+    terrainGroup.rotation.set(-0.76, 0, 0.64);
+    terrainGroup.position.set(0, 0.54, 0);
+    terrainGroup.scale.set(0.98, 0.98, 0.98);
+    scene.add(terrainGroup);
+
+    const segmentsX = 76;
+    const segmentsY = 54;
+    const terrainGeometry = new THREE.PlaneGeometry(4.4, 3.1, segmentsX, segmentsY);
+    const positions = terrainGeometry.attributes.position;
+    const colors = [];
+    const heights = [];
+
+    function ridge(x, y, cx, cy, amplitude, spread) {
+      const dx = x - cx;
+      const dy = y - cy;
+      return amplitude * Math.exp(-(dx * dx + dy * dy) / spread);
+    }
+
+    function sampleElevation(x, y) {
+      const normalizedX = x / 2.2;
+      const normalizedY = y / 1.55;
+      const terrain =
+        ridge(normalizedX, normalizedY, -0.64, 0.18, 0.62, 0.22) +
+        ridge(normalizedX, normalizedY, -0.18, 0.36, 1.18, 0.12) +
+        ridge(normalizedX, normalizedY, 0.34, 0.22, 1.42, 0.055) +
+        ridge(normalizedX, normalizedY, 0.72, -0.22, 0.92, 0.075) +
+        ridge(normalizedX, normalizedY, -0.48, -0.42, 0.54, 0.06) -
+        ridge(normalizedX, normalizedY, -0.1, -0.22, 0.48, 0.15) -
+        ridge(normalizedX, normalizedY, 0.42, -0.48, 0.3, 0.22) +
+        Math.sin(normalizedX * 9.6 + normalizedY * 2.7) * 0.06 +
+        Math.cos(normalizedY * 12.4 - normalizedX * 3.1) * 0.052 +
+        Math.sin((normalizedX + normalizedY) * 23.0) * 0.018 +
+        Math.cos((normalizedX - normalizedY) * 19.0) * 0.014;
+      const edgeFade = Math.max(Math.abs(normalizedX), Math.abs(normalizedY));
+      return (terrain - edgeFade * 0.16) * 1.08;
+    }
+
+    for (let index = 0; index < positions.count; index += 1) {
+      const x = positions.getX(index);
+      const y = positions.getY(index);
+      const elevation = sampleElevation(x, y);
+      positions.setZ(index, elevation);
+      heights.push(elevation);
+    }
+
+    const minHeight = Math.min(...heights);
+    const maxHeight = Math.max(...heights);
+    for (const height of heights) {
+      const normalized = clamp((height - minHeight) / (maxHeight - minHeight), 0, 1);
+      const t = clamp((normalized - 0.06) / 0.82, 0, 1);
+      const color = sampleElevationColor(t);
+      colors.push(color.r, color.g, color.b);
+    }
+
+    terrainGeometry.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
+    terrainGeometry.computeVertexNormals();
+    terrainGroup.add(new THREE.Mesh(terrainGeometry, new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide })));
+    terrainGroup.add(new THREE.LineSegments(
+      new THREE.WireframeGeometry(terrainGeometry),
+      new THREE.LineBasicMaterial({ color: new THREE.Color("#071426"), transparent: true, opacity: 0.08 })
+    ));
+
+    const contourMaterial = new THREE.LineBasicMaterial({ color: new THREE.Color("#071426"), transparent: true, opacity: 0.26 });
+    const accentContourMaterial = new THREE.LineBasicMaterial({ color: new THREE.Color("#007ea7"), transparent: true, opacity: 0.42 });
+    const rowLength = segmentsX + 1;
+    for (let row = 4; row < segmentsY; row += 5) {
+      const contourPoints = [];
+      for (let column = 0; column <= segmentsX; column += 1) {
+        const vertexIndex = row * rowLength + column;
+        contourPoints.push(new THREE.Vector3(positions.getX(vertexIndex), positions.getY(vertexIndex), positions.getZ(vertexIndex) + 0.012));
+      }
+      terrainGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(contourPoints), row % 10 === 4 ? accentContourMaterial : contourMaterial));
+    }
+
+    const baseGrid = new THREE.GridHelper(5.4, 12, 0x9ed8e8, 0xd8edf3);
+    baseGrid.rotation.x = Math.PI / 2;
+    baseGrid.position.z = minHeight - 0.24;
+    terrainGroup.add(baseGrid);
+
+    scene.add(new THREE.AmbientLight(0xf7fafc, 0.72));
+    const keyLight = new THREE.DirectionalLight(0xf7fafc, 1.08);
+    keyLight.position.set(-2.2, 3.8, 5.2);
+    scene.add(keyLight);
+    const sideLight = new THREE.PointLight(0x007ea7, 0.34, 7);
+    sideLight.position.set(2.4, -1.6, 3.2);
+    scene.add(sideLight);
+
+    const state = {
+      dragging: false,
+      lastX: 0,
+      lastY: 0,
+      targetX: terrainGroup.rotation.x,
+      targetZ: terrainGroup.rotation.z,
+      distance: 6.18
+    };
+
+    function resizeTerrain() {
+      const rect = canvas.getBoundingClientRect();
+      const width = Math.max(260, Math.round(rect.width));
+      const height = Math.max(180, Math.round(rect.height));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      camera.lookAt(0, 0.18, 0.18);
+    }
+
+    function renderTerrain(time = 0) {
+      terrainGroup.rotation.x += (state.targetX - terrainGroup.rotation.x) * 0.12;
+      terrainGroup.rotation.z += (state.targetZ - terrainGroup.rotation.z) * 0.12;
+      camera.position.z += (state.distance - camera.position.z) * 0.1;
+      camera.lookAt(0, 0.18, 0.18);
+      if (!reduceMotion && !state.dragging) {
+        state.targetZ += 0.0009;
+        state.targetX = -0.76 + Math.sin(time * 0.00045) * 0.026;
+      }
+      renderer.render(scene, camera);
+      requestAnimationFrame(renderTerrain);
+    }
+
+    resizeTerrain();
+    renderTerrain();
+    window.addEventListener("resize", resizeTerrain);
+
+    canvas.addEventListener("pointerdown", (event) => {
+      state.dragging = true;
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
+      canvas.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!state.dragging) {
+        return;
+      }
+      const deltaX = event.clientX - state.lastX;
+      const deltaY = event.clientY - state.lastY;
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
+      state.targetZ += deltaX * 0.008;
+      state.targetX = clamp(state.targetX + deltaY * 0.006, -1.26, -0.34);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("pointerup", (event) => {
+      state.dragging = false;
+      canvas.releasePointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("wheel", (event) => {
+      event.preventDefault();
+    }, { passive: false });
+  });
+}
+
+function updateHorizontalCases() {
+  if (!horizontalCases || !horizontalCaseTrack) {
+    return;
+  }
+
+  const rect = horizontalCases.getBoundingClientRect();
+  const travel = Math.max(horizontalCases.offsetHeight - window.innerHeight, 1);
+  const progress = clamp(-rect.top / travel, 0, 1);
+  const panelCount = Math.max(horizontalCaseTrack.children.length, 1);
+  const activeIndex = clamp(Math.round(progress * (panelCount - 1)), 0, panelCount - 1);
+  horizontalCases.style.setProperty("--case-progress", progress.toFixed(4));
+  horizontalCaseDots.forEach((dot, index) => {
+    dot.classList.toggle("is-active", index === activeIndex);
+  });
+
+  if (!horizontalCaseSnapping && progress > 0.02 && progress < 0.98) {
+    clearTimeout(horizontalCaseSnapTimer);
+    horizontalCaseSnapTimer = window.setTimeout(() => {
+      const sectionTop = horizontalCases.getBoundingClientRect().top + window.scrollY;
+      const targetProgress = activeIndex / Math.max(panelCount - 1, 1);
+      const targetY = sectionTop + travel * targetProgress;
+      horizontalCaseSnapping = true;
+      window.scrollTo({
+        top: targetY,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+      window.setTimeout(() => {
+        horizontalCaseSnapping = false;
+        updateHorizontalCases();
+      }, 520);
+    }, 360);
+  }
+}
+
+function initHorizontalCases() {
+  if (!horizontalCases || !horizontalCaseTrack) {
+    return;
+  }
+
+  updateHorizontalCases();
+  window.addEventListener("scroll", updateHorizontalCases, { passive: true });
+  window.addEventListener("resize", updateHorizontalCases);
+}
 let logoTargetProgress = 0;
 let logoVisualProgress = 0;
 let logoAnimationFrame = 0;
@@ -509,8 +1153,8 @@ let logoAutoCompleting = false;
 let logoPreviousScrollBehavior = "";
 const logoAutoCompleteDelay = 2000;
 const logoAutoCompleteStart = 0.006;
-const logoAutoCompleteFormationEnd = 0.42;
-const logoAutoCompleteCenteredEnd = 0.58;
+const logoAutoCompleteFormationEnd = 0.32;
+const logoAutoCompleteCenteredEnd = 0.48;
 const logoAutoCompleteDuration = 2400;
 
 function getLogoScrollProgress() {
@@ -520,7 +1164,23 @@ function getLogoScrollProgress() {
 
   const rect = heroSection.getBoundingClientRect();
   const travel = Math.max(rect.height, 1);
-  return clamp(-rect.top / travel, 0, 1);
+  const isCompactViewport = window.matchMedia("(max-width: 720px)").matches;
+  const startOffset = isCompactViewport
+    ? clamp(window.innerHeight * 0.07, 46, 64)
+    : clamp(window.innerHeight * 0.12, 86, 120);
+  return clamp((startOffset - rect.top) / travel, 0, 1);
+}
+
+function getScrollBrandOriginRect() {
+  if (introBrandMark) {
+    const introRect = introBrandMark.getBoundingClientRect();
+
+    if (introRect.width > 0 && introRect.height > 0) {
+      return introRect;
+    }
+  }
+
+  return headerBrand ? headerBrand.getBoundingClientRect() : null;
 }
 
 function cancelLogoAutoComplete() {
@@ -603,9 +1263,9 @@ function applyLogoProgress(progress) {
   const x = 12 + (36 - 12) * eased;
   const y = 22 + (54 - 22) * eased;
   const draw = 0.18 + 0.82 * eased;
-  const arrival = clamp(progress / 0.34, 0, 1);
+  const arrival = clamp(progress / 0.18, 0, 1);
   const arrivalEase = 1 - Math.pow(1 - arrival, 4);
-  const exit = clamp((progress - 0.36) / 0.22, 0, 1);
+  const exit = clamp((progress - 0.48) / 0.2, 0, 1);
   const exitEase = 1 - Math.pow(1 - exit, 3);
 
   if (logoMarker) {
@@ -615,20 +1275,25 @@ function applyLogoProgress(progress) {
     logoMarker.dataset.docked = progress > 0.72 ? "true" : "false";
   }
 
-  if (scrollBrandLockup && headerBrand) {
-    const brandRect = headerBrand.getBoundingClientRect();
+  if (scrollBrandLockup) {
+    const brandRect = getScrollBrandOriginRect();
+
+    if (!brandRect) {
+      return;
+    }
+
     const startX = brandRect.left + brandRect.width / 2 - window.innerWidth / 2;
     const startY = brandRect.top + brandRect.height / 2 - window.innerHeight / 2;
-    const visualArrival = 0.82 + 0.18 * arrivalEase;
+    const visualArrival = arrivalEase;
     const lockupX = startX * (1 - visualArrival);
     const lockupY = startY * (1 - visualArrival) - 86 * exitEase;
-    const lockupScale = 0.92 + (1.26 - 0.92) * arrivalEase - 0.16 * exitEase;
+    const lockupScale = 0.42 + (1.2 - 0.42) * arrivalEase - 0.16 * exitEase;
     const lockupOpacity = arrivalEase * (1 - exitEase);
-    const wordReveal = clamp(arrival / 0.42, 0, 1);
-    const dDrawReveal = clamp((arrival - 0.42) / 0.46, 0, 1);
+    const wordReveal = clamp((arrival - 0.02) / 0.78, 0, 1);
+    const dDrawReveal = clamp((arrival - 0.82) / 0.18, 0, 1);
     const dDrawEase = 1 - Math.pow(1 - dDrawReveal, 4);
     const wordOpacity = wordReveal * (1 - exitEase);
-    const wordShift = -118 + 118 * wordReveal - 28 * exitEase;
+    const wordShift = -90 + 90 * wordReveal - 24 * exitEase;
 
     scrollBrandLockup.style.setProperty("--lockup-x", lockupX.toFixed(2));
     scrollBrandLockup.style.setProperty("--lockup-y", lockupY.toFixed(2));
@@ -648,7 +1313,11 @@ function applyLogoProgress(progress) {
 function updateLogoMarker(options = {}) {
   logoTargetProgress = getLogoScrollProgress();
 
-  if (options.immediate) {
+  if (options.immediate || logoTargetProgress >= 0.72) {
+    if (logoAnimationFrame) {
+      cancelAnimationFrame(logoAnimationFrame);
+      logoAnimationFrame = 0;
+    }
     logoVisualProgress = logoTargetProgress;
     applyLogoProgress(logoVisualProgress);
     return;
@@ -681,6 +1350,136 @@ function updateLogoMarker(options = {}) {
   logoAnimationFrame = requestAnimationFrame(animateLogoProgress);
 }
 
+function placeWorkflowDetail() {
+  if (!workflowDetail || !processWorkbench) {
+    return;
+  }
+
+  const activeStep = document.querySelector(".step.is-active");
+
+  if (mobileWorkflowQuery.matches && activeStep) {
+    activeStep.insertAdjacentElement("afterend", workflowDetail);
+    return;
+  }
+
+  processWorkbench.appendChild(workflowDetail);
+}
+
+function setWorkflowStepState(step, isActive) {
+  step.classList.toggle("is-active", isActive);
+  step.setAttribute("aria-selected", String(isActive));
+  step.setAttribute("aria-expanded", String(isActive));
+}
+
+function collapseMobileWorkflow() {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    return;
+  }
+
+  workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+  tweenMobileWorkflowDetail("close", () => {
+    workflowDetail.hidden = true;
+    processWorkbench.appendChild(workflowDetail);
+  });
+}
+
+function syncWorkflowLayout() {
+  if (!workflowDetail) {
+    return;
+  }
+
+  if (mobileWorkflowQuery.matches) {
+    placeWorkflowDetail();
+    return;
+  }
+
+  workflowDetail.hidden = false;
+
+  if (!document.querySelector(".step.is-active")) {
+    setWorkflowStepState(workflowSteps[0], true);
+    renderWorkflow(0);
+    return;
+  }
+
+  placeWorkflowDetail();
+}
+
+function tweenMobileWorkflowDetail(direction, onFinish) {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    onFinish?.();
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (workflowDetailTween) {
+    workflowDetailTween.cancel();
+  }
+
+  if (prefersReducedMotion || typeof workflowDetail.animate !== "function") {
+    onFinish?.();
+    return;
+  }
+
+  const open = direction === "open";
+  const fullHeight = `${workflowDetail.scrollHeight}px`;
+  workflowDetail.style.overflow = "hidden";
+  workflowDetail.style.transformOrigin = "top center";
+
+  workflowDetailTween = workflowDetail.animate(
+    open
+      ? [
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-10px) scale(0.985)", filter: "blur(2px)" },
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" }
+        ]
+      : [
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-8px) scale(0.99)", filter: "blur(1.5px)" }
+        ],
+    {
+      duration: open ? 420 : 300,
+      easing: open ? "cubic-bezier(0.16, 1, 0.3, 1)" : "cubic-bezier(0.55, 0, 0.1, 1)",
+      fill: "both"
+    }
+  );
+
+  workflowDetailTween.onfinish = () => {
+    const finishedTween = workflowDetailTween;
+    workflowDetailTween = undefined;
+
+    if (!open) {
+      onFinish?.();
+      finishedTween?.cancel();
+      return;
+    }
+
+    finishedTween?.cancel();
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+    onFinish?.();
+  };
+
+  workflowDetailTween.oncancel = () => {
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+  };
+}
+
+function revealMobileWorkflowStep(step) {
+  if (!mobileWorkflowQuery.matches || !step) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  requestAnimationFrame(() => {
+    step.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start"
+    });
+  });
+}
+
 function renderWorkflow(index) {
   if (!workflowDetail) {
     return;
@@ -696,6 +1495,8 @@ function renderWorkflow(index) {
     </div>
     ${renderWorkflowVisual(item.visual)}
   `;
+
+  placeWorkflowDetail();
 }
 
 function renderWorkflowVisual(type) {
@@ -759,9 +1560,88 @@ function setFieldError(field, message) {
   }
 }
 
+function getCopy() {
+  return translations[currentLang] || translations.pt;
+}
+
+function setLabelText(selector, text) {
+  const label = document.querySelector(selector);
+  if (!label) {
+    return;
+  }
+
+  const textNode = Array.from(label.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+  if (textNode) {
+    textNode.textContent = `\n              ${text}\n              `;
+  }
+}
+
+function applyStaticCopy(copy) {
+  copy.static.forEach(([selector, value, attribute]) => {
+    const element = selector === "title" ? document.querySelector("title") : document.querySelector(selector);
+    if (!element) {
+      return;
+    }
+
+    if (attribute) {
+      element.setAttribute(attribute, value);
+    } else {
+      element.textContent = value;
+    }
+  });
+
+  copy.labels.forEach(([selector, value]) => setLabelText(selector, value));
+  copy.attrs.forEach(([selector, attribute, value]) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.setAttribute(attribute, value);
+    }
+  });
+}
+
+function updateWorkflowTabs(copy) {
+  workflowSteps.forEach((step, index) => {
+    const item = copy.workflow[index];
+    if (!item) {
+      return;
+    }
+
+    const title = item.title.length > 28 ? item.title.replace(" e ", " e\n") : item.title;
+    step.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${title}`;
+  });
+}
+
+function setLanguage(lang) {
+  currentLang = translations[lang] ? lang : "pt";
+  const copy = getCopy();
+
+  document.documentElement.lang = currentLang === "pt" ? "pt-BR" : "en";
+  localStorage.setItem("data-language", currentLang);
+
+  languageButtons.forEach((button) => {
+    const isActive = button.dataset.lang === currentLang;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  workflow = copy.workflow;
+  testimonials = copy.testimonials;
+  testimonialIndex = Math.min(testimonialIndex, testimonials.length - 1);
+
+  applyStaticCopy(copy);
+  updateWorkflowTabs(copy);
+
+  const activeStep = document.querySelector(".step.is-active");
+  const workflowIndex = activeStep ? Number(activeStep.dataset.step) : 0;
+  renderWorkflow(Number.isFinite(workflowIndex) ? workflowIndex : 0);
+  renderTestimonial(testimonialIndex);
+}
+
 initTopographyField();
 initPointerMotion();
 initLiquidOrbs();
+initTerrainModels();
+initHorizontalCases();
 
 function setMobileNavState(isOpen) {
   if (!siteNav || !navToggle) {
@@ -769,7 +1649,8 @@ function setMobileNavState(isOpen) {
   }
 
   navToggle.setAttribute("aria-expanded", String(isOpen));
-  navToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  const labels = currentLang === "en" ? ["Close menu", "Open menu"] : ["Fechar menu", "Abrir menu"];
+  navToggle.setAttribute("aria-label", isOpen ? labels[0] : labels[1]);
   siteNav.toggleAttribute("inert", !isOpen && window.matchMedia("(max-width: 760px)").matches);
 }
 
@@ -836,7 +1717,7 @@ mapPins.forEach((pin) => {
   pin.addEventListener("click", () => {
     mapPins.forEach((item) => item.classList.remove("is-active"));
     pin.classList.add("is-active");
-    scanStatus.textContent = `${pin.dataset.pin} validado`;
+    scanStatus.textContent = `${pin.dataset.pin} ${getCopy().console.validated}`;
   });
 });
 
@@ -847,25 +1728,33 @@ layerButtons.forEach((button) => {
       .filter((item) => item.classList.contains("is-active"))
       .map((item) => item.textContent.trim())
       .join(" + ");
-    scanStatus.textContent = activeLayers ? `${activeLayers} ativos` : "camadas pausadas";
+    scanStatus.textContent = activeLayers ? `${activeLayers} ${getCopy().console.active}` : getCopy().console.paused;
   });
 });
 
 workflowSteps.forEach((step) => {
+  step.setAttribute("aria-controls", "workflow-detail");
+
   step.addEventListener("click", () => {
-    workflowSteps.forEach((item) => {
-      item.classList.remove("is-active");
-      item.setAttribute("aria-selected", "false");
-      item.setAttribute("aria-expanded", "false");
-    });
-    step.classList.add("is-active");
-    step.setAttribute("aria-selected", "true");
-    step.setAttribute("aria-expanded", "true");
+    const isOpenMobileStep = mobileWorkflowQuery.matches && step.classList.contains("is-active") && !workflowDetail.hidden;
+
+    if (isOpenMobileStep) {
+      collapseMobileWorkflow();
+      return;
+    }
+
+    workflowDetail.hidden = false;
+    workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+    setWorkflowStepState(step, true);
     renderWorkflow(Number(step.dataset.step));
+    tweenMobileWorkflowDetail("open");
+    revealMobileWorkflowStep(step);
   });
 });
 
-renderWorkflow(0);
+setLanguage(currentLang);
+
+mobileWorkflowQuery.addEventListener("change", syncWorkflowLayout);
 
 testimonialButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -888,14 +1777,7 @@ accordionItems.forEach((item) => {
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const lang = button.dataset.lang;
-    languageButtons.forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
-    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const key = element.dataset.i18n;
-      element.textContent = translations[lang][key];
-    });
+    setLanguage(button.dataset.lang);
   });
 });
 
@@ -910,22 +1792,22 @@ contactForm.addEventListener("submit", (event) => {
   fields.forEach((field) => {
     let message = "";
     if (!field.value.trim()) {
-      message = "Preencha este campo.";
+      message = getCopy().form.required;
     } else if (field.type === "email" && !field.validity.valid) {
-      message = "Use um email válido.";
+      message = getCopy().form.email;
     }
     setFieldError(field, message);
     isValid = isValid && !message;
   });
 
   if (!isValid) {
-    status.textContent = "Revise os campos destacados para enviar o diagnóstico.";
+    status.textContent = getCopy().form.invalid;
     return;
   }
 
-  button.textContent = "Diagnóstico solicitado";
+  button.textContent = getCopy().form.sent;
   button.disabled = true;
-  status.textContent = "Recebemos seu contexto técnico. A equipe DATUM retorna com o próximo passo.";
+  status.textContent = getCopy().form.success;
 });
 
 contactForm.querySelectorAll("input, textarea").forEach((field) => {

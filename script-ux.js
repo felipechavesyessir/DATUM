@@ -17,7 +17,7 @@ const workflow = [
     title: "Leitura geoespacial",
     body:
       "Interpretação de superfícies, feições, pontos de controle, áreas de interesse e relações territoriais para reduzir ruído operacional.",
-    tags: ["Relevo", "Feições", "Áreas", "Datum"],
+    tags: ["Relevo", "Feições", "Áreas", "Referência"],
     visual: "read"
   },
   {
@@ -78,11 +78,15 @@ const mapPins = document.querySelectorAll(".map-pin");
 const scanStatus = document.querySelector("#scan-status");
 const logoMarker = document.querySelector("#logo-map-marker");
 const headerBrand = document.querySelector(".brand");
+const introBrandMark = document.querySelector(".intro-brand-mark");
 const scrollBrandLockup = document.querySelector("#scroll-brand-lockup");
 const heroSection = document.querySelector("#inicio");
 const layerButtons = document.querySelectorAll(".layer");
 const workflowDetail = document.querySelector("#workflow-detail");
 const workflowSteps = document.querySelectorAll(".step");
+const processWorkbench = document.querySelector(".process-workbench");
+const mobileWorkflowQuery = window.matchMedia("(max-width: 720px)");
+let workflowDetailTween;
 const testimonialQuote = document.querySelector("#testimonial-quote");
 const testimonialName = document.querySelector("#testimonial-name");
 const testimonialRole = document.querySelector("#testimonial-role");
@@ -509,8 +513,8 @@ let logoAutoCompleting = false;
 let logoPreviousScrollBehavior = "";
 const logoAutoCompleteDelay = 2000;
 const logoAutoCompleteStart = 0.006;
-const logoAutoCompleteFormationEnd = 0.42;
-const logoAutoCompleteCenteredEnd = 0.58;
+const logoAutoCompleteFormationEnd = 0.32;
+const logoAutoCompleteCenteredEnd = 0.48;
 const logoAutoCompleteDuration = 2400;
 
 function getLogoScrollProgress() {
@@ -520,7 +524,23 @@ function getLogoScrollProgress() {
 
   const rect = heroSection.getBoundingClientRect();
   const travel = Math.max(rect.height, 1);
-  return clamp(-rect.top / travel, 0, 1);
+  const isCompactViewport = window.matchMedia("(max-width: 720px)").matches;
+  const startOffset = isCompactViewport
+    ? clamp(window.innerHeight * 0.07, 46, 64)
+    : clamp(window.innerHeight * 0.12, 86, 120);
+  return clamp((startOffset - rect.top) / travel, 0, 1);
+}
+
+function getScrollBrandOriginRect() {
+  if (introBrandMark) {
+    const introRect = introBrandMark.getBoundingClientRect();
+
+    if (introRect.width > 0 && introRect.height > 0) {
+      return introRect;
+    }
+  }
+
+  return headerBrand ? headerBrand.getBoundingClientRect() : null;
 }
 
 function cancelLogoAutoComplete() {
@@ -603,9 +623,9 @@ function applyLogoProgress(progress) {
   const x = 12 + (36 - 12) * eased;
   const y = 22 + (54 - 22) * eased;
   const draw = 0.18 + 0.82 * eased;
-  const arrival = clamp(progress / 0.34, 0, 1);
+  const arrival = clamp(progress / 0.18, 0, 1);
   const arrivalEase = 1 - Math.pow(1 - arrival, 4);
-  const exit = clamp((progress - 0.36) / 0.22, 0, 1);
+  const exit = clamp((progress - 0.48) / 0.2, 0, 1);
   const exitEase = 1 - Math.pow(1 - exit, 3);
 
   if (logoMarker) {
@@ -615,20 +635,25 @@ function applyLogoProgress(progress) {
     logoMarker.dataset.docked = progress > 0.72 ? "true" : "false";
   }
 
-  if (scrollBrandLockup && headerBrand) {
-    const brandRect = headerBrand.getBoundingClientRect();
+  if (scrollBrandLockup) {
+    const brandRect = getScrollBrandOriginRect();
+
+    if (!brandRect) {
+      return;
+    }
+
     const startX = brandRect.left + brandRect.width / 2 - window.innerWidth / 2;
     const startY = brandRect.top + brandRect.height / 2 - window.innerHeight / 2;
-    const visualArrival = 0.82 + 0.18 * arrivalEase;
+    const visualArrival = arrivalEase;
     const lockupX = startX * (1 - visualArrival);
     const lockupY = startY * (1 - visualArrival) - 86 * exitEase;
-    const lockupScale = 0.92 + (1.26 - 0.92) * arrivalEase - 0.16 * exitEase;
+    const lockupScale = 0.42 + (1.2 - 0.42) * arrivalEase - 0.16 * exitEase;
     const lockupOpacity = arrivalEase * (1 - exitEase);
-    const wordReveal = clamp(arrival / 0.42, 0, 1);
-    const dDrawReveal = clamp((arrival - 0.42) / 0.46, 0, 1);
+    const wordReveal = clamp((arrival - 0.02) / 0.78, 0, 1);
+    const dDrawReveal = clamp((arrival - 0.82) / 0.18, 0, 1);
     const dDrawEase = 1 - Math.pow(1 - dDrawReveal, 4);
     const wordOpacity = wordReveal * (1 - exitEase);
-    const wordShift = -118 + 118 * wordReveal - 28 * exitEase;
+    const wordShift = -90 + 90 * wordReveal - 24 * exitEase;
 
     scrollBrandLockup.style.setProperty("--lockup-x", lockupX.toFixed(2));
     scrollBrandLockup.style.setProperty("--lockup-y", lockupY.toFixed(2));
@@ -648,7 +673,11 @@ function applyLogoProgress(progress) {
 function updateLogoMarker(options = {}) {
   logoTargetProgress = getLogoScrollProgress();
 
-  if (options.immediate) {
+  if (options.immediate || logoTargetProgress >= 0.72) {
+    if (logoAnimationFrame) {
+      cancelAnimationFrame(logoAnimationFrame);
+      logoAnimationFrame = 0;
+    }
     logoVisualProgress = logoTargetProgress;
     applyLogoProgress(logoVisualProgress);
     return;
@@ -681,6 +710,136 @@ function updateLogoMarker(options = {}) {
   logoAnimationFrame = requestAnimationFrame(animateLogoProgress);
 }
 
+function placeWorkflowDetail() {
+  if (!workflowDetail || !processWorkbench) {
+    return;
+  }
+
+  const activeStep = document.querySelector(".step.is-active");
+
+  if (mobileWorkflowQuery.matches && activeStep) {
+    activeStep.insertAdjacentElement("afterend", workflowDetail);
+    return;
+  }
+
+  processWorkbench.appendChild(workflowDetail);
+}
+
+function setWorkflowStepState(step, isActive) {
+  step.classList.toggle("is-active", isActive);
+  step.setAttribute("aria-selected", String(isActive));
+  step.setAttribute("aria-expanded", String(isActive));
+}
+
+function collapseMobileWorkflow() {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    return;
+  }
+
+  workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+  tweenMobileWorkflowDetail("close", () => {
+    workflowDetail.hidden = true;
+    processWorkbench.appendChild(workflowDetail);
+  });
+}
+
+function syncWorkflowLayout() {
+  if (!workflowDetail) {
+    return;
+  }
+
+  if (mobileWorkflowQuery.matches) {
+    placeWorkflowDetail();
+    return;
+  }
+
+  workflowDetail.hidden = false;
+
+  if (!document.querySelector(".step.is-active")) {
+    setWorkflowStepState(workflowSteps[0], true);
+    renderWorkflow(0);
+    return;
+  }
+
+  placeWorkflowDetail();
+}
+
+function tweenMobileWorkflowDetail(direction, onFinish) {
+  if (!workflowDetail || !mobileWorkflowQuery.matches) {
+    onFinish?.();
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (workflowDetailTween) {
+    workflowDetailTween.cancel();
+  }
+
+  if (prefersReducedMotion || typeof workflowDetail.animate !== "function") {
+    onFinish?.();
+    return;
+  }
+
+  const open = direction === "open";
+  const fullHeight = `${workflowDetail.scrollHeight}px`;
+  workflowDetail.style.overflow = "hidden";
+  workflowDetail.style.transformOrigin = "top center";
+
+  workflowDetailTween = workflowDetail.animate(
+    open
+      ? [
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-10px) scale(0.985)", filter: "blur(2px)" },
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" }
+        ]
+      : [
+          { maxHeight: fullHeight, opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
+          { maxHeight: "0px", opacity: 0, transform: "translateY(-8px) scale(0.99)", filter: "blur(1.5px)" }
+        ],
+    {
+      duration: open ? 420 : 300,
+      easing: open ? "cubic-bezier(0.16, 1, 0.3, 1)" : "cubic-bezier(0.55, 0, 0.1, 1)",
+      fill: "both"
+    }
+  );
+
+  workflowDetailTween.onfinish = () => {
+    const finishedTween = workflowDetailTween;
+    workflowDetailTween = undefined;
+
+    if (!open) {
+      onFinish?.();
+      finishedTween?.cancel();
+      return;
+    }
+
+    finishedTween?.cancel();
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+    onFinish?.();
+  };
+
+  workflowDetailTween.oncancel = () => {
+    workflowDetail.style.overflow = "";
+    workflowDetail.style.transformOrigin = "";
+  };
+}
+
+function revealMobileWorkflowStep(step) {
+  if (!mobileWorkflowQuery.matches || !step) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  requestAnimationFrame(() => {
+    step.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start"
+    });
+  });
+}
+
 function renderWorkflow(index) {
   if (!workflowDetail) {
     return;
@@ -696,6 +855,8 @@ function renderWorkflow(index) {
     </div>
     ${renderWorkflowVisual(item.visual)}
   `;
+
+  placeWorkflowDetail();
 }
 
 function renderWorkflowVisual(type) {
@@ -852,20 +1013,28 @@ layerButtons.forEach((button) => {
 });
 
 workflowSteps.forEach((step) => {
+  step.setAttribute("aria-controls", "workflow-detail");
+
   step.addEventListener("click", () => {
-    workflowSteps.forEach((item) => {
-      item.classList.remove("is-active");
-      item.setAttribute("aria-selected", "false");
-      item.setAttribute("aria-expanded", "false");
-    });
-    step.classList.add("is-active");
-    step.setAttribute("aria-selected", "true");
-    step.setAttribute("aria-expanded", "true");
+    const isOpenMobileStep = mobileWorkflowQuery.matches && step.classList.contains("is-active") && !workflowDetail.hidden;
+
+    if (isOpenMobileStep) {
+      collapseMobileWorkflow();
+      return;
+    }
+
+    workflowDetail.hidden = false;
+    workflowSteps.forEach((item) => setWorkflowStepState(item, false));
+    setWorkflowStepState(step, true);
     renderWorkflow(Number(step.dataset.step));
+    tweenMobileWorkflowDetail("open");
+    revealMobileWorkflowStep(step);
   });
 });
 
 renderWorkflow(0);
+
+mobileWorkflowQuery.addEventListener("change", syncWorkflowLayout);
 
 testimonialButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -925,7 +1094,7 @@ contactForm.addEventListener("submit", (event) => {
 
   button.textContent = "Diagnóstico solicitado";
   button.disabled = true;
-  status.textContent = "Recebemos seu contexto técnico. A equipe DATUM retorna com o próximo passo.";
+  status.textContent = "Recebemos seu contexto técnico. A equipe DATA retorna com o próximo passo.";
 });
 
 contactForm.querySelectorAll("input, textarea").forEach((field) => {

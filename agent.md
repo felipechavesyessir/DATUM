@@ -1,30 +1,45 @@
-# Agent Instructions - DATUM Website
+# Agent Instructions - DATA Website
 
 ## Instrucao Obrigatoria de Animacao da Logotipo
 
-Quando a tarefa envolver a animacao da logotipo DATUM, seguir obrigatoriamente o arquivo:
+Quando a tarefa envolver a animacao da logotipo DATA, seguir obrigatoriamente o arquivo:
 
 `agent-animacao.md`
 
-Regra resumida: a animacao central nao deve comecar aberta. A logo oficial deve ficar no canto superior esquerdo; no primeiro scroll, o `D` oficial deve sair visualmente dessa logo, tomar o centro da tela, revelar apenas o restante da palavra (`atum`) para formar `Datum`; logo no segundo movimento de scroll, a palavra completa deve desaparecer com uma animacao curta, suave e premium. No inicio, nao usar frase junto da marca: apenas terrain lines/curvas de nivel suaves no fundo, movimentando-se antes e durante a animacao da DATUM. Depois da saida, aparecem as informacoes relevantes.
+Regra resumida: a animacao central nao deve comecar aberta. A logo oficial deve ficar no canto superior esquerdo; no primeiro scroll, o `D` oficial deve sair visualmente dessa logo, tomar o centro da tela, revelar apenas o restante da palavra (`ata`) para formar `Data`; logo no segundo movimento de scroll, a palavra completa deve desaparecer com uma animacao curta, suave e premium. No inicio, nao usar frase junto da marca: apenas terrain lines/curvas de nivel suaves no fundo, movimentando-se antes e durante a animacao da DATA. Depois da saida, aparecem as informacoes relevantes.
 
 Para animacoes, esta regra substitui qualquer instrucao antiga que proiba o uso da versao vetorial. A animacao deve usar o arquivo oficial:
 
-`assets/brand/datum-logo-official-vector.svg`
+`assets/brand/data-logo-official-vector.svg`
 
 Nao alterar desenho, cores, proporcoes, espessuras ou composicao do monograma.
 
+## Regras Obrigatorias Para Mobile
+
+Ao adaptar o site para mobile, nao mudar o conteudo nem as animacoes existentes.
+
+Isso significa:
+
+- Nao reescrever, remover, resumir ou trocar textos.
+- Nao alterar a ordem conceitual das secoes.
+- Nao remover elementos importantes para "simplificar" a versao mobile.
+- Nao mudar o comportamento, ritmo, gatilhos, sequencia ou intencao das animacoes.
+- Nao substituir animacoes por versoes diferentes no mobile.
+- Nao desligar animacoes, exceto quando houver preferencia explicita do usuario por reducao de movimento.
+- Ajustar apenas o que for necessario para responsividade: tamanhos, espacamentos, quebras, alinhamentos, largura, altura, leitura e toque.
+- Preservar a experiencia visual e narrativa da versao desktop, apenas reorganizada para caber bem em telas pequenas.
+
 ## Objetivo
 
-Criar um site institucional para uma empresa chamada **DATUM**, seguindo integralmente as diretrizes do brandbook:
+Criar um site institucional para uma empresa chamada **DATA**, seguindo integralmente as diretrizes do brandbook:
 
-`C:\Users\felip\Documents\Felipe\2. Pessoal\Fotos e Vídeos\Brandbook Datum Identidade Geoespacial.pdf`
+`C:\Users\felip\Documents\Felipe\2. Pessoal\Fotos e Vídeos\Brandbook Data Identidade Geoespacial.pdf`
 
 O site deve transmitir uma marca de inteligência geoespacial aplicada, com aparência técnica, premium, confiável, contemporânea e adequada para engenharia, cartografia, geodésia, GIS e análise territorial.
 
 ## Logo Oficial
 
-A logotipo oficial da DATUM é a imagem PNG:
+A logotipo oficial da DATA é a imagem PNG:
 
 `C:\Users\felip\Documents\Felipe\2. Pessoal\Fotos e Vídeos\ChatGPT Image 8 de mai. de 2026, 17_57_31.png`
 
@@ -48,7 +63,7 @@ Isso significa:
 No HTML/CSS, a logo deve ser renderizada como imagem, preservando proporção:
 
 ```html
-<img src="CAMINHO_DA_LOGO.png" alt="DATUM" />
+<img src="CAMINHO_DA_LOGO.png" alt="DATA" />
 ```
 
 Use CSS seguro:
@@ -65,7 +80,7 @@ img.logo {
 
 ## Essência da Marca
 
-DATUM vem do conceito de datum geográfico: modelo matemático usado para representar a Terra e definir coordenadas espaciais com precisão.
+DATA vem do conceito de data geográfico: modelo matemático usado para representar a Terra e definir coordenadas espaciais com precisão.
 
 A marca deve comunicar:
 
@@ -270,7 +285,7 @@ Evitar frases como:
 
 O site pode apresentar:
 
-- Hero institucional com DATUM como marca principal.
+- Hero institucional com DATA como marca principal.
 - Proposta de valor: inteligência espacial aplicada.
 - Serviços ou frentes de atuação.
 - Aplicações por setor.
@@ -280,7 +295,7 @@ O site pode apresentar:
 
 Assinatura conceitual:
 
-**DATUM**
+**DATA**
 
 Inteligência espacial aplicada.
 

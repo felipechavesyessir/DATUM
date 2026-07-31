@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DATA - Manual de Identidade Visual</title>
+  <style>
+    @page { size: A4; margin: 16mm 15mm; }
+    :root {
+      --deep: #071426;
+      --geo: #007EA7;
+      --geo-alt: #0068D9;
+      --ice: #F7FAFC;
+      --gray: #5E6B76;
+      --graphite: #1D252C;
+      --green: #2FBF71;
+      --line: #DCE6ED;
+      --soft: #EEF5F8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--graphite);
+      font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.55;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--deep);
+      font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+      line-height: 1.14;
+    }
+    h1 { font-size: 30pt; max-width: 640px; }
+    h2 {
+      border-top: 1px solid var(--line);
+      font-size: 17.5pt;
+      margin-top: 24px;
+      padding-top: 16px;
+    }
+    h3 { color: var(--geo); font-size: 12.4pt; margin-top: 15px; }
+    p { margin: 7px 0 0; }
+    ul, ol { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 4px 0; }
+    code {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      color: var(--deep);
+      padding: 1px 4px;
+    }
+    a { color: var(--geo); text-decoration: none; overflow-wrap: anywhere; }
+    .cover {
+      min-height: 250mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+    }
+    .cover:before {
+      content: "";
+      position: absolute;
+      inset: -16mm -15mm auto auto;
+      width: 88mm;
+      height: 88mm;
+      background:
+        linear-gradient(90deg, rgba(0,126,167,.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0,126,167,.08) 1px, transparent 1px);
+      background-size: 8mm 8mm;
+      z-index: -1;
+    }
+    .logo { width: 150px; height: auto; margin-bottom: 42px; }
+    .kicker {
+      color: var(--geo);
+      font-size: 8.6pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      color: var(--gray);
+      font-size: 13pt;
+      line-height: 1.43;
+      margin-top: 16px;
+      max-width: 650px;
+    }
+    .lead {
+      border-left: 4px solid var(--geo);
+      color: var(--deep);
+      font-size: 14pt;
+      font-weight: 650;
+      line-height: 1.35;
+      margin-top: 14px;
+      padding-left: 13px;
+    }
+    .meta {
+      border-top: 1px solid var(--line);
+      color: var(--gray);
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 16px;
+    }
+    .toc { page-break-after: always; }
+    .section { page-break-inside: avoid; }
+    .page-break { page-break-before: always; }
+    .grid-2 { display: grid; gap: 11px; grid-template-columns: 1fr 1fr; margin-top: 11px; }
+    .grid-3 { display: grid; gap: 10px; grid-template-columns: 1fr 1fr 1fr; margin-top: 11px; }
+    .box, .rule, .asset, .font-card {
+      background: var(--ice);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 13px;
+    }
+    .box strong, .rule strong, .asset strong, .font-card strong {
+      color: var(--deep);
+      display: block;
+    }
+    .brand-display {
+      align-items: center;
+      background: var(--ice);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      min-height: 112px;
+      padding: 16px;
+    }
+    .brand-display.dark { background: var(--deep); }
+    .brand-display img { max-height: 86px; max-width: 92%; object-fit: contain; }
+    .mono img { max-height: 98px; }
+    .swatches {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 11px;
+    }
+    .swatch {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    .swatch-chip { height: 34px; }
+    .swatch-body { padding: 10px 12px; }
+    .swatch-body strong { color: var(--deep); display: block; }
+    .table {
+      border-collapse: collapse;
+      margin-top: 10px;
+      width: 100%;
+    }
+    .table th, .table td {
+      border: 1px solid var(--line);
+      padding: 8px 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .table th { background: var(--soft); color: var(--deep); }
+    .font-sample {
+      color: var(--deep);
+      display: block;
+      font-size: 20pt;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-top: 6px;
+    }
+    .space { font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif; }
+    .plex { font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif; }
+    .inter { font-family: Inter, "Segoe UI", Arial, sans-serif; }
+    .note {
+      background: #F3FBF7;
+      border-left: 4px solid var(--green);
+      color: #1F4234;
+      margin-top: 12px;
+      padding: 10px 12px;
+    }
+    .warn {
+      background: #FFF8EB;
+      border-left: 4px solid #C9891B;
+      color: #4A3413;
+      margin-top: 12px;
+      padding: 10px 12px;
+    }
+    .do-dont {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 11px;
+    }
+    .do { border-left: 4px solid var(--green); }
+    .dont { border-left: 4px solid #C73D3D; }
+    .sources { font-size: 9.2pt; page-break-before: always; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="cover">
+      <div>
+        <img class="logo" src="../assets/brand/data-logo-official.png" alt="DATA">
+        <p class="kicker">Manual de identidade visual</p>
+        <h1>Identidade visual da DATA</h1>
+        <p class="subtitle">
+          Guia completo de uso da marca DATA: conceito visual, logotipo, monograma, paleta de
+          cores, tipografia, arquivos oficiais, formatos recomendados, linguagem gráfica e ideias
+          que sustentam a identidade da empresa.
+        </p>
+        <p class="lead">
+          Uma marca técnica, precisa e contemporânea para inteligência geoespacial, topografia,
+          geodésia, cartografia, geoprocessamento e análise territorial.
+        </p>
+      </div>
+      <div class="meta">
+        <div><strong>Marca</strong><br>DATA</div>
+        <div><strong>Versão</strong><br>Manual institucional, 10 de maio de 2026</div>
+        <div><strong>Arquivos base</strong><br>PNG oficial e SVGs em <code>assets/brand</code></div>
+        <div><strong>Uso</strong><br>Site, propostas, relatórios, apresentações, GIS e redes sociais</div>
+      </div>
+    </section>
+
+    <section class="toc">
+      <h2>Sumário</h2>
+      <div class="grid-2">
+        <div class="box"><strong>1. Essência da marca</strong>O que a identidade deve comunicar.</div>
+        <div class="box"><strong>2. Conceito visual</strong>Curvas de nível, relevo, geodésia e precisão.</div>
+        <div class="box"><strong>3. Logotipo</strong>Versões, monograma, redução e regras de uso.</div>
+        <div class="box"><strong>4. Paleta de cores</strong>Códigos HEX, RGB, CMYK aproximado e função de cada cor.</div>
+        <div class="box"><strong>5. Tipografia</strong>Letras oficiais e hierarquia recomendada.</div>
+        <div class="box"><strong>6. Arquivos</strong>PNG, SVG, PDF, JPG, WEBP e quando usar cada formato.</div>
+        <div class="box"><strong>7. Linguagem visual</strong>Grids, mapas, linhas, ícones, interfaces e aplicações.</div>
+        <div class="box"><strong>8. Voz e ideias</strong>Como a DATA deve soar e quais conceitos orientar.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. Essência da marca</h2>
+      <p>
+        A DATA é uma marca de inteligência geoespacial aplicada. O nome remete ao conceito de data
+        geográfico: uma referência usada para representar a Terra e definir coordenadas espaciais
+        com precisão. Por isso, a identidade visual deve transmitir confiança, método, engenharia,
+        cartografia moderna e leitura técnica do território.
+      </p>
+      <h3>A marca deve parecer</h3>
+      <div class="grid-3">
+        <div class="box"><strong>Técnica</strong>Baseada em precisão, dados e método.</div>
+        <div class="box"><strong>Confiável</strong>Adequada para relatórios, órgãos públicos e engenharia.</div>
+        <div class="box"><strong>Contemporânea</strong>Atual, limpa e digital, sem exagero futurista.</div>
+        <div class="box"><strong>Geoespacial</strong>Conectada a mapas, coordenadas, relevo e território.</div>
+        <div class="box"><strong>Premium</strong>Séria, organizada e pronta para clientes exigentes.</div>
+        <div class="box"><strong>Aplicada</strong>Voltada a resultado, campo, análise e entrega.</div>
+      </div>
+      <h3>A marca não deve parecer</h3>
+      <ul>
+        <li>Startup genérica sem ligação com território.</li>
+        <li>Agência criativa ou estúdio visual.</li>
+        <li>Marca infantil, colorida demais ou lúdica demais.</li>
+        <li>Empresa futurista exagerada, cheia de brilho, glow e efeitos 3D.</li>
+        <li>Software abstrato que não deixa claro o vínculo com geociências e engenharia.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>2. Conceito visual</h2>
+      <p>
+        A identidade visual da DATA nasce da combinação entre curvas de nível, relevo topográfico,
+        ponto de referência geodésico, leitura espacial e continuidade dos dados. O símbolo deve
+        sugerir território interpretado, e não apenas decoração.
+      </p>
+      <div class="grid-2">
+        <div class="box"><strong>Curvas de nível</strong>Representam topografia, elevação, leitura do terreno e modelagem espacial.</div>
+        <div class="box"><strong>Marco geodésico</strong>Representa referência, coordenada, controle e precisão posicional.</div>
+        <div class="box"><strong>Letra D</strong>Cria reconhecimento de marca e permite uso como monograma.</div>
+        <div class="box"><strong>Fluxo de dados</strong>Linhas contínuas comunicam processamento, análise e transformação de informação.</div>
+      </div>
+      <h3>Ideia central</h3>
+      <p class="lead">
+        A DATA lê o território, organiza dados espaciais e transforma coordenadas em decisão técnica.
+      </p>
+    </section>
+
+    <section class="section page-break">
+      <h2>3. Logotipo e versões</h2>
+      <p>
+        A marca possui arquivos em PNG e SVG no projeto. O PNG oficial deve ser preservado sem
+        alterações visuais. As versões SVG são adequadas para interfaces, animações controladas,
+        impressão vetorial e aplicações em escala.
+      </p>
+      <div class="grid-2">
+        <div>
+          <div class="brand-display">
+            <img src="../assets/brand/data-logo-official.png" alt="Logo oficial DATA">
+          </div>
+          <h3>Logo oficial PNG</h3>
+          <p>
+            Arquivo principal para apresentações, documentos e uso geral quando a renderização do
+            PNG for suficiente. Não distorcer, recolorir ou aplicar efeitos.
+          </p>
+        </div>
+        <div>
+          <div class="brand-display mono">
+            <img src="../assets/brand/data-monograma.svg" alt="Monograma DATA">
+          </div>
+          <h3>Monograma</h3>
+          <p>
+            Versão compacta para favicon, avatar, assinatura visual, marca d'água, interface GIS,
+            ícone de app e aplicações pequenas.
+          </p>
+        </div>
+      </div>
+      <h3>Arquivos de marca existentes</h3>
+      <table class="table">
+        <tr><th>Arquivo</th><th>Formato</th><th>Uso recomendado</th></tr>
+        <tr><td><code>data-logo-official.png</code></td><td>PNG</td><td>Logo oficial em documentos, apresentações e materiais gerais.</td></tr>
+        <tr><td><code>data-logo-official-vector.svg</code></td><td>SVG</td><td>Versão vetorial limpa para escala, web, impressão e animações controladas.</td></tr>
+        <tr><td><code>data-logo.svg</code></td><td>SVG</td><td>Aplicações vetoriais alternativas no site ou sistema visual.</td></tr>
+        <tr><td><code>data-logo-dark.svg</code></td><td>SVG</td><td>Aplicações em fundos ou composições que exigem versão escura.</td></tr>
+        <tr><td><code>data-logo-reduzido.svg</code></td><td>SVG</td><td>Cabeçalhos, rodapés, documentos compactos e áreas com pouca largura.</td></tr>
+        <tr><td><code>data-monograma.svg</code></td><td>SVG</td><td>Ícone, favicon, avatar, app, marca d'água e elementos de interface.</td></tr>
+        <tr><td><code>data-topographic-background-vector.svg</code></td><td>SVG</td><td>Textura técnica, fundo cartográfico e elementos institucionais discretos.</td></tr>
+      </table>
+      <h3>Área de respiro</h3>
+      <p>
+        Nenhum texto, borda, imagem ou elemento gráfico deve encostar na marca. Como regra simples,
+        use ao redor do logo uma margem mínima equivalente à altura da letra D do wordmark. Em
+        aplicações muito pequenas, aumente o respiro para preservar leitura.
+      </p>
+      <h3>Tamanho mínimo</h3>
+      <table class="table">
+        <tr><th>Versão</th><th>Digital</th><th>Impresso</th></tr>
+        <tr><td>Logo principal</td><td>140 px de largura</td><td>35 mm de largura</td></tr>
+        <tr><td>Logo reduzido</td><td>96 px de largura</td><td>28 mm de largura</td></tr>
+        <tr><td>Monograma</td><td>24 px</td><td>8 mm</td></tr>
+      </table>
+      <div class="warn">
+        Não aplicar sombra, brilho, bevel, gradiente, rotação, distorção, contorno extra, textura ou
+        troca de cores fora da paleta definida.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. Paleta oficial</h2>
+      <p>
+        A paleta da DATA usa azul técnico profundo como base institucional, azul geoespacial como
+        cor de destaque, branco gelo como fundo técnico, cinzas para texto e verde coordenada apenas
+        para validação, status e confirmação.
+      </p>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#071426"></div>
+          <div class="swatch-body"><strong>Azul Técnico Profundo</strong>HEX #071426<br>RGB 7, 20, 38<br>CMYK aprox. 82, 47, 0, 85<br>Uso: fundo premium, títulos, wordmark, áreas institucionais.</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#007EA7"></div>
+          <div class="swatch-body"><strong>Azul Geoespacial</strong>HEX #007EA7<br>RGB 0, 126, 167<br>CMYK aprox. 100, 25, 0, 35<br>Uso: links, linhas, destaques, dados ativos e interação.</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#0068D9"></div>
+          <div class="swatch-body"><strong>Azul Vetorial de Apoio</strong>HEX #0068D9<br>RGB 0, 104, 217<br>CMYK aprox. 100, 52, 0, 15<br>Uso: detalhe presente em alguns SVGs vetorizados.</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#F7FAFC; border-bottom:1px solid #DCE6ED"></div>
+          <div class="swatch-body"><strong>Branco Gelo</strong>HEX #F7FAFC<br>RGB 247, 250, 252<br>CMYK aprox. 2, 1, 0, 1<br>Uso: fundos, documentos, dashboards e áreas de leitura.</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#5E6B76"></div>
+          <div class="swatch-body"><strong>Cinza Técnico</strong>HEX #5E6B76<br>RGB 94, 107, 118<br>CMYK aprox. 20, 9, 0, 54<br>Uso: textos secundários, legendas, metadados e descrições.</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#1D252C"></div>
+          <div class="swatch-body"><strong>Grafite</strong>HEX #1D252C<br>RGB 29, 37, 44<br>CMYK aprox. 34, 16, 0, 83<br>Uso: texto principal, fundos neutros e contraste técnico.</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#2FBF71"></div>
+          <div class="swatch-body"><strong>Verde Coordenada</strong>HEX #2FBF71<br>RGB 47, 191, 113<br>CMYK aprox. 75, 0, 41, 25<br>Uso: confirmação, validação, status ativo e sensores.</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#DCE6ED"></div>
+          <div class="swatch-body"><strong>Linha Cartográfica</strong>HEX #DCE6ED<br>RGB 220, 230, 237<br>CMYK aprox. 7, 3, 0, 7<br>Uso: bordas, grids, divisórias e linhas técnicas sutis.</div>
+        </div>
+      </div>
+      <h3>Proporção de uso</h3>
+      <ul>
+        <li>60% branco gelo e fundos claros para leitura técnica.</li>
+        <li>25% azul técnico profundo e grafite para autoridade e contraste.</li>
+        <li>10% azul geoespacial para marca, links, mapas e destaques.</li>
+        <li>5% verde coordenada, usado apenas quando houver estado positivo ou validação.</li>
+      </ul>
+    </section>
+
+    <section class="section page-break">
+      <h2>5. Tipografia</h2>
+      <p>
+        A tipografia deve reforçar a sensação de engenharia, precisão e modernidade. A DATA usa uma
+        combinação de fontes geométricas e técnicas, com hierarquia limpa.
+      </p>
+      <div class="grid-3">
+        <div class="font-card">
+          <strong>Space Grotesk</strong>
+          <span class="font-sample space">DATA 012</span>
+          Display, títulos, chamadas, destaques e marca. Usar pesos 600 e 700.
+        </div>
+        <div class="font-card">
+          <strong>IBM Plex Sans</strong>
+          <span class="font-sample plex">DATA 012</span>
+          Corpo de texto técnico, relatórios, descrições, interfaces e documentos.
+        </div>
+        <div class="font-card">
+          <strong>Inter</strong>
+          <span class="font-sample inter">DATA 012</span>
+          Fonte institucional de fallback para dashboards, documentos e sistemas.
+        </div>
+      </div>
+      <h3>Hierarquia recomendada</h3>
+      <table class="table">
+        <tr><th>Uso</th><th>Fonte</th><th>Peso</th><th>Observação</th></tr>
+        <tr><td>H1 / títulos principais</td><td>Space Grotesk</td><td>600-700</td><td>Frases curtas, sem excesso de caixa alta.</td></tr>
+        <tr><td>H2 / seções</td><td>Space Grotesk</td><td>600</td><td>Separar bem os blocos de conteúdo.</td></tr>
+        <tr><td>Corpo de texto</td><td>IBM Plex Sans</td><td>400</td><td>Manter linhas com até 75 caracteres.</td></tr>
+        <tr><td>Dados, labels e UI</td><td>IBM Plex Sans ou Inter</td><td>500-600</td><td>Boa leitura em mapas, tabelas e painéis.</td></tr>
+        <tr><td>Números técnicos</td><td>IBM Plex Sans</td><td>500</td><td>Usar espaçamento claro e alinhamento consistente.</td></tr>
+      </table>
+      <h3>Regras tipográficas</h3>
+      <ul>
+        <li>Evitar fontes decorativas, manuscritas, serifadas ornamentais ou excessivamente futuristas.</li>
+        <li>Evitar letter spacing negativo.</li>
+        <li>Usar caixa alta com moderação, principalmente em rótulos curtos.</li>
+        <li>Preferir textos objetivos, com boa margem e leitura técnica.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>6. Formatos de arquivo</h2>
+      <p>
+        A identidade deve circular em formatos adequados para cada uso. Usar o formato correto evita
+        perda de qualidade, serrilhado, peso excessivo e problemas de impressão.
+      </p>
+      <table class="table">
+        <tr><th>Formato</th><th>Quando usar</th><th>Quando evitar</th></tr>
+        <tr><td>SVG</td><td>Site, interfaces, ícones, animações, impressão vetorial, materiais escaláveis.</td><td>Quando o sistema não aceitar vetor ou quando houver risco de edição indevida.</td></tr>
+        <tr><td>PNG</td><td>Apresentações, documentos, transparência, uso rápido sem perda visual.</td><td>Impressões muito grandes ou aplicações que exigem vetor.</td></tr>
+        <tr><td>PDF</td><td>Brandbook, propostas, relatórios finais, envio institucional e impressão.</td><td>Como arquivo editável de marca, salvo quando for PDF vetorial preparado para gráfica.</td></tr>
+        <tr><td>JPG</td><td>Fotografias, imagens de campo e fundos sem transparência.</td><td>Logotipo, monograma, mapas com texto fino ou arte que precisa de transparência.</td></tr>
+        <tr><td>WEBP</td><td>Imagens otimizadas para site, fotos e fundos leves.</td><td>Arquivo mestre, impressão ou materiais que precisam máxima compatibilidade.</td></tr>
+        <tr><td>DWG/DXF</td><td>Produtos técnicos de topografia, CAD, locação e engenharia.</td><td>Identidade visual institucional, exceto em carimbos ou pranchas técnicas.</td></tr>
+      </table>
+      <h3>Nomenclatura recomendada</h3>
+      <ul>
+        <li><code>data-logo-principal.svg</code></li>
+        <li><code>data-logo-principal.png</code></li>
+        <li><code>data-logo-reduzido.svg</code></li>
+        <li><code>data-monograma.svg</code></li>
+        <li><code>data-monograma-favicon.png</code></li>
+        <li><code>data-pattern-topografico.svg</code></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>7. Linguagem visual</h2>
+      <p>
+        A linguagem visual da DATA deve parecer cartográfica e técnica sem virar ilustração
+        decorativa. Os elementos gráficos devem lembrar mapas, coordenadas, linhas de nível,
+        triangulação, pontos de controle, camadas GIS e leitura espacial.
+      </p>
+      <div class="grid-2">
+        <div class="box"><strong>Grid modular</strong>Usar alinhamento horizontal, margens claras e organização por colunas.</div>
+        <div class="box"><strong>Linhas topográficas</strong>Usar como textura sutil, nunca competindo com texto ou logo.</div>
+        <div class="box"><strong>Mapas e camadas</strong>Preferir visuais limpos, com hierarquia de informação e cores controladas.</div>
+        <div class="box"><strong>Ícones</strong>Traço uniforme, formas geométricas, leitura rápida e sem excesso de detalhe.</div>
+        <div class="box"><strong>Interfaces GIS</strong>Painéis densos, botões discretos, rótulos claros e dados fáceis de comparar.</div>
+        <div class="box"><strong>Relatórios</strong>Layout técnico, tabelas limpas, mapas legíveis e metadados bem identificados.</div>
+      </div>
+      <h3>Espessura e forma</h3>
+      <ul>
+        <li>Curvas de nível: aproximadamente 2 a 2,5 px em tela, proporcional em impressão.</li>
+        <li>Cantos de componentes: até 8 px de raio, mantendo aparência técnica.</li>
+        <li>Bordas: finas, preferencialmente em <code>#DCE6ED</code>.</li>
+        <li>Sombras: usar pouco ou não usar; a marca deve parecer precisa, não decorativa.</li>
+      </ul>
+    </section>
+
+    <section class="section page-break">
+      <h2>8. Aplicações recomendadas</h2>
+      <div class="grid-2">
+        <div class="box"><strong>Site institucional</strong>Logo claro, navegação objetiva, fundo técnico, chamadas curtas e mapas/linhas como apoio visual.</div>
+        <div class="box"><strong>Relatórios técnicos</strong>Capa limpa, logotipo preservado, paleta controlada, tabelas e mapas com metadados.</div>
+        <div class="box"><strong>Propostas comerciais</strong>Tom premium, textos objetivos, serviços bem separados e uso de azul geoespacial para destaques.</div>
+        <div class="box"><strong>Apresentações</strong>Slides com muito respiro, títulos fortes, dados visualmente claros e pouca ornamentação.</div>
+        <div class="box"><strong>Redes sociais</strong>Posts técnicos, bastidores de campo, mapas autorizados, frases curtas e monograma como assinatura.</div>
+        <div class="box"><strong>Interfaces e dashboards</strong>Azul para interação, verde para validação, cinzas para metadados e fundo claro para legibilidade.</div>
+      </div>
+      <h3>Aplicações que combinam com a DATA</h3>
+      <ul>
+        <li>GIS e geotecnologia.</li>
+        <li>Topografia, geodésia e cartografia.</li>
+        <li>Geotecnia, risco geológico e análise territorial.</li>
+        <li>LiDAR, drones, sensoriamento remoto e modelos digitais de terreno.</li>
+        <li>Infraestrutura, mineração, logística, meio ambiente e planejamento urbano.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>9. O que fazer e o que evitar</h2>
+      <div class="do-dont">
+        <div class="rule do">
+          <strong>Fazer</strong>
+          <ul>
+            <li>Usar o logo com respiro.</li>
+            <li>Manter cores oficiais.</li>
+            <li>Preservar proporções.</li>
+            <li>Usar fundos limpos.</li>
+            <li>Valorizar mapas, grids e dados reais.</li>
+            <li>Comunicar precisão e método.</li>
+          </ul>
+        </div>
+        <div class="rule dont">
+          <strong>Evitar</strong>
+          <ul>
+            <li>Recolorir o logo aleatoriamente.</li>
+            <li>Aplicar sombra, brilho ou 3D.</li>
+            <li>Distorcer, esticar ou comprimir.</li>
+            <li>Usar gradientes chamativos.</li>
+            <li>Usar fundos poluídos atrás da marca.</li>
+            <li>Adotar linguagem genérica de startup.</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Exemplos de voz correta</h3>
+      <ul>
+        <li>Transformamos dados geoespaciais em informação técnica pronta para decisão.</li>
+        <li>Precisão territorial aplicada à engenharia.</li>
+        <li>Modelagem espacial com rastreabilidade técnica.</li>
+        <li>Cartografia inteligente para operações de campo.</li>
+      </ul>
+      <h3>Exemplos de voz incorreta</h3>
+      <ul>
+        <li>Soluções disruptivas para revolucionar o futuro.</li>
+        <li>Ecossistema inteligente de inovação total.</li>
+        <li>Plataforma tech de última geração sem limites.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>10. Ideias que envolvem a identidade</h2>
+      <p>
+        A identidade da DATA deve carregar uma ideia simples: precisão geográfica aplicada à vida
+        real. A marca existe para mostrar que dados espaciais podem sair do campo, passar por análise
+        técnica e virar resultado objetivo para obra, território, risco e decisão.
+      </p>
+      <div class="grid-2">
+        <div class="box"><strong>Campo para decisão</strong>Dados coletados não são o fim: eles viram mapas, análises, relatórios e ações.</div>
+        <div class="box"><strong>Território legível</strong>A DATA torna áreas, limites, riscos e fenômenos espaciais mais compreensíveis.</div>
+        <div class="box"><strong>Precisão com propósito</strong>A precisão importa porque reduz erro, retrabalho, custo e incerteza.</div>
+        <div class="box"><strong>Automação responsável</strong>A automação acelera processos, mas continua apoiada em validação técnica.</div>
+        <div class="box"><strong>Cartografia contemporânea</strong>Mapas, grids e coordenadas aparecem com estética limpa e atual.</div>
+        <div class="box"><strong>Autoridade tranquila</strong>A marca deve transmitir segurança sem precisar parecer agressiva ou exagerada.</div>
+      </div>
+      <p class="lead">
+        Assinatura conceitual: DATA, inteligência espacial aplicada.
+      </p>
+    </section>
+
+    <section class="sources">
+      <h2>Arquivos e referências internas</h2>
+      <p>Este manual foi organizado a partir dos materiais existentes no workspace da DATA.</p>
+      <ol>
+        <li><code>DESIGN.md</code>: tokens de cor, tipografia, layout, componentes e regras de imagem.</li>
+        <li><code>reports/brandbook-text.txt</code>: brandbook conceitual extraído.</li>
+        <li><code>assets/brand/data-logo-official.png</code>: logo oficial em PNG.</li>
+        <li><code>assets/brand/data-logo-official-vector.svg</code>: logo oficial vetorizado.</li>
+        <li><code>assets/brand/data-monograma.svg</code>: monograma e ícone compacto.</li>
+        <li><code>assets/brand/data-topographic-background-vector.svg</code>: fundo topográfico vetorial.</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
-  "name": "datum",
+  "name": "data",
   "version": "1.0.0",
-  "description": "DATUM institutional website with Playwright browser automation helpers.",
+  "description": "DATA institutional website with Playwright browser automation helpers.",
   "main": "script.js",
   "scripts": {
     "browser:search": "node scripts/playwright-search.mjs",

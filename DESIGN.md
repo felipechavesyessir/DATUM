@@ -1,4 +1,4 @@
-# DATUM Design System
+# DATA Design System
 
 ## Color Tokens
 

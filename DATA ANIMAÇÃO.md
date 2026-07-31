@@ -1,26 +1,26 @@
-# DATUM ANIMAÇÃO
+# DATA ANIMAÇÃO
 
-Especificação da animação da logotipo DATUM no scroll da página inicial.
+Especificação da animação da logotipo DATA no scroll da página inicial.
 
 ## Objetivo
 
-Ao abrir a página, a animação central ainda não aparece aberta. A logotipo oficial fica no canto superior esquerdo do header. No primeiro scroll, o monograma oficial da DATUM sai visualmente dessa posição, toma o centro da tela e revela o restante do nome da empresa. Como o monograma já representa o `D`, somente o texto `atum` aparece ao lado dele.
+Ao abrir a página, a animação central ainda não aparece aberta. A logotipo oficial fica no canto superior esquerdo do header. No primeiro scroll, o monograma oficial da DATA sai visualmente dessa posição, toma o centro da tela e revela o restante do nome da empresa. Como o monograma já representa o `D`, somente o texto `ata` aparece ao lado dele.
 
-A intenção visual é premium, sutil e técnica: a marca funciona como momento emblemático curto da experiência. O início deve ter poucos elementos competindo visualmente; não deve haver frase junto da marca nem textos/cards do hero visíveis, apenas terrain lines suaves preenchendo toda a tela no fundo. Antes e durante a animação da DATUM, essas curvas de nível devem se movimentar de forma ondulante e muito sutil. Logo no segundo movimento de scroll, a palavra completa desaparece com movimento suave, liberando o hero e suas informações relevantes.
+A intenção visual é premium, sutil e técnica: a marca funciona como momento emblemático curto da experiência. O início deve ter poucos elementos competindo visualmente; não deve haver frase junto da marca nem textos/cards do hero visíveis, apenas terrain lines suaves preenchendo toda a tela no fundo. Antes e durante a animação da DATA, essas curvas de nível devem se movimentar de forma ondulante e muito sutil. Logo no segundo movimento de scroll, a palavra completa desaparece com movimento suave, liberando o hero e suas informações relevantes.
 
 ## Arquivos Principais
 
-- Logo vetorizada oficial: `assets/brand/datum-logo-official-vector.svg`
+- Logo vetorizada oficial: `assets/brand/data-logo-official-vector.svg`
 - Estrutura HTML: `index.html`
 - Estilos e motion: `styles.css`
 - Controle por scroll: `script.js`
-- Curvas de nível animadas no hero: `.hero-topography`, baseadas em `assets/brand/datum-topographic-background-vector.svg`
+- Curvas de nível animadas no hero: `.hero-topography`, baseadas em `assets/brand/data-topographic-background-vector.svg`
 
 ## Regra da Logotipo
 
 A animação deve sempre ser baseada na versão vetorial oficial:
 
-`assets/brand/datum-logo-official-vector.svg`
+`assets/brand/data-logo-official-vector.svg`
 
 Não alterar:
 
@@ -70,11 +70,11 @@ pathLength="1"
 
 ## Tipografia
 
-### Texto `atum`
+### Texto `ata`
 
 Classe: `.scroll-brand-rest`
 
-- Conteúdo: `atum`
+- Conteúdo: `ata`
 - Fonte: `"Space Grotesk", "IBM Plex Sans", sans-serif`
 - Peso: `600`
 - Cor: `var(--deep)` ou `#071426`
@@ -82,7 +82,7 @@ Classe: `.scroll-brand-rest`
 - Tamanho mobile: `clamp(54px, 18vw, 88px)`
 - Altura de linha: `0.82`
 - Letter spacing: `0.02em`
-- Caixa: manter minúsculo, exatamente `atum`
+- Caixa: manter minúsculo, exatamente `ata`
 
 ### Frase de Impacto
 
@@ -94,7 +94,7 @@ Não usar frase de impacto na animação inicial. A marca deve aparecer sozinha,
 
 - Monograma principal: `#071426`
 - Acento azul do monograma: `#0068D9`
-- Texto `atum`: `#071426`
+- Texto `ata`: `#071426`
 - Fundo técnico da página: `#F7FAFC`
 - Respiro atrás da marca: `rgba(247, 250, 252, 0.86)`
 
@@ -121,8 +121,8 @@ A animação central usa a camada fixa:
 ```html
 <div class="scroll-brand-lockup" id="scroll-brand-lockup" aria-hidden="true">
   <div class="scroll-brand-wordmark">
-    <svg class="datum-vector-logo scroll-brand-monogram">...</svg>
-    <span class="scroll-brand-rest">atum</span>
+    <svg class="data-vector-logo scroll-brand-monogram">...</svg>
+    <span class="scroll-brand-rest">ata</span>
   </div>
 </div>
 ```
@@ -208,14 +208,14 @@ body.logo-in-motion .brand {
   opacity: 0.16;
 }
 
-body.logo-in-motion .brand .datum-vector-logo {
+body.logo-in-motion .brand .data-vector-logo {
   transform: translateY(4px) scale(0.94);
 }
 ```
 
 ## Desenho dos Traços
 
-Classe: `.datum-vector-logo .logo-trace`
+Classe: `.data-vector-logo .logo-trace`
 
 ```css
 stroke-dasharray: 1;
@@ -272,7 +272,7 @@ Escala da assinatura:
 const lockupScale = 0.98 - 0.16 * introEase;
 ```
 
-Saída do texto `atum`:
+Saída do texto `ata`:
 
 ```js
 const wordOpacity = 1 - fadeEase;
@@ -298,11 +298,11 @@ document.body.classList.toggle("logo-centered", introExit < 0.82);
 2. Primeiro scroll:
    - o `D` sai visualmente da logo do canto superior esquerdo;
    - o monograma toma o centro da tela;
-   - `atum` aparece para formar `Datum`;
+   - `ata` aparece para formar `Data`;
    - as curvas de nível continuam se movimentando suavemente ao fundo.
 
 3. Segundo movimento de scroll:
-   - `atum` reduz opacidade com leve deslocamento;
+   - `ata` reduz opacidade com leve deslocamento;
    - a palavra completa desaparece de forma curta e animada;
    - monograma mantém o desenho oficial completo;
    - hero e console voltam a aparecer por trás.
@@ -319,7 +319,7 @@ Em telas abaixo de `720px`:
 - header usa logo com `54px`;
 - assinatura central usa largura `min(92vw, 420px)`;
 - monograma central reduz para `82px` a `118px`;
-- texto `atum` reduz para `54px` a `88px`;
+- texto `ata` reduz para `54px` a `88px`;
 - margem entre monograma e texto fica em `-18px`.
 
 ## Acessibilidade e Movimento Reduzido
@@ -336,9 +336,9 @@ Também são reduzidas transições e animações globais.
 
 ## Checklist Antes de Alterar
 
-- A logo continua baseada em `datum-logo-official-vector.svg`?
+- A logo continua baseada em `data-logo-official-vector.svg`?
 - O `viewBox` continua `0 0 1254 1254`?
-- O texto revelado continua sendo apenas `atum`?
+- O texto revelado continua sendo apenas `ata`?
 - A animação continua sem frase abaixo da marca?
 - O SVG preserva `#071426` e `#0068D9`?
 - A animação usa `transform` e `opacity`, não propriedades de layout?
@@ -357,5 +357,5 @@ npx impeccable detect --fast --json index.html styles.css script.js
 Screenshot atual de referência:
 
 ```text
-reports/screenshots/datum-official-vector-wordmark-polished.png
+reports/screenshots/data-official-vector-wordmark-polished.png
 ```
