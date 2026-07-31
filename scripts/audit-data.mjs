@@ -52,7 +52,7 @@ async function auditViewport(browser, viewport) {
     const viewportWidth = window.innerWidth;
     const focusable = Array.from(
       document.querySelectorAll(
-        'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+        'a[href], button, input:not([type="hidden"]), textarea, select, [tabindex]:not([tabindex="-1"])'
       )
     );
     const invisibleFocusables = focusable
@@ -201,12 +201,56 @@ async function auditViewport(browser, viewport) {
     const form = document.querySelector(".contact-form");
     const button = form?.querySelector("button");
     button?.click();
-    return {
+    const invalidState = {
       invalidFields: Array.from(form?.querySelectorAll(".is-invalid") || []).map((field) => field.name),
       status: form?.querySelector(".form-status")?.textContent.trim() || "",
       nameError: form?.querySelector('[data-error-for="name"]')?.textContent.trim() || "",
-      emailError: form?.querySelector('[data-error-for="email"]')?.textContent.trim() || "",
-      messageError: form?.querySelector('[data-error-for="message"]')?.textContent.trim() || ""
+      contactError: form?.querySelector('[data-error-for="contact"]')?.textContent.trim() || ""
+    };
+
+    const setField = (name, value) => {
+      const field = form.elements[name];
+      field.value = value;
+      field.dispatchEvent(new Event(field.tagName === "SELECT" ? "change" : "input", { bubbles: true }));
+    };
+
+    document.querySelector('[data-service="modelagem-3d"]')?.click();
+    setField("name", "Teste DATUM");
+    setField("contact", "contato-invalido");
+    setField("intent", "parceria-tecnica");
+    setField("message", "Apoio técnico em um projeto.");
+    button?.click();
+    const invalidContactRejected = Boolean(form.elements.contact.classList.contains("is-invalid"));
+
+    setField("contact", "teste@datum.com.br");
+
+    let openedWhatsappUrl = "";
+    const nativeAnchorClick = HTMLAnchorElement.prototype.click;
+    HTMLAnchorElement.prototype.click = function captureLeadLink() {
+      if (this.href.startsWith("https://wa.me/")) {
+        openedWhatsappUrl = this.href;
+        return;
+      }
+      nativeAnchorClick.call(this);
+    };
+
+    button?.click();
+    HTMLAnchorElement.prototype.click = nativeAnchorClick;
+
+    const leadEvent = window.dataLayer?.find((item) => item.event === "datum_lead_submit") || null;
+    const whatsappMessage = openedWhatsappUrl
+      ? new URL(openedWhatsappUrl).searchParams.get("text")
+      : "";
+
+    return {
+      invalidState,
+      submission: {
+        invalidContactRejected,
+        servicePrefilledFromCard: form.elements.service.value === "modelagem-3d",
+        openedWhatsapp: Boolean(openedWhatsappUrl),
+        whatsappMessage,
+        leadEvent
+      }
     };
   });
 

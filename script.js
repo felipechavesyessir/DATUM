@@ -75,7 +75,7 @@ const translations = {
       ['.site-nav a[href="#processo"]', "Método"],
       ['.site-nav a[href="#cases"]', "Projetos"],
       ['.site-nav a[href="#tecnologia"]', "Tecnologia"],
-      ['.site-nav a[href*="wa.me"]', "Contato"],
+      ['.site-nav a[href="#contato"]', "Contato"],
       [".intro-impact .intro-copy", "Leia o território com a"],
       [".intro-impact > span", ""],
       [".company-intro-section .eyebrow", "Sobre a Datum"],
@@ -98,9 +98,9 @@ const translations = {
       [".result-card:nth-child(3) span", "Projetos institucionais"],
       [".result-card:nth-child(3) h3", "Decisão pública"],
       [".result-card:nth-child(3) p", "Mapas, relatórios e bases geográficas para risco, regularização, comunidades e infraestrutura."],
-      [".case-panel-intro .eyebrow", "Projetos e trabalhos"],
-      [".case-panel-intro h2", "Trabalhos e cases da Datum."],
-      [".case-panel-intro p", "Uma seleção de entregas em geoprocessamento, análise espacial, modelagem, documentação técnica e apoio à decisão pública."],
+      [".case-panel-intro .eyebrow", "Experiência da equipe"],
+      [".case-panel-intro h2", "Trabalhos da equipe técnica da Datum."],
+      [".case-panel-intro p", "Experiências reunidas pela equipe em geoprocessamento, análise espacial, modelagem, documentação técnica e apoio à decisão pública."],
       [".case-partner-lockup span", "Fundação Nacional dos Povos Indígenas"],
       [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
       [".case-detail-panel:nth-child(2) .case-story h3", "Terra Indígena Kaxuyana-Tunayana"],
@@ -109,11 +109,11 @@ const translations = {
       [".case-detail-panel:nth-child(3) .case-story span", "PMRR Contagem"],
       [".case-detail-panel:nth-child(3) .case-story h3", "Áreas com risco de deslizamento"],
       [".case-detail-panel:nth-child(3) .case-story strong", "3D + ortofoto"],
-      [".case-detail-panel:nth-child(3) .case-story p", "Mapeamento de áreas suscetíveis, produção de ortofotos e modelos 3D para apoiar diagnóstico técnico, leitura de relevo e planejamento de redução de risco."],
+      [".case-detail-panel:nth-child(3) .case-story p", "A equipe técnica reúne experiência em mapeamento de áreas suscetíveis, produção de ortofotos e modelos 3D para diagnóstico e planejamento de redução de risco."],
       [".case-detail-panel:nth-child(4) .case-story span", "Governo Federal"],
       [".case-detail-panel:nth-child(4) .case-story h3", "Regularização fundiária"],
       [".case-detail-panel:nth-child(4) .case-story strong", "REURB"],
-      [".case-detail-panel:nth-child(4) .case-story p", "Organização de bases, lotes, limites e documentação geoespacial para apoiar processos de regularização fundiária urbana com rastreabilidade técnica."],
+      [".case-detail-panel:nth-child(4) .case-story p", "A equipe técnica reúne experiência na organização de bases, lotes, limites e documentação geoespacial para processos de REURB com rastreabilidade técnica."],
       [".testimonial-copy .eyebrow", "Aplicações"],
       [".testimonial-copy h2", "Onde dados espaciais precisam virar produto técnico confiável."],
       ['.testimonial-nav[data-testimonial="prev"]', "Anterior"],
@@ -148,10 +148,30 @@ const translations = {
       [".news-item:nth-child(3) strong", "Rotinas para validar e padronizar entregas."],
       [".news-item:nth-child(4) time", "RELATÓRIOS"],
       [".news-item:nth-child(4) strong", "Mapas, modelos e relatórios executivos."],
-      [".contact-copy .eyebrow", "Contato"],
-      [".contact-copy h2", "Solicite orçamento ou converse com um especialista."],
-      [".contact-copy p", "Envie o tipo de serviço, localização, prazo, arquivos disponíveis e objetivo técnico. A Datum faz a triagem e retorna com próximos passos."],
-      [".contact-form button", "Enviar briefing"],
+      [".contact-copy .eyebrow", "Conexão técnica"],
+      [".contact-copy h2", "Vamos somar capacidade ao próximo projeto."],
+      [".contact-copy p", "Parcerias, apoio especializado e novas demandas são bem-vindos. Leva menos de um minuto."],
+      [".form-signal strong", "CANAL ABERTO"],
+      [".form-signal small", "resposta humana"],
+      [".field-name .field-label", "Nome"],
+      [".field-contact .field-label", "Email ou WhatsApp"],
+      [".field-intent .field-label", "O que você busca?"],
+      [".field-service .field-label", "Serviço relacionado"],
+      [".field-message .field-label", "Mensagem "],
+      [".field-message .field-label small", "opcional"],
+      ['.field-intent option[value=""]', "Selecione"],
+      ['.field-intent option[value="parceria-tecnica"]', "Propor parceria técnica"],
+      ['.field-intent option[value="apoio-projeto"]', "Apoio em um projeto"],
+      ['.field-intent option[value="contratar-datum"]', "Contratar a DATUM"],
+      ['.field-service option[value=""]', "Selecione"],
+      ['.field-service option[value="modelagem-3d"]', "Modelagem 3D"],
+      ['.field-service option[value="geodesia-topografia"]', "Geodésia e topografia"],
+      ['.field-service option[value="cartografia-gis"]', "Cartografia e GIS"],
+      ['.field-service option[value="inteligencia-territorial"]', "Inteligência territorial"],
+      ['.field-service option[value="outro"]', "Outro ou multidisciplinar"],
+      [".contact-form button", "Enviar contato"],
+      [".form-privacy", "Seus dados serão usados somente para responder a este contato."],
+      [".form-whatsapp", "Prefere falar agora? Abrir WhatsApp"],
       [".site-footer strong", "Datum"],
       [".site-footer > div p", "Dados geoespaciais transformados em decisão técnica para engenharia, território, risco e regularização."],
       [".site-footer nav a:nth-child(1)", "Sobre"],
@@ -160,11 +180,7 @@ const translations = {
       [".site-footer nav a:nth-child(4)", "Contato"],
       [".site-footer > p", "DATUM Projetos e Geointeligência Ltda. · CNPJ 67.694.029/0001-91 · Belo Horizonte/MG"]
     ],
-    labels: [
-      [".contact-form label:nth-of-type(1)", "Nome"],
-      [".contact-form label:nth-of-type(2)", "Email"],
-      [".contact-form label:nth-of-type(3)", "Briefing técnico"]
-    ],
+    labels: [],
     attrs: [
       [".brand", "aria-label", "Datum"],
       [".nav-toggle", "aria-label", "Abrir menu"],
@@ -174,10 +190,12 @@ const translations = {
       [".step-list", "aria-label", "Etapas do método Datum"],
       ['input[name="name"]', "aria-label", "Nome"],
       ['input[name="name"]', "placeholder", "Seu nome"],
-      ['input[name="email"]', "aria-label", "Email"],
-      ['input[name="email"]', "placeholder", "voce@empresa.com"],
-      ['textarea[name="message"]', "aria-label", "Briefing técnico"],
-      ['textarea[name="message"]', "placeholder", "Tipo de serviço, localização, prazo e arquivos disponíveis"]
+      ['input[name="contact"]', "aria-label", "Email ou WhatsApp"],
+      ['input[name="contact"]', "placeholder", "Como retornamos?"],
+      ['select[name="intent"]', "aria-label", "Objetivo do contato"],
+      ['select[name="service"]', "aria-label", "Serviço relacionado"],
+      ['textarea[name="message"]', "aria-label", "Mensagem opcional"],
+      ['textarea[name="message"]', "placeholder", "Conte em uma frase como podemos ajudar"]
     ],
     workflow: [
       {
@@ -249,7 +267,8 @@ const translations = {
     form: {
       required: "Preencha este campo.",
       email: "Use um email válido.",
-      invalid: "Revise os campos destacados para enviar o briefing.",
+      contact: "Informe um email ou WhatsApp válido.",
+      invalid: "Revise os campos destacados.",
       sent: "Abrindo WhatsApp",
       success: "Continue o envio na conversa do WhatsApp que foi aberta."
     }
@@ -266,7 +285,7 @@ const translations = {
       ['.site-nav a[href="#processo"]', "Method"],
       ['.site-nav a[href="#cases"]', "Projects"],
       ['.site-nav a[href="#tecnologia"]', "Technology"],
-      ['.site-nav a[href*="wa.me"]', "Contact"],
+      ['.site-nav a[href="#contato"]', "Contact"],
       [".intro-impact .intro-copy", "Read the territory with"],
       [".intro-impact > span", ""],
       [".company-intro-section .eyebrow", "About Datum"],
@@ -289,9 +308,9 @@ const translations = {
       [".result-card:nth-child(3) span", "Institutional projects"],
       [".result-card:nth-child(3) h3", "Public decisions"],
       [".result-card:nth-child(3) p", "Maps, reports and geographic databases for risk, regularization, communities and infrastructure."],
-      [".case-panel-intro .eyebrow", "Projects and work"],
-      [".case-panel-intro h2", "Datum work and case studies."],
-      [".case-panel-intro p", "A selection of deliveries in geoprocessing, spatial analysis, modeling, technical documentation and public decision support."],
+      [".case-panel-intro .eyebrow", "Team experience"],
+      [".case-panel-intro h2", "Work by Datum's technical team."],
+      [".case-panel-intro p", "Experience brought together by the team in geoprocessing, spatial analysis, modeling, technical documentation and public decision support."],
       [".case-partner-lockup span", "National Foundation for Indigenous Peoples"],
       [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
       [".case-detail-panel:nth-child(2) .case-story h3", "Kaxuyana-Tunayana Indigenous Land"],
@@ -300,11 +319,11 @@ const translations = {
       [".case-detail-panel:nth-child(3) .case-story span", "Contagem risk plan"],
       [".case-detail-panel:nth-child(3) .case-story h3", "Landslide risk areas"],
       [".case-detail-panel:nth-child(3) .case-story strong", "3D + orthophoto"],
-      [".case-detail-panel:nth-child(3) .case-story p", "Mapping of susceptible areas, orthophoto production and 3D models to support technical diagnosis, terrain reading and risk reduction planning."],
+      [".case-detail-panel:nth-child(3) .case-story p", "The technical team brings experience in mapping susceptible areas, producing orthophotos and 3D models for diagnosis and risk reduction planning."],
       [".case-detail-panel:nth-child(4) .case-story span", "Federal Government"],
       [".case-detail-panel:nth-child(4) .case-story h3", "Land regularization"],
       [".case-detail-panel:nth-child(4) .case-story strong", "REURB"],
-      [".case-detail-panel:nth-child(4) .case-story p", "Organization of datasets, parcels, boundaries and geospatial documentation to support urban land regularization with technical traceability."],
+      [".case-detail-panel:nth-child(4) .case-story p", "The technical team brings experience in organizing datasets, parcels, boundaries and geospatial documentation for land regularization with technical traceability."],
       [".testimonial-copy .eyebrow", "Applications"],
       [".testimonial-copy h2", "Where spatial data must become reliable technical output."],
       ['.testimonial-nav[data-testimonial="prev"]', "Previous"],
@@ -339,10 +358,30 @@ const translations = {
       [".news-item:nth-child(3) strong", "Routines to validate and standardize deliverables."],
       [".news-item:nth-child(4) time", "REPORTS"],
       [".news-item:nth-child(4) strong", "Maps, models and executive reports."],
-      [".contact-copy .eyebrow", "Contact"],
-      [".contact-copy h2", "Request a quote or talk to a specialist."],
-      [".contact-copy p", "Send the service type, location, deadline, available files and technical objective. Datum screens the demand and returns with next steps."],
-      [".contact-form button", "Send briefing"],
+      [".contact-copy .eyebrow", "Technical connection"],
+      [".contact-copy h2", "Let's add capacity to the next project."],
+      [".contact-copy p", "Partnerships, specialist support and new projects are welcome. It takes less than a minute."],
+      [".form-signal strong", "CHANNEL OPEN"],
+      [".form-signal small", "human response"],
+      [".field-name .field-label", "Name"],
+      [".field-contact .field-label", "Email or WhatsApp"],
+      [".field-intent .field-label", "What are you looking for?"],
+      [".field-service .field-label", "Related service"],
+      [".field-message .field-label", "Message "],
+      [".field-message .field-label small", "optional"],
+      ['.field-intent option[value=""]', "Select"],
+      ['.field-intent option[value="parceria-tecnica"]', "Propose a technical partnership"],
+      ['.field-intent option[value="apoio-projeto"]', "Support on a project"],
+      ['.field-intent option[value="contratar-datum"]', "Hire DATUM"],
+      ['.field-service option[value=""]', "Select"],
+      ['.field-service option[value="modelagem-3d"]', "3D modeling"],
+      ['.field-service option[value="geodesia-topografia"]', "Geodesy and surveying"],
+      ['.field-service option[value="cartografia-gis"]', "Cartography and GIS"],
+      ['.field-service option[value="inteligencia-territorial"]', "Territorial intelligence"],
+      ['.field-service option[value="outro"]', "Other or multidisciplinary"],
+      [".contact-form button", "Send contact"],
+      [".form-privacy", "Your data will only be used to respond to this contact."],
+      [".form-whatsapp", "Prefer to talk now? Open WhatsApp"],
       [".site-footer strong", "Datum"],
       [".site-footer > div p", "Geospatial data transformed into technical decisions for engineering, territory, risk and regularization."],
       [".site-footer nav a:nth-child(1)", "About"],
@@ -351,11 +390,7 @@ const translations = {
       [".site-footer nav a:nth-child(4)", "Contact"],
       [".site-footer > p", "DATUM Projetos e Geointeligência Ltda. · CNPJ 67.694.029/0001-91 · Belo Horizonte/MG"]
     ],
-    labels: [
-      [".contact-form label:nth-of-type(1)", "Name"],
-      [".contact-form label:nth-of-type(2)", "Email"],
-      [".contact-form label:nth-of-type(3)", "Technical briefing"]
-    ],
+    labels: [],
     attrs: [
       [".brand", "aria-label", "Datum"],
       [".nav-toggle", "aria-label", "Open menu"],
@@ -365,10 +400,12 @@ const translations = {
       [".step-list", "aria-label", "Datum method steps"],
       ['input[name="name"]', "aria-label", "Name"],
       ['input[name="name"]', "placeholder", "Your name"],
-      ['input[name="email"]', "aria-label", "Email"],
-      ['input[name="email"]', "placeholder", "you@company.com"],
-      ['textarea[name="message"]', "aria-label", "Technical briefing"],
-      ['textarea[name="message"]', "placeholder", "Service type, location, deadline and available files"]
+      ['input[name="contact"]', "aria-label", "Email or WhatsApp"],
+      ['input[name="contact"]', "placeholder", "How should we reply?"],
+      ['select[name="intent"]', "aria-label", "Contact purpose"],
+      ['select[name="service"]', "aria-label", "Related service"],
+      ['textarea[name="message"]', "aria-label", "Optional message"],
+      ['textarea[name="message"]', "placeholder", "In one sentence, tell us how we can help"]
     ],
     workflow: [
       {
@@ -440,7 +477,8 @@ const translations = {
     form: {
       required: "Fill out this field.",
       email: "Use a valid email.",
-      invalid: "Review the highlighted fields before sending the briefing.",
+      contact: "Enter a valid email or WhatsApp number.",
+      invalid: "Review the highlighted fields.",
       sent: "Opening WhatsApp",
       success: "Continue sending the message in the WhatsApp conversation that opened."
     }
@@ -470,6 +508,7 @@ const accordionItems = document.querySelectorAll(".accordion-item");
 const languageButtons = document.querySelectorAll(".language");
 const revealItems = document.querySelectorAll(".reveal");
 const contactForm = document.querySelector(".contact-form");
+const serviceCards = document.querySelectorAll("[data-service]");
 const topographyCanvas = document.querySelector("#site-topography-field");
 const liquidOrbCanvases = document.querySelectorAll("[data-liquid-orb]");
 const terrainModelCanvases = document.querySelectorAll("[data-terrain-model]");
@@ -1495,6 +1534,94 @@ function setFieldError(field, message) {
   }
 }
 
+function isValidContact(value) {
+  const normalized = value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneDigits = normalized.replace(/\D/g, "");
+  return emailPattern.test(normalized) || (phoneDigits.length >= 10 && phoneDigits.length <= 13);
+}
+
+function getSelectedOptionText(form, fieldName) {
+  const field = form.elements[fieldName];
+  return field?.selectedOptions?.[0]?.textContent.trim() || "";
+}
+
+function setFormService(service) {
+  const field = contactForm.elements.service;
+  const optionExists = Array.from(field.options).some((option) => option.value === service);
+
+  if (!optionExists) {
+    return;
+  }
+
+  field.value = service;
+  setFieldError(field, "");
+  contactForm.classList.remove("is-contextual");
+  requestAnimationFrame(() => contactForm.classList.add("is-contextual"));
+  window.setTimeout(() => contactForm.classList.remove("is-contextual"), 900);
+}
+
+function initLeadFunnel() {
+  const params = new URLSearchParams(window.location.search);
+  const campaignFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  let storedCampaign = {};
+
+  try {
+    storedCampaign = JSON.parse(sessionStorage.getItem("datum-campaign") || "{}");
+  } catch {
+    storedCampaign = {};
+  }
+
+  const campaign = {};
+  campaignFields.forEach((fieldName) => {
+    campaign[fieldName] = params.get(fieldName) || storedCampaign[fieldName] || "";
+  });
+  campaign.referrer = storedCampaign.referrer || document.referrer || "";
+  campaign.landing_page = storedCampaign.landing_page || window.location.href.split("#")[0];
+
+  try {
+    sessionStorage.setItem("datum-campaign", JSON.stringify(campaign));
+  } catch {
+    // The form remains functional when storage is unavailable.
+  }
+
+  Object.entries(campaign).forEach(([fieldName, value]) => {
+    const field = contactForm.elements[fieldName];
+    if (field) {
+      field.value = value;
+    }
+  });
+
+  const requestedIntent = params.get("intent");
+  const intentField = contactForm.elements.intent;
+  if (requestedIntent && Array.from(intentField.options).some((option) => option.value === requestedIntent)) {
+    intentField.value = requestedIntent;
+  }
+
+  const requestedService = params.get("service");
+  if (requestedService) {
+    setFormService(requestedService);
+  }
+
+  serviceCards.forEach((card) => {
+    card.addEventListener("click", () => setFormService(card.dataset.service));
+  });
+}
+
+function emitLeadEvent(data) {
+  const eventDetail = {
+    intent: data.get("intent"),
+    service: data.get("service"),
+    source: data.get("utm_source") || "direct",
+    medium: data.get("utm_medium") || "site",
+    campaign: data.get("utm_campaign") || ""
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "datum_lead_submit", ...eventDetail });
+  window.dispatchEvent(new CustomEvent("datum:lead", { detail: eventDetail }));
+}
+
 function getCopy() {
   return translations[currentLang] || translations.pt;
 }
@@ -1674,6 +1801,7 @@ workflowSteps.forEach((step) => {
 });
 
 setLanguage(currentLang);
+initLeadFunnel();
 
 mobileWorkflowQuery.addEventListener("change", syncWorkflowLayout);
 
@@ -1707,16 +1835,17 @@ contactForm.addEventListener("submit", (event) => {
   const form = event.currentTarget;
   const button = form.querySelector("button");
   const status = form.querySelector(".form-status");
-  const fields = Array.from(form.querySelectorAll("input, textarea"));
+  const fields = Array.from(form.querySelectorAll("[required]"));
   let isValid = true;
 
   fields.forEach((field) => {
     let message = "";
     if (!field.value.trim()) {
       message = getCopy().form.required;
-    } else if (field.type === "email" && !field.validity.valid) {
-      message = getCopy().form.email;
+    } else if (field.name === "contact" && !isValidContact(field.value)) {
+      message = getCopy().form.contact;
     }
+
     setFieldError(field, message);
     isValid = isValid && !message;
   });
@@ -1727,26 +1856,47 @@ contactForm.addEventListener("submit", (event) => {
   }
 
   const data = new FormData(form);
+  const intent = getSelectedOptionText(form, "intent");
+  const service = getSelectedOptionText(form, "service");
+  const message = String(data.get("message") || "").trim();
+  const source = String(data.get("utm_source") || "").trim();
+  const campaign = String(data.get("utm_campaign") || "").trim();
   const whatsappNumber = form.dataset.whatsapp;
-  const briefing = [
-    "Olá, sou " + data.get("name") + ".",
-    "Meu e-mail é " + data.get("email") + ".",
-    "",
-    "Gostaria de conversar sobre o seguinte projeto:",
-    String(data.get("message")).trim()
-  ].join("\n");
+  const isEnglish = currentLang === "en";
+  const briefing = isEnglish
+    ? [
+        `Hello, I am ${data.get("name")}.`,
+        `Contact: ${data.get("contact")}`,
+        `Purpose: ${intent}`,
+        `Service: ${service}`,
+        message ? `Message: ${message}` : "",
+        source || campaign ? `Reference: ${[source, campaign].filter(Boolean).join(" / ")}` : ""
+      ]
+    : [
+        `Olá, sou ${data.get("name")}.`,
+        `Contato: ${data.get("contact")}`,
+        `Objetivo: ${intent}`,
+        `Serviço: ${service}`,
+        message ? `Mensagem: ${message}` : "",
+        source || campaign ? `Referência: ${[source, campaign].filter(Boolean).join(" / ")}` : ""
+      ];
   const whatsappUrl =
-    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(briefing);
+    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(briefing.filter(Boolean).join("\n"));
   const whatsappLink = document.createElement("a");
   whatsappLink.href = whatsappUrl;
   whatsappLink.target = "_blank";
   whatsappLink.rel = "noopener noreferrer";
 
+  emitLeadEvent(data);
   button.textContent = getCopy().form.sent;
   status.textContent = getCopy().form.success;
   whatsappLink.click();
+  window.setTimeout(() => {
+    button.textContent = getCopy().static.find(([selector]) => selector === ".contact-form button")?.[1] || "Enviar contato";
+  }, 1800);
 });
 
-contactForm.querySelectorAll("input, textarea").forEach((field) => {
-  field.addEventListener("input", () => setFieldError(field, ""));
+contactForm.querySelectorAll("input, select, textarea").forEach((field) => {
+  const eventName = field.tagName === "SELECT" ? "change" : "input";
+  field.addEventListener(eventName, () => setFieldError(field, ""));
 });

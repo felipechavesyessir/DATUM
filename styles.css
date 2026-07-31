@@ -1310,15 +1310,38 @@ h3 {
 
 @media (max-width: 760px) {
   .horizontal-cases {
-    height: 280vh;
+    height: auto;
+  }
+
+  .horizontal-cases-sticky {
+    position: static;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .case-horizontal-track {
+    display: grid;
+    width: 100%;
+    min-height: 0;
+    transform: none;
   }
 
   .case-panel {
-    padding: 96px 18px 68px;
+    min-height: 0;
+    padding: 76px 18px;
+    border-bottom: 1px solid rgba(7, 20, 38, 0.1);
   }
 
   .case-panel-inner {
-    width: min(100%, 320px);
+    width: min(100%, 520px);
+  }
+
+  .case-panel-intro {
+    min-height: 76vh;
+  }
+
+  .horizontal-case-progress {
+    display: none;
   }
 
   .case-intro-layout h2 {
@@ -1333,7 +1356,7 @@ h3 {
   .case-detail-layout,
   .case-detail-panel:nth-child(2) .case-detail-layout {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 24px;
   }
 
   .case-story h3 {
@@ -2658,21 +2681,68 @@ blockquote {
 }
 
 .contact-form {
+  position: relative;
   display: grid;
-  gap: 14px;
-  background: var(--ice);
+  gap: 12px;
+  background:
+    linear-gradient(rgba(0, 126, 167, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 126, 167, 0.045) 1px, transparent 1px),
+    var(--ice);
+  background-size: 24px 24px;
   color: var(--deep);
+  transition:
+    border-color var(--medium) var(--ease-out),
+    box-shadow var(--medium) var(--ease-out);
+}
+
+.contact-form.is-contextual {
+  border-color: rgba(0, 126, 167, 0.65);
+  box-shadow: 0 0 0 5px rgba(0, 126, 167, 0.12), 0 24px 64px rgba(0, 0, 0, 0.18);
+}
+
+.form-signal {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 2px;
+  color: var(--geo);
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.form-signal span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(47, 191, 113, 0.42);
+  animation: form-signal-pulse 2.4s ease-out infinite;
+}
+
+.form-signal small {
+  margin-left: auto;
+  color: var(--gray);
+  font: inherit;
+  letter-spacing: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .contact-form label {
   display: grid;
-  gap: 8px;
+  gap: 6px;
   color: var(--gray);
   font-size: 13px;
   font-weight: 800;
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   border: 1px solid var(--line);
@@ -2680,13 +2750,33 @@ blockquote {
   padding: 13px 14px;
   background: var(--paper);
   color: var(--deep);
+  font: inherit;
   resize: vertical;
   transition:
     border-color var(--fast) var(--ease-out),
     box-shadow var(--fast) var(--ease-out);
 }
 
+.contact-form select {
+  min-height: 47px;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gray) 50%),
+    linear-gradient(135deg, var(--gray) 50%, transparent 50%);
+  background-position:
+    calc(100% - 17px) 20px,
+    calc(100% - 12px) 20px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px;
+  padding-right: 34px;
+}
+
+.contact-form textarea {
+  min-height: 84px;
+}
+
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
   border-color: rgba(0, 126, 167, 0.72);
   box-shadow: 0 0 0 4px rgba(0, 126, 167, 0.12);
@@ -2694,21 +2784,67 @@ blockquote {
 }
 
 .contact-form input.is-invalid,
+.contact-form select.is-invalid,
 .contact-form textarea.is-invalid {
   border-color: #a33a3a;
 }
 
+.field-label small {
+  color: rgba(94, 107, 118, 0.72);
+  font-weight: 500;
+}
+
 .field-error,
 .form-status {
-  min-height: 18px;
   color: #8a2f2f;
   font-size: 12px;
   font-weight: 700;
 }
 
+.field-error:empty,
+.form-status:empty {
+  display: none;
+}
+
 .form-status {
   margin: 0;
   color: var(--geo);
+}
+
+.form-privacy {
+  margin: -2px 0 0;
+  color: var(--gray);
+  font-size: 11px;
+  text-align: center;
+}
+
+.form-whatsapp {
+  justify-self: center;
+  color: var(--geo);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@keyframes form-signal-pulse {
+  70% {
+    box-shadow: 0 0 0 8px rgba(47, 191, 113, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(47, 191, 113, 0);
+  }
+}
+
+@media (max-width: 620px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .site-footer {
