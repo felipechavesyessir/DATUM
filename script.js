@@ -1,8 +1,3 @@
-if (window.location.hash && window.location.hash !== "#") {
-  window.history.replaceState(null, "", `${window.location.pathname}#`);
-  window.scrollTo(0, 0);
-}
-
 let workflow = [
   {
     label: "01 / coleta",
@@ -79,9 +74,8 @@ const translations = {
       ['.site-nav a[href="#produtos"]', "Serviços"],
       ['.site-nav a[href="#processo"]', "Método"],
       ['.site-nav a[href="#cases"]', "Projetos"],
-      ['.site-nav a[href="#carreiras"]', "Tecnologia"],
-      ['.site-nav a[href="#contato"]', "Contato"],
-      ['.site-nav a[href="#login"]', "Login"],
+      ['.site-nav a[href="#tecnologia"]', "Tecnologia"],
+      ['.site-nav a[href*="wa.me"]', "Contato"],
       [".intro-impact .intro-copy", "Leia o território com a"],
       [".intro-impact > span", ""],
       [".company-intro-section .eyebrow", "Sobre a Datum"],
@@ -111,7 +105,7 @@ const translations = {
       [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
       [".case-detail-panel:nth-child(2) .case-story h3", "Terra Indígena Kaxuyana-Tunayana"],
       [".case-detail-panel:nth-child(2) .case-story strong", "2,182 milhões de hectares"],
-      [".case-detail-panel:nth-child(2) .case-story p", "A Datum atuou no geoprocessamento, organização dos dados, análise espacial e mapeamento da terra para suporte técnico à Funai."],
+      [".case-detail-panel:nth-child(2) .case-story p", "A equipe técnica da Datum reúne experiência em geoprocessamento, organização de dados, análise espacial e mapeamento territorial para suporte à Funai."],
       [".case-detail-panel:nth-child(3) .case-story span", "PMRR Contagem"],
       [".case-detail-panel:nth-child(3) .case-story h3", "Áreas com risco de deslizamento"],
       [".case-detail-panel:nth-child(3) .case-story strong", "3D + ortofoto"],
@@ -160,12 +154,11 @@ const translations = {
       [".contact-form button", "Enviar briefing"],
       [".site-footer strong", "Datum"],
       [".site-footer > div p", "Dados geoespaciais transformados em decisão técnica para engenharia, território, risco e regularização."],
-      [".site-footer nav a:nth-child(1)", "Termos de Uso"],
-      [".site-footer nav a:nth-child(2)", "Política de Privacidade"],
-      [".site-footer nav a:nth-child(3)", "Código de Ética"],
-      [".site-footer nav a:nth-child(4)", "LinkedIn"],
-      [".site-footer nav a:nth-child(5)", "Twitter"],
-      [".site-footer > p", "© 2026 Datum"]
+      [".site-footer nav a:nth-child(1)", "Sobre"],
+      [".site-footer nav a:nth-child(2)", "Serviços"],
+      [".site-footer nav a:nth-child(3)", "Projetos"],
+      [".site-footer nav a:nth-child(4)", "Contato"],
+      [".site-footer > p", "DATUM Projetos e Geointeligência Ltda. · CNPJ 67.694.029/0001-91 · Belo Horizonte/MG"]
     ],
     labels: [
       [".contact-form label:nth-of-type(1)", "Nome"],
@@ -257,8 +250,8 @@ const translations = {
       required: "Preencha este campo.",
       email: "Use um email válido.",
       invalid: "Revise os campos destacados para enviar o briefing.",
-      sent: "Briefing enviado",
-      success: "Recebemos seu contexto técnico. A equipe Datum retorna com o próximo passo."
+      sent: "Abrindo WhatsApp",
+      success: "Continue o envio na conversa do WhatsApp que foi aberta."
     }
   },
   en: {
@@ -272,9 +265,8 @@ const translations = {
       ['.site-nav a[href="#produtos"]', "Services"],
       ['.site-nav a[href="#processo"]', "Method"],
       ['.site-nav a[href="#cases"]', "Projects"],
-      ['.site-nav a[href="#carreiras"]', "Technology"],
-      ['.site-nav a[href="#contato"]', "Contact"],
-      ['.site-nav a[href="#login"]', "Login"],
+      ['.site-nav a[href="#tecnologia"]', "Technology"],
+      ['.site-nav a[href*="wa.me"]', "Contact"],
       [".intro-impact .intro-copy", "Read the territory with"],
       [".intro-impact > span", ""],
       [".company-intro-section .eyebrow", "About Datum"],
@@ -304,7 +296,7 @@ const translations = {
       [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
       [".case-detail-panel:nth-child(2) .case-story h3", "Kaxuyana-Tunayana Indigenous Land"],
       [".case-detail-panel:nth-child(2) .case-story strong", "2.182 million hectares"],
-      [".case-detail-panel:nth-child(2) .case-story p", "Datum worked on geoprocessing, data organization, spatial analysis and land mapping for technical support to Funai."],
+      [".case-detail-panel:nth-child(2) .case-story p", "Datum's technical team brings experience in geoprocessing, data organization, spatial analysis and territorial mapping for support to Funai."],
       [".case-detail-panel:nth-child(3) .case-story span", "Contagem risk plan"],
       [".case-detail-panel:nth-child(3) .case-story h3", "Landslide risk areas"],
       [".case-detail-panel:nth-child(3) .case-story strong", "3D + orthophoto"],
@@ -353,12 +345,11 @@ const translations = {
       [".contact-form button", "Send briefing"],
       [".site-footer strong", "Datum"],
       [".site-footer > div p", "Geospatial data transformed into technical decisions for engineering, territory, risk and regularization."],
-      [".site-footer nav a:nth-child(1)", "Terms of Use"],
-      [".site-footer nav a:nth-child(2)", "Privacy Policy"],
-      [".site-footer nav a:nth-child(3)", "Code of Ethics"],
-      [".site-footer nav a:nth-child(4)", "LinkedIn"],
-      [".site-footer nav a:nth-child(5)", "Twitter"],
-      [".site-footer > p", "© 2026 Datum"]
+      [".site-footer nav a:nth-child(1)", "About"],
+      [".site-footer nav a:nth-child(2)", "Services"],
+      [".site-footer nav a:nth-child(3)", "Projects"],
+      [".site-footer nav a:nth-child(4)", "Contact"],
+      [".site-footer > p", "DATUM Projetos e Geointeligência Ltda. · CNPJ 67.694.029/0001-91 · Belo Horizonte/MG"]
     ],
     labels: [
       [".contact-form label:nth-of-type(1)", "Name"],
@@ -450,8 +441,8 @@ const translations = {
       required: "Fill out this field.",
       email: "Use a valid email.",
       invalid: "Review the highlighted fields before sending the briefing.",
-      sent: "Briefing sent",
-      success: "We received your technical context. The Datum team will return with the next step."
+      sent: "Opening WhatsApp",
+      success: "Continue sending the message in the WhatsApp conversation that opened."
     }
   }
 };
@@ -1805,9 +1796,25 @@ contactForm.addEventListener("submit", (event) => {
     return;
   }
 
+  const data = new FormData(form);
+  const whatsappNumber = form.dataset.whatsapp;
+  const briefing = [
+    "Olá, sou " + data.get("name") + ".",
+    "Meu e-mail é " + data.get("email") + ".",
+    "",
+    "Gostaria de conversar sobre o seguinte projeto:",
+    String(data.get("message")).trim()
+  ].join("\n");
+  const whatsappUrl =
+    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(briefing);
+  const whatsappLink = document.createElement("a");
+  whatsappLink.href = whatsappUrl;
+  whatsappLink.target = "_blank";
+  whatsappLink.rel = "noopener noreferrer";
+
   button.textContent = getCopy().form.sent;
-  button.disabled = true;
   status.textContent = getCopy().form.success;
+  whatsappLink.click();
 });
 
 contactForm.querySelectorAll("input, textarea").forEach((field) => {

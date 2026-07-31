@@ -1,1 +1,6 @@
 .vercel
+node_modules/
+reports/audit/
+reports/browser-search/
+reports/enter-analysis/
+reports/screenshots/
