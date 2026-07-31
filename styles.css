@@ -25,6 +25,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
 }
 
 body {
@@ -2286,9 +2291,16 @@ blockquote {
 }
 
 .product-card:hover {
-  transform: translateY(-2px);
   border-color: rgba(0, 126, 167, 0.42);
   box-shadow: 0 16px 40px rgba(7, 20, 38, 0.1);
+}
+
+.product-card:focus-visible,
+.result-card:focus-visible,
+.testimonial-card:focus-visible,
+.news-item:focus-visible {
+  outline: 3px solid rgba(0, 126, 167, 0.26);
+  outline-offset: 3px;
 }
 
 .result-card:hover,
@@ -2767,6 +2779,29 @@ body.pointer-motion-ready .terrain-console {
     box-shadow 200ms ease-out,
     background-color 150ms ease;
   will-change: transform;
+}
+
+body.pointer-motion-ready .product-card {
+  transform:
+    perspective(900px)
+    translate3d(var(--card-shift-x, 0px), 0, 0)
+    rotateX(var(--card-tilt-x, 0deg))
+    rotateY(var(--card-tilt-y, 0deg));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+body.pointer-motion-ready .product-card:is(:hover, :focus-visible) {
+  transform:
+    perspective(900px)
+    translate3d(var(--card-shift-x, 0px), -4px, 0)
+    rotateX(var(--card-tilt-x, 0deg))
+    rotateY(var(--card-tilt-y, 0deg));
+}
+
+.is-motion-paused,
+.is-motion-paused * {
+  animation-play-state: paused !important;
 }
 
 body.pointer-motion-ready .map-pin {

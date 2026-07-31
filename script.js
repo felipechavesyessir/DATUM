@@ -479,8 +479,6 @@ const horizontalCaseDots = document.querySelectorAll(".horizontal-case-progress 
 
 let testimonialIndex = 0;
 let currentLang = localStorage.getItem("data-language") || "pt";
-let horizontalCaseSnapTimer = 0;
-let horizontalCaseSnapping = false;
 
 document.body.classList.add("motion-ready");
 
@@ -626,6 +624,7 @@ function initPointerMotion() {
   }
 
   const motionTargets = [...document.querySelectorAll(".terrain-console, .process-workbench, .map-pin")];
+  const productCards = [...document.querySelectorAll(".product-card")];
   const pointer = {
     x: window.innerWidth * 0.5,
     y: window.innerHeight * 0.5
@@ -663,6 +662,18 @@ function initPointerMotion() {
       target.style.setProperty("--motion-active", near ? "1" : "0");
     });
 
+    productCards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const inside =
+        pointer.x >= rect.left && pointer.x <= rect.right && pointer.y >= rect.top && pointer.y <= rect.bottom;
+      const localX = clamp((pointer.x - rect.left) / Math.max(rect.width, 1) - 0.5, -0.5, 0.5);
+      const localY = clamp((pointer.y - rect.top) / Math.max(rect.height, 1) - 0.5, -0.5, 0.5);
+
+      card.style.setProperty("--card-tilt-x", `${(inside ? -localY * 3.2 : 0).toFixed(2)}deg`);
+      card.style.setProperty("--card-tilt-y", `${(inside ? localX * 3.2 : 0).toFixed(2)}deg`);
+      card.style.setProperty("--card-shift-x", `${(inside ? localX * 2.4 : 0).toFixed(2)}px`);
+    });
+
     ticking = false;
   }
 
@@ -688,7 +699,32 @@ function initPointerMotion() {
       target.style.setProperty("--motion-y", "0px");
       target.style.setProperty("--motion-active", "0");
     });
+    productCards.forEach((card) => {
+      card.style.setProperty("--card-tilt-x", "0deg");
+      card.style.setProperty("--card-tilt-y", "0deg");
+      card.style.setProperty("--card-shift-x", "0px");
+    });
   });
+}
+
+function initMotionVisibility() {
+  if (!("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const animatedSections = document.querySelectorAll(
+    ".product-card, .horizontal-case-panel, .process-workbench"
+  );
+  const motionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-motion-paused", !entry.isIntersecting);
+      });
+    },
+    { rootMargin: "160px 0px", threshold: 0.01 }
+  );
+
+  animatedSections.forEach((section) => motionObserver.observe(section));
 }
 
 function initLiquidOrbs() {
@@ -716,7 +752,6 @@ function initLiquidOrbs() {
         canvas,
         alpha: true,
         antialias: true,
-        preserveDrawingBuffer: true,
         powerPreference: "high-performance"
       });
     } catch {
@@ -922,7 +957,6 @@ function initTerrainModels() {
         canvas,
         alpha: true,
         antialias: true,
-        preserveDrawingBuffer: true,
         powerPreference: "high-performance"
       });
     } catch {
@@ -1106,24 +1140,6 @@ function updateHorizontalCases() {
   horizontalCaseDots.forEach((dot, index) => {
     dot.classList.toggle("is-active", index === activeIndex);
   });
-
-  if (!horizontalCaseSnapping && progress > 0.02 && progress < 0.98) {
-    clearTimeout(horizontalCaseSnapTimer);
-    horizontalCaseSnapTimer = window.setTimeout(() => {
-      const sectionTop = horizontalCases.getBoundingClientRect().top + window.scrollY;
-      const targetProgress = activeIndex / Math.max(panelCount - 1, 1);
-      const targetY = sectionTop + travel * targetProgress;
-      horizontalCaseSnapping = true;
-      window.scrollTo({
-        top: targetY,
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
-      });
-      window.setTimeout(() => {
-        horizontalCaseSnapping = false;
-        updateHorizontalCases();
-      }, 520);
-    }, 360);
-  }
 }
 
 function initHorizontalCases() {
@@ -1131,22 +1147,25 @@ function initHorizontalCases() {
     return;
   }
 
+  let frame = 0;
+  const scheduleUpdate = () => {
+    if (frame) {
+      return;
+    }
+
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      updateHorizontalCases();
+    });
+  };
+
   updateHorizontalCases();
-  window.addEventListener("scroll", updateHorizontalCases, { passive: true });
-  window.addEventListener("resize", updateHorizontalCases);
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
 }
 let logoTargetProgress = 0;
 let logoVisualProgress = 0;
 let logoAnimationFrame = 0;
-let logoIdleTimer = 0;
-let logoAutoScrollFrame = 0;
-let logoAutoCompleting = false;
-let logoPreviousScrollBehavior = "";
-const logoAutoCompleteDelay = 2000;
-const logoAutoCompleteStart = 0.006;
-const logoAutoCompleteFormationEnd = 0.32;
-const logoAutoCompleteCenteredEnd = 0.48;
-const logoAutoCompleteDuration = 2400;
 
 function getLogoScrollProgress() {
   if (!heroSection) {
@@ -1172,81 +1191,6 @@ function getScrollBrandOriginRect() {
   }
 
   return headerBrand ? headerBrand.getBoundingClientRect() : null;
-}
-
-function cancelLogoAutoComplete() {
-  clearTimeout(logoIdleTimer);
-
-  if (logoAutoScrollFrame) {
-    cancelAnimationFrame(logoAutoScrollFrame);
-    logoAutoScrollFrame = 0;
-  }
-
-  if (logoPreviousScrollBehavior !== "") {
-    document.documentElement.style.scrollBehavior = logoPreviousScrollBehavior;
-    logoPreviousScrollBehavior = "";
-  }
-
-  logoAutoCompleting = false;
-}
-
-function completeLogoScroll() {
-  if (!heroSection || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
-  }
-
-  const currentProgress = getLogoScrollProgress();
-
-  if (
-    logoAutoCompleting ||
-    currentProgress < logoAutoCompleteStart ||
-    currentProgress >= logoAutoCompleteCenteredEnd
-  ) {
-    return;
-  }
-
-  const heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
-  const targetProgress =
-    currentProgress < logoAutoCompleteFormationEnd ? logoAutoCompleteFormationEnd : logoAutoCompleteCenteredEnd;
-  const targetY = heroTop + heroSection.offsetHeight * targetProgress;
-  const startY = window.scrollY;
-  const distance = targetY - startY;
-  const startTime = performance.now();
-  const root = document.documentElement;
-
-  logoAutoCompleting = true;
-  logoPreviousScrollBehavior = root.style.scrollBehavior;
-  root.style.scrollBehavior = "auto";
-
-  function step(time) {
-    const elapsed = Math.min((time - startTime) / logoAutoCompleteDuration, 1);
-    const eased = 1 - Math.pow(1 - elapsed, 3);
-    window.scrollTo(0, startY + distance * eased);
-    updateLogoMarker();
-
-    if (elapsed < 1) {
-      logoAutoScrollFrame = requestAnimationFrame(step);
-    } else {
-      logoAutoScrollFrame = 0;
-      logoAutoCompleting = false;
-      root.style.scrollBehavior = logoPreviousScrollBehavior;
-      logoPreviousScrollBehavior = "";
-    }
-  }
-
-  logoAutoScrollFrame = requestAnimationFrame(step);
-}
-
-function scheduleLogoAutoComplete() {
-  clearTimeout(logoIdleTimer);
-
-  if (logoAutoCompleting) {
-    return;
-  }
-
-  logoIdleTimer = window.setTimeout(() => {
-    completeLogoScroll();
-  }, logoAutoCompleteDelay);
 }
 
 function applyLogoProgress(progress) {
@@ -1633,6 +1577,7 @@ initPointerMotion();
 initLiquidOrbs();
 initTerrainModels();
 initHorizontalCases();
+initMotionVisibility();
 
 function setMobileNavState(isOpen) {
   if (!siteNav || !navToggle) {
@@ -1667,24 +1612,9 @@ window.addEventListener(
   "scroll",
   () => {
     updateLogoMarker();
-    scheduleLogoAutoComplete();
   },
   { passive: true }
 );
-
-["wheel", "touchstart", "keydown"].forEach((eventName) => {
-  window.addEventListener(
-    eventName,
-    () => {
-      if (!logoAutoCompleting) {
-        return;
-      }
-
-      cancelLogoAutoComplete();
-    },
-    { passive: true }
-  );
-});
 
 window.addEventListener("resize", () => updateLogoMarker({ immediate: true }));
 updateLogoMarker({ immediate: true });

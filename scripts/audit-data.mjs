@@ -153,6 +153,50 @@ async function auditViewport(browser, viewport) {
     });
   });
 
+  let cardMotionResult = null;
+  let scrollControlResult = null;
+  if (!viewport.isMobile) {
+    const cards = page.locator(".product-card");
+    const cardCount = await cards.count();
+    const transforms = [];
+
+    for (let index = 0; index < cardCount; index += 1) {
+      const card = cards.nth(index);
+      await card.scrollIntoViewIfNeeded();
+      const before = await card.evaluate((element) => getComputedStyle(element).transform);
+      await card.hover();
+      await page.waitForTimeout(240);
+      const after = await card.evaluate((element) => getComputedStyle(element).transform);
+      transforms.push({
+        index: index + 1,
+        changedOnHover: before !== after,
+        before,
+        after
+      });
+    }
+
+    scrollControlResult = await page.evaluate(async () => {
+      const root = document.documentElement;
+      const previousBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, Math.min(520, document.documentElement.scrollHeight - window.innerHeight));
+      const initialY = window.scrollY;
+      root.style.scrollBehavior = previousBehavior;
+      await new Promise((resolve) => window.setTimeout(resolve, 2400));
+      const finalY = window.scrollY;
+      return {
+        initialY,
+        finalY,
+        remainedUnderUserControl: Math.abs(finalY - initialY) < 2
+      };
+    });
+
+    cardMotionResult = {
+      allCardsRespond: transforms.length > 0 && transforms.every((item) => item.changedOnHover),
+      transforms
+    };
+  }
+
   const formResult = await page.evaluate(() => {
     const form = document.querySelector(".contact-form");
     const button = form?.querySelector("button");
@@ -195,6 +239,8 @@ async function auditViewport(browser, viewport) {
     failedRequests,
     metrics,
     linkChecks,
+    cardMotionResult,
+    scrollControlResult,
     formResult,
     menuResult
   };
