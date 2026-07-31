@@ -70,10 +70,10 @@ let testimonials = [
 const translations = {
   pt: {
     static: [
-      ["title", "DATA - Dados geoespaciais transformados em decisão técnica"],
-      ['meta[name="description"]', "A DATA transforma dados geoespaciais em soluções precisas para engenharia, território, obras, gestão de riscos e tomada de decisão.", "content"],
+      ["title", "Datum - Dados geoespaciais transformados em decisão técnica"],
+      ['meta[name="description"]', "A Datum transforma dados geoespaciais em soluções precisas para engenharia, território, obras, gestão de riscos e tomada de decisão.", "content"],
       [".skip-link", "Ir para o conteúdo"],
-      [".announcement span", "DATA"],
+      [".announcement span", "Datum"],
       [".announcement p", "Precisão territorial para topografia, geoprocessamento, análises geotécnicas, regularização, obras e automação espacial."],
       [".announcement a", "Falar com especialista"],
       ['.site-nav a[href="#produtos"]', "Serviços"],
@@ -84,13 +84,13 @@ const translations = {
       ['.site-nav a[href="#login"]', "Login"],
       [".intro-impact .intro-copy", "Leia o território com a"],
       [".intro-impact > span", ""],
-      [".company-intro-section .eyebrow", "Sobre a DATA"],
+      [".company-intro-section .eyebrow", "Sobre a Datum"],
       ["#company-intro-title", "Dados geoespaciais para decisões precisas."],
-      [".company-intro-copy p", "Sediada no IGC-UFMG, em Belo Horizonte, a DATA coleta, verifica, interpreta e automatiza dados territoriais. Atuamos em topografia, geoprocessamento, georreferenciamento de imóveis, locação de obras, análises geotécnicas e mapeamentos para projetos públicos, privados e institucionais."],
+      [".company-intro-copy p", "Sediada no IGC-UFMG, em Belo Horizonte, a Datum coleta, verifica, interpreta e automatiza dados territoriais. Atuamos em topografia, geoprocessamento, georreferenciamento de imóveis, locação de obras, análises geotécnicas e mapeamentos para projetos públicos, privados e institucionais."],
       [".company-intro-actions .primary", "Solicitar orçamento"],
       [".company-intro-actions .secondary", "Ver método técnico"],
       [".process-intro .eyebrow", "Como trabalhamos"],
-      [".process-intro h2", "Como a DATA opera"],
+      [".process-intro h2", "Como a Datum opera"],
       [".process-intro p", "Da demanda à entrega, organizamos objetivo, método, coordenada, validação, automação e suporte para reduzir incerteza e sustentar decisões territoriais."],
       [".results-copy .eyebrow", "Projetos"],
       [".results-copy h2", "Experiências em territórios, risco e decisão pública."],
@@ -110,7 +110,7 @@ const translations = {
       ['.testimonial-nav[data-testimonial="next"]', "Próximo"],
       [".security-panel .eyebrow", "Tecnologia e padrões"],
       [".security-panel h2", "Dados, ferramentas e automação com rastreabilidade."],
-      [".security-panel p", "A DATA combina campo, SIG, CAD, sensoriamento remoto, bases públicas, modelos de terreno e rotinas de automação para entregar mapas, memoriais, dashboards e relatórios com origem e método claros."],
+      [".security-panel p", "A Datum combina campo, SIG, CAD, sensoriamento remoto, bases públicas, modelos de terreno e rotinas de automação para entregar mapas, memoriais, dashboards e relatórios com origem e método claros."],
       [".accordion-item:nth-child(1) span", "Referência, precisão e sistema oficial"],
       [".accordion-item:nth-child(1) p", "Coordenadas, data geodésico, escala, limites e compatibilidade com exigências técnicas e legais, incluindo fluxos de georreferenciamento e documentação espacial."],
       [".accordion-item:nth-child(2) span", "Campo, SIG e sensoriamento remoto"],
@@ -140,16 +140,16 @@ const translations = {
       [".news-item:nth-child(4) strong", "Mapas, modelos e relatórios executivos."],
       [".contact-copy .eyebrow", "Contato"],
       [".contact-copy h2", "Solicite orçamento ou converse com um especialista."],
-      [".contact-copy p", "Envie o tipo de serviço, localização, prazo, arquivos disponíveis e objetivo técnico. A DATA faz a triagem e retorna com próximos passos."],
+      [".contact-copy p", "Envie o tipo de serviço, localização, prazo, arquivos disponíveis e objetivo técnico. A Datum faz a triagem e retorna com próximos passos."],
       [".contact-form button", "Enviar briefing"],
-      [".site-footer strong", "DATA"],
+      [".site-footer strong", "Datum"],
       [".site-footer > div p", "Dados geoespaciais transformados em decisão técnica para engenharia, território, risco e regularização."],
       [".site-footer nav a:nth-child(1)", "Termos de Uso"],
       [".site-footer nav a:nth-child(2)", "Política de Privacidade"],
       [".site-footer nav a:nth-child(3)", "Código de Ética"],
       [".site-footer nav a:nth-child(4)", "LinkedIn"],
       [".site-footer nav a:nth-child(5)", "Twitter"],
-      [".site-footer > p", "© 2026 DATA"]
+      [".site-footer > p", "© 2026 Datum"]
     ],
     labels: [
       [".contact-form label:nth-of-type(1)", "Nome"],
@@ -157,12 +157,12 @@ const translations = {
       [".contact-form label:nth-of-type(3)", "Briefing técnico"]
     ],
     attrs: [
-      [".brand", "aria-label", "DATA"],
+      [".brand", "aria-label", "Datum"],
       [".nav-toggle", "aria-label", "Abrir menu"],
       ["#site-nav", "aria-label", "Navegação principal"],
       [".language-switch", "aria-label", "Idiomas"],
-      [".scroll-cue", "aria-label", "Rolar para Sobre a DATA"],
-      [".step-list", "aria-label", "Etapas do método DATA"],
+      [".scroll-cue", "aria-label", "Rolar para Sobre a Datum"],
+      [".step-list", "aria-label", "Etapas do método Datum"],
       ['input[name="name"]', "aria-label", "Nome"],
       ['input[name="name"]', "placeholder", "Seu nome"],
       ['input[name="email"]', "aria-label", "Email"],
@@ -242,15 +242,15 @@ const translations = {
       email: "Use um email válido.",
       invalid: "Revise os campos destacados para enviar o briefing.",
       sent: "Briefing enviado",
-      success: "Recebemos seu contexto técnico. A equipe DATA retorna com o próximo passo."
+      success: "Recebemos seu contexto técnico. A equipe Datum retorna com o próximo passo."
     }
   },
   en: {
     static: [
-      ["title", "DATA - Geospatial data transformed into technical decisions"],
-      ['meta[name="description"]', "DATA transforms geospatial data into precise solutions for engineering, territory, construction, risk management and decision-making.", "content"],
+      ["title", "Datum - Geospatial data transformed into technical decisions"],
+      ['meta[name="description"]', "Datum transforms geospatial data into precise solutions for engineering, territory, construction, risk management and decision-making.", "content"],
       [".skip-link", "Skip to content"],
-      [".announcement span", "DATA"],
+      [".announcement span", "Datum"],
       [".announcement p", "Territorial precision for surveying, GIS, geotechnical analysis, land regularization, construction and spatial automation."],
       [".announcement a", "Talk to a specialist"],
       ['.site-nav a[href="#produtos"]', "Services"],
@@ -261,13 +261,13 @@ const translations = {
       ['.site-nav a[href="#login"]', "Login"],
       [".intro-impact .intro-copy", "Read the territory with"],
       [".intro-impact > span", ""],
-      [".company-intro-section .eyebrow", "About DATA"],
+      [".company-intro-section .eyebrow", "About Datum"],
       ["#company-intro-title", "Geospatial data for precise decisions."],
-      [".company-intro-copy p", "Based at IGC-UFMG in Belo Horizonte, DATA collects, verifies, interprets and automates territorial data. We work with surveying, GIS, property georeferencing, construction layout, geotechnical analysis and mapping for public, private and institutional projects."],
+      [".company-intro-copy p", "Based at IGC-UFMG in Belo Horizonte, Datum collects, verifies, interprets and automates territorial data. We work with surveying, GIS, property georeferencing, construction layout, geotechnical analysis and mapping for public, private and institutional projects."],
       [".company-intro-actions .primary", "Request a quote"],
       [".company-intro-actions .secondary", "See technical method"],
       [".process-intro .eyebrow", "How we work"],
-      [".process-intro h2", "How DATA operates"],
+      [".process-intro h2", "How Datum operates"],
       [".process-intro p", "From demand to delivery, we organize purpose, method, coordinates, validation, automation and support to reduce uncertainty and sustain territorial decisions."],
       [".results-copy .eyebrow", "Projects"],
       [".results-copy h2", "Experience across territory, risk and public decision-making."],
@@ -287,7 +287,7 @@ const translations = {
       ['.testimonial-nav[data-testimonial="next"]', "Next"],
       [".security-panel .eyebrow", "Technology and standards"],
       [".security-panel h2", "Data, tools and automation with traceability."],
-      [".security-panel p", "DATA combines fieldwork, GIS, CAD, remote sensing, public datasets, terrain models and automation routines to deliver maps, memorials, dashboards and reports with clear origin and method."],
+      [".security-panel p", "Datum combines fieldwork, GIS, CAD, remote sensing, public datasets, terrain models and automation routines to deliver maps, memorials, dashboards and reports with clear origin and method."],
       [".accordion-item:nth-child(1) span", "Reference, precision and official systems"],
       [".accordion-item:nth-child(1) p", "Coordinates, geodetic reference, scale, boundaries and compatibility with technical and legal requirements, including georeferencing and spatial documentation workflows."],
       [".accordion-item:nth-child(2) span", "Fieldwork, GIS and remote sensing"],
@@ -317,16 +317,16 @@ const translations = {
       [".news-item:nth-child(4) strong", "Maps, models and executive reports."],
       [".contact-copy .eyebrow", "Contact"],
       [".contact-copy h2", "Request a quote or talk to a specialist."],
-      [".contact-copy p", "Send the service type, location, deadline, available files and technical objective. DATA screens the demand and returns with next steps."],
+      [".contact-copy p", "Send the service type, location, deadline, available files and technical objective. Datum screens the demand and returns with next steps."],
       [".contact-form button", "Send briefing"],
-      [".site-footer strong", "DATA"],
+      [".site-footer strong", "Datum"],
       [".site-footer > div p", "Geospatial data transformed into technical decisions for engineering, territory, risk and regularization."],
       [".site-footer nav a:nth-child(1)", "Terms of Use"],
       [".site-footer nav a:nth-child(2)", "Privacy Policy"],
       [".site-footer nav a:nth-child(3)", "Code of Ethics"],
       [".site-footer nav a:nth-child(4)", "LinkedIn"],
       [".site-footer nav a:nth-child(5)", "Twitter"],
-      [".site-footer > p", "© 2026 DATA"]
+      [".site-footer > p", "© 2026 Datum"]
     ],
     labels: [
       [".contact-form label:nth-of-type(1)", "Name"],
@@ -334,12 +334,12 @@ const translations = {
       [".contact-form label:nth-of-type(3)", "Technical briefing"]
     ],
     attrs: [
-      [".brand", "aria-label", "DATA"],
+      [".brand", "aria-label", "Datum"],
       [".nav-toggle", "aria-label", "Open menu"],
       ["#site-nav", "aria-label", "Main navigation"],
       [".language-switch", "aria-label", "Languages"],
-      [".scroll-cue", "aria-label", "Scroll to About DATA"],
-      [".step-list", "aria-label", "DATA method steps"],
+      [".scroll-cue", "aria-label", "Scroll to About Datum"],
+      [".step-list", "aria-label", "Datum method steps"],
       ['input[name="name"]', "aria-label", "Name"],
       ['input[name="name"]', "placeholder", "Your name"],
       ['input[name="email"]', "aria-label", "Email"],
@@ -419,7 +419,7 @@ const translations = {
       email: "Use a valid email.",
       invalid: "Review the highlighted fields before sending the briefing.",
       sent: "Briefing sent",
-      success: "We received your technical context. The DATA team will return with the next step."
+      success: "We received your technical context. The Datum team will return with the next step."
     }
   }
 };
