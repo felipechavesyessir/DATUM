@@ -104,6 +104,22 @@ const translations = {
       [".result-card:nth-child(3) span", "Projetos institucionais"],
       [".result-card:nth-child(3) h3", "Decisão pública"],
       [".result-card:nth-child(3) p", "Mapas, relatórios e bases geográficas para risco, regularização, comunidades e infraestrutura."],
+      [".case-panel-intro .eyebrow", "Projetos e trabalhos"],
+      [".case-panel-intro h2", "Trabalhos e cases da Datum."],
+      [".case-panel-intro p", "Uma seleção de entregas em geoprocessamento, análise espacial, modelagem, documentação técnica e apoio à decisão pública."],
+      [".case-partner-lockup span", "Fundação Nacional dos Povos Indígenas"],
+      [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
+      [".case-detail-panel:nth-child(2) .case-story h3", "Terra Indígena Kaxuyana-Tunayana"],
+      [".case-detail-panel:nth-child(2) .case-story strong", "2,182 milhões de hectares"],
+      [".case-detail-panel:nth-child(2) .case-story p", "A Datum atuou no geoprocessamento, organização dos dados, análise espacial e mapeamento da terra para suporte técnico à Funai."],
+      [".case-detail-panel:nth-child(3) .case-story span", "PMRR Contagem"],
+      [".case-detail-panel:nth-child(3) .case-story h3", "Áreas com risco de deslizamento"],
+      [".case-detail-panel:nth-child(3) .case-story strong", "3D + ortofoto"],
+      [".case-detail-panel:nth-child(3) .case-story p", "Mapeamento de áreas suscetíveis, produção de ortofotos e modelos 3D para apoiar diagnóstico técnico, leitura de relevo e planejamento de redução de risco."],
+      [".case-detail-panel:nth-child(4) .case-story span", "Governo Federal"],
+      [".case-detail-panel:nth-child(4) .case-story h3", "Regularização fundiária"],
+      [".case-detail-panel:nth-child(4) .case-story strong", "REURB"],
+      [".case-detail-panel:nth-child(4) .case-story p", "Organização de bases, lotes, limites e documentação geoespacial para apoiar processos de regularização fundiária urbana com rastreabilidade técnica."],
       [".testimonial-copy .eyebrow", "Aplicações"],
       [".testimonial-copy h2", "Onde dados espaciais precisam virar produto técnico confiável."],
       ['.testimonial-nav[data-testimonial="prev"]', "Anterior"],
@@ -281,6 +297,22 @@ const translations = {
       [".result-card:nth-child(3) span", "Institutional projects"],
       [".result-card:nth-child(3) h3", "Public decisions"],
       [".result-card:nth-child(3) p", "Maps, reports and geographic databases for risk, regularization, communities and infrastructure."],
+      [".case-panel-intro .eyebrow", "Projects and work"],
+      [".case-panel-intro h2", "Datum work and case studies."],
+      [".case-panel-intro p", "A selection of deliveries in geoprocessing, spatial analysis, modeling, technical documentation and public decision support."],
+      [".case-partner-lockup span", "National Foundation for Indigenous Peoples"],
+      [".case-detail-panel:nth-child(2) .case-story span", "FUNAI"],
+      [".case-detail-panel:nth-child(2) .case-story h3", "Kaxuyana-Tunayana Indigenous Land"],
+      [".case-detail-panel:nth-child(2) .case-story strong", "2.182 million hectares"],
+      [".case-detail-panel:nth-child(2) .case-story p", "Datum worked on geoprocessing, data organization, spatial analysis and land mapping for technical support to Funai."],
+      [".case-detail-panel:nth-child(3) .case-story span", "Contagem risk plan"],
+      [".case-detail-panel:nth-child(3) .case-story h3", "Landslide risk areas"],
+      [".case-detail-panel:nth-child(3) .case-story strong", "3D + orthophoto"],
+      [".case-detail-panel:nth-child(3) .case-story p", "Mapping of susceptible areas, orthophoto production and 3D models to support technical diagnosis, terrain reading and risk reduction planning."],
+      [".case-detail-panel:nth-child(4) .case-story span", "Federal Government"],
+      [".case-detail-panel:nth-child(4) .case-story h3", "Land regularization"],
+      [".case-detail-panel:nth-child(4) .case-story strong", "REURB"],
+      [".case-detail-panel:nth-child(4) .case-story p", "Organization of datasets, parcels, boundaries and geospatial documentation to support urban land regularization with technical traceability."],
       [".testimonial-copy .eyebrow", "Applications"],
       [".testimonial-copy h2", "Where spatial data must become reliable technical output."],
       ['.testimonial-nav[data-testimonial="prev"]', "Previous"],
@@ -449,9 +481,15 @@ const revealItems = document.querySelectorAll(".reveal");
 const contactForm = document.querySelector(".contact-form");
 const topographyCanvas = document.querySelector("#site-topography-field");
 const liquidOrbCanvases = document.querySelectorAll("[data-liquid-orb]");
+const terrainModelCanvases = document.querySelectorAll("[data-terrain-model]");
+const horizontalCases = document.querySelector("[data-horizontal-cases]");
+const horizontalCaseTrack = document.querySelector("[data-case-track]");
+const horizontalCaseDots = document.querySelectorAll(".horizontal-case-progress span");
 
 let testimonialIndex = 0;
 let currentLang = localStorage.getItem("data-language") || "pt";
+let horizontalCaseSnapTimer = 0;
+let horizontalCaseSnapping = false;
 
 document.body.classList.add("motion-ready");
 
@@ -857,6 +895,255 @@ function initLiquidOrbs() {
   });
 }
 
+function initTerrainModels() {
+  if (!window.THREE || !terrainModelCanvases.length) {
+    return;
+  }
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const elevationRamp = [
+    { stop: 0, color: new THREE.Color("#184f9f") },
+    { stop: 0.18, color: new THREE.Color("#1fb6d0") },
+    { stop: 0.38, color: new THREE.Color("#2fbf71") },
+    { stop: 0.58, color: new THREE.Color("#b9d95c") },
+    { stop: 0.74, color: new THREE.Color("#f2d16b") },
+    { stop: 0.88, color: new THREE.Color("#e98732") },
+    { stop: 1, color: new THREE.Color("#c7372f") }
+  ];
+
+  function sampleElevationColor(value) {
+    const adjusted = clamp(value, 0, 1);
+    for (let index = 1; index < elevationRamp.length; index += 1) {
+      const previous = elevationRamp[index - 1];
+      const next = elevationRamp[index];
+      if (adjusted <= next.stop) {
+        const local = (adjusted - previous.stop) / (next.stop - previous.stop);
+        return previous.color.clone().lerp(next.color, clamp(local, 0, 1));
+      }
+    }
+    return elevationRamp[elevationRamp.length - 1].color.clone();
+  }
+
+  terrainModelCanvases.forEach((canvas) => {
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: true,
+        preserveDrawingBuffer: true,
+        powerPreference: "high-performance"
+      });
+    } catch {
+      return;
+    }
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 40);
+    camera.position.set(0, 0.52, 6.18);
+    camera.lookAt(0, 0.18, 0.18);
+
+    const terrainGroup = new THREE.Group();
+    terrainGroup.rotation.set(-0.76, 0, 0.64);
+    terrainGroup.position.set(0, 0.54, 0);
+    terrainGroup.scale.set(0.98, 0.98, 0.98);
+    scene.add(terrainGroup);
+
+    const segmentsX = 76;
+    const segmentsY = 54;
+    const terrainGeometry = new THREE.PlaneGeometry(4.4, 3.1, segmentsX, segmentsY);
+    const positions = terrainGeometry.attributes.position;
+    const colors = [];
+    const heights = [];
+
+    function ridge(x, y, cx, cy, amplitude, spread) {
+      const dx = x - cx;
+      const dy = y - cy;
+      return amplitude * Math.exp(-(dx * dx + dy * dy) / spread);
+    }
+
+    function sampleElevation(x, y) {
+      const normalizedX = x / 2.2;
+      const normalizedY = y / 1.55;
+      const terrain =
+        ridge(normalizedX, normalizedY, -0.64, 0.18, 0.62, 0.22) +
+        ridge(normalizedX, normalizedY, -0.18, 0.36, 1.18, 0.12) +
+        ridge(normalizedX, normalizedY, 0.34, 0.22, 1.42, 0.055) +
+        ridge(normalizedX, normalizedY, 0.72, -0.22, 0.92, 0.075) +
+        ridge(normalizedX, normalizedY, -0.48, -0.42, 0.54, 0.06) -
+        ridge(normalizedX, normalizedY, -0.1, -0.22, 0.48, 0.15) -
+        ridge(normalizedX, normalizedY, 0.42, -0.48, 0.3, 0.22) +
+        Math.sin(normalizedX * 9.6 + normalizedY * 2.7) * 0.06 +
+        Math.cos(normalizedY * 12.4 - normalizedX * 3.1) * 0.052 +
+        Math.sin((normalizedX + normalizedY) * 23.0) * 0.018 +
+        Math.cos((normalizedX - normalizedY) * 19.0) * 0.014;
+      const edgeFade = Math.max(Math.abs(normalizedX), Math.abs(normalizedY));
+      return (terrain - edgeFade * 0.16) * 1.08;
+    }
+
+    for (let index = 0; index < positions.count; index += 1) {
+      const x = positions.getX(index);
+      const y = positions.getY(index);
+      const elevation = sampleElevation(x, y);
+      positions.setZ(index, elevation);
+      heights.push(elevation);
+    }
+
+    const minHeight = Math.min(...heights);
+    const maxHeight = Math.max(...heights);
+    for (const height of heights) {
+      const normalized = clamp((height - minHeight) / (maxHeight - minHeight), 0, 1);
+      const t = clamp((normalized - 0.06) / 0.82, 0, 1);
+      const color = sampleElevationColor(t);
+      colors.push(color.r, color.g, color.b);
+    }
+
+    terrainGeometry.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
+    terrainGeometry.computeVertexNormals();
+    terrainGroup.add(new THREE.Mesh(terrainGeometry, new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide })));
+    terrainGroup.add(new THREE.LineSegments(
+      new THREE.WireframeGeometry(terrainGeometry),
+      new THREE.LineBasicMaterial({ color: new THREE.Color("#071426"), transparent: true, opacity: 0.08 })
+    ));
+
+    const contourMaterial = new THREE.LineBasicMaterial({ color: new THREE.Color("#071426"), transparent: true, opacity: 0.26 });
+    const accentContourMaterial = new THREE.LineBasicMaterial({ color: new THREE.Color("#007ea7"), transparent: true, opacity: 0.42 });
+    const rowLength = segmentsX + 1;
+    for (let row = 4; row < segmentsY; row += 5) {
+      const contourPoints = [];
+      for (let column = 0; column <= segmentsX; column += 1) {
+        const vertexIndex = row * rowLength + column;
+        contourPoints.push(new THREE.Vector3(positions.getX(vertexIndex), positions.getY(vertexIndex), positions.getZ(vertexIndex) + 0.012));
+      }
+      terrainGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(contourPoints), row % 10 === 4 ? accentContourMaterial : contourMaterial));
+    }
+
+    const baseGrid = new THREE.GridHelper(5.4, 12, 0x9ed8e8, 0xd8edf3);
+    baseGrid.rotation.x = Math.PI / 2;
+    baseGrid.position.z = minHeight - 0.24;
+    terrainGroup.add(baseGrid);
+
+    scene.add(new THREE.AmbientLight(0xf7fafc, 0.72));
+    const keyLight = new THREE.DirectionalLight(0xf7fafc, 1.08);
+    keyLight.position.set(-2.2, 3.8, 5.2);
+    scene.add(keyLight);
+    const sideLight = new THREE.PointLight(0x007ea7, 0.34, 7);
+    sideLight.position.set(2.4, -1.6, 3.2);
+    scene.add(sideLight);
+
+    const state = {
+      dragging: false,
+      lastX: 0,
+      lastY: 0,
+      targetX: terrainGroup.rotation.x,
+      targetZ: terrainGroup.rotation.z,
+      distance: 6.18
+    };
+
+    function resizeTerrain() {
+      const rect = canvas.getBoundingClientRect();
+      const width = Math.max(260, Math.round(rect.width));
+      const height = Math.max(180, Math.round(rect.height));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      camera.lookAt(0, 0.18, 0.18);
+    }
+
+    function renderTerrain(time = 0) {
+      terrainGroup.rotation.x += (state.targetX - terrainGroup.rotation.x) * 0.12;
+      terrainGroup.rotation.z += (state.targetZ - terrainGroup.rotation.z) * 0.12;
+      camera.position.z += (state.distance - camera.position.z) * 0.1;
+      camera.lookAt(0, 0.18, 0.18);
+      if (!reduceMotion && !state.dragging) {
+        state.targetZ += 0.0009;
+        state.targetX = -0.76 + Math.sin(time * 0.00045) * 0.026;
+      }
+      renderer.render(scene, camera);
+      requestAnimationFrame(renderTerrain);
+    }
+
+    resizeTerrain();
+    renderTerrain();
+    window.addEventListener("resize", resizeTerrain);
+
+    canvas.addEventListener("pointerdown", (event) => {
+      state.dragging = true;
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
+      canvas.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!state.dragging) {
+        return;
+      }
+      const deltaX = event.clientX - state.lastX;
+      const deltaY = event.clientY - state.lastY;
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
+      state.targetZ += deltaX * 0.008;
+      state.targetX = clamp(state.targetX + deltaY * 0.006, -1.26, -0.34);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("pointerup", (event) => {
+      state.dragging = false;
+      canvas.releasePointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("wheel", (event) => {
+      event.preventDefault();
+    }, { passive: false });
+  });
+}
+
+function updateHorizontalCases() {
+  if (!horizontalCases || !horizontalCaseTrack) {
+    return;
+  }
+
+  const rect = horizontalCases.getBoundingClientRect();
+  const travel = Math.max(horizontalCases.offsetHeight - window.innerHeight, 1);
+  const progress = clamp(-rect.top / travel, 0, 1);
+  const panelCount = Math.max(horizontalCaseTrack.children.length, 1);
+  const activeIndex = clamp(Math.round(progress * (panelCount - 1)), 0, panelCount - 1);
+  horizontalCases.style.setProperty("--case-progress", progress.toFixed(4));
+  horizontalCaseDots.forEach((dot, index) => {
+    dot.classList.toggle("is-active", index === activeIndex);
+  });
+
+  if (!horizontalCaseSnapping && progress > 0.02 && progress < 0.98) {
+    clearTimeout(horizontalCaseSnapTimer);
+    horizontalCaseSnapTimer = window.setTimeout(() => {
+      const sectionTop = horizontalCases.getBoundingClientRect().top + window.scrollY;
+      const targetProgress = activeIndex / Math.max(panelCount - 1, 1);
+      const targetY = sectionTop + travel * targetProgress;
+      horizontalCaseSnapping = true;
+      window.scrollTo({
+        top: targetY,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+      window.setTimeout(() => {
+        horizontalCaseSnapping = false;
+        updateHorizontalCases();
+      }, 520);
+    }, 360);
+  }
+}
+
+function initHorizontalCases() {
+  if (!horizontalCases || !horizontalCaseTrack) {
+    return;
+  }
+
+  updateHorizontalCases();
+  window.addEventListener("scroll", updateHorizontalCases, { passive: true });
+  window.addEventListener("resize", updateHorizontalCases);
+}
 let logoTargetProgress = 0;
 let logoVisualProgress = 0;
 let logoAnimationFrame = 0;
@@ -1353,6 +1640,8 @@ function setLanguage(lang) {
 initTopographyField();
 initPointerMotion();
 initLiquidOrbs();
+initTerrainModels();
+initHorizontalCases();
 
 function setMobileNavState(isOpen) {
   if (!siteNav || !navToggle) {
